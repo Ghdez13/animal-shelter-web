@@ -1,0 +1,110 @@
+[
+  {
+    "id": "tip_1",
+    "title": {
+      "es": "Actividades físicas: jugar con tu perro",
+      "en": "Physical activities: playing with your dog",
+      "fr": "Activités physiques : jouer avec son chien"
+    },
+    "prefix": {
+      "es": "Consejo:",
+      "en": "Tip:",
+      "fr": "Conseil :"
+    },
+    "text": {
+      "es": "Dedica al menos 30 minutos diarios a actividades físicas con tu perro. Esto ayuda a mantenerlo saludable, reduce el estrés y fortalece el vínculo entre ambos. Puedes alternar caminatas, juegos de buscar y traer, o pequeños circuitos de agilidad que estimulen tanto su mente como su cuerpo.",
+      "en": "Spend at least 30 minutes daily doing physical activities with your dog. This helps keep them healthy, reduces stress, and strengthens your bond. You can alternate walks, fetch games, or small agility circuits that stimulate both their mind and body.",
+      "fr": "Consacrez au moins 30 minutes par jour à des activités physiques avec votre chien. Cela aide à le garder en bonne santé, réduit le stress et renforce le lien entre vous. Vous pouvez alterner promenades, jeux de rapport et petits parcours d’agilité stimulant son esprit et son corps."
+    }
+  },
+  {
+    "id": "tip_2",
+    "title": {
+      "es": "Socialización temprana",
+      "en": "Early socialization",
+      "fr": "Socialisation précoce"
+    },
+    "prefix": {
+      "es": "Consejo:",
+      "en": "Tip:",
+      "fr": "Conseil :"
+    },
+    "text": {
+      "es": "Introduce a tu mascota a otros animales y personas desde cachorro. La socialización temprana ayuda a prevenir comportamientos agresivos o temerosos en la adultez. Asegúrate de que las interacciones sean seguras y positivas, y refuerza con elogios o pequeñas recompensas para generar confianza.",
+      "en": "Introduce your pet to other animals and people from puppyhood. Early socialization helps prevent aggressive or fearful behaviors in adulthood. Ensure interactions are safe and positive, and reinforce with praise or small treats to build trust.",
+      "fr": "Présentez votre animal à d’autres animaux et personnes dès son plus jeune âge. La socialisation précoce aide à prévenir les comportements agressifs ou craintifs à l’âge adulte. Assurez-vous que les interactions soient sûres et positives et renforcez-les avec des éloges ou de petites récompenses."
+    }
+  },
+  {
+    "id": "tip_3",
+    "title": {
+      "es": "Alimentación equilibrada",
+      "en": "Balanced diet",
+      "fr": "Alimentation équilibrée"
+    },
+    "prefix": {
+      "es": "Consejo:",
+      "en": "Tip:",
+      "fr": "Conseil :"
+    },
+    "text": {
+      "es": "Proporciona a tu mascota una alimentación equilibrada y adecuada a su edad, tamaño y actividad. Evita los excesos y los alimentos peligrosos. Una dieta sana no solo mejora la salud física, sino que también influye en su energía, pelaje y comportamiento general.",
+      "en": "Provide your pet with a balanced diet suitable for their age, size, and activity level. Avoid excesses and harmful foods. A healthy diet not only improves physical health but also affects their energy, coat, and overall behavior.",
+      "fr": "Offrez à votre animal une alimentation équilibrée adaptée à son âge, sa taille et son niveau d’activité. Évitez les excès et les aliments dangereux. Une alimentation saine améliore non seulement la santé physique, mais influence également son énergie, son pelage et son comportement général."
+    }
+  },
+  {
+    "id": "tip_4",
+    "title": {
+      "es": "Higiene y cuidado regular",
+      "en": "Hygiene and regular care",
+      "fr": "Hygiène et soins réguliers"
+    },
+    "prefix": {
+      "es": "Consejo:",
+      "en": "Tip:",
+      "fr": "Conseil :"
+    },
+    "text": {
+      "es": "Mantén una rutina de higiene que incluya cepillado, baño y limpieza de orejas y dientes según las necesidades de tu mascota. Revisiones periódicas y cuidados regulares ayudan a prevenir enfermedades, detectar problemas a tiempo y garantizan una vida más saludable y cómoda.",
+      "en": "Maintain a hygiene routine that includes brushing, bathing, and cleaning ears and teeth according to your pet’s needs. Regular check-ups and care help prevent diseases, detect issues early, and ensure a healthier, more comfortable life.",
+      "fr": "Maintenez une routine d’hygiène comprenant le brossage, le bain et le nettoyage des oreilles et des dents selon les besoins de votre animal. Des soins réguliers permettent de prévenir les maladies, de détecter les problèmes à temps et d’assurer une vie plus saine et confortable."
+    }
+  },
+  {
+    "id": "tip_5",
+    "title": {
+      "es": "Tiempo de descanso adecuado",
+      "en": "Adequate rest time",
+      "fr": "Temps de repos adéquat"
+    },
+    "prefix": {
+      "es": "Consejo:",
+      "en": "Tip:",
+      "fr": "Conseil :"
+    },
+    "text": {
+      "es": "Asegúrate de que tu mascota tenga un espacio tranquilo para descansar y dormir lo necesario. El descanso adecuado es vital para su desarrollo físico y emocional, y ayuda a que estén más equilibrados, felices y con energía para jugar y aprender.",
+      "en": "Make sure your pet has a quiet space to rest and sleep as needed. Adequate rest is vital for their physical and emotional development and helps them stay balanced, happy, and energetic for play and learning.",
+      "fr": "Assurez-vous que votre animal dispose d’un espace calme pour se reposer et dormir suffisamment. Un repos adéquat est vital pour son développement physique et émotionnel, et l’aide à rester équilibré, heureux et énergique pour jouer et apprendre."
+    }
+  },
+  {
+    "id": "tip_6",
+    "title": {
+      "es": "Estimulación mental",
+      "en": "Mental stimulation",
+      "fr": "Stimulation mentale"
+    },
+    "prefix": {
+      "es": "Consejo:",
+      "en": "Tip:",
+      "fr": "Conseil :"
+    },
+    "text": {
+      "es": "Proporciona juguetes interactivos, rompecabezas o juegos de búsqueda para estimular la mente de tu mascota. La estimulación mental reduce el aburrimiento, mejora la obediencia y mantiene a tu mascota activa y feliz incluso cuando no puedes dedicarle tiempo físico constante.",
+      "en": "Provide interactive toys, puzzles, or fetch games to stimulate your pet’s mind. Mental stimulation reduces boredom, improves obedience, and keeps your pet active and happy even when you can’t dedicate constant physical time.",
+      "fr": "Fournissez des jouets interactifs, des puzzles ou des jeux de rapport pour stimuler l’esprit de votre animal. La stimulation mentale réduit l’ennui, améliore l’obéissance et garde votre animal actif et heureux même lorsque vous ne pouvez pas lui consacrer du temps physique constant."
+    }
+  }
+]

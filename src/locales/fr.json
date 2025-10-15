@@ -1,0 +1,162 @@
+{
+  "navbar": {
+    "logoAlt": "Logo du refuge animalier, aller à la page d'accueil",
+    "toggleMenu": "Basculer le menu",
+    "menu": "Menu",
+    "close": "Fermer",
+    "learnOurServices": "Découvrez nos services",
+    "learnVolunteerOpportunities": "Découvrez les opportunités de bénévolat",
+    "donateAnimalShelter": "Faire un don au refuge animalier",
+    "learnAboutUs": "En savoir plus sur nous",
+    "contactUs": "Contactez-nous"
+  },
+
+  "menu": {
+    "services": "Services",
+    "volunteer": "Joindre",
+    "donations": "Dons",
+    "about-us": "À propos",
+    "contact": "Contact"
+  },
+
+  "hero": [
+    {
+      "title": "Un compagnon vous attend",
+      "text": "Chaque chien ou chat mérite une seconde chance. En adoptant, vous transformez une vie brisée en une histoire d’amour et de fidélité. Ouvrez votre cœur, votre maison deviendra son refuge.",
+      "buttonText": "En savoir plus",
+      "buttonLink": "/services"
+    },
+    {
+      "title": "Qui nous sommes",
+      "text": "Notre refuge existe pour protéger, soigner et offrir un avenir aux animaux abandonnés. Découvrez notre mission, nos valeurs et les histoires inspirantes qui nous motivent chaque jour à continuer à faire la différence.",
+      "buttonText": "En savoir plus",
+      "buttonLink": "/about-us"
+    },
+    {
+      "title": "Devenez acteur du changement",
+      "text": "Votre soutien peut prendre mille formes : un peu de temps pour aider, une donation pour nourrir ou un simple partage pour sensibiliser. Ensemble, chaque petit geste construit un grand avenir pour eux.",
+      "buttonText": "Rejoignez-nous",
+      "buttonLink": "/volunteer"
+    }
+  ],
+  "card": {
+    "card_1": {
+      "alt": "Découvrez nos options d'adoption pour chiens et chats, et offrez-leur enfin un foyer chaleureux, aimant et rempli de tendresse."
+    },
+    "card_2": {
+      "title": "Adoption",
+      "content": "Apprenez comment vous pouvez transformer la vie d’un animal en lui offrant une maison sûre, pleine d’amour et de bonheur quotidien."
+    },
+    "card_3": {
+      "alt": "Soutenez le refuge grâce à vos dons généreux, et permettez-nous d’apporter nourriture, soins médicaux et sécurité à chaque animal recueilli."
+    },
+    "card_4": {
+      "title": "Dons",
+      "content": "Découvrez comment votre contribution régulière, petite ou grande, peut changer profondément la vie de nos animaux et soutenir durablement notre mission."
+    },
+    "card_5": {
+      "alt": "Rejoignez notre équipe comme bénévole, promenez nos chiens, partagez de l’affection et offrez-leur des instants précieux de liberté et bonheur."
+    },
+    "card_6": {
+      "title": "Promenade de chiens",
+      "content": "Découvrez les horaires disponibles et rejoignez-nous pour participer activement à la promenade, apportant bien-être, joie et socialisation à chaque chien."
+    }
+  },
+  "card.learn_more": "En savoir plus",
+
+  "campaignSection": {
+    "title": "Ne les abandonnez pas, aidez-les à trouver un foyer",
+    "text": "Chaque animal mérite amour et attention. Avant de décider de l'abandonner, envisagez des alternatives comme l'adoption ou un refuge temporaire. Votre action peut sauver sa vie et lui offrir un avenir heureux.",
+    "button": "En savoir plus",
+    "imageAlt": "Chiot laissé seul dans la rue"
+  },
+
+  "footer": {
+    "contactTitle": "Contactez-nous",
+    "visitUs": "Visitez-nous",
+    "goHome": "Aller à l'accueil",
+    "logoAlt": "Logo du refuge animal",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "rights": "Refuge animal",
+    "viewExactLocation": "Voir l'emplacement exact sur Google Maps",
+    "allRightsReserved": "Tous droits réservés",
+    "privacyPolicy": "Politique de confidentialité",
+    "developedBy": "Site web développé par"
+  },
+
+  "servicesSection": {
+    "title": "Nos services",
+    "tipsTittle": "Trucs & conseils"
+  },
+
+  "volunteerSection": {
+    "title": "Deviens bénévole",
+    "introPhrase": "Notre temps, nos mains et nos cœurs peuvent changer des vies.",
+    "bannerDescription":"Faire un don aide aussi",
+    "button": "En savoir plus",
+    "captions": [
+      "Organise des événements et des activités",
+      "Enseigne et apprends les soins aux animaux",
+      "Soutiens les campagnes de santé",
+      "Ton don remplit les ventres et les cœurs",
+      "Vacciner, c’est aussi aimer",
+      "Promène un ami à quatre pattes",
+      "Ensemble, nous formons des familles",
+      "Là où naissent de nouvelles familles"
+    ]
+  },
+
+  "form": {
+    "title": "Inscrivez-vous ici!",
+    "description": "S’inscrire est facile : remplissez le formulaire et nous vous contacterons. WhatsApp est optionnel mais facilite la communication. Aider ne signifie pas toujours adopter ; vous pouvez aussi offrir temps et affection.",
+    "name": "Votre nom",
+    "email": "Votre email",
+    "whatsapp": "Votre WhatsApp",
+    "selectService": "Sélectionnez un service",
+    "walks": "Promenades",
+    "volunteer": "Volontaire",
+    "general": "Général",
+    "submit": "Envoyer"
+  },
+
+  "volunteerReflection":{
+    "title": [
+      "Ton temps change des vies",
+      "Eux aussi ont besoin d'amour",
+      "Aider nous rend humains"
+    ],
+    "description":[
+      "Offrir quelques heures peut tout changer. Chaque promenade, chaque caresse, chaque geste d’amour redonne espoir à ceux qui en ont le plus besoin. Ton temps a le pouvoir de transformer des vies.",
+      "Les animaux ressentent, attendent et font confiance. Un peu d’attention et de tendresse peut guérir des blessures invisibles et remplir leur monde de joie. Aimer, c’est aussi sauver.",
+      "Être bénévole n’aide pas seulement les animaux, cela unit les gens. Ensemble, nous créons un espace d’empathie, de respect et d’espoir, où chaque action inspire un changement réel et durable."
+    ]
+  },
+
+  "donationSection":{
+    "title": "Fais un don et fais la différence",
+    "description":"Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
+    "donationIntroTitle":"Ensemble, nous pouvons aider",
+    "donationIntro":"Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
+    "donationBanner":"Soyez bénévole !",
+    "button":"Rejoindre",
+    "whyDonateTitle":"Pourquoi faire un don ?",
+    "whyDonateDescription":"Les dons sont ce qui rend notre mission possible. Chaque contribution nous permet de couvrir les traitements médicaux, la nourriture et un refuge sûr pour les animaux que nous sauvons. Ensemble, nous pouvons changer leur histoire."
+    },
+
+    "donationCards":{
+      "title":"Modes de don",
+      "titleCard":[
+        "Virement bancaire",
+        "Paiement via OXXO",
+        "Virement international",
+        "Liste de souhaits Amazon"
+      ],
+      "description":[
+        "Faites un don directement via notre compte bancaire. Sûr et rapide.",
+        "Soutenez-nous depuis le magasin OXXO le plus proche en utilisant notre référence.",
+        "Vous pouvez également faire un don depuis l’étranger en utilisant notre code SWIFT.",
+        "Envoyez de la nourriture, des médicaments ou des jouets directement depuis notre liste de souhaits"
+      ]
+    }
+}

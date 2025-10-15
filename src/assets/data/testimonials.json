@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "author": "Laura Gómez",
+    "text": {
+      "es": "Adoptar fue más sencillo de lo que pensé. Me pidieron mis datos personales y me explicaron que habría visitas para verificar que mi perrito estuviera bien cuidado.",
+      "en": "Adopting was easier than I thought. They asked for my personal information and explained that there would be visits to make sure my dog was well cared for.",
+      "fr": "Adopter a été plus simple que je ne le pensais. Ils m'ont demandé mes informations personnelles et m'ont expliqué qu'il y aurait des visites pour vérifier que mon chien soit bien soigné."
+    }
+  },
+  {
+    "id": 2,
+    "author": "Andrés Martínez",
+    "text": {
+      "es": "No pude adoptar por el momento, pero he apoyado donando croquetas y juguetes. Me alegra saber que con eso también contribuyo.",
+      "en": "I couldn’t adopt for now, but I have supported by donating kibble and toys. I’m glad to know that this also helps.",
+      "fr": "Je n'ai pas pu adopter pour l'instant, mais j'ai soutenu en donnant des croquettes et des jouets. Je suis heureux de savoir que cela aide aussi."
+    }
+  },
+  {
+    "id": 3,
+    "author": "Sophie Lambert",
+    "text": {
+      "es": "El servicio del hotel para perros es excelente. Mi mascota estuvo cómoda, bien cuidada y feliz durante toda su estancia.",
+      "en": "The dog hotel service is excellent. My pet was comfortable, well cared for, and happy throughout the stay.",
+      "fr": "Le service de l'hôtel pour chiens est excellent. Mon animal était à l'aise, bien soigné et heureux pendant tout le séjour."
+    }
+  },
+  {
+    "id": 4,
+    "author": "Carlos Rivera",
+    "text": {
+      "es": "Me encantó ver cómo organizan campañas de adopción en las plazas públicas. Se nota el compromiso por encontrar hogares responsables.",
+      "en": "I loved seeing how they organize adoption campaigns in public squares. You can really see their commitment to finding responsible homes.",
+      "fr": "J'ai adoré voir comment ils organisent des campagnes d'adoption sur les places publiques. On voit vraiment leur engagement à trouver des foyers responsables."
+    }
+  },
+  {
+    "id": 5,
+    "author": "Emily Johnson",
+    "text": {
+      "es": "Soy voluntaria en las visitas a escuelas. Es increíble poder hablar con los niños sobre el cuidado y respeto hacia los animales.",
+      "en": "I volunteer in school visits. It’s amazing to talk to kids about caring for and respecting animals.",
+      "fr": "Je suis bénévole lors des visites scolaires. C'est incroyable de pouvoir parler aux enfants des soins et du respect envers les animaux."
+    }
+  },
+  {
+    "id": 6,
+    "author": "Mariana López",
+    "text": {
+      "es": "Aunque no pude llevarme un perrito a casa, participé en la recolección de ropa y mantas para el refugio. Fue muy gratificante ayudar.",
+      "en": "Even though I couldn’t take a dog home, I participated in collecting clothes and blankets for the shelter. It was very rewarding to help.",
+      "fr": "Même si je n'ai pas pu emmener un chien à la maison, j'ai participé à la collecte de vêtements et de couvertures pour le refuge. C'était très gratifiant d'aider."
+    }
+  }
+]

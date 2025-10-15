@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "logoAlt": "Animal Shelter logo, go to home page",
+    "toggleMenu": "Toggle Menu",
+    "menu": "Menu",
+    "close": "Close",
+    "learnOurServices": "Learn About Our Services",
+    "learnVolunteerOpportunities": "Discover Volunteer Opportunities",
+    "donateAnimalShelter": "Donate to the Animal Shelter",
+    "learnAboutUs": "Learn More About Us",
+    "contactUs": "Contact Us"
+  },
+
+  "menu": {
+    "services": "Services",
+    "volunteer": "Join ",
+    "donations": "Donate",
+    "about-us": "About Us",
+    "contact": "Contact"
+  },
+
+  "hero": [
+    {
+      "title": "A Friend Awaits You",
+      "text": "Every dog or cat deserves a second chance. By adopting, you turn a broken past into a future of love and loyalty. Open your heart, and your home becomes their safe haven.",
+      "buttonText": "Learn More",
+      "buttonLink": "/services"
+    },
+    {
+      "title": "Who We Are",
+      "text": "Our shelter exists to protect, care for, and give hope to abandoned animals. Discover our mission, values, and the inspiring stories that motivate us every day to continue making a difference in their lives.",
+      "buttonText": "Learn More",
+      "buttonLink": "/about-us"
+    },
+    {
+      "title": "Be Part of the Change",
+      "text": "Your support can take many forms: a little time to help, a donation to feed, or simply sharing to raise awareness. Together, every small gesture builds a brighter tomorrow for them.",
+      "buttonText": "Join Us",
+      "buttonLink": "/volunteer"
+    }
+  ],
+
+  "card": {
+    "card_1": {
+      "alt": "Explore our adoption options for dogs and cats, and give them the chance to live in a safe, loving, forever home."
+    },
+    "card_2": {
+      "title": "Adoption",
+      "content": "Learn how you can transform the life of a loyal companion by opening your heart and welcoming them into your family home."
+    },
+    "card_3": {
+      "alt": "Support the shelter with your generous donations, helping us provide food, medical care, safety, and love for every rescued animal here."
+    },
+    "card_4": {
+      "title": "Donations",
+      "content": "Discover how your contribution, whether small or large, can truly change animals’ lives and support our mission in a lasting way."
+    },
+    "card_5": {
+      "alt": "Join our team as a volunteer, walk our dogs, share affection, and give them unforgettable moments of freedom, joy, and happiness."
+    },
+    "card_6": {
+      "title": "Dog Walking",
+      "content": "Check available schedules and join us to participate in dog walking, bringing well-being, joy, and socialization to every dog we shelter."
+    }
+  },
+
+  "card.learn_more": "Learn More",
+
+  "campaignSection": {
+    "title": "Don't abandon them, help them find a home",
+    "text": "Every animal deserves love and care. Before deciding to abandon, consider alternatives like adoption or temporary shelter. Your action can save their life and give them a happy future.",
+    "button": "Learn more",
+    "imageAlt": "Puppy being left alone on the street"
+  },
+
+  "footer": {
+    "contactTitle": "Contact Us",
+    "visitUs": "Visit Us",
+    "goHome": "Go Home",
+    "logoAlt": "Animal Refuge logo",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "rights": "Animal Refuge",
+    "viewExactLocation": "View exact location on Google Maps",
+    "allRightsReserved": "All Rights Reserved",
+    "privacyPolicy": "Privacy Policy",
+    "developedBy": "Website developed by"
+  },
+
+  "servicesSection": {
+    "title": "Our Services",
+    "tipsTittle": "Tips & advice"
+  },
+
+  "volunteerSection": {
+    "title": "Become a Volunteer",
+    "introPhrase": "Our time, our hands, and our hearts can change lives.",
+    "bannerDescription":"Donating helps too",
+    "button": "Learn more",
+    "captions": [
+      "Organize events and activities",
+      "Teach and learn about animal care",
+      "Support health campaigns",
+      "Your donation fills bellies and hearts",
+      "Vaccinating is also an act of love",
+      "Walk a furry friend",
+      "Together, we build families",
+      "Where new families are born"
+    ]
+  },
+
+  "form": {
+    "title": "Sign up here!",
+    "description": "Signing up is easy: fill out the form and we’ll get in touch. WhatsApp is optional but makes communication faster. Helping doesn’t always mean adopting; you can also give time and affection.",
+    "name": "Your name",
+    "email": "Your email",
+    "whatsapp": "Your WhatsApp",
+    "selectService": "Select a service",
+    "walks": "Walks",
+    "volunteer": "Volunteer",
+    "general": "General",
+    "submit": "Send"
+  },
+
+  "volunteerReflection":{
+    "title": [
+      "Your time changes lives",
+      "They need love too",
+      "Building communities"
+    ],
+    "description":[
+      "Giving a few hours can change everything. Every walk, every touch, every act of love brings hope back to those who need it most. Your time has the power to transform lives.",
+      "Animals feel, wait, and trust. A little attention and kindness can heal invisible wounds and fill their world with joy. To love is also to save.",
+      "Being a volunteer not only helps animals, it connects people. Together we build a space of empathy, respect, and hope, where every action sparks real and lasting change."
+    ]
+  },
+
+  "donationSection":{
+    "title": "Donate & Make a Difference",
+    "description":"Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
+    "donationIntroTitle":"Together We Can Help",
+    "donationIntro":"Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
+    "donationBanner":"Join as a Volunteer!",
+    "button":"Join Now",
+    "whyDonateTitle":"Why Donate?",
+    "whyDonateDescription":"Donations are what make our mission possible. Every contribution allows us to cover medical treatments, food, and safe shelter for the animals we rescue. Together, we can change their story."
+    },
+
+    "donationCards":{
+      "title":"Ways to Donate",
+      "titleCard":[
+        "Bank transfer",
+        "OXXO payment",
+        "International transfer",
+        "Amazon Wishlist"
+      ],
+      "description":[
+        "Donate directly through our bank account. Safe and quick.",
+        "Support us from your nearest OXXO store using our reference.",
+        "You can also donate from abroad using our SWIFT code.",
+        "Send food, medicine, or toys directly from our wishlist."
+      ]
+    }
+}

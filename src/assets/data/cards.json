@@ -1,0 +1,56 @@
+[
+  {
+    "id": "card_1",
+    "type": "image",
+    "images": [
+      "/images/adoption1.webp",
+      "/images/adoption2.webp"
+    ],
+    "alt": "card.card_1.content",
+    "category": "services"
+  },
+  {
+    "id": "card_2",
+    "type": "text",
+    "title": "card.card_2.title",
+    "content": "card.card_2.content",
+    "category": "services",
+    "link": "/services"
+  },
+  {
+    "id": "card_3",
+    "type": "image",
+    "images": [
+      "/images/donation1.webp",
+      "/images/donation2.webp"
+    ],
+    "alt": "card.card_3.content",
+    "category": "donations"
+  },
+  {
+    "id": "card_4",
+    "type": "text",
+    "title": "card.card_4.title",
+    "content": "card.card_4.content",
+    "category": "donations",
+    "link": "/donations"
+  },
+  {
+    "id": "card_5",
+    "type": "image",
+    "images": [
+      "/images/walking1.webp",
+      "/images/walking2.webp"
+    ],
+    "alt": "card.card_5.content",
+    "category": "volunteer"
+  },
+  {
+    "id": "card_6",
+    "type": "text",
+    "title": "card.card_6.title",
+    "content": "card.card_6.content",
+    "category": "volunteer",
+    "link": "/volunteer"
+  }
+]

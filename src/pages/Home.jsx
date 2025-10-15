@@ -1,11 +1,18 @@
+//import
+import Hero from "../components/Home/HomeHero";
+import Cards from "../components/Home/HomeCards";
+import CampaignSection from "../components/Home/HomeCampaignSection";
+import TestimonialSlider from "../components/Home/HomeTestimonialsSlider";
 
+const Home = () => {
+  return (
+    <>
+      <Hero />
+      <Cards />
+      <CampaignSection />
+      <TestimonialSlider />
+    </>
+  );
+};
 
-const Home =() =>{
-    return(
-        <div className ="text-center p4">
-            <h1 className = "text-3xl font-bold underline"> Home Page</h1>
-        </div>
-    )
-}
-
-export default Home
+export default Home;
