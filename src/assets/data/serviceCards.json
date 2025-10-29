@@ -43,9 +43,9 @@
     "id": "service_3",
     "icon": "/icons/vaccination.webp",
     "title": {
-      "es": "Campañas de vacunación y esterilización",
-      "en": "Vaccination & Sterilization Campaigns",
-      "fr": "Campagnes de vaccination et de stérilisation"
+      "es": "Campañas",
+      "en": "Campaigns",
+      "fr": "Campagnes"
     },
     "text": {
       "es": "Participa en nuestras campañas para mantener a las mascotas saludables y controladas.",

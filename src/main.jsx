@@ -1,15 +1,17 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import "./index.css";
-import App from "./App.jsx";
-import "./i18n.js";
+import { BrowserRouter } from "react-router-dom"; // React Router for SPA routing
 
+import App from "./App.jsx"; // Main app component
+import "./index.css"; // Global CSS
+import "./i18n.js"; // i18n initialization
 
-createRoot(document.getElementById("root")).render(
+// Create root and render the application
+const root = createRoot(document.getElementById("root"));
+root.render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <App /> {/* Main SPA component */}
     </BrowserRouter>
   </StrictMode>
 );

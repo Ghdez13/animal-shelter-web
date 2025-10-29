@@ -6,7 +6,7 @@
       "/images/adoption1.webp",
       "/images/adoption2.webp"
     ],
-    "alt": "card.card_1.content",
+    "alt": "card.card_1.alt",
     "category": "services"
   },
   {
@@ -24,7 +24,7 @@
       "/images/donation1.webp",
       "/images/donation2.webp"
     ],
-    "alt": "card.card_3.content",
+    "alt": "card.card_3.alt",
     "category": "donations"
   },
   {
@@ -34,23 +34,5 @@
     "content": "card.card_4.content",
     "category": "donations",
     "link": "/donations"
-  },
-  {
-    "id": "card_5",
-    "type": "image",
-    "images": [
-      "/images/walking1.webp",
-      "/images/walking2.webp"
-    ],
-    "alt": "card.card_5.content",
-    "category": "volunteer"
-  },
-  {
-    "id": "card_6",
-    "type": "text",
-    "title": "card.card_6.title",
-    "content": "card.card_6.content",
-    "category": "volunteer",
-    "link": "/volunteer"
   }
 ]

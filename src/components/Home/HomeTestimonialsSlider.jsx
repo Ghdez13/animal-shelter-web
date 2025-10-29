@@ -1,20 +1,18 @@
-// Imports
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Quote } from "lucide-react";
-import testimonialsData from "../../assets/data/testimonials.json";
+import testimonialsData from "../../assets/data/homeTestimonials.json";
 import Filled from "../../assets/icons/filled-footprint.svg";
 import Outline from "../../assets/icons/outline-footprint.svg";
 
 export default function TestimonialSlider() {
-  // Hooks / State
   const { i18n } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [testimonials, setTestimonials] = useState([]);
   const [isHovered, setIsHovered] = useState(false);
   const intervalRef = useRef(null);
 
-  // Load testimonials data on mount
+  // Load testimonials on mount
   useEffect(() => {
     setTestimonials(testimonialsData);
   }, []);
@@ -22,8 +20,6 @@ export default function TestimonialSlider() {
   // Auto-slide effect
   useEffect(() => {
     if (!testimonials.length) return;
-
-    clearInterval(intervalRef.current);
 
     if (!isHovered) {
       intervalRef.current = setInterval(() => {
@@ -36,8 +32,7 @@ export default function TestimonialSlider() {
     return () => clearInterval(intervalRef.current);
   }, [isHovered, testimonials]);
 
-  // Return null if no testimonials
-  if (testimonials.length === 0) return null;
+  if (!testimonials.length) return null;
 
   return (
     <section
@@ -51,12 +46,15 @@ export default function TestimonialSlider() {
           className="flex transition-transform duration-700"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {/* Individual testimonial */}
+          {/* Individual testimonial card */}
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="flex-shrink-0 w-full px-4">
-              <Quote className="w-10 h-10 text-[var(--color-button-bg-hover-primary)] mx-auto mb-4" />
+              <Quote
+                className="w-10 h-10 text-[var(--color-button-bg-hover-primary)] mx-auto mb-4"
+                aria-hidden="true"
+              />
               <p className="text-[20px] italic text-gray-700">
-                "{testimonial.text[i18n.language]}"
+                "{testimonial.text[i18n.language] || testimonial.text["es"]}"
               </p>
               <p className="mt-4 text-[20px] font-semibold text-gray-900">
                 - {testimonial.author}
@@ -66,18 +64,19 @@ export default function TestimonialSlider() {
         </div>
       </div>
 
-      {/* Pagination dots footprints */}
-      <div className="mt-6 flex space-x-3 justify-center">
+      {/* Pagination dots */}
+      <div className="mt-8 flex space-x-3 justify-center">
         {testimonials.map((testimonial, index) => (
           <button
             key={index}
+            type="button"
             onClick={() => setCurrentIndex(index)}
-            className="w-6 h-6"
-            aria-label={`Go to testimonial by ${testimonial.author}`} // accesibility
+            className="w-8 h-8"
+            aria-label={`Go to testimonial by ${testimonial.author}`}
           >
             <img
               src={index === currentIndex ? Filled : Outline}
-              alt={`Slide ${index + 1} – ${testimonial.author}`} // descriptive alt
+              alt={`Slide ${index + 1} – ${testimonial.author}`}
               className="w-full h-full"
             />
           </button>

@@ -2,8 +2,6 @@
   "navbar": {
     "logoAlt": "Logo del refugio de animales, ir a la página de inicio",
     "toggleMenu": "Alternar menú",
-    "menu": "Menú",
-    "close": "Cerrar",
     "learnOurServices": "Conoce nuestros servicios",
     "learnVolunteerOpportunities": "Conoce las oportunidades de voluntariado",
     "donateAnimalShelter": "Donar al refugio de animales",
@@ -54,13 +52,6 @@
     "card_4": {
       "title": "Donaciones",
       "content": "Descubre cómo tu aporte, ya sea grande o pequeño, puede marcar una diferencia real en la vida de muchos animales necesitados."
-    },
-    "card_5": {
-      "alt": "Únete como voluntario en el refugio, pasea a nuestros perros, bríndales cariño y compárteles momentos únicos de alegría, libertad y compañía."
-    },
-    "card_6": {
-      "title": "Paseo de perros",
-      "content": "Conoce los horarios disponibles y participa activamente en esta actividad que promueve bienestar, socialización y felicidad en cada perro del refugio."
     }
   },
 
@@ -74,28 +65,27 @@
   },
 
   "footer": {
-    "contactTitle": "Contáctanos",
-    "visitUs": "Visítanos",
+    "contactTitle": "Contáctanos ✉️",
+    "visitUs": "Punto de adopción – Visítanos",
     "goHome": "Ir al inicio",
     "logoAlt": "Logo de Refugio Animal",
     "facebook": "Facebook",
     "instagram": "Instagram",
-    "rights": "Refugio Animal",
+    "rights": "Refugio Animal.",
     "viewExactLocation": "Ver ubicación exacta en Google Maps",
     "allRightsReserved": "Todos los derechos reservados",
-    "privacyPolicy": "Política de privacidad",
     "developedBy": "Sitio web desarrollado por"
   },
 
   "servicesSection": {
     "title": "Nuestros servicios",
-    "tipsTittle": "Trucos & consejos"
+    "tipsTitle": "Trucos & consejos"
   },
 
   "volunteerSection": {
     "title": "Sé un voluntario",
     "introPhrase": "Nuestro tiempo, nuestras manos y nuestros corazones pueden cambiar vidas.",
-    "bannerDescription":"Donar también ayuda",
+    "bannerDescription": "Donar también ayuda",
     "button": "Más información",
     "captions": [
       "Organiza eventos y actividades",
@@ -111,56 +101,87 @@
 
   "form": {
     "title": "¡Regístrate aquí!",
-    "description": "Registrarse es fácil: llena el formulario y nos pondremos en contacto. El WhatsApp es opcional, pero facilita la comunicación. Ayudar no siempre es adoptar; también puedes brindar tiempo y cariño.",
+    "description": "Registrarse es fácil: llena el formulario y nos pondremos en contacto. Ayudar no siempre es adoptar; también puedes brindar tiempo y cariño.",
     "name": "Tu nombre",
     "email": "Tu correo",
-    "whatsapp": "Tu WhatsApp",
+    "message": "Tu mensaje...",
     "selectService": "Selecciona un servicio",
     "walks": "Paseos",
     "volunteer": "Voluntario",
     "general": "General",
+    "invalidEmail": "Formato de correo electrónico incorrecto",
+    "invalidFormat": "Formato de nombre inválido",
+    "requiredField": "Campo obligatorio",
+    "minLength": "Longitud mínima no alcanzada",
+    "maxLength": "Longitud máxima excedida",
+    "sending": "Enviando...",
     "submit": "Enviar"
   },
 
-  "volunteerReflection":{
+  "volunteerReflection": {
     "title": [
       "Tu tiempo transforma vidas",
       "Ellos también necesitan amor",
       "Creando comunidades"
     ],
-    "description":[
+    "description": [
       "Dedicar unas horas puede marcar la diferencia. Cada paseo, caricia o gesto de amor devuelve esperanza a quienes más lo necesitan. Tu tiempo tiene el poder de cambiar destinos.",
       "Los animales sienten, esperan y confían. Un poco de atención y cariño puede sanar heridas invisibles y llenar de alegría su mundo. Amar también es una forma de salvar.",
       "Ser voluntario no solo ayuda a los animales, también une personas. Juntos construimos un espacio de empatía, respeto y esperanza, donde cada acción impulsa un cambio real y duradero."
     ]
   },
 
-  "donationSection":{
+  "donationSection": {
     "title": "Dona y haz la diferencia",
-    "description":"Tu apoyo ayuda a salvar animales en situación de abandono y maltrato. Juntos podemos darles un hogar seguro, alimentar a los que tienen hambre y sanar sus heridas. Gracias por tu cariño.",
-    "donationIntroTitle":"Juntos podemos ayudar",
-    "donationIntro":"Tu apoyo ayuda a salvar animales en situación de abandono y maltrato. Juntos podemos darles un hogar seguro, alimentar a los que tienen hambre y sanar sus heridas. Gracias por tu cariño.",
-    "donationBanner":"¡Participa como voluntario!",
-    "button":"Únete ahora",
-    "whyDonateTitle":"¿Por qué donar?",
-    "whyDonateDescription":"Las donaciones son lo que hace posible nuestra misión. Cada contribución nos permite cubrir tratamientos médicos, alimento y un refugio seguro para los animales que rescatamos. Juntos, podemos cambiar su historia."
-    },
+    "description": "Tu apoyo ayuda a salvar animales en situación de abandono y maltrato. Juntos podemos darles un hogar seguro, alimentar a los que tienen hambre y sanar sus heridas. Gracias por tu cariño.",
+    "donationIntroTitle": "Juntos podemos ayudar",
+    "donationIntro": "Tu apoyo ayuda a salvar animales en situación de abandono y maltrato. Juntos podemos darles un hogar seguro, alimentar a los que tienen hambre y sanar sus heridas. Gracias por tu cariño.",
+    "donationBanner": "¡Participa como voluntario!",
+    "button": "Únete ahora",
+    "whyDonateTitle": "¿Por qué donar?",
+    "whyDonateDescription": "Las donaciones son lo que hace posible nuestra misión. Cada contribución nos permite cubrir tratamientos médicos, alimento y un refugio seguro para los animales que rescatamos. Juntos, podemos cambiar su historia."
+  },
 
-    "donationCards":{
-      "title":"Formas de donar",
-      "titleCard":[
-        "Transferencia bancaria",
-        "Pago en OXXO",
-        "Transferencia internacional",
-        "Lista de deseos de Amazon"
-      ],
-      "description":[
-        "Dona directamente a través de nuestra cuenta bancaria. Seguro y rápido.",
-        "Apóyanos desde la tienda OXXO más cercana usando nuestra referencia.",
-        "También puedes donar desde el extranjero usando nuestro código SWIFT.",
-        "Envía comida, medicinas o juguetes directamente desde nuestra lista de deseos."
-      ]
-    }
+  "donationCards": {
+    "title": "Formas de donar",
+    "titleCard": [
+      "Transferencia bancaria",
+      "Pago en OXXO",
+      "Transferencia internacional",
+      "Lista de deseos de Amazon"
+    ],
+    "description": [
+      "Dona directamente a través de nuestra cuenta bancaria. Seguro y rápido.",
+      "Apóyanos desde la tienda OXXO más cercana usando nuestra referencia.",
+      "También puedes donar desde el extranjero usando nuestro código SWIFT.",
+      "Envía comida, medicinas o juguetes directamente desde nuestra lista de deseos."
+    ]
+  },
 
+  "aboutUs": {
+    "title": "Nuestros Valores"
+  },
 
+  "aboutUsValues": {
+    "title": ["Bienestar Animal", "Respeto", "Amor por Ayudar", "Pasión"],
+    "description": [
+      "Ponemos siempre la salud y felicidad de cada animal en el centro de nuestro trabajo. Cada rescate, cada vacunación y cada cuidado están guiados por el compromiso de brindarles una vida digna y segura.",
+      "Creemos en el respeto hacia todos los seres vivos. Respetamos sus vidas, sus necesidades y su naturaleza, fomentando una cultura de convivencia armoniosa entre humanos y animales.",
+      "Nos mueve la vocación de ayudar. Cada acción, desde rescatar animales de las calles hasta educar sobre adopciones responsables, nace del profundo deseo de hacer el bien y mejorar la vida de quienes más lo necesitan.",
+      "La pasión impulsa nuestro refugio. Nos dedicamos con entusiasmo y entrega a cada proyecto, a cada animal rescatado y a cada familia que encuentra un nuevo compañero, porque creemos que cada vida salvada merece todo nuestro corazón."
+    ]
+  },
+
+  "contact": {
+    "title": "Contáctanos",
+    "description": "¡Nos encantará saber de ti! Si tienes alguna pregunta, comentario o sugerencia, utiliza nuestro formulario de contacto.",
+    "bannerDescription": "Amigos para adoptar",
+    "button": "Más información"
+  },
+
+  "alerts": {
+    "submitStatusSuccess": "¡Tu mensaje ha sido enviado! 😸",
+    "submitStatusFailed": "¡Ups! Algo salió mal, inténtalo de nuevo. 😿",
+    "instagramUnderConstruction": "Nuestro Instagram está en construcción 🚧"
+  }
 }

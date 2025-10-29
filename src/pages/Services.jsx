@@ -1,43 +1,56 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import ServiceCard from "../components/ServiceCard";
-import Tips from "../components/Tips";
+import ServiceCard from "../components/Services/ServiceCard";
+import Tips from "../components/Services/ServicesTips";
 import SectionBackground from "../components/SectionBackground";
 import BackgroundMobile from "../assets/images/background-mobile.webp";
 
 const Services = () => {
-  const [services, setServices] = useState([]);
+  const [services, setServices] = useState([]); // Stores service card data
+  const [loading, setLoading] = useState(true); // Loading state
   const { t } = useTranslation();
 
+  // Dynamically load service cards data from JSON
   useEffect(() => {
-    import("../assets/data/serviceCards.json").then((module) =>
-      setServices(module.default)
-    );
+    import("../assets/data/serviceCards.json")
+      .then((module) => setServices(module.default))
+      .catch((err) => console.error("Failed to load services:", err))
+      .finally(() => setLoading(false));
   }, []);
 
   return (
     <SectionBackground image={BackgroundMobile}>
-      <section className="p-6">
-        {/* Título principal de la sección */}
-        <h1 className="text-[50px] font-bold mb-6 text-[var(--color-text-dark)]">
-          {t("servicesSection.title")}
-        </h1>
-
-        {/* Grid de cards */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
+      <main className="px-6">
+        {/* Main section title */}
+        <div className="max-w-6xl mx-auto md:px-6">
+          <h1 className="text-[50px] font-extrabold mb-20 text-[var(--color-text-dark)]">
+            {t("servicesSection.title")}
+          </h1>
         </div>
-        {/* Sección de Tips */}
-        {/* Título principal de section tips */}
-        <h1 className="text-[50px] font-bold mt-16 text-[var(--color-text-dark)]">
-          {t("servicesSection.tipsTittle")}
-        </h1>
+
+        {/* Services grid */}
+        {loading ? (
+          <p className="text-center text-lg text-[var(--color-text-dark)]">
+            Loading services...
+          </p>
+        ) : (
+          <div className="max-w-6xl mx-auto md:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
+        )}
+
+        {/* Tips section */}
+        <div className="max-w-6xl mx-auto md:px-6">
+          <h2 className="text-[50px] font-bold mt-12 text-[var(--color-text-dark)]">
+            {t("servicesSection.tipsTitle")}
+          </h2>
+        </div>
         <div className="mt-8">
           <Tips />
         </div>
-      </section>
+      </main>
     </SectionBackground>
   );
 };

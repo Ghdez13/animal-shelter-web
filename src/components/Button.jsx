@@ -1,12 +1,14 @@
-const Button = ({ link, children, className }) => {
-  const handleClick = () => {
-    if (link) window.location.href = link;
-  };
+import { Link } from "react-router-dom";
 
+// Button component for internal navigation only
+const Button = ({ to, children, className }) => {
   return (
-    <a href={link} className={`btn-style ${className ?? ""}`} onClick={handleClick}>
+    <Link
+      to={to}
+      className={`btn-style ${className ?? ""}`}
+    >
       {children}
-    </a>
+    </Link>
   );
 };
 

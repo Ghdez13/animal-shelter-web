@@ -2,9 +2,9 @@ import SectionBackground from "../components/SectionBackground";
 import BackgroundMobile from "../assets/images/background-mobile.webp";
 import BackgroundBanner from "../assets/images/BackgroundOrange.webp";
 import { useTranslation } from "react-i18next";
-import VolunteerCarousel from "../components/VolunteerCarousel";
-import VolunteerReflection from "../components/VolunteerReflection";
-import VolunteerForm from "../components/VolunteerForm";
+import VolunteerCarousel from "../components/Volunteer/VolunteerCarousel";
+import VolunteerReflection from "../components/Volunteer/VolunteerReflection";
+import VolunteerForm from "../components/Volunteer/VolunteerForm";
 import Button from "../components/Button";
 
 const Volunteer = () => {
@@ -12,46 +12,64 @@ const Volunteer = () => {
 
   return (
     <SectionBackground image={BackgroundMobile}>
-      <section className="p-6">
-        {/* Título principal de la sección */}
-        <h1 className="text-[50px] font-bold mb-6 text-[var(--color-text-dark)]">
-          {t("volunteerSection.title")}
-        </h1>
-        {/* Volunteering inspiratonal message*/}
-        <div>
-          <p className="text-[20px]  text-[var(--color-text-dark)]">
+      {/* Main section with bottom padding to respect footer */}
+      <main className="px-6">
+        {/* Main section title */}
+        <div className="max-w-6xl mx-auto md:px-6">
+          <h1 className="text-[50px] font-extrabold mb-20 text-[var(--color-text-dark)]">
+            {t("volunteerSection.title")}
+          </h1>
+        </div>
+
+        {/* Volunteering introductory message */}
+        <div className="max-w-6xl mx-auto md:px-6">
+          <p className="text-[20px] text-[var(--color-text-dark)]">
             {t("volunteerSection.introPhrase")}
           </p>
         </div>
-        {/* Images carousel*/}
+
+        {/* Images carousel */}
         <VolunteerCarousel />
-        {/* Volunteer form*/}
-        <h2 className="text-[40px] font-bold mb-6 text-[var(--color-text-dark)]">
-          {t("form.title")}
-        </h2>
-        <p className="text-[20px] text-[var(--color-text-dark)]">
-          {t("form.description")}
-        </p>
-        <VolunteerForm />
-        {/* Banner to Donation*/}
-        <div className=" mb-20 ">
-          <div
-            className="w-full h-64 md:h-80 flex flex-col justify-center items-center text-center bg-cover bg-center relative rounded-xl"
-            style={{ backgroundImage: `url(${BackgroundBanner})` }}
-          >
-            <div className="relative z-10 px-4">
-              <p className="text-[var(--color-text-light)] text-[40px] font-semibold mb-4">
-                {t("volunteerSection.bannerDescription")}
-              </p>
-              <Button link="/donations" className="btn-green">
-                {t("volunteerSection.button")}
-              </Button>
+
+        {/* Volunteer form */}
+        <section aria-labelledby="volunteer-form-title" className="mt-12">
+          <div className="max-w-6xl mx-auto px-0 md:px-6">
+            <h2 className="text-[40px] font-bold mb-6 text-[var(--color-text-dark)]">
+              {t("form.title")}
+            </h2>
+            <p className="text-[20px] text-[var(--color-text-dark)]">
+              {t("form.description")}
+            </p>
+            <VolunteerForm />
+          </div>
+        </section>
+
+        {/* Banner linking to Donations section */}
+        <section className="mt-24">
+          <div className="max-w-6xl mx-auto md:px-6">
+            <div className="relative rounded-xl overflow-hidden h-64 md:h-50">
+              {/* Background image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${BackgroundBanner})` }}
+              />
+
+              {/* Content with controlled padding */}
+              <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 py-4">
+                <p className="text-[40px] md:text-[40px] font-semibold text-[var(--color-text-light)] mb-4">
+                  {t("volunteerSection.bannerDescription")}
+                </p>
+                <Button to="/donations" className="btn-green">
+                  {t("volunteerSection.button")}
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-        {/*Volunteer Reflection*/}
+        </section>
+
+        {/* Volunteer reflections/testimonials */}
         <VolunteerReflection />
-      </section>
+      </main>
     </SectionBackground>
   );
 };

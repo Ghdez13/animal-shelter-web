@@ -13,7 +13,7 @@ body {
 
 body.modal-open {
   overflow: hidden;
-  padding-right: 0.5rem; /* Ajusta este valor según la scrollbar */
+  padding-right: 0.5rem;
 }
 
 @font-face {
@@ -21,6 +21,7 @@ body.modal-open {
   src: url("./assets/fonts/ComicRelief-Regular.ttf") format("truetype");
   font-weight: 400; /* Regular */
   font-style: normal;
+  font-display: swap; /* <-- Important */
 }
 
 @font-face {
@@ -28,8 +29,10 @@ body.modal-open {
   src: url("./assets/fonts/ComicRelief-Bold.ttf") format("truetype");
   font-weight: 700; /* Bold */
   font-style: normal;
+  font-display: swap; /* <-- Important */
 }
 
+/* Utility class for applying ComicRelief font */
 .font-comic {
   font-family: "ComicRelief", sans-serif;
 }
@@ -84,12 +87,12 @@ body.modal-open {
 
 .btn-green {
   @apply inline-block w-56 mt-7 text-center text-[var(--color-text-light)] text-lg font-semibold
-         bg-[#3a9d9a]  /* fondo base */
+         bg-[#3a9d9a]  
          border-[#2e7d7a] 
          rounded-md cursor-pointer
          px-5 py-2
          shadow-[0px_6px_0px_#2e7d7a]
-         hover:bg-[#36a1a1]  /* hover ligeramente más oscuro o saturado */
+         hover:bg-[#36a1a1]  
          hover:border-[#2e7d7a] 
          hover:shadow-[0px_6px_0px_#2e7d7a]
          active:shadow-[0px_2px_0px_#2e7d7a]
@@ -105,6 +108,5 @@ body.modal-open {
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  color: #1e5c59 !important; /* un poco más oscuro al hover */
+  color: #1e5c59 !important;
 }
-

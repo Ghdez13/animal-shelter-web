@@ -2,8 +2,6 @@
   "navbar": {
     "logoAlt": "Animal Shelter logo, go to home page",
     "toggleMenu": "Toggle Menu",
-    "menu": "Menu",
-    "close": "Close",
     "learnOurServices": "Learn About Our Services",
     "learnVolunteerOpportunities": "Discover Volunteer Opportunities",
     "donateAnimalShelter": "Donate to the Animal Shelter",
@@ -54,13 +52,6 @@
     "card_4": {
       "title": "Donations",
       "content": "Discover how your contribution, whether small or large, can truly change animals’ lives and support our mission in a lasting way."
-    },
-    "card_5": {
-      "alt": "Join our team as a volunteer, walk our dogs, share affection, and give them unforgettable moments of freedom, joy, and happiness."
-    },
-    "card_6": {
-      "title": "Dog Walking",
-      "content": "Check available schedules and join us to participate in dog walking, bringing well-being, joy, and socialization to every dog we shelter."
     }
   },
 
@@ -74,16 +65,15 @@
   },
 
   "footer": {
-    "contactTitle": "Contact Us",
-    "visitUs": "Visit Us",
+    "contactTitle": "Contact Us ✉️",
+    "visitUs": "Adoption Point – Visit Us",
     "goHome": "Go Home",
     "logoAlt": "Animal Refuge logo",
     "facebook": "Facebook",
     "instagram": "Instagram",
-    "rights": "Animal Refuge",
+    "rights": "Animal Refuge.",
     "viewExactLocation": "View exact location on Google Maps",
     "allRightsReserved": "All Rights Reserved",
-    "privacyPolicy": "Privacy Policy",
     "developedBy": "Website developed by"
   },
 
@@ -95,7 +85,7 @@
   "volunteerSection": {
     "title": "Become a Volunteer",
     "introPhrase": "Our time, our hands, and our hearts can change lives.",
-    "bannerDescription":"Donating helps too",
+    "bannerDescription": "Donating helps too",
     "button": "Learn more",
     "captions": [
       "Organize events and activities",
@@ -111,54 +101,87 @@
 
   "form": {
     "title": "Sign up here!",
-    "description": "Signing up is easy: fill out the form and we’ll get in touch. WhatsApp is optional but makes communication faster. Helping doesn’t always mean adopting; you can also give time and affection.",
+    "description": "Signing up is easy: fill out the form and we’ll get in touch. Helping doesn’t always mean adopting; you can also give time and affection.",
     "name": "Your name",
     "email": "Your email",
-    "whatsapp": "Your WhatsApp",
+    "message": "Your message...",
     "selectService": "Select a service",
     "walks": "Walks",
     "volunteer": "Volunteer",
     "general": "General",
+    "invalidEmail": "Invalid email format",
+    "invalidFormat": "Invalid name format",
+    "requiredField": "Required field",
+    "minLength": "Minimum length not reached",
+    "maxLength": "Maximum length exceeded",
+    "sending": "Sending...",
     "submit": "Send"
   },
 
-  "volunteerReflection":{
+  "volunteerReflection": {
     "title": [
       "Your time changes lives",
       "They need love too",
       "Building communities"
     ],
-    "description":[
+    "description": [
       "Giving a few hours can change everything. Every walk, every touch, every act of love brings hope back to those who need it most. Your time has the power to transform lives.",
       "Animals feel, wait, and trust. A little attention and kindness can heal invisible wounds and fill their world with joy. To love is also to save.",
       "Being a volunteer not only helps animals, it connects people. Together we build a space of empathy, respect, and hope, where every action sparks real and lasting change."
     ]
   },
 
-  "donationSection":{
+  "donationSection": {
     "title": "Donate & Make a Difference",
-    "description":"Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
-    "donationIntroTitle":"Together We Can Help",
-    "donationIntro":"Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
-    "donationBanner":"Join as a Volunteer!",
-    "button":"Join Now",
-    "whyDonateTitle":"Why Donate?",
-    "whyDonateDescription":"Donations are what make our mission possible. Every contribution allows us to cover medical treatments, food, and safe shelter for the animals we rescue. Together, we can change their story."
-    },
+    "description": "Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
+    "donationIntroTitle": "Together We Can Help",
+    "donationIntro": "Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
+    "donationBanner": "Join as a Volunteer!",
+    "button": "Join Now",
+    "whyDonateTitle": "Why Donate?",
+    "whyDonateDescription": "Donations are what make our mission possible. Every contribution allows us to cover medical treatments, food, and safe shelter for the animals we rescue. Together, we can change their story."
+  },
 
-    "donationCards":{
-      "title":"Ways to Donate",
-      "titleCard":[
-        "Bank transfer",
-        "OXXO payment",
-        "International transfer",
-        "Amazon Wishlist"
-      ],
-      "description":[
-        "Donate directly through our bank account. Safe and quick.",
-        "Support us from your nearest OXXO store using our reference.",
-        "You can also donate from abroad using our SWIFT code.",
-        "Send food, medicine, or toys directly from our wishlist."
-      ]
-    }
+  "donationCards": {
+    "title": "Ways to Donate",
+    "titleCard": [
+      "Bank transfer",
+      "OXXO payment",
+      "International transfer",
+      "Amazon Wishlist"
+    ],
+    "description": [
+      "Donate directly through our bank account. Safe and quick.",
+      "Support us from your nearest OXXO store using our reference.",
+      "You can also donate from abroad using our SWIFT code.",
+      "Send food, medicine, or toys directly from our wishlist."
+    ]
+  },
+
+  "aboutUs": {
+    "title": "Our Values"
+  },
+
+  "aboutUsValues": {
+    "title": ["Animal Welfare", "Respect", "Love for Helping", "Passion"],
+    "description": [
+      "We always place the health and happiness of every animal at the heart of our work. Every rescue, vaccination, and care is guided by the commitment to give them a safe and dignified life.",
+      "We believe in respect for all living beings. We honor their lives, needs, and nature, promoting a culture of harmonious coexistence between humans and animals.",
+      "Our actions are driven by a passion for helping. From rescuing street animals to educating about responsible adoption, everything we do comes from the desire to do good and improve lives.",
+      "Passion fuels our shelter. We dedicate ourselves with enthusiasm and commitment to every project, every rescued animal, and every family finding a new companion, because we believe every saved life deserves all our heart."
+    ]
+  },
+
+  "contact": {
+    "title": "Contact Us",
+    "description": "We’d love to hear from you! If you have any questions, comments, or suggestions, please use our contact form.",
+    "bannerDescription": "Friends for Adoption",
+    "button": "More Info"
+  },
+
+  "alerts": {
+    "submitStatusSuccess": "Your message has been sent! 😸",
+    "submitStatusFailed": "Oops! Something went wrong, try again. 😿",
+    "instagramUnderConstruction": "Our Instagram is under construction 🚧"
+  }
 }

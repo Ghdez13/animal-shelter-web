@@ -2,8 +2,6 @@
   "navbar": {
     "logoAlt": "Logo du refuge animalier, aller à la page d'accueil",
     "toggleMenu": "Basculer le menu",
-    "menu": "Menu",
-    "close": "Fermer",
     "learnOurServices": "Découvrez nos services",
     "learnVolunteerOpportunities": "Découvrez les opportunités de bénévolat",
     "donateAnimalShelter": "Faire un don au refuge animalier",
@@ -53,13 +51,6 @@
     "card_4": {
       "title": "Dons",
       "content": "Découvrez comment votre contribution régulière, petite ou grande, peut changer profondément la vie de nos animaux et soutenir durablement notre mission."
-    },
-    "card_5": {
-      "alt": "Rejoignez notre équipe comme bénévole, promenez nos chiens, partagez de l’affection et offrez-leur des instants précieux de liberté et bonheur."
-    },
-    "card_6": {
-      "title": "Promenade de chiens",
-      "content": "Découvrez les horaires disponibles et rejoignez-nous pour participer activement à la promenade, apportant bien-être, joie et socialisation à chaque chien."
     }
   },
   "card.learn_more": "En savoir plus",
@@ -72,16 +63,15 @@
   },
 
   "footer": {
-    "contactTitle": "Contactez-nous",
-    "visitUs": "Visitez-nous",
+    "contactTitle": "Contactez-nous ✉️",
+    "visitUs": "Point d’adoption – Visitez-nous",
     "goHome": "Aller à l'accueil",
     "logoAlt": "Logo du refuge animal",
     "facebook": "Facebook",
     "instagram": "Instagram",
-    "rights": "Refuge animal",
+    "rights": "Refuge animal.",
     "viewExactLocation": "Voir l'emplacement exact sur Google Maps",
     "allRightsReserved": "Tous droits réservés",
-    "privacyPolicy": "Politique de confidentialité",
     "developedBy": "Site web développé par"
   },
 
@@ -93,7 +83,7 @@
   "volunteerSection": {
     "title": "Deviens bénévole",
     "introPhrase": "Notre temps, nos mains et nos cœurs peuvent changer des vies.",
-    "bannerDescription":"Faire un don aide aussi",
+    "bannerDescription": "Faire un don aide aussi",
     "button": "En savoir plus",
     "captions": [
       "Organise des événements et des activités",
@@ -109,54 +99,87 @@
 
   "form": {
     "title": "Inscrivez-vous ici!",
-    "description": "S’inscrire est facile : remplissez le formulaire et nous vous contacterons. WhatsApp est optionnel mais facilite la communication. Aider ne signifie pas toujours adopter ; vous pouvez aussi offrir temps et affection.",
+    "description": "S’inscrire est facile : remplissez le formulaire et nous vous contacterons. Aider ne signifie pas toujours adopter ; vous pouvez aussi offrir temps et affection.",
     "name": "Votre nom",
     "email": "Votre email",
-    "whatsapp": "Votre WhatsApp",
+    "message": "votre message...",
     "selectService": "Sélectionnez un service",
     "walks": "Promenades",
     "volunteer": "Volontaire",
     "general": "Général",
+    "invalidEmail": "Format d'email incorrect",
+    "invalidFormat": "Format de nom invalide",
+    "requiredField": "Champ obligatoire",
+    "minLength": "Longueur minimale non atteinte",
+    "maxLength": "Longueur maximale dépassée",
+    "sending": "Envoi en cours...",
     "submit": "Envoyer"
   },
 
-  "volunteerReflection":{
+  "volunteerReflection": {
     "title": [
       "Ton temps change des vies",
       "Eux aussi ont besoin d'amour",
       "Aider nous rend humains"
     ],
-    "description":[
+    "description": [
       "Offrir quelques heures peut tout changer. Chaque promenade, chaque caresse, chaque geste d’amour redonne espoir à ceux qui en ont le plus besoin. Ton temps a le pouvoir de transformer des vies.",
       "Les animaux ressentent, attendent et font confiance. Un peu d’attention et de tendresse peut guérir des blessures invisibles et remplir leur monde de joie. Aimer, c’est aussi sauver.",
       "Être bénévole n’aide pas seulement les animaux, cela unit les gens. Ensemble, nous créons un espace d’empathie, de respect et d’espoir, où chaque action inspire un changement réel et durable."
     ]
   },
 
-  "donationSection":{
+  "donationSection": {
     "title": "Fais un don et fais la différence",
-    "description":"Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
-    "donationIntroTitle":"Ensemble, nous pouvons aider",
-    "donationIntro":"Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
-    "donationBanner":"Soyez bénévole !",
-    "button":"Rejoindre",
-    "whyDonateTitle":"Pourquoi faire un don ?",
-    "whyDonateDescription":"Les dons sont ce qui rend notre mission possible. Chaque contribution nous permet de couvrir les traitements médicaux, la nourriture et un refuge sûr pour les animaux que nous sauvons. Ensemble, nous pouvons changer leur histoire."
-    },
+    "description": "Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
+    "donationIntroTitle": "Ensemble, nous pouvons aider",
+    "donationIntro": "Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
+    "donationBanner": "Soyez bénévole !",
+    "button": "Rejoindre",
+    "whyDonateTitle": "Pourquoi faire un don ?",
+    "whyDonateDescription": "Les dons sont ce qui rend notre mission possible. Chaque contribution nous permet de couvrir les traitements médicaux, la nourriture et un refuge sûr pour les animaux que nous sauvons. Ensemble, nous pouvons changer leur histoire."
+  },
 
-    "donationCards":{
-      "title":"Modes de don",
-      "titleCard":[
-        "Virement bancaire",
-        "Paiement via OXXO",
-        "Virement international",
-        "Liste de souhaits Amazon"
-      ],
-      "description":[
-        "Faites un don directement via notre compte bancaire. Sûr et rapide.",
-        "Soutenez-nous depuis le magasin OXXO le plus proche en utilisant notre référence.",
-        "Vous pouvez également faire un don depuis l’étranger en utilisant notre code SWIFT.",
-        "Envoyez de la nourriture, des médicaments ou des jouets directement depuis notre liste de souhaits"
-      ]
-    }
+  "donationCards": {
+    "title": "Modes de don",
+    "titleCard": [
+      "Virement bancaire",
+      "Paiement via OXXO",
+      "Virement international",
+      "Liste de souhaits Amazon"
+    ],
+    "description": [
+      "Faites un don directement via notre compte bancaire. Sûr et rapide.",
+      "Soutenez-nous depuis le magasin OXXO le plus proche en utilisant notre référence.",
+      "Vous pouvez également faire un don depuis l’étranger en utilisant notre code SWIFT.",
+      "Envoyez de la nourriture, des médicaments ou des jouets directement depuis notre liste de souhaits"
+    ]
+  },
+
+  "aboutUs": {
+    "title": "Nos Valeurs"
+  },
+
+  "aboutUsValues": {
+    "title": ["Bien-être Animal", "Respect", "Amour d’Aider", "Passion"],
+    "description": [
+      "Nous plaçons toujours la santé et le bonheur de chaque animal au cœur de notre action. Chaque sauvetage, chaque vaccination et chaque soin sont guidés par l’engagement de leur offrir une vie digne et sécurisée.",
+      "Nous croyons au respect de tous les êtres vivants. Nous honorons leur vie, leurs besoins et leur nature, en promouvant une culture de coexistence harmonieuse entre les humains et les animaux.",
+      "Nos actions sont animées par le désir d’aider. Du sauvetage des animaux de la rue à l’éducation à l’adoption responsable, tout ce que nous faisons vient du souhait de faire le bien et d’améliorer des vies.",
+      "La pasión impulsa nuestro refugio. Nos dedicamos con entusiasmo y entrega a cada proyecto, a cada animal rescatado y a cada familia que encuentra un nuevo compañero, porque creemos que cada vida salvada merece todo nuestro corazón."
+    ]
+  },
+
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Nous serions ravis d’avoir de vos nouvelles ! Si vous avez des questions, des commentaires ou des suggestions, veuillez utiliser notre formulaire de contact.",
+    "bannerDescription": "Amis à adopter",
+    "button": "En savoir plus"
+  },
+
+  "alerts": {
+    "instagramUnderConstruction": "Notre Instagram est en construction 🚧",
+    "submitStatusSuccess": "Votre message a été envoyé ! 😸",
+    "submitStatusFailed": "Oups ! Quelque chose s'est mal passé, réessayez. 😿"
+  }
 }
