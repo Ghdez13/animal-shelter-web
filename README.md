@@ -7,7 +7,7 @@ This is a React + Vite social project for an animal shelter platform aimed to he
 - Responsive design with Tailwind CSS
 - React Router for SPA navigation
 - Accessible with semantic HTML, keyboard navigation, and ARIA attributes
-- Multilingual support planned (Spanish & English)
+- Multilingual support planned (Spanish, English & French)
 - Modular component structure (Header, Navbar, Footer, pages)
 
 ## Installation
