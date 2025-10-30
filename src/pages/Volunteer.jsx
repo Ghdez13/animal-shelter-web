@@ -15,14 +15,14 @@ const Volunteer = () => {
       {/* Main section with bottom padding to respect footer */}
       <main className="px-6">
         {/* Main section title */}
-        <div className="max-w-6xl mx-auto md:px-6">
-          <h1 className="text-[50px] font-extrabold mb-20 text-[var(--color-text-dark)]">
+        <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-40">
+          <h1 className="text-[50px] md:text-[70px] lg:text-[90px]  font-extrabold mb-20 text-[var(--color-text-dark)]">
             {t("volunteerSection.title")}
           </h1>
         </div>
 
         {/* Volunteering introductory message */}
-        <div className="max-w-6xl mx-auto md:px-6">
+        <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6">
           <p className="text-[20px] text-[var(--color-text-dark)]">
             {t("volunteerSection.introPhrase")}
           </p>
@@ -33,8 +33,11 @@ const Volunteer = () => {
 
         {/* Volunteer form */}
         <section aria-labelledby="volunteer-form-title" className="mt-12">
-          <div className="max-w-6xl mx-auto px-0 md:px-6">
-            <h2 className="text-[40px] font-bold mb-6 text-[var(--color-text-dark)]">
+          <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6">
+            <h2
+              id="volunteer-form-title"
+              className="text-[40px] font-bold mb-6 text-[var(--color-text-dark)]"
+            >
               {t("form.title")}
             </h2>
             <p className="text-[20px] text-[var(--color-text-dark)]">
@@ -46,7 +49,7 @@ const Volunteer = () => {
 
         {/* Banner linking to Donations section */}
         <section className="mt-24">
-          <div className="max-w-6xl mx-auto md:px-6">
+          <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6">
             <div className="relative rounded-xl overflow-hidden h-64 md:h-50">
               {/* Background image */}
               <div

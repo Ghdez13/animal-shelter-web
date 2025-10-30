@@ -6,7 +6,8 @@ const CampaignSection = () => {
   const campaignImage = "/images/abandon1.webp";
 
   return (
-    <div className="campaign-container flex flex-col p-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:gap-12 max-w-6xl mx-auto mt-12">
+    <section className="px-6">
+    <div className="campaign-container flex flex-col px-0 md:px-0 lg:px-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:gap-12 max-w-6xl mx-auto mt-12">
       {/* Image wrapper: mobile first (top), desktop right */}
       <div className="flex justify-center w-full mb-6 min-[900px]:mb-0 min-[900px]:flex-1 min-[900px]:justify-end min-[900px]:order-2">
         <img
@@ -17,7 +18,7 @@ const CampaignSection = () => {
       </div>
 
       {/* Campaign text content */}
-      <div className="campaign-content flex flex-col text-left min-[900px]:flex-1 min-[900px]:order-1">
+      <div className="campaign-content  flex flex-col text-left min-[900px]:flex-1 min-[900px]:order-1">
         <h2 className="campaign-title text-[40px] font-bold text-[var(--color-text-dark)]">
           {t("campaignSection.title")}
         </h2>
@@ -33,6 +34,7 @@ const CampaignSection = () => {
         </Button>
       </div>
     </div>
+    </section>
   );
 };
 

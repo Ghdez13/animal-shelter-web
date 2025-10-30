@@ -11,7 +11,7 @@ const SectionBackground = ({
         <img
           src={image}
           alt={alt}
-          className="lg:hidden w-full h-auto object-cover"
+          className="w-full h-auto object-cover"
         />
       )}
       {/* Render children content on top of the background */}

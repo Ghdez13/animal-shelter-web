@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import AboutUsOurHistory from "../../assets/images/aboutUsOurHistory.webp";
+import LazyImage from "../LazyImage";
 import aboutUs from "../../assets/data/aboutUs.json";
 
 const AboutUsValues = () => {
@@ -35,15 +36,14 @@ const AboutUsValues = () => {
   return (
     <section className="bg-transparent text-[var(--color-text-dark)]">
       {/* === Values section === */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
+      <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
         {values.map(({ title, description, icon }, index) => (
-          <div key={index} className="flex flex-col items-start text-left">
+          <div key={index} className="flex flex-col  items-start text-left">
             <div className="flex items-center gap-3 mb-2">
-              <img
+              <LazyImage
                 src={icon}
                 alt={`${title} icon`}
                 className="w-20 h-20 object-contain"
-                loading="lazy"
               />
               <h2 className="text-[40px] font-semibold">{title}</h2>
             </div>
@@ -55,30 +55,33 @@ const AboutUsValues = () => {
       </div>
 
       {/* === Story section === */}
-      <div className="flex flex-col md:flex-row w-full max-w-6xl mb-16 rounded-2xl overflow-hidden">
+      <div className="flex flex-col px-0 md:px-0 lg:px-6 lg:flex-row w-full max-w-6xl mx-auto rounded-2xl overflow-hidden mt-6">
         {/* Section image */}
-        <img
+        <LazyImage
           src={AboutUsOurHistory}
           alt={t("aboutUsValues.imageAlt", "Donation helping animals")}
-          className="w-full md:w-1/2 object-cover h-64 md:h-auto"
+          className="w-full lg:w-1/2 object-cover h-80 lg:h-auto lg:rounded-l-2xl"
         />
 
         {/* Text area with story */}
         <div
-          className="flex flex-col justify-center items-start text-start p-8 md:p-12"
+          className="flex flex-col items-center justify-center w-full lg:w-1/2 px-6 lg:rounded-r-2xl"
           style={{
             backgroundColor: "var(--color-bg-orange)",
             color: "var(--color-text-light)",
           }}
         >
-          <h2 className="text-[40px] font-semibold mb-4">
-            {data.ourStoryTitle}
-          </h2>
-          {data.storyText.map((paragraph, index) => (
-            <p key={index} className="max-w-md text-[20px] mb-4">
-              {paragraph}
-            </p>
-          ))}
+          {/* Wrapper interno para alinear título y párrafos */}
+          <div className="w-full max-w-md text-left">
+            <h2 className="text-[40px] font-semibold mb-4">
+              {data.ourStoryTitle}
+            </h2>
+            {data.storyText.map((paragraph, index) => (
+              <p key={index} className="text-[20px] mb-4">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </section>

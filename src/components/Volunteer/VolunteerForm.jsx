@@ -158,7 +158,7 @@ const VolunteerForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder={t("form.name")}
-          className="p-3 rounded-xl border border-gray-300 bg-[#eeeeee]"
+          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
           autoComplete="name"
         />
@@ -178,7 +178,7 @@ const VolunteerForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder={t("form.email")}
-          className="p-3 rounded-xl border border-gray-300 bg-[#eeeeee]"
+          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
           autoComplete="email"
         />
@@ -196,7 +196,7 @@ const VolunteerForm = () => {
           value={formData.service}
           onChange={handleChange}
           onBlur={handleBlur}
-          className="p-3 rounded-xl border border-gray-300 bg-[#eeeeee]"
+          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
         >
           <option value="">{t("form.selectService")}</option>

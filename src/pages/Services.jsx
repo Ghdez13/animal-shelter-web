@@ -22,8 +22,8 @@ const Services = () => {
     <SectionBackground image={BackgroundMobile}>
       <main className="px-6">
         {/* Main section title */}
-        <div className="max-w-6xl mx-auto md:px-6">
-          <h1 className="text-[50px] font-extrabold mb-20 text-[var(--color-text-dark)]">
+        <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-40">
+          <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold mb-20 text-[var(--color-text-dark)]">
             {t("servicesSection.title")}
           </h1>
         </div>
@@ -34,7 +34,7 @@ const Services = () => {
             Loading services...
           </p>
         ) : (
-          <div className="max-w-6xl mx-auto md:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((service) => (
               <ServiceCard key={service.id} service={service} />
             ))}
@@ -42,7 +42,7 @@ const Services = () => {
         )}
 
         {/* Tips section */}
-        <div className="max-w-6xl mx-auto md:px-6">
+        <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6">
           <h2 className="text-[50px] font-bold mt-12 text-[var(--color-text-dark)]">
             {t("servicesSection.tipsTitle")}
           </h2>

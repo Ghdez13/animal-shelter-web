@@ -34,7 +34,8 @@ const Cards = () => {
   }, [cards]);
 
   return (
-    <div className="cards-container grid gap-6 p-6 md:max-w-6xl md:mx-auto md:grid-cols-2 mt-12">
+    <section className="px-6">
+    <div className="cards-container grid gap-6 px-0 md:px-0 lg:px-6 md:max-w-6xl md:mx-auto md:grid-cols-2 mt-12">
       {cards.map((card, i) => {
         const currentIndex = imgIndices[card.id] || 0;
         const rowReverse = i >= 2; // second row reversed
@@ -78,6 +79,7 @@ const Cards = () => {
         );
       })}
     </div>
+    </section>
   );
 };
 

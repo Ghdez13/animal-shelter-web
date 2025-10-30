@@ -1,7 +1,7 @@
 import LogoBlack from "../assets/logo/navbar-logo.webP";
 import BackgroundOrange from "../assets/images/BackgroundOrange.webp";
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // Menu paths and translations
@@ -59,7 +59,7 @@ const Navbar = () => {
           <img
             src={LogoBlack}
             alt={t("navbar.logoAlt")}
-            className="h-15 lg:h-28 object-contain"
+            className="h-15 md:h-25 lg:h-28 object-contain"
           />
         </Link>
 
@@ -96,17 +96,23 @@ const Navbar = () => {
           ></span>
         </button>
 
-        {/* Desktop menu (visible only from 1200px and up) */}
+        {/* Desktop menu (visible only from 1140px and up) */}
         <div className="hidden min-[1200px]:flex min-[1200px]:space-x-6 items-center">
           {MENU_ITEMS.map((item) => (
-            <Link
+            <NavLink
               key={item}
               to={`/${item}`}
-              aria-label={t(`menu.${item.replace("-", "")}`)}
-              className="text-2xl hover:underline focus:outline-none focus:text-[var(--color-focus-primary)]"
+              aria-label={t(`menu.${item}`)}
+              className={({ isActive }) =>
+                `relative text-2xl transition focus:outline-none hover:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all ${
+                  isActive
+                    ? "after:w-full text-[var(--color-text-light)]"
+                    : "text-[var(--color-text-light)]"
+                }`
+              }
             >
               {t(`menu.${item}`)}
-            </Link>
+            </NavLink>
           ))}
 
           {/* Desktop language selector */}
@@ -115,10 +121,10 @@ const Navbar = () => {
               <button
                 key={code}
                 onClick={() => i18n.changeLanguage(code)}
-                className={`font-semibold transition ${
+                className={`relative font-semibold transition after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all hover:after:w-full ${
                   i18n.language === code
-                    ? "text-[var(--color-focus-primary)]"
-                    : "text-[var(--color-text-dark)]"
+                    ? "after:w-full text-[var(--color-text-light)]"
+                    : "text-[var(--color-text-light)]"
                 }`}
               >
                 {label}
@@ -150,7 +156,7 @@ const Navbar = () => {
               <Link
                 key={item}
                 to={`/${item}`}
-                aria-label={t(`menu.${item.replace("-", "")}`)}
+                aria-label={t(`menu.${item}`)}
                 className="text-2xl text-[var(--color-text-light)] hover:underline focus-visible:outline-none focus:text-[var(--color-focus-secondary)]"
                 onClick={() => setIsOpen(false)}
               >

@@ -9,7 +9,9 @@ import Message3 from "../../assets/images/message3.webp";
 
 const VolunteerReflection = () => {
   const { t } = useTranslation();
+
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const titles = t("volunteerReflection.title", { returnObjects: true });
   const descriptions = t("volunteerReflection.description", {
@@ -17,17 +19,25 @@ const VolunteerReflection = () => {
   });
   const images = [Message1, Message2, Message3];
 
-  // Autoplay
+  // Autoplay with pause support
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused, images.length]);
 
   return (
     <section className="w-full mt-24">
-      <div className="max-w-6xl mx-auto w-full md:px-6 flex flex-col md:flex-row items-start md:items-center text-left">
+      {/* Container that handles pause on interaction */}
+      <div
+        className="max-w-6xl mx-auto w-full px-0 md:px-0 lg:px-6 flex flex-col md:flex-row items-start md:items-center text-left"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+      >
         {/* Image */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">
           <img
@@ -46,7 +56,7 @@ const VolunteerReflection = () => {
             {descriptions[currentIndex]}
           </p>
 
-          {/* Dots */}
+          {/* Navigation dots */}
           <div className="flex justify-start mt-6 space-x-2 w-full">
             {images.map((_, index) => (
               <button

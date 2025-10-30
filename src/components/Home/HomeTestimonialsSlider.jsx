@@ -71,7 +71,7 @@ export default function TestimonialSlider() {
             key={index}
             type="button"
             onClick={() => setCurrentIndex(index)}
-            className="w-8 h-8"
+            className="w-8 h-8 md:w-10 md:h-10"
             aria-label={`Go to testimonial by ${testimonial.author}`}
           >
             <img

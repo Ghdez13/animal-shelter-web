@@ -144,7 +144,7 @@ const ContactForm = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 w-full mx-auto mt-12 mb-28"
+        className="flex flex-col gap-4 w-full max-w-xl mt-5 ml-0"
       >
         {/* Name */}
         <input
@@ -154,7 +154,7 @@ const ContactForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder={t("form.name")}
-          className="p-3 rounded-xl border border-gray-300 bg-[#eeeeee]"
+          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
           autoComplete="name"
         />
@@ -170,7 +170,7 @@ const ContactForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder={t("form.email")}
-          className="p-3 rounded-xl border border-gray-300 bg-[#eeeeee]"
+          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
           autoComplete="email"
         />
@@ -185,7 +185,7 @@ const ContactForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder={t("form.message")}
-          className="p-3 rounded-xl border border-gray-300 bg-[#eeeeee] h-32 resize-none"
+          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)] h-32 resize-none max-w-full"
           required
         />
         {touched.message && errors.message && (

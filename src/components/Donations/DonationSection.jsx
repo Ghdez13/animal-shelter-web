@@ -36,7 +36,7 @@ const Donation = () => {
 
   return (
     // Main container with same padding as footer and centered content
-    <section className="w-full flex justify-center md:px-6">
+    <section className="w-full flex justify-center px-0 md:px-0 lg:px-6">
       {/* Central content wrapper */}
       <div className="w-full max-w-6xl flex flex-col items-center">
         {/* Intro Section with image and orange background text */}

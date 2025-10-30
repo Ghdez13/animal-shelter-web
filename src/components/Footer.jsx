@@ -45,8 +45,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="text-[var(--color-text-dark)] font-semibold bg-transparent py-10 mt-12">
-      <div className="max-w-6xl mx-auto w-full px-6 flex flex-col gap-5">
+    <footer className="text-[var(--color-text-dark)] font-semibold bg-transparent px-6 py-10 mt-12">
+      <div className="max-w-6xl mx-auto w-full px-0 md:px-0 lg:px-6 flex flex-col gap-5">
         {/* Logo + Menu section */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-center w-full px-5 mb-6 gap-8 md:gap-16">
           {/* Logo */}
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
 
           {/* Menu and social section */}
-          <div className="text-lg flex flex-row w-full md:w-auto justify-around md:justify-end md:gap-16">
+          <div className="text-lg md:text-2xl flex flex-row w-full md:w-auto justify-around md:justify-end md:gap-16">
             {/* Menu group 1 */}
             <div className="flex flex-col gap-2 text-center md:text-left">
               <a
@@ -117,7 +117,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label={t("footer.facebook")}
                   className={`
-            w-5 h-5 block
+            w-5 h-5 md:w-8 md:h-8 block
             bg-[url('/icons/facebook.webp')]
             hover:bg-[url('/icons/facebookhover.webp')]
             bg-contain bg-no-repeat
@@ -128,7 +128,7 @@ const Footer = () => {
                 {/* Instagram icon */}
                 <button
                   aria-label={t("footer.instagram")}
-                  className={`w-5 h-5 block bg-[url('/icons/instagram.webp')] hover:bg-[url('/icons/instagramhover.webp')] bg-contain bg-no-repeat transition-all duration-200 ${focusRing}`}
+                  className={`w-5 h-5 md:w-8 md:h-8 block bg-[url('/icons/instagram.webp')] hover:bg-[url('/icons/instagramhover.webp')] bg-contain bg-no-repeat transition-all duration-200 ${focusRing}`}
                   onClick={() => openModal("instagramUnderConstruction")}
                 />
               </div>
@@ -138,7 +138,7 @@ const Footer = () => {
 
         {/* Contact section with orange background */}
         <div
-          className="relative text-lg flex flex-col items-start p-6 rounded-lg text-[var(--color-text-light)] gap-6 overflow-hidden"
+          className="relative text-lg md:text-2xl flex flex-col items-start p-6 rounded-lg text-[var(--color-text-light)] gap-6 overflow-hidden"
           style={{
             backgroundImage: `url(${BackgroundOrange})`,
             backgroundRepeat: "no-repeat",
@@ -184,7 +184,7 @@ const Footer = () => {
           </div>
 
           {/* Decorative image for md and up */}
-          <div className="hidden md:block absolute bottom-0 right-0 w-[320px] md:w-[400px] [@media(min-width:920px)]:w-[530px] opacity-90">
+          <div className="hidden md:block absolute bottom-0 right-0 w-[320px] md:w-[300px] [@media(min-width:920px)]:w-[500px] opacity-90">
             <img
               src={DecorativeImage}
               alt="Decorative footer md+"
@@ -194,7 +194,7 @@ const Footer = () => {
         </div>
 
         {/* Rights and developer info */}
-        <div className="text-xs text-[var(--color-text-dark)] flex justify-between items-start w-full mt-4">
+        <div className="text-xs md:text-lg text-[var(--color-text-dark)] flex justify-between items-start w-full mt-4">
           {/* Left: rights */}
           <p>
             © {new Date().getFullYear()}. {t("footer.rights")} <br />

@@ -9,11 +9,13 @@ const AboutUs = () => {
   return (
     // Wrap main content with a responsive background image
     <SectionBackground image={BackgroundMobile} alt="About Us background">
-      <main className="px-6 md:px-12 py-8">
+      <main className="px-6">
         {/* Page title */}
-        <h1 className="text-[50px] font-extrabold mb-20 text-[var(--color-text-dark)]">
-          {t("aboutUs.title")}
-        </h1>
+        <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-40">
+          <h1 className="text-[50px] md:text-[70px] lg:text-[90px]  font-extrabold mb-20 text-[var(--color-text-dark)]">
+            {t("aboutUs.title")}
+          </h1>
+        </div>
 
         {/* Core values of the organization */}
         <AboutUsValues />

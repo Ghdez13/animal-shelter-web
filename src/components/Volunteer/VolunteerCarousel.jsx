@@ -5,55 +5,69 @@ import Outline from "../../assets/icons/outline-footprint.svg";
 
 const VolunteerCarousel = () => {
   const { t } = useTranslation();
+
+  // Current slide index
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Number of cards per slide (1 for mobile, 2 for desktop)
   const [cardsPerSlide, setCardsPerSlide] = useState(1);
 
-  // Load captions safely
+  // Control autoplay pause
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Load captions safely from translation
   const captions = Array.from(
     { length: 8 },
     (_, i) => t(`volunteerSection.captions.${i}`) || ""
   );
 
-  // Build images array
+  // Build images array with captions
   const images = captions.map((caption, index) => ({
     src: `/images/carousel${index + 1}.webp`,
     caption,
   }));
 
-  // Determine cards per slide based on screen width
+  // Update number of cards per slide on window resize
   useEffect(() => {
     const updateCardsPerSlide = () =>
       setCardsPerSlide(window.innerWidth >= 768 ? 2 : 1);
 
-    updateCardsPerSlide();
+    updateCardsPerSlide(); // set initially
     window.addEventListener("resize", updateCardsPerSlide);
     return () => window.removeEventListener("resize", updateCardsPerSlide);
   }, []);
 
-  // Group images into slides safely
+  // Group images into slides based on cards per slide
   const slides = [];
   for (let i = 0; i < images.length; i += cardsPerSlide) {
     slides.push(images.slice(i, i + cardsPerSlide));
   }
+  const safeSlides = slides.length > 0 ? slides : [[]]; // fallback
 
-  // Fallback to avoid undefined
-  const safeSlides = slides.length > 0 ? slides : [[]];
-
-  // Autoplay carousel
+  // Autoplay carousel with pause support
   useEffect(() => {
+    if (isPaused) return; // do not run interval if paused
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % safeSlides.length);
     }, 2000);
-    return () => clearInterval(interval);
-  }, [safeSlides.length]);
+    return () => clearInterval(interval); // cleanup
+  }, [safeSlides.length, isPaused]);
 
   if (!safeSlides.length) return null; // nothing to render
 
   return (
     <div className="w-full flex justify-center pb-6">
-      <div className="w-full max-w-6xl md:px-6 py-8">
+      <div className="w-full max-w-6xl px-0 md:px-0 lg:px-6 py-8">
         {/* Slide container */}
-        <div className="flex gap-4 overflow-hidden">
+        <div
+          className="flex gap-4 overflow-hidden"
+          // Pause autoplay on hover (desktop)
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          // Pause autoplay on touch (mobile)
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+        >
           {safeSlides[currentIndex]?.map((img, idx) => (
             <div
               key={idx}
@@ -61,7 +75,7 @@ const VolunteerCarousel = () => {
                 cardsPerSlide === 2 ? "md:w-1/2" : ""
               }`}
             >
-              {/* Card */}
+              {/* Single card */}
               <div className="flex flex-col rounded-lg shadow-lg overflow-hidden h-[400px]">
                 {/* Image container */}
                 <div className="flex-1 overflow-hidden">
