@@ -61,15 +61,20 @@ const VolunteerReflection = () => {
             {images.map((_, index) => (
               <button
                 key={index}
+                type="button"
                 onClick={() => setCurrentIndex(index)}
-                className="focus:outline-none"
-                aria-label={`Go to slide ${index + 1}`}
+                className="focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-primary)] focus-visible:ring-offset-2 rounded-full transition-transform duration-200"
+                aria-label={`${t("dots.goToSlide")} ${index + 1}`}
                 aria-current={index === currentIndex ? "true" : "false"}
               >
                 <img
                   src={index === currentIndex ? Filled : Outline}
-                  alt="dot"
-                  className="w-6 h-6"
+                  alt={
+                    index === currentIndex
+                      ? `${t("dots.activeSlide")} ${index + 1}`
+                      : `${t("dots.slide")} ${index + 1}`
+                  }
+                  className="w-8 h-8 md:w-10 md:h-10"
                 />
               </button>
             ))}

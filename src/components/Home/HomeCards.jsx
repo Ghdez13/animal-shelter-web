@@ -43,7 +43,7 @@ const Cards = () => {
         return (
           <div
             key={card.id}
-            className={`bg-[var(--color-bg-article)] rounded-lg shadow-md overflow-hidden transition md:flex md:items-stretch md:gap-6 ${
+            className={`bg-[var(--color-bg-article)] rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 md:flex md:items-stretch md:gap-6 ${
               rowReverse ? "md:flex-row-reverse" : ""
             }`}
           >
@@ -60,7 +60,7 @@ const Cards = () => {
 
             {/* Text card */}
             {card.type === "text" && (
-              <div className="p-6 md:p-12 flex-1 flex flex-col justify-center">
+              <div className="p-6 md:p-12 flex-1 flex flex-col justify-center hover:shadow-lg hover:-translate-y-1 transition-transform duration-300">
                 <h2 className="text-[40px] font-bold mb-2">{t(card.title)}</h2>
                 <p className="text-[var(--color-text-dark)] text-[20px] mb-4">
                   {t(card.content)}

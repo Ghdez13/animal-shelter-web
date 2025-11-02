@@ -10,8 +10,10 @@ const Footer = () => {
   const { t } = useTranslation();
 
   // Accessibility focus styles
-  const focusTextPrimary =
-    "focus:outline-none focus:text-[var(--color-focus-primary)]";
+  const focusUnderline =
+    "focus-visible:outline-none focus:text-[var(--color-focus-primary)] focus:underline underline-offset-4";
+  const hoverUnderline =
+    "hover:underline hover:text-[var(--color-focus-primary)] underline-offset-4";
   const focusRing =
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-primary)]";
 
@@ -23,6 +25,7 @@ const Footer = () => {
     setIsModalOpen(true);
   };
 
+  // Obfuscated email for spam protection
   const emailParts = [
     String.fromCharCode(
       115,
@@ -39,7 +42,7 @@ const Footer = () => {
       112,
       101,
       116
-    ), // "shelterjauspet"
+    ),
     "@",
     "outlook.com",
   ];
@@ -69,42 +72,27 @@ const Footer = () => {
           <div className="text-lg md:text-2xl flex flex-row w-full md:w-auto justify-around md:justify-end md:gap-16">
             {/* Menu group 1 */}
             <div className="flex flex-col gap-2 text-center md:text-left">
-              <a
-                href="/services"
-                className={`hover:underline ${focusTextPrimary}`}
-              >
+              <a href="/services" className={`${hoverUnderline} ${focusUnderline}`}>
                 {t("menu.services")}
               </a>
-              <a
-                href="/volunteer"
-                className={`hover:underline ${focusTextPrimary}`}
-              >
+              <a href="/volunteer" className={`${hoverUnderline} ${focusUnderline}`}>
                 {t("menu.volunteer")}
               </a>
             </div>
 
             {/* Menu group 2 */}
             <div className="flex flex-col gap-2 text-center md:text-left">
-              <a
-                href="/donations"
-                className={`hover:underline ${focusTextPrimary}`}
-              >
+              <a href="/donations" className={`${hoverUnderline} ${focusUnderline}`}>
                 {t("menu.donations")}
               </a>
-              <a
-                href="/about-us"
-                className={`hover:underline ${focusTextPrimary}`}
-              >
+              <a href="/about-us" className={`${hoverUnderline} ${focusUnderline}`}>
                 {t("menu.about-us")}
               </a>
             </div>
 
             {/* Menu group 3 + social icons */}
             <div className="flex flex-col gap-2 text-center md:text-left">
-              <a
-                href="/contact"
-                className={`hover:underline ${focusTextPrimary}`}
-              >
+              <a href="/contact" className={`${hoverUnderline} ${focusUnderline}`}>
                 {t("menu.contact")}
               </a>
 
@@ -116,14 +104,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={t("footer.facebook")}
-                  className={`
-            w-5 h-5 md:w-8 md:h-8 block
-            bg-[url('/icons/facebook.webp')]
-            hover:bg-[url('/icons/facebookhover.webp')]
-            bg-contain bg-no-repeat
-            transition-all duration-200
-            ${focusRing}
-          `}
+                  className={`w-5 h-5 md:w-8 md:h-8 block bg-[url('/icons/facebook.webp')] hover:bg-[url('/icons/facebookhover.webp')] bg-contain bg-no-repeat transition-all duration-200 ${focusRing}`}
                 />
                 {/* Instagram icon */}
                 <button
@@ -154,32 +135,36 @@ const Footer = () => {
 
           {/* Address group */}
           <div className="flex flex-col gap-3 z-10">
-            <h3 className="font-extrabold">
-              {t("footer.visitUs")}{" "}
-              <span role="img" aria-label="Location pin">
-                📍
-              </span>
-            </h3>
-            <a
-              href="https://maps.app.goo.gl/wTxnETvNsVKJXiEG6"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t("footer.viewExactLocation")}
-              className="hover:underline leading-6 block font-normal focus-visible:outline-none focus:text-[var(--color-focus-secondary)]"
-            >
-              5ta Av. esquina con Av. Constituyentes s/n,
-              <br />
-              Centro, Playa del Carmen, Q.R.
-            </a>
-          </div>
+  <h3 className="font-extrabold">
+    {t("footer.visitUs")}{" "}
+    <span role="img" aria-label="Location pin">
+      📍
+    </span>
+  </h3>
+  <a
+    href="https://maps.app.goo.gl/wTxnETvNsVKJXiEG6"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={t("footer.viewExactLocation")}
+    className="leading-6 block font-normal
+      transition-colors
+          duration-300
+          hover:text-[var(--color-button-bg-hover-primary)]
+          focus-visible:text-[var(--color-button-bg-hover-primary)]
+          focus-visible:outline-none"
+  >
+    5ta Av. esquina con Av. Constituyentes s/n,
+    <br />
+    Centro, Playa del Carmen, Q.R.
+  </a>
+</div>
 
           {/* Decorative image for mobile */}
           <div className="block md:hidden relative w-[250px] mx-auto mt-16">
             <img
               src={DecorativeImage}
               alt="Decorative footer mobile"
-              className="
-      w-full h-auto absolute -bottom-8 left-1/2 transform -translate-x-1/2 sm:w-[280px] sm:-bottom-8"
+              className="w-full h-auto absolute -bottom-8 left-1/2 transform -translate-x-1/2 sm:w-[280px] sm:-bottom-8"
             />
           </div>
 
@@ -200,11 +185,12 @@ const Footer = () => {
             © {new Date().getFullYear()}. {t("footer.rights")} <br />
             {t("footer.allRightsReserved")}.
           </p>
+
           {/* Right: developer */}
           <p>
             {t("footer.developedBy") + " "}
             <br />
-            <a href="#" className={`hover:underline ${focusTextPrimary}`}>
+            <a href="#" className={`${hoverUnderline} ${focusUnderline}`}>
               Jerry Hernández.
             </a>
           </p>
@@ -223,3 +209,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

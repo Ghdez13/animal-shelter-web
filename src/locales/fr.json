@@ -11,32 +11,39 @@
 
   "menu": {
     "services": "Services",
-    "volunteer": "Joindre",
+    "volunteer": "Bénévolat",
     "donations": "Dons",
     "about-us": "À propos",
     "contact": "Contact"
   },
 
-  "hero": [
-    {
-      "title": "Un compagnon vous attend",
-      "text": "Chaque chien ou chat mérite une seconde chance. En adoptant, vous transformez une vie brisée en une histoire d’amour et de fidélité. Ouvrez votre cœur, votre maison deviendra son refuge.",
-      "buttonText": "En savoir plus",
-      "buttonLink": "/services"
-    },
-    {
-      "title": "Qui nous sommes",
-      "text": "Notre refuge existe pour protéger, soigner et offrir un avenir aux animaux abandonnés. Découvrez notre mission, nos valeurs et les histoires inspirantes qui nous motivent chaque jour à continuer à faire la différence.",
-      "buttonText": "En savoir plus",
-      "buttonLink": "/about-us"
-    },
-    {
-      "title": "Devenez acteur du changement",
-      "text": "Votre soutien peut prendre mille formes : un peu de temps pour aider, une donation pour nourrir ou un simple partage pour sensibiliser. Ensemble, chaque petit geste construit un grand avenir pour eux.",
-      "buttonText": "Rejoignez-nous",
-      "buttonLink": "/volunteer"
-    }
-  ],
+  "hero": {
+    "carouselLabel": "Section principale du héros",
+    "slideNavigation": "Navigation des images du héros",
+    "goToSlide": "Aller à la diapositive",
+
+    "slides": [
+      {
+        "title": "Un ami vous attend",
+        "text": "Chaque chien ou chat mérite une seconde chance. En adoptant, vous transformez un passé brisé en un avenir rempli d’amour et de loyauté. Ouvrez votre cœur et votre maison deviendra leur refuge sûr.",
+        "buttonText": "En savoir plus",
+        "buttonLink": "/services"
+      },
+      {
+        "title": "Qui nous sommes",
+        "text": "Notre refuge existe pour protéger, soigner et donner de l’espoir aux animaux abandonnés. Découvrez notre mission, nos valeurs et les histoires inspirantes qui nous motivent chaque jour.",
+        "buttonText": "En savoir plus",
+        "buttonLink": "/a-propos"
+      },
+      {
+        "title": "Participez au changement",
+        "text": "Votre soutien peut prendre de nombreuses formes : un peu de temps pour aider, un don pour nourrir ou simplement partager pour sensibiliser. Ensemble, chaque petit geste construit un avenir meilleur pour eux.",
+        "buttonText": "Rejoignez-nous",
+        "buttonLink": "/benevolat"
+      }
+    ]
+  },
+
   "card": {
     "card_1": {
       "alt": "Découvrez nos options d'adoption pour chiens et chats, et offrez-leur enfin un foyer chaleureux, aimant et rempli de tendresse."
@@ -72,13 +79,21 @@
     "rights": "Refuge animal.",
     "viewExactLocation": "Voir l'emplacement exact sur Google Maps",
     "allRightsReserved": "Tous droits réservés",
-    "developedBy": "Site web développé par"
+    "developedBy": "Site web développé par",
+    "emailAriaLabel": "Envoyer un courriel à {{email}}"
   },
 
   "servicesSection": {
     "title": "Nos services",
-    "tipsTittle": "Trucs & conseils"
+    "tipsTittle": "Trucs & conseils",
+    "loading": "Chargement des services..."
   },
+
+  "dots": {
+  "goToSlide": "Aller à la diapositive",
+  "activeSlide": "Diapositive active",
+  "slide": "Diapositive"
+},
 
   "volunteerSection": {
     "title": "Deviens bénévole",
@@ -130,7 +145,7 @@
   },
 
   "donationSection": {
-    "title": "Fais un don et fais la différence",
+    "title": "Fais la différence",
     "description": "Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
     "donationIntroTitle": "Ensemble, nous pouvons aider",
     "donationIntro": "Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
@@ -153,7 +168,8 @@
       "Soutenez-nous depuis le magasin OXXO le plus proche en utilisant notre référence.",
       "Vous pouvez également faire un don depuis l’étranger en utilisant notre code SWIFT.",
       "Envoyez de la nourriture, des médicaments ou des jouets directement depuis notre liste de souhaits"
-    ]
+    ],
+    "message": "🚧 Nous travaillons sur cette section. Si vous souhaitez aider, envoyez-nous un e-mail et nous vous dirons comment."
   },
 
   "aboutUs": {
@@ -179,8 +195,9 @@
   },
 
   "alerts": {
-    "instagramUnderConstruction": "Notre Instagram est en construction 🚧",
     "submitStatusSuccess": "Votre message a été envoyé ! 😸",
-    "submitStatusFailed": "Oups ! Quelque chose s'est mal passé, réessayez. 😿"
+    "submitStatusFailed": "Oups ! Quelque chose s'est mal passé, réessayez. 😿",
+    "instagramUnderConstruction": "🚧 Notre Instagram est en construction.",
+    "sectionUnderConstruction":"🚧 Section en construction. Merci pour votre patience."
   }
 }

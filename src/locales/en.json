@@ -11,32 +11,38 @@
 
   "menu": {
     "services": "Services",
-    "volunteer": "Join ",
+    "volunteer": "Volunteer",
     "donations": "Donate",
     "about-us": "About Us",
     "contact": "Contact"
   },
 
-  "hero": [
-    {
-      "title": "A Friend Awaits You",
-      "text": "Every dog or cat deserves a second chance. By adopting, you turn a broken past into a future of love and loyalty. Open your heart, and your home becomes their safe haven.",
-      "buttonText": "Learn More",
-      "buttonLink": "/services"
-    },
-    {
-      "title": "Who We Are",
-      "text": "Our shelter exists to protect, care for, and give hope to abandoned animals. Discover our mission, values, and the inspiring stories that motivate us every day to continue making a difference in their lives.",
-      "buttonText": "Learn More",
-      "buttonLink": "/about-us"
-    },
-    {
-      "title": "Be Part of the Change",
-      "text": "Your support can take many forms: a little time to help, a donation to feed, or simply sharing to raise awareness. Together, every small gesture builds a brighter tomorrow for them.",
-      "buttonText": "Join Us",
-      "buttonLink": "/volunteer"
-    }
-  ],
+  "hero": {
+    "carouselLabel": "Main hero section",
+    "slideNavigation": "Hero image navigation",
+    "goToSlide": "Go to slide",
+
+    "slides": [
+      {
+        "title": "A Friend Awaits You",
+        "text": "Every dog or cat deserves a second chance. By adopting, you turn a broken past into a future of love and loyalty. Open your heart, and your home becomes their safe haven.",
+        "buttonText": "Learn More",
+        "buttonLink": "/services"
+      },
+      {
+        "title": "Who We Are",
+        "text": "Our shelter exists to protect, care for, and give hope to abandoned animals. Discover our mission, values, and the inspiring stories that motivate us every day to continue making a difference in their lives.",
+        "buttonText": "Learn More",
+        "buttonLink": "/about-us"
+      },
+      {
+        "title": "Be Part of the Change",
+        "text": "Your support can take many forms: a little time to help, a donation to feed, or simply sharing to raise awareness. Together, every small gesture builds a brighter tomorrow for them.",
+        "buttonText": "Join Us",
+        "buttonLink": "/volunteer"
+      }
+    ]
+  },
 
   "card": {
     "card_1": {
@@ -74,13 +80,21 @@
     "rights": "Animal Refuge.",
     "viewExactLocation": "View exact location on Google Maps",
     "allRightsReserved": "All Rights Reserved",
-    "developedBy": "Website developed by"
+    "developedBy": "Website developed by",
+    "emailAriaLabel": "Send an email to {{email}}"
   },
 
   "servicesSection": {
     "title": "Our Services",
-    "tipsTittle": "Tips & advice"
+    "tipsTittle": "Tips & advice",
+    "loading": "Loading services..."
   },
+
+  "dots": {
+  "goToSlide": "Go to slide",
+  "activeSlide": "Active slide",
+  "slide": "Slide"
+},
 
   "volunteerSection": {
     "title": "Become a Volunteer",
@@ -132,7 +146,7 @@
   },
 
   "donationSection": {
-    "title": "Donate & Make a Difference",
+    "title": "Make a difference",
     "description": "Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
     "donationIntroTitle": "Together We Can Help",
     "donationIntro": "Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
@@ -155,7 +169,8 @@
       "Support us from your nearest OXXO store using our reference.",
       "You can also donate from abroad using our SWIFT code.",
       "Send food, medicine, or toys directly from our wishlist."
-    ]
+    ],
+    "message": "🚧 We're working on this section. If you'd like to help, send us an email and we'll tell you how."
   },
 
   "aboutUs": {
@@ -183,6 +198,7 @@
   "alerts": {
     "submitStatusSuccess": "Your message has been sent! 😸",
     "submitStatusFailed": "Oops! Something went wrong, try again. 😿",
-    "instagramUnderConstruction": "Our Instagram is under construction 🚧"
+    "instagramUnderConstruction": "🚧 Our Instagram is under construction.",
+    "sectionUnderConstruction":"🚧 Section under construction. Thank you for your patience."
   }
 }

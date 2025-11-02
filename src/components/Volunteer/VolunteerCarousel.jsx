@@ -4,15 +4,11 @@ import Filled from "../../assets/icons/filled-footprint.svg";
 import Outline from "../../assets/icons/outline-footprint.svg";
 
 const VolunteerCarousel = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language || "es";
 
-  // Current slide index
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Number of cards per slide (1 for mobile, 2 for desktop)
   const [cardsPerSlide, setCardsPerSlide] = useState(1);
-
-  // Control autoplay pause
   const [isPaused, setIsPaused] = useState(false);
 
   // Load captions safely from translation
@@ -21,39 +17,37 @@ const VolunteerCarousel = () => {
     (_, i) => t(`volunteerSection.captions.${i}`) || ""
   );
 
-  // Build images array with captions
   const images = captions.map((caption, index) => ({
     src: `/images/carousel${index + 1}.webp`,
     caption,
   }));
 
-  // Update number of cards per slide on window resize
+  // Update cards per slide on resize
   useEffect(() => {
     const updateCardsPerSlide = () =>
       setCardsPerSlide(window.innerWidth >= 768 ? 2 : 1);
-
-    updateCardsPerSlide(); // set initially
+    updateCardsPerSlide();
     window.addEventListener("resize", updateCardsPerSlide);
     return () => window.removeEventListener("resize", updateCardsPerSlide);
   }, []);
 
-  // Group images into slides based on cards per slide
+  // Group images into slides
   const slides = [];
   for (let i = 0; i < images.length; i += cardsPerSlide) {
     slides.push(images.slice(i, i + cardsPerSlide));
   }
-  const safeSlides = slides.length > 0 ? slides : [[]]; // fallback
+  const safeSlides = slides.length > 0 ? slides : [[]];
 
-  // Autoplay carousel with pause support
+  // Autoplay
   useEffect(() => {
-    if (isPaused) return; // do not run interval if paused
+    if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % safeSlides.length);
     }, 2000);
-    return () => clearInterval(interval); // cleanup
+    return () => clearInterval(interval);
   }, [safeSlides.length, isPaused]);
 
-  if (!safeSlides.length) return null; // nothing to render
+  if (!safeSlides.length) return null;
 
   return (
     <div className="w-full flex justify-center pb-6">
@@ -61,10 +55,8 @@ const VolunteerCarousel = () => {
         {/* Slide container */}
         <div
           className="flex gap-4 overflow-hidden"
-          // Pause autoplay on hover (desktop)
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          // Pause autoplay on touch (mobile)
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setIsPaused(false)}
         >
@@ -75,9 +67,7 @@ const VolunteerCarousel = () => {
                 cardsPerSlide === 2 ? "md:w-1/2" : ""
               }`}
             >
-              {/* Single card */}
               <div className="flex flex-col rounded-lg shadow-lg overflow-hidden h-[400px]">
-                {/* Image container */}
                 <div className="flex-1 overflow-hidden">
                   <img
                     src={img.src}
@@ -85,7 +75,6 @@ const VolunteerCarousel = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Caption */}
                 <div
                   className="p-4 text-center text-[20px]"
                   style={{
@@ -102,25 +91,38 @@ const VolunteerCarousel = () => {
 
         {/* Navigation dots */}
         <div className="mt-6 flex space-x-3 justify-center">
-          {safeSlides.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              onClick={() => setCurrentIndex(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              className="w-8 h-8"
-            >
-              <img
-                src={index === currentIndex ? Filled : Outline}
-                alt={
-                  index === currentIndex
-                    ? `Active slide ${index + 1}`
-                    : `Slide ${index + 1}`
+          {safeSlides.map((_, index) => {
+            const isActive = index === currentIndex;
+            return (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setCurrentIndex(index)}
+                className={`w-8 h-8 md:w-10 md:h-10 rounded-full focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-primary)] focus-visible:ring-offset-2 transition-transform duration-200 ${
+                  isActive ? "scale-110" : "opacity-80 hover:opacity-100"
+                }`}
+                aria-label={
+                  isActive
+                    ? `${t("dots.activeSlide", { index: index + 1 })} ${
+                        index + 1
+                      }`
+                    : `${t("dots.goToSlide", { index: index + 1 })} ${
+                        index + 1
+                      }`
                 }
-                className="w-full h-full"
-              />
-            </button>
-          ))}
+              >
+                <img
+                  src={isActive ? Filled : Outline}
+                  alt={
+                    isActive
+                      ? `${t("dots.activeSlide")} ${index + 1}`
+                      : `${t("dots.slide")} ${index + 1}`
+                  }
+                  className="w-full h-full"
+                />
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

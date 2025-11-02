@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  font-family: "ComicRelief", sans-serif;
+  font-family: "ComicRelief", "Comic Sans MS", "Arial", sans-serif;
   background-image: url("./assets/images/background.webp");
   background-attachment: fixed;
   background-position: center;
@@ -14,6 +14,14 @@ body {
 body.modal-open {
   overflow: hidden;
   padding-right: 0.5rem;
+}
+
+/* Mobile optimization:
+   Disable fixed background on small screens to prevent visual bugs */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
 }
 
 @font-face {
@@ -34,7 +42,7 @@ body.modal-open {
 
 /* Utility class for applying ComicRelief font */
 .font-comic {
-  font-family: "ComicRelief", sans-serif;
+  font-family: "ComicRelief", "Comic Sans MS", "Arial", sans-serif;
 }
 
 @theme {
@@ -100,13 +108,31 @@ body.modal-open {
          transition-all duration-200;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  color: #2c7d7a !important;
-  transition: color 0.3s ease;
+/* Focus styles for buttons (keyboard navigation) */
+.btn-style:focus-visible,
+.btn-green:focus-visible {
+  outline: 3px solid var(--color-focus-secondary);
+  outline-offset: 3px;
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  color: #1e5c59 !important;
+:focus-visible {
+  outline: 3px solid var(--color-focus-primary);
+  outline-offset: 3px;
+}
+
+/* Donation cards*/
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }

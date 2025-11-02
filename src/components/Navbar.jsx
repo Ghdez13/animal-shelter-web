@@ -20,9 +20,6 @@ const LANGUAGES = [
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
-  const focusRing =
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-primary)]";
-
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef(null);
 
@@ -34,7 +31,6 @@ const Navbar = () => {
       }
     };
     document.addEventListener("click", handleClickOutside);
-
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
@@ -53,8 +49,7 @@ const Navbar = () => {
         <Link
           to="/"
           onClick={() => setIsOpen(false)}
-          className="focus-visible:outline-2 focus:outline-offset-4"
-          style={{ outlineColor: "var(--color-focus-primary)" }}
+          className="focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-secondary)] rounded-xl transition"
         >
           <img
             src={LogoBlack}
@@ -69,7 +64,8 @@ const Navbar = () => {
             e.stopPropagation();
             setIsOpen(!isOpen);
           }}
-          className={`absolute top-6 right-6 w-20 h-4 flex items-center justify-center min-[1200px]:hidden ${focusRing} z-60`}
+          className={`absolute top-6 right-6 w-20 h-4 flex items-center justify-center min-[1140px]:hidden z-60
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-secondary)] focus-visible:rounded-lg transition`}
           aria-label={t("navbar.toggleMenu")}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -96,15 +92,19 @@ const Navbar = () => {
           ></span>
         </button>
 
-        {/* Desktop menu (visible only from 1140px and up) */}
-        <div className="hidden min-[1200px]:flex min-[1200px]:space-x-6 items-center">
+        {/* Desktop menu */}
+        <div className="hidden min-[1140px]:flex min-[1140px]:space-x-6 items-center">
           {MENU_ITEMS.map((item) => (
             <NavLink
               key={item}
               to={`/${item}`}
               aria-label={t(`menu.${item}`)}
               className={({ isActive }) =>
-                `relative text-2xl transition focus:outline-none hover:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all ${
+                `relative text-2xl transition focus:outline-none 
+                hover:after:w-full focus-visible:after:w-full 
+                after:absolute after:-bottom-1 after:left-0 after:h-1 
+                after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300
+                ${
                   isActive
                     ? "after:w-full text-[var(--color-text-light)]"
                     : "text-[var(--color-text-light)]"
@@ -121,7 +121,11 @@ const Navbar = () => {
               <button
                 key={code}
                 onClick={() => i18n.changeLanguage(code)}
-                className={`relative font-semibold transition after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all hover:after:w-full ${
+                className={`relative font-semibold transition 
+                hover:after:w-full focus-visible:after:w-full 
+                after:absolute after:-bottom-1 after:left-0 after:h-1 
+                after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300 
+                ${
                   i18n.language === code
                     ? "after:w-full text-[var(--color-text-light)]"
                     : "text-[var(--color-text-light)]"
@@ -157,13 +161,17 @@ const Navbar = () => {
                 key={item}
                 to={`/${item}`}
                 aria-label={t(`menu.${item}`)}
-                className="text-2xl text-[var(--color-text-light)] hover:underline focus-visible:outline-none focus:text-[var(--color-focus-secondary)]"
                 onClick={() => setIsOpen(false)}
+                className="relative inline-block text-2xl text-[var(--color-text-light)] transition 
+                  focus:outline-none hover:after:w-full focus-visible:after:w-full
+                  after:absolute after:-bottom-1 after:left-0 after:h-1 
+                  after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300"
               >
                 {t(`menu.${item}`)}
               </Link>
             ))}
 
+            {/* ✅ Mobile language selector (matches desktop behavior) */}
             <div className="flex justify-center space-x-4 pt-6 border-t border-[var(--color-text-light)]">
               {LANGUAGES.map(({ code, label }) => (
                 <button
@@ -172,11 +180,15 @@ const Navbar = () => {
                     i18n.changeLanguage(code);
                     setIsOpen(false);
                   }}
-                  className={`text-lg font-semibold transition ${
-                    i18n.language === code
-                      ? "text-[var(--color-focus-secondary)]"
-                      : "text-[var(--color-text-light)]"
-                  }`}
+                  className={`relative inline-block font-semibold transition 
+                    hover:after:w-full focus-visible:after:w-full 
+                    after:absolute after:-bottom-1 after:left-0 after:h-1 
+                    after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300
+                    ${
+                      i18n.language === code
+                        ? "after:w-full text-[var(--color-text-light)]"
+                        : "text-[var(--color-text-light)]"
+                    }`}
                 >
                   {label}
                 </button>

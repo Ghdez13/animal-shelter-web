@@ -1,27 +1,61 @@
+import { useState } from "react";
 import Donation1 from "../../assets/images/donation1.webp";
 import Donation2 from "../../assets/images/donation2.webp";
 import BackgroundBanner from "../../assets/images/BackgroundOrange.webp";
 import Button from "../Button";
 import { useTranslation } from "react-i18next";
 
-// Component for individual donation cards
-const DonationCard = ({ title, description, icon }) => (
-  <div className="bg-[var(--color-bg-article)] rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
-    <img
-      src={icon}
-      alt={`${title} icon`}
-      className="w-20 h-20 mb-3 object-contain"
-    />
-    <h3 className="text-[25px] font-semibold text-[var(--color-text-dark)] mb-2">
-      {title}
-    </h3>
-    <p className="text-[20px] text-[var(--color-text-dark)]">{description}</p>
+//Component for individual donation cards
+const DonationCard = ({ title, description, icon, isFlipped, onFlip, t }) => (
+  <div
+    onClick={onFlip}
+    className="relative w-full h-96 cursor-pointer perspective"
+  >
+    {/* Flip container */}
+    <div
+      className={`relative w-full h-full duration-700 transform-style-preserve-3d ${
+        isFlipped ? "rotate-y-180" : ""
+      }`}
+    >
+      {/* Front side */}
+      <div className="absolute w-full h-full bg-[var(--color-bg-article)] rounded-2xl shadow-md p-6 flex flex-col justify-center items-center hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 backface-hidden overflow-hidden will-change-transform">
+        <img
+          src={icon}
+          alt={`${title} icon`}
+          className="w-20 h-20 mb-3 object-contain"
+        />
+        <h3 className="text-[25px] font-semibold text-[var(--color-text-dark)] mb-2 text-center">
+          {title}
+        </h3>
+        <p className="text-[20px] text-[var(--color-text-dark)] leading-snug text-left max-w-[85%]">
+          {description}
+        </p>
+      </div>
+
+      {/* Back side */}
+      <div className="absolute w-full h-full bg-[var(--color-bg-article)] rounded-2xl shadow-md flex flex-col justify-center items-center hover:shadow-lg hover:-translate-y-1  rotate-y-180 backface-hidden p-6 border border-gray-300 overflow-hidden will-change-transform">
+        <img
+          src="/icons/construction.webp"
+          alt="Construction icon"
+          className="w-20 h-20 mb-3 object-contain"
+        />
+        <h3 className="text-[25px] font-semibold text-[var(--color-text-dark)] mb-2 text-center">
+          {title}
+        </h3>
+        <p className="text-[20px] text-[var(--color-text-dark)] leading-snug text-left max-w-[85%]">
+          {t("donationCards.message")}
+        </p>
+      </div>
+    </div>
   </div>
 );
 
+// Main Donation component
 const Donation = () => {
   const { t } = useTranslation();
+  const [flippedIndex, setFlippedIndex] = useState(null);
 
+  // Icons for each donation method
   const donationIcons = [
     "/icons/bank.webp",
     "/icons/oxxo.webp",
@@ -29,17 +63,21 @@ const Donation = () => {
     "/icons/amazon.webp",
   ];
 
+  // Titles and descriptions from i18n files
   const donationTitles = t("donationCards.titleCard", { returnObjects: true });
   const donationDescriptions = t("donationCards.description", {
     returnObjects: true,
   });
 
+  // Handle card flip - only one card can stay flipped at a time
+  const handleFlip = (index) => {
+    setFlippedIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
   return (
-    // Main container with same padding as footer and centered content
     <section className="w-full flex justify-center px-0 md:px-0 lg:px-6">
-      {/* Central content wrapper */}
       <div className="w-full max-w-6xl flex flex-col items-center">
-        {/* Intro Section with image and orange background text */}
+        {/* Intro Section with image and text */}
         <div className="flex flex-col md:flex-row w-full rounded-2xl overflow-hidden mt-6">
           <img
             src={Donation1}
@@ -67,13 +105,18 @@ const Donation = () => {
           <h2 className="text-[40px] font-bold text-[var(--color-text-dark)] mb-10">
             {t("donationCards.title")}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          {/* Responsive grid for cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {donationTitles.map((title, index) => (
               <DonationCard
                 key={index}
                 title={title}
                 description={donationDescriptions[index]}
                 icon={donationIcons[index]}
+                isFlipped={flippedIndex === index}
+                onFlip={() => handleFlip(index)}
+                t={t}
               />
             ))}
           </div>

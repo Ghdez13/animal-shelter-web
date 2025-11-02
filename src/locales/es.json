@@ -11,32 +11,38 @@
 
   "menu": {
     "services": "Servicios",
-    "volunteer": "Unirse",
+    "volunteer": "Voluntarios",
     "donations": "Donar",
     "about-us": "Nosotros",
     "contact": "Contacto"
   },
 
-  "hero": [
-    {
-      "title": "Un amigo te espera",
-      "text": "Cada perro o gato merece una segunda oportunidad. Al adoptar, transformas un pasado difícil en un futuro de amor y lealtad. Abre tu corazón: tu hogar puede convertirse en el refugio que tanto necesitan.",
-      "buttonText": "Saber más",
-      "buttonLink": "/services"
-    },
-    {
-      "title": "Quiénes somos",
-      "text": "Nuestro refugio existe para proteger, cuidar y dar esperanza a los animales abandonados. Conoce nuestra misión, nuestros valores y las historias inspiradoras que cada día nos motivan a seguir marcando la diferencia en sus vidas.",
-      "buttonText": "Saber más",
-      "buttonLink": "/about-us"
-    },
-    {
-      "title": "Sé parte del cambio",
-      "text": "Tu apoyo puede tomar muchas formas: un poco de tiempo para ayudar, una donación para alimentar o simplemente compartir para crear conciencia. Juntos, cada pequeño gesto construye un futuro mejor para ellos.",
-      "buttonText": "Únete",
-      "buttonLink": "/volunteer"
-    }
-  ],
+  "hero": {
+    "carouselLabel": "Sección principal del héroe",
+    "slideNavigation": "Navegación de imágenes del héroe",
+    "goToSlide": "Ir a la diapositiva",
+
+    "slides": [
+      {
+        "title": "Un amigo te espera",
+        "text": "Cada perro o gato merece una segunda oportunidad. Al adoptar, conviertes un pasado roto en un futuro lleno de amor y lealtad. Abre tu corazón y tu hogar será su refugio seguro.",
+        "buttonText": "Conoce más",
+        "buttonLink": "/servicios"
+      },
+      {
+        "title": "Quiénes somos",
+        "text": "Nuestro refugio existe para proteger, cuidar y dar esperanza a los animales abandonados. Descubre nuestra misión, valores e historias inspiradoras que nos motivan cada día.",
+        "buttonText": "Conoce más",
+        "buttonLink": "/sobre-nosotros"
+      },
+      {
+        "title": "Sé parte del cambio",
+        "text": "Tu apoyo puede tomar muchas formas: tiempo para ayudar, una donación para alimentar o simplemente compartir para crear conciencia. Juntos, cada pequeño gesto construye un mejor mañana para ellos.",
+        "buttonText": "Únete",
+        "buttonLink": "/voluntariado"
+      }
+    ]
+  },
 
   "card": {
     "card_1": {
@@ -74,13 +80,21 @@
     "rights": "Refugio Animal.",
     "viewExactLocation": "Ver ubicación exacta en Google Maps",
     "allRightsReserved": "Todos los derechos reservados",
-    "developedBy": "Sitio web desarrollado por"
+    "developedBy": "Sitio web desarrollado por",
+    "emailAriaLabel": "Enviar un correo a {{email}}"
   },
 
   "servicesSection": {
     "title": "Nuestros servicios",
-    "tipsTitle": "Trucos & consejos"
+    "tipsTitle": "Trucos & consejos",
+    "loading": "Cargando servicios..."
   },
+
+  "dots": {
+  "goToSlide": "Ir a la diapositiva",
+  "activeSlide": "Diapositiva activa",
+  "slide": "Diapositiva"
+},
 
   "volunteerSection": {
     "title": "Sé un voluntario",
@@ -132,7 +146,7 @@
   },
 
   "donationSection": {
-    "title": "Dona y haz la diferencia",
+    "title": "Haz la diferencia",
     "description": "Tu apoyo ayuda a salvar animales en situación de abandono y maltrato. Juntos podemos darles un hogar seguro, alimentar a los que tienen hambre y sanar sus heridas. Gracias por tu cariño.",
     "donationIntroTitle": "Juntos podemos ayudar",
     "donationIntro": "Tu apoyo ayuda a salvar animales en situación de abandono y maltrato. Juntos podemos darles un hogar seguro, alimentar a los que tienen hambre y sanar sus heridas. Gracias por tu cariño.",
@@ -155,7 +169,8 @@
       "Apóyanos desde la tienda OXXO más cercana usando nuestra referencia.",
       "También puedes donar desde el extranjero usando nuestro código SWIFT.",
       "Envía comida, medicinas o juguetes directamente desde nuestra lista de deseos."
-    ]
+    ],
+    "message": "🚧 Estamos trabajando en esta sección. Si deseas ayudar, envíanos un correo y te diremos cómo."
   },
 
   "aboutUs": {
@@ -183,6 +198,7 @@
   "alerts": {
     "submitStatusSuccess": "¡Tu mensaje ha sido enviado! 😸",
     "submitStatusFailed": "¡Ups! Algo salió mal, inténtalo de nuevo. 😿",
-    "instagramUnderConstruction": "Nuestro Instagram está en construcción 🚧"
+    "instagramUnderConstruction": "🚧 Nuestro Instagram está en construcción.",
+    "sectionUnderConstruction":"🚧 Sección en construcción. Gracias por tu paciencia."
   }
 }

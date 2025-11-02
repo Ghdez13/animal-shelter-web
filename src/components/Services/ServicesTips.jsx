@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Filled from "../../assets/icons/filled-footprint.svg";
 import Outline from "../../assets/icons/outline-footprint.svg";
 
 const Tips = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const lang = i18n.language;
 
   const [tips, setTips] = useState([]);
@@ -13,7 +13,7 @@ const Tips = () => {
   const [isHovered, setIsHovered] = useState(false);
   const intervalRef = useRef(null);
 
-  // Load tips JSON
+  // Load tips JSON dynamically
   useEffect(() => {
     import("../../assets/data/serviceTips.json").then((module) =>
       setTips(module.default)
@@ -29,7 +29,7 @@ const Tips = () => {
     setSlides(grouped);
   }, [tips]);
 
-  // Autoplay
+  // Auto-slide effect
   useEffect(() => {
     if (!slides.length) return;
     if (!isHovered) {
@@ -45,10 +45,9 @@ const Tips = () => {
   return (
     <section
       className="relative max-w-6xl mx-auto px-0 md:px-0 lg:px-6"
-      // Pause autoplay on hover (desktop)
+      // Pause autoplay on hover (desktop) or touch (mobile)
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      // Pause autoplay on touch (mobile)
       onTouchStart={() => setIsHovered(true)}
       onTouchEnd={() => setIsHovered(false)}
     >
@@ -68,7 +67,8 @@ const Tips = () => {
                 const prefix = tip.prefix[lang] || tip.prefix["es"];
                 const text = tip.text[lang] || tip.text["es"];
                 return (
-                  <div key={tip.id} className="flex-1">
+                  // Each tip is an article for semantic purposes
+                  <article key={tip.id} className="flex-1">
                     <h3 className="text-[var(--color-text-dark)] font-bold text-[20px] sm:text-[40px] mb-6">
                       {title}
                     </h3>
@@ -78,7 +78,7 @@ const Tips = () => {
                     <p className="text-[20px] text-[var(--color-text-dark)]">
                       {text}
                     </p>
-                  </div>
+                  </article>
                 );
               })}
             </div>
@@ -88,20 +88,23 @@ const Tips = () => {
 
       {/* Navigation dots */}
       <div className="flex justify-center mt-4 space-x-2">
-        {slides.map((_, idx) => (
+        {slides.map((group, idx) => (
           <button
             key={idx}
             type="button"
             onClick={() => setCurrentIndex(idx)}
-            className="focus:outline-none"
-            aria-label={`Go to slide ${idx + 1}`}
+            // Focus style consistent with global :focus-visible
+            className="focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-primary)] rounded-full"
+            aria-label={`${t("dots.goToSlide")} ${idx + 1} - ${
+              group[0].title[lang] || group[0].title["es"]
+            }`}
           >
             <img
               src={idx === currentIndex ? Filled : Outline}
               alt={
                 idx === currentIndex
-                  ? `Active slide ${idx + 1}`
-                  : `Slide ${idx + 1}`
+                  ? `${t("dots.activeSlide")} ${idx + 1}`
+                  : `${t("dots.slide")} ${idx + 1}`
               }
               className="w-8 h-8 md:w-10 md:h-10"
             />
@@ -113,3 +116,4 @@ const Tips = () => {
 };
 
 export default Tips;
+

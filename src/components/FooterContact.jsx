@@ -1,16 +1,24 @@
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 const FooterContact = ({ emailParts = [] }) => {
-  // Combine email parts into full email address
+  const { t } = useTranslation();
+
+  // Combine all parts to form the complete email address
   const email = useMemo(() => emailParts.join(""), [emailParts]);
 
   return (
     <div className="inline-flex flex-col gap-0.5 text-[var(--color-text-light)] font-normal leading-6 mb-8">
-      {/* Email link */}
       <a
         href={`mailto:${email}`}
-        aria-label={`Send an email to ${email}`}
-        className="hover:underline focus-visible:outline-none  focus:text-[var(--color-focus-secondary)]"
+        aria-label={t("footer.emailAriaLabel", { email })}
+        className="
+          transition-colors
+          duration-300
+          hover:text-[var(--color-button-bg-hover-primary)]
+          focus-visible:text-[var(--color-button-bg-hover-primary)]
+          focus-visible:outline-none
+        "
       >
         {email}
       </a>

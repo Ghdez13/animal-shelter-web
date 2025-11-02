@@ -18,18 +18,24 @@ const Hero = () => {
     HeroImageMobileTwo,
     HeroImageMobileThree,
   ];
-  const desktopImages = [HeroDesktop, HeroDesktopTwo, HeroDesktopThree];
+
+  const desktopImages = [
+    HeroDesktop,
+    HeroDesktopTwo,
+    HeroDesktopThree,
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // === Preload images to avoid flicker ===
+  // Preload images to prevent flicker
   useEffect(() => {
-    [...mobileImages, ...desktopImages].forEach(
-      (img) => (new Image().src = img)
-    );
+    [...mobileImages, ...desktopImages].forEach((img) => {
+      const image = new Image();
+      image.src = img;
+    });
   }, []);
 
-  // === Automatic slide change every 9s ===
+  // Auto slide change every 9s
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % mobileImages.length);
@@ -38,47 +44,54 @@ const Hero = () => {
   }, [mobileImages.length]);
 
   return (
-    <section className="w-full">
+    <section
+      className="w-full"
+      aria-label={t("hero.carouselLabel")}
+      role="region"
+    >
       {/* === Mobile version === */}
       <div className="relative w-full min-[1140px]:hidden">
-        {/* Background image */}
         <img
           key={currentIndex}
           src={mobileImages[currentIndex]}
-          alt={t(`hero.${currentIndex}.title`)}
+          alt=""
+          role="presentation"
           className="w-full h-auto object-cover transition-all animate-fadeIn"
         />
 
-        {/* Content wrapper aligned with footer width */}
+        {/* Content wrapper */}
         <div className="max-w-6xl mx-auto w-full px-6">
           <article className="flex flex-col text-left px-0 md:px-0 lg:px-6">
             <h1 className="text-[50px] font-extrabold text-[var(--color-text-dark)] text-left">
-              {t(`hero.${currentIndex}.title`)}
+              {t(`hero.slides.${currentIndex}.title`)}
             </h1>
+
             <p className="mt-7 text-[20px] text-[var(--color-text-dark)]">
-              {t(`hero.${currentIndex}.text`)}
+              {t(`hero.slides.${currentIndex}.text`)}
             </p>
-            <Button to={t(`hero.${currentIndex}.buttonLink`)}>
-              {t(`hero.${currentIndex}.buttonText`)}
+
+            <Button to={t(`hero.slides.${currentIndex}.buttonLink`)}>
+              {t(`hero.slides.${currentIndex}.buttonText`)}
             </Button>
 
             {/* Dots indicator */}
-            <div className="mt-10 flex space-x-3 justify-start">
+            <div
+              className="mt-10 flex space-x-3 justify-start"
+              role="group"
+              aria-label={t("hero.slideNavigation")}
+            >
               {mobileImages.map((_, index) => (
                 <button
                   key={index}
                   type="button"
                   onClick={() => setCurrentIndex(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                  className="w-8 h-8 md:w-10 md:h-10 "
+                  aria-label={`${t("hero.goToSlide")} ${index + 1}`}
+                  className={`w-8 h-8 md:w-10 md:h-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-primary)] rounded-full`}
                 >
                   <img
                     src={index === currentIndex ? Filled : Outline}
-                    alt={
-                      index === currentIndex
-                        ? `Slide ${index + 1} active`
-                        : `Slide ${index + 1}`
-                    }
+                    alt=""
+                    role="presentation"
                     className="w-full h-full"
                   />
                 </button>
@@ -88,49 +101,48 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* === Desktop version (>=1200px) === */}
-      <div className="hidden min-[1140px]:flex min-[1140px]:relative justify-center bg-transparent py-10">
-        {/* Centered container with the same width and padding as the footer */}
-        <div className="max-w-6xl w-full flex  gap-10 relative">
-          {/* Background image (outside the padding area) */}
-          <img
-            key={currentIndex}
-            src={desktopImages[currentIndex]}
-            alt={t(`hero.${currentIndex}.title`)}
-            className="absolute top-0 right-0 w-[58%] h-full object-cover -z-10"
-          />
-
-          {/* Left side: title, text, button, and dots */}
-          <article className="flex flex-col max-w-[40%] z-10">
+      {/* === Desktop version (>=1140px) === */}
+      <div
+        className="hidden min-[1140px]:flex relative w-full min-h-[1000px] bg-no-repeat bg-center bg-cover"
+        style={{
+          backgroundImage: `url(${desktopImages[currentIndex]})`,
+          maxWidth: "2000px",
+          margin: "0 auto",
+        }}
+      >
+        <div className="max-w-6xl w-full flex relative z-20 mt-48">
+          <article className="flex flex-col justify-center max-w-[38%] ml-8">
             <h1 className="text-[60px] font-extrabold text-[var(--color-text-dark)] leading-tight">
-              {t(`hero.${currentIndex}.title`)}
+              {t(`hero.slides.${currentIndex}.title`)}
             </h1>
+
             <p className="mt-6 text-[22px] text-[var(--color-text-dark)]">
-              {t(`hero.${currentIndex}.text`)}
+              {t(`hero.slides.${currentIndex}.text`)}
             </p>
+
             <div className="mt-8">
-              <Button to={t(`hero.${currentIndex}.buttonLink`)}>
-                {t(`hero.${currentIndex}.buttonText`)}
+              <Button to={t(`hero.slides.${currentIndex}.buttonLink`)}>
+                {t(`hero.slides.${currentIndex}.buttonText`)}
               </Button>
             </div>
 
-            {/* Navigation dots */}
-            <div className="mt-8 flex space-x-3">
+            <div
+              className="mt-8 flex space-x-3"
+              role="group"
+              aria-label={t("hero.slideNavigation")}
+            >
               {desktopImages.map((_, index) => (
                 <button
                   key={index}
                   type="button"
                   onClick={() => setCurrentIndex(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                  className="w-8 h-8 md:w-10 md:h-10"
+                  aria-label={`${t("hero.goToSlide")} ${index + 1}`}
+                  className={`w-8 h-8 md:w-10 md:h-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-primary)] rounded-full`}
                 >
                   <img
                     src={index === currentIndex ? Filled : Outline}
-                    alt={
-                      index === currentIndex
-                        ? `Slide ${index + 1} active`
-                        : `Slide ${index + 1}`
-                    }
+                    alt=""
+                    role="presentation"
                     className="w-full h-full"
                   />
                 </button>

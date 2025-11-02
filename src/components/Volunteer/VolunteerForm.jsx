@@ -5,9 +5,8 @@ import AutoCloseModal from "../AutoCloseModal";
 import emailjs from "@emailjs/browser";
 
 const VolunteerForm = () => {
-  const { t, i18n } = useTranslation(); // Get translation function and current language
+  const { t, i18n } = useTranslation(); // Translation function and current language
 
-  // Map language codes to readable names (will appear in the email)
   const languageNames = {
     es: "Español",
     en: "English",
@@ -19,29 +18,29 @@ const VolunteerForm = () => {
     name: "",
     email: "",
     service: "",
-    language: languageNames[i18n.language] || i18n.language, // Track current page language
-    formType: "Volunteer Form", // Identify which form is submitted
+    language: languageNames[i18n.language] || i18n.language,
+    formType: "Volunteer Form",
   });
 
-  // Track touched fields for validation display
+  // Track touched fields
   const [touched, setTouched] = useState({
     name: false,
     email: false,
     service: false,
   });
 
-  // Store validation errors
+  // Validation errors
   const [errors, setErrors] = useState({
     name: "",
     email: "",
     service: "",
   });
 
-  const [isFormValid, setIsFormValid] = useState(false); // Overall form validity
+  const [isFormValid, setIsFormValid] = useState(false); // Form validity
   const [isSubmitting, setIsSubmitting] = useState(false); // Submission state
-  const [modalType, setModalType] = useState(""); // "" | "submitStatusSuccess" | "submitStatusFailed"
+  const [modalType, setModalType] = useState(""); // Modal type
 
-  // Sync language field with i18n current language whenever it changes
+  // Sync language field with i18n language
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
@@ -56,72 +55,76 @@ const VolunteerForm = () => {
     // Name validation
     const nameTrimmed = data.name.trim();
     const nameRegex = /^[a-zA-ZÀ-ÿ\s'-]+$/;
-    if (nameTrimmed === "") newErrors.name = t("form.requiredField");
-    else if (nameTrimmed.length < 2) newErrors.name = t("form.minLength");
-    else if (nameTrimmed.length > 50) newErrors.name = t("form.maxLength");
-    else if (!nameRegex.test(nameTrimmed))
-      newErrors.name = t("form.invalidFormat");
-    else newErrors.name = "";
+    newErrors.name =
+      nameTrimmed === ""
+        ? t("form.requiredField")
+        : nameTrimmed.length < 2
+        ? t("form.minLength")
+        : nameTrimmed.length > 50
+        ? t("form.maxLength")
+        : !nameRegex.test(nameTrimmed)
+        ? t("form.invalidFormat")
+        : "";
 
     // Email validation
+    const emailTrimmed = data.email.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (data.email.trim() === "") newErrors.email = t("form.requiredField");
-    else if (!emailRegex.test(data.email))
-      newErrors.email = t("form.invalidEmail");
-    else newErrors.email = "";
+    newErrors.email =
+      emailTrimmed === ""
+        ? t("form.requiredField")
+        : !emailRegex.test(emailTrimmed)
+        ? t("form.invalidEmail")
+        : "";
 
     // Service validation
-    if (data.service.trim() === "") newErrors.service = t("form.requiredField");
-    else newErrors.service = "";
+    const serviceTrimmed = data.service.trim();
+    newErrors.service = serviceTrimmed === "" ? t("form.requiredField") : "";
 
-    // Update errors state
     setErrors(newErrors);
 
-    // Check if all fields are valid
-    const valid = Object.values(newErrors).every((err) => err === "");
-    setIsFormValid(valid);
+    // Check overall form validity
+    setIsFormValid(Object.values(newErrors).every((err) => err === ""));
+    return newErrors;
   };
 
   // Validate on initial render
   useEffect(() => {
     validateForm(formData);
-  }, []);
+  }, [formData]);
 
   // Handle input/select change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // Remove leading spaces and multiple spaces
     const cleanValue = value.replace(/^\s+/, "").replace(/\s{2,}/g, " ");
     const updatedData = { ...formData, [name]: cleanValue };
     setFormData(updatedData);
     validateForm(updatedData);
   };
 
-  // Mark field as touched on blur
+  // Mark field as touched
   const handleBlur = (e) => {
     const { name } = e.target;
     setTouched((prev) => ({ ...prev, [name]: true }));
   };
 
-  // Handle form submission
+  // Form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!isFormValid) return; // Prevent submission if invalid
+    const validationErrors = validateForm(formData);
+    if (!Object.values(validationErrors).every((err) => err === "")) return;
 
     setIsSubmitting(true);
 
     try {
-      // Send form via EmailJS
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formData,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
+      setModalType("submitStatusSuccess");
 
-      setModalType("submitStatusSuccess"); // Show success modal
-
-      // Reset form (keep language and formType fields)
+      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -134,10 +137,22 @@ const VolunteerForm = () => {
       setIsFormValid(false);
     } catch (error) {
       console.error("EmailJS error:", error);
-      setModalType("submitStatusFailed"); // Show failure modal
+      setModalType("submitStatusFailed");
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Helper to decide whether to show error
+  const shouldShowError = (field) => {
+    const otherFieldsFilled = Object.keys(formData)
+      .filter(
+        (key) => key !== field && key !== "language" && key !== "formType"
+      )
+      .every((key) => formData[key].trim() !== "");
+    return (
+      touched[field] || (otherFieldsFilled && formData[field].trim() === "")
+    );
   };
 
   return (
@@ -146,7 +161,7 @@ const VolunteerForm = () => {
         onSubmit={handleSubmit}
         className="flex flex-col gap-4 w-full max-w-xl mt-12"
       >
-        {/* Name */}
+        {/* Name input */}
         <label htmlFor="name" className="sr-only">
           {t("form.name")}
         </label>
@@ -160,13 +175,16 @@ const VolunteerForm = () => {
           placeholder={t("form.name")}
           className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
-          autoComplete="name"
+          aria-invalid={errors.name ? "true" : "false"}
+          aria-describedby={errors.name ? "name-error" : undefined}
         />
-        {touched.name && errors.name && (
-          <span className="text-red-500 text-sm">{errors.name}</span>
+        {shouldShowError("name") && errors.name && (
+          <span id="name-error" className="text-red-500 text-sm">
+            {errors.name}
+          </span>
         )}
 
-        {/* Email */}
+        {/* Email input */}
         <label htmlFor="email" className="sr-only">
           {t("form.email")}
         </label>
@@ -180,13 +198,16 @@ const VolunteerForm = () => {
           placeholder={t("form.email")}
           className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
-          autoComplete="email"
+          aria-invalid={errors.email ? "true" : "false"}
+          aria-describedby={errors.email ? "email-error" : undefined}
         />
-        {touched.email && errors.email && (
-          <span className="text-red-500 text-sm">{errors.email}</span>
+        {shouldShowError("email") && errors.email && (
+          <span id="email-error" className="text-red-500 text-sm">
+            {errors.email}
+          </span>
         )}
 
-        {/* Service */}
+        {/* Service select */}
         <label htmlFor="service" className="sr-only">
           {t("form.selectService")}
         </label>
@@ -198,27 +219,31 @@ const VolunteerForm = () => {
           onBlur={handleBlur}
           className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
+          aria-invalid={errors.service ? "true" : "false"}
+          aria-describedby={errors.service ? "service-error" : undefined}
         >
           <option value="">{t("form.selectService")}</option>
           <option value="walks">{t("form.walks")}</option>
           <option value="volunteer">{t("form.volunteer")}</option>
           <option value="general">{t("form.general")}</option>
         </select>
-        {touched.service && errors.service && (
-          <span className="text-red-500 text-sm">{errors.service}</span>
+        {shouldShowError("service") && errors.service && (
+          <span id="service-error" className="text-red-500 text-sm">
+            {errors.service}
+          </span>
         )}
 
         {/* Hidden fields */}
         <input type="hidden" name="language" value={formData.language} />
         <input type="hidden" name="formType" value={formData.formType} />
 
-        {/* Submit */}
+        {/* Submit button */}
         <FormButton disabled={!isFormValid} isLoading={isSubmitting}>
           {isSubmitting ? t("form.sending") : t("form.submit")}
         </FormButton>
       </form>
 
-      {/* Modal */}
+      {/* Modal for submission status */}
       {modalType && (
         <AutoCloseModal type={modalType} onClose={() => setModalType("")} />
       )}

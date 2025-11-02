@@ -5,43 +5,34 @@ import AutoCloseModal from "../AutoCloseModal";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(); // Translation function and current language
 
-  // Map language codes to human-readable names
-  const languageNames = {
-    es: "Español",
-    en: "English",
-    fr: "Français",
-  };
+  const languageNames = { es: "Español", en: "English", fr: "Français" };
 
-  // Initialize form data state
+  // Initialize form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-    language: languageNames[i18n.language] || i18n.language, // Keep track of page language
-    formType: "Contact Form", // Identify which form is submitted
+    language: languageNames[i18n.language] || i18n.language,
+    formType: "Contact Form",
   });
 
-  // Track touched fields for validation feedback
+  // Track touched fields
   const [touched, setTouched] = useState({
     name: false,
     email: false,
     message: false,
   });
 
-  // Store validation errors
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  // Validation errors
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
 
-  const [isFormValid, setIsFormValid] = useState(false); // Form validity
+  const [isFormValid, setIsFormValid] = useState(false); // Overall form validity
   const [isSubmitting, setIsSubmitting] = useState(false); // Submission state
-  const [modalType, setModalType] = useState(""); // "" | "submitStatusSuccess" | "submitStatusFailed"
+  const [modalType, setModalType] = useState(""); // Modal type
 
-  // Keep language in sync with i18n
+  // Sync language field with i18n language
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
@@ -53,75 +44,86 @@ const ContactForm = () => {
   const validateForm = (data) => {
     const newErrors = {};
 
-    // Name
+    // Name validation
     const nameTrimmed = data.name.trim();
     const nameRegex = /^[a-zA-ZÀ-ÿ\s'-]+$/;
-    if (nameTrimmed === "") newErrors.name = t("form.requiredField");
-    else if (nameTrimmed.length < 2) newErrors.name = t("form.minLength");
-    else if (nameTrimmed.length > 50) newErrors.name = t("form.maxLength");
-    else if (!nameRegex.test(nameTrimmed))
-      newErrors.name = t("form.invalidFormat");
-    else newErrors.name = "";
+    newErrors.name =
+      nameTrimmed === ""
+        ? t("form.requiredField")
+        : nameTrimmed.length < 2
+        ? t("form.minLength")
+        : nameTrimmed.length > 50
+        ? t("form.maxLength")
+        : !nameRegex.test(nameTrimmed)
+        ? t("form.invalidFormat")
+        : "";
 
-    // Email
+    // Email validation
+    const emailTrimmed = data.email.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (data.email.trim() === "") newErrors.email = t("form.requiredField");
-    else if (!emailRegex.test(data.email))
-      newErrors.email = t("form.invalidEmail");
-    else newErrors.email = "";
+    newErrors.email =
+      emailTrimmed === ""
+        ? t("form.requiredField")
+        : !emailRegex.test(emailTrimmed)
+        ? t("form.invalidEmail")
+        : "";
 
-    // Message
+    // Message validation
     const messageTrimmed = data.message.trim();
-    if (messageTrimmed === "") newErrors.message = t("form.requiredField");
-    else if (messageTrimmed.length < 5) newErrors.message = t("form.minLength");
-    else if (messageTrimmed.length > 500)
-      newErrors.message = t("form.maxLength");
-    else newErrors.message = "";
+    newErrors.message =
+      messageTrimmed === ""
+        ? t("form.requiredField")
+        : messageTrimmed.length < 5
+        ? t("form.minLength")
+        : messageTrimmed.length > 500
+        ? t("form.maxLength")
+        : "";
 
     setErrors(newErrors);
-    // Check if all fields are valid
+
+    // Check overall form validity
     setIsFormValid(Object.values(newErrors).every((err) => err === ""));
+    return newErrors;
   };
 
+  // Validate on initial render and whenever formData changes
   useEffect(() => {
-    validateForm(formData); // Validate initially
-  }, []);
+    validateForm(formData);
+  }, [formData]);
 
   // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const cleanValue = value.replace(/^\s+/, "").replace(/\s{2,}/g, " ");
+    const cleanValue = value.replace(/^\s+/, "").replace(/\s{2,}/g, " "); // Remove leading spaces and multiple spaces
     const updatedData = { ...formData, [name]: cleanValue };
     setFormData(updatedData);
     validateForm(updatedData);
   };
 
-  // Handle blur events to mark fields as touched
+  // Handle input blur to mark as touched
   const handleBlur = (e) => {
     const { name } = e.target;
     setTouched((prev) => ({ ...prev, [name]: true }));
   };
 
-  // Handle form submission
+  // Form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!isFormValid) return;
+
+    const validationErrors = validateForm(formData);
+    if (!Object.values(validationErrors).every((err) => err === "")) return;
 
     setIsSubmitting(true);
-
     try {
-      // Send email using EmailJS
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formData,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
-
-      // Show success modal
       setModalType("submitStatusSuccess");
 
-      // Reset form (keep language and formType)
+      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -134,10 +136,22 @@ const ContactForm = () => {
       setIsFormValid(false);
     } catch (error) {
       console.error("EmailJS error:", error);
-      setModalType("submitStatusFailed"); // Show failure modal
+      setModalType("submitStatusFailed");
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Helper to decide whether to show error
+  const shouldShowError = (field) => {
+    const otherFieldsFilled = Object.keys(formData)
+      .filter(
+        (key) => key !== field && key !== "language" && key !== "formType"
+      )
+      .every((key) => formData[key].trim() !== "");
+    return (
+      touched[field] || (otherFieldsFilled && formData[field].trim() === "")
+    );
   };
 
   return (
@@ -146,8 +160,12 @@ const ContactForm = () => {
         onSubmit={handleSubmit}
         className="flex flex-col gap-4 w-full max-w-xl mt-5 ml-0"
       >
-        {/* Name */}
+        {/* Name input */}
+        <label htmlFor="name" className="sr-only">
+          {t("form.name")}
+        </label>
         <input
+          id="name"
           type="text"
           name="name"
           value={formData.name}
@@ -156,14 +174,23 @@ const ContactForm = () => {
           placeholder={t("form.name")}
           className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
+          aria-required="true"
+          aria-invalid={errors.name ? "true" : "false"}
+          aria-describedby={errors.name ? "name-error" : undefined}
           autoComplete="name"
         />
-        {touched.name && errors.name && (
-          <span className="text-red-500 text-sm">{errors.name}</span>
+        {shouldShowError("name") && errors.name && (
+          <span id="name-error" className="text-red-500 text-sm">
+            {errors.name}
+          </span>
         )}
 
-        {/* Email */}
+        {/* Email input */}
+        <label htmlFor="email" className="sr-only">
+          {t("form.email")}
+        </label>
         <input
+          id="email"
           type="email"
           name="email"
           value={formData.email}
@@ -172,14 +199,23 @@ const ContactForm = () => {
           placeholder={t("form.email")}
           className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
+          aria-required="true"
+          aria-invalid={errors.email ? "true" : "false"}
+          aria-describedby={errors.email ? "email-error" : undefined}
           autoComplete="email"
         />
-        {touched.email && errors.email && (
-          <span className="text-red-500 text-sm">{errors.email}</span>
+        {shouldShowError("email") && errors.email && (
+          <span id="email-error" className="text-red-500 text-sm">
+            {errors.email}
+          </span>
         )}
 
-        {/* Message */}
+        {/* Message input */}
+        <label htmlFor="message" className="sr-only">
+          {t("form.message")}
+        </label>
         <textarea
+          id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
@@ -187,22 +223,31 @@ const ContactForm = () => {
           placeholder={t("form.message")}
           className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)] h-32 resize-none max-w-full"
           required
+          aria-required="true"
+          aria-invalid={errors.message ? "true" : "false"}
+          aria-describedby={errors.message ? "message-error" : undefined}
         />
-        {touched.message && errors.message && (
-          <span className="text-red-500 text-sm">{errors.message}</span>
+        {shouldShowError("message") && errors.message && (
+          <span id="message-error" className="text-red-500 text-sm">
+            {errors.message}
+          </span>
         )}
 
-        {/* Hidden fields */}
+        {/* Hidden fields for language and form type */}
         <input type="hidden" name="language" value={formData.language} />
         <input type="hidden" name="formType" value={formData.formType} />
 
-        {/* Submit */}
-        <FormButton disabled={!isFormValid} isLoading={isSubmitting}>
+        {/* Submit button */}
+        <FormButton
+          disabled={!isFormValid}
+          isLoading={isSubmitting}
+          type="submit"
+        >
           {isSubmitting ? t("form.sending") : t("form.submit")}
         </FormButton>
       </form>
 
-      {/* Modal */}
+      {/* Modal for submission status */}
       {modalType && (
         <AutoCloseModal type={modalType} onClose={() => setModalType("")} />
       )}

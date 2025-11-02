@@ -31,7 +31,7 @@ const Services = () => {
         {/* Services grid */}
         {loading ? (
           <p className="text-center text-lg text-[var(--color-text-dark)]">
-            Loading services...
+            {t("servicesSection.loading")}
           </p>
         ) : (
           <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -56,3 +56,4 @@ const Services = () => {
 };
 
 export default Services;
+
