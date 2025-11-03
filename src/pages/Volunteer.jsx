@@ -15,7 +15,7 @@ const Volunteer = () => {
       {/* Main section with bottom padding to respect footer */}
       <main className="px-6">
         {/* Main section title */}
-        <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-40">
+        <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-30">
           <h1 className="text-[50px] md:text-[70px] lg:text-[90px]  font-extrabold mb-20 text-[var(--color-text-dark)]">
             {t("volunteerSection.title")}
           </h1>

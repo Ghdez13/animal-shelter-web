@@ -1,0 +1,27 @@
+import { useTranslation } from "react-i18next";
+import SectionBackground from "../components/SectionBackground";
+import BackgroundMobile from "../assets/images/background-mobile.webp";
+import AdoptionsGallery from "../components/Adoptions/AdoptionsGallery";
+
+const Adoptions = () => {
+  const { t } = useTranslation();
+
+  return (
+    // Wrap main content with responsive mobile background
+    <SectionBackground image={BackgroundMobile} alt="Contact page background">
+      <main className="px-6">
+        {/* Page title */}
+        <div className="max-w-6xl mx-auto px-6 md:px-6 lg:px-6 mb-8">
+          <h1 className="text-[50px] md:text-[70px] lg:text-[90px]  font-extrabold  text-[var(--color-text-dark)]">
+            {t("adoptions.title")}
+          </h1>
+        </div>
+
+        {/* Gallery Section */}
+        <AdoptionsGallery />
+      </main>
+    </SectionBackground>
+  );
+};
+
+export default Adoptions;

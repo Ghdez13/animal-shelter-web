@@ -33,13 +33,13 @@
         "title": "Qui nous sommes",
         "text": "Notre refuge existe pour protéger, soigner et donner de l’espoir aux animaux abandonnés. Découvrez notre mission, nos valeurs et les histoires inspirantes qui nous motivent chaque jour.",
         "buttonText": "En savoir plus",
-        "buttonLink": "/a-propos"
+        "buttonLink": "/about-us"
       },
       {
         "title": "Participez au changement",
         "text": "Votre soutien peut prendre de nombreuses formes : un peu de temps pour aider, un don pour nourrir ou simplement partager pour sensibiliser. Ensemble, chaque petit geste construit un avenir meilleur pour eux.",
         "buttonText": "Rejoignez-nous",
-        "buttonLink": "/benevolat"
+        "buttonLink": "/volunteer"
       }
     ]
   },
@@ -193,6 +193,35 @@
     "bannerDescription": "Amis à adopter",
     "button": "En savoir plus"
   },
+
+  "adoptions": {
+    "title": "Animaux à Adopter"
+  },
+
+"adoptionsGallery": {
+  "description": "Rencontrez nos adorables amis à la recherche d'un nouveau foyer.",
+  "filterDogs": "Chiens",
+  "filterCats": "Chats",
+  "filterOthers": "Autres"
+},
+  
+"animalModal": {
+  "close": "Fermer",
+  "age": "Âge",
+  "sex": "Sexe",
+  "size": "Taille",
+  "sterilized": "Stérilisé",
+  "personality": "Personnalité",
+  "interestedIn": "Intéressé par {{name}} ?",
+  "namePlaceholder": "Votre nom",
+  "emailPlaceholder": "Votre e-mail",
+  "submitButton": "Demander des informations",
+  "thankYou": "Nous vous contacterons bientôt."
+},
+
+"animalCard": {
+  "button": "Adoptez-moi"
+},
 
   "alerts": {
     "submitStatusSuccess": "Votre message a été envoyé ! 😸",

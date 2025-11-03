@@ -195,6 +195,36 @@
     "button": "More Info"
   },
 
+  "adoptions": {
+    "title": "Animals for Adoption"
+  },
+
+    "adoptionsGallery": {
+  "description": "Meet our lovely friends looking for a new home.",
+  "filterDogs": "Dogs",
+  "filterCats": "Cats",
+  "filterOthers": "Others"
+},
+
+
+"animalModal": {
+  "close": "Close",
+  "age": "Age",
+  "sex": "Sex",
+  "size": "Size",
+  "sterilized": "Sterilized",
+  "personality": "Personality",
+  "interestedIn": "Interested in {{name}}?",
+  "namePlaceholder": "Your name",
+  "emailPlaceholder": "Your email",
+  "submitButton": "Request information",
+  "thankYou": "We will contact you soon."
+},
+
+"animalCard": {
+  "button": "Take home"
+},
+
   "alerts": {
     "submitStatusSuccess": "Your message has been sent! 😸",
     "submitStatusFailed": "Oops! Something went wrong, try again. 😿",

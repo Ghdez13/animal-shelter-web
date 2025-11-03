@@ -27,19 +27,19 @@
         "title": "Un amigo te espera",
         "text": "Cada perro o gato merece una segunda oportunidad. Al adoptar, conviertes un pasado roto en un futuro lleno de amor y lealtad. Abre tu corazón y tu hogar será su refugio seguro.",
         "buttonText": "Conoce más",
-        "buttonLink": "/servicios"
+        "buttonLink": "/services"
       },
       {
         "title": "Quiénes somos",
         "text": "Nuestro refugio existe para proteger, cuidar y dar esperanza a los animales abandonados. Descubre nuestra misión, valores e historias inspiradoras que nos motivan cada día.",
         "buttonText": "Conoce más",
-        "buttonLink": "/sobre-nosotros"
+        "buttonLink": "/about-us"
       },
       {
         "title": "Sé parte del cambio",
         "text": "Tu apoyo puede tomar muchas formas: tiempo para ayudar, una donación para alimentar o simplemente compartir para crear conciencia. Juntos, cada pequeño gesto construye un mejor mañana para ellos.",
         "buttonText": "Únete",
-        "buttonLink": "/voluntariado"
+        "buttonLink": "/volunteer"
       }
     ]
   },
@@ -194,6 +194,35 @@
     "bannerDescription": "Amigos para adoptar",
     "button": "Más información"
   },
+
+  "adoptions": {
+    "title": "Candidatos en Adopción"
+  },
+
+"adoptionsGallery": {
+  "description": "Conoce a nuestros adorables amigos que buscan un nuevo hogar.",
+  "filterDogs": "Perros",
+  "filterCats": "Gatos",
+  "filterOthers": "Otros"
+},
+
+"animalModal": {
+  "close": "Cerrar",
+  "age": "Edad",
+  "sex": "Sexo",
+  "size": "Tamaño",
+  "sterilized": "Esterilizado",
+  "personality": "Personalidad",
+  "interestedIn": "¿Interesado en {{name}}?",
+  "namePlaceholder": "Tu nombre",
+  "emailPlaceholder": "Tu correo electrónico",
+  "submitButton": "Solicitar información",
+  "thankYou": "Nos pondremos en contacto contigo pronto."
+},
+
+"animalCard": {
+  "button": "Llévame a casa"
+},
 
   "alerts": {
     "submitStatusSuccess": "¡Tu mensaje ha sido enviado! 😸",

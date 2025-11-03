@@ -17,7 +17,7 @@
       "en": "See animals",
       "fr": "Voir les animaux"
     },
-    "link": "/adopciones"
+    "link": "/adoptions"
   },
   {
     "id": "service_2",
@@ -37,7 +37,7 @@
       "en": "Learn more",
       "fr": "En savoir plus"
     },
-    "link": "/hotel"
+    "link": "/Hotel"
   },
   {
     "id": "service_3",
@@ -57,7 +57,7 @@
       "en": "More info",
       "fr": "Plus d'informations"
     },
-    "link": "/campanas"
+    "link": "/Campaigns"
   },
   {
     "id": "service_4",
@@ -77,6 +77,6 @@
       "en": "Report",
       "fr": "Signaler"
     },
-    "link": "/perdidos"
+    "link": "/LostFound"
   }
 ]
