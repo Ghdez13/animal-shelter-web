@@ -37,7 +37,7 @@
       "en": "Learn more",
       "fr": "En savoir plus"
     },
-    "link": "/Hotel"
+    "link": "/hotel"
   },
   {
     "id": "service_3",
@@ -57,7 +57,7 @@
       "en": "More info",
       "fr": "Plus d'informations"
     },
-    "link": "/Campaigns"
+    "link": "/campaigns"
   },
   {
     "id": "service_4",
@@ -77,6 +77,6 @@
       "en": "Report",
       "fr": "Signaler"
     },
-    "link": "/LostFound"
+    "link": "/lostFound"
   }
 ]

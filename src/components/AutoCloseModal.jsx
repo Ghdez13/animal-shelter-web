@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-const AutoCloseModal = ({ type, onClose, duration = 3000 }) => {
+const AutoCloseModal = ({ type, onClose, duration = 3000, values = {} }) => {
   const { t } = useTranslation();
 
   // Automatically close modal after `duration` milliseconds
@@ -21,7 +21,8 @@ const AutoCloseModal = ({ type, onClose, duration = 3000 }) => {
         className="bg-[var(--color-bg-article)] text-[var(--color-text-dark)] rounded-lg border-t-4 border-[#ef7a2b] p-6 w-11/12 max-w-sm text-center shadow-lg"
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
       >
-        <p className="text-[20px]">{t(`alerts.${type}`)}</p>
+        {/* Interpolates variables from `values` */}
+        <p className="text-[20px]">{t(`alerts.${type}`, values)}</p>
       </div>
     </div>
   );

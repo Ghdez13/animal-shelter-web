@@ -202,7 +202,8 @@
   "description": "Rencontrez nos adorables amis à la recherche d'un nouveau foyer.",
   "filterDogs": "Chiens",
   "filterCats": "Chats",
-  "filterOthers": "Autres"
+  "filterOthers": "Autres",
+  "noResults": "Quelle joie ! Tous les petits compagnons de cette catégorie ont déjà trouvé leur foyer pour toujours. 🐶🐱"
 },
   
 "animalModal": {
@@ -213,10 +214,7 @@
   "sterilized": "Stérilisé",
   "personality": "Personnalité",
   "interestedIn": "Intéressé par {{name}} ?",
-  "namePlaceholder": "Votre nom",
-  "emailPlaceholder": "Votre e-mail",
-  "submitButton": "Demander des informations",
-  "thankYou": "Nous vous contacterons bientôt."
+  "submitButton": "Demander des informations"
 },
 
 "animalCard": {
@@ -225,8 +223,13 @@
 
   "alerts": {
     "submitStatusSuccess": "Votre message a été envoyé ! 😸",
+    "adoptionSubmitSuccess": "Merci pour votre intérêt pour {{name}} ! 🐾 Nous vous contacterons bientôt.",
     "submitStatusFailed": "Oups ! Quelque chose s'est mal passé, réessayez. 😿",
     "instagramUnderConstruction": "🚧 Notre Instagram est en construction.",
     "sectionUnderConstruction":"🚧 Section en construction. Merci pour votre patience."
+  },
+
+  "scrollToTop":{
+    "message":"Retour en haut"
   }
 }

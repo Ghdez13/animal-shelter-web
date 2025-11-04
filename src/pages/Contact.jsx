@@ -44,7 +44,7 @@ const Contact = () => {
                 <p className="text-[40px] md:text-[40px] font-semibold text-[var(--color-text-light)] mb-4">
                   {t("contact.bannerDescription")}
                 </p>
-                <Button to="/services" className="btn-green">
+                <Button to="/adoptions" className="btn-green">
                   {t("contact.button")}
                 </Button>
               </div>

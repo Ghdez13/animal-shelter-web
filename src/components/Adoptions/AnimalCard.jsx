@@ -7,11 +7,12 @@ const AnimalCard = ({ animal, onSelect }) => {
   const { t } = useTranslation();
 
   // Get the first image for preview in the card
-  const mainImage = animal.images && animal.images.length > 0 ? animal.images[0] : "";
+  const mainImage =
+    animal.images && animal.images.length > 0 ? animal.images[0] : "";
 
   return (
     <article
-      className="flex flex-col items-center bg-[var(--color-bg-light)]  rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 transition-transform duration-300"
+      className="flex flex-col items-center  bg-transparent  rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 transition-transform duration-300"
       aria-label={animal.name}
     >
       {/* Animal image */}
@@ -22,8 +23,8 @@ const AnimalCard = ({ animal, onSelect }) => {
       />
 
       {/* Animal info */}
-      <div className="p-6 flex flex-col items-center text-center">
-        <h2 className="text-[28px] font-semibold text-[var(--color-text-dark)] mb-4">
+      <div className="p-6  flex flex-col items-center text-center text-[var(--color-text-dark)]">
+        <h2 className="text-[24px] md:text-[28px] font-semibold mb-4">
           {animal.name}
         </h2>
 

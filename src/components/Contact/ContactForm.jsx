@@ -239,7 +239,7 @@ const ContactForm = () => {
 
         {/* Submit button */}
         <FormButton
-          disabled={!isFormValid}
+          disabled={!isFormValid || isSubmitting}
           isLoading={isSubmitting}
           type="submit"
         >

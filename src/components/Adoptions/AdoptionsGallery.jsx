@@ -40,75 +40,81 @@ const AdoptionsGallery = () => {
         );
 
   return (
-    <main className="px-6">
+    <section className="relative flex flex-col items-start gap-10 text-[var(--color-text-dark)]">
       {/* Page description */}
-      <div className="max-w-6xl mx-auto px-6 md:px-6 lg:px-6">
-        <p className="text-[20px] text-[var(--color-text-dark)]">
-          {t("adoptionsGallery.description")}
-        </p>
+      <div className="w-full max-w-6xl px-0 md:px-0 lg:px-6 mx-auto">
+        <p className="text-lg md:text-xl">{t("adoptionsGallery.description")}</p>
       </div>
 
       {/* Filter section */}
-      <div
-        className="max-w-6xl mx-auto my-10 p-4 rounded-xl flex flex-wrap justify-center gap-6"
-        style={{
-          backgroundColor: "var(--color-bg-orange)",
-          color: "var(--color-text-light)",
-        }}
-      >
-        <label className="flex items-center gap-3 cursor-pointer">
-          <input
-            type="checkbox"
-            checked={selectedFilters.includes("dog")}
-            onChange={() => handleFilterChange("dog")}
-            className="w-5 h-5"
-            style={{
-              accentColor: "var(--color-focus-secondary)",
-              color: "#eeeeee",
-            }}
-          />
-          <span className="text-lg">{t("adoptionsGallery.filterDogs")}</span>
-        </label>
+      <div className="w-full flex justify-center">
+        <div
+          className="inline-flex flex-wrap justify-center items-center gap-6 p-4 rounded-xl shadow-md border-t-4"
+          style={{
+            backgroundColor: "var(--color-bg-orange)",
+            color: "var(--color-text-light)",
+            borderColor: "var(--color-focus-secondary)",
+          }}
+        >
+          <label className="flex items-center gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={selectedFilters.includes("dog")}
+              onChange={() => handleFilterChange("dog")}
+              className="w-5 h-5"
+              style={{ accentColor: "var(--color-focus-secondary)" }}
+            />
+            <span className="text-lg">{t("adoptionsGallery.filterDogs")}</span>
+          </label>
 
-        <label className="flex items-center gap-3 cursor-pointer">
-          <input
-            type="checkbox"
-            checked={selectedFilters.includes("cat")}
-            onChange={() => handleFilterChange("cat")}
-            className="w-5 h-5"
-            style={{
-              accentColor: "var(--color-focus-secondary)",
-              color: "#eeeeee",
-            }}
-          />
-          <span className="text-lg">{t("adoptionsGallery.filterCats")}</span>
-        </label>
+          <label className="flex items-center gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={selectedFilters.includes("cat")}
+              onChange={() => handleFilterChange("cat")}
+              className="w-5 h-5"
+              style={{ accentColor: "var(--color-focus-secondary)" }}
+            />
+            <span className="text-lg">{t("adoptionsGallery.filterCats")}</span>
+          </label>
 
-        <label className="flex items-center gap-3 cursor-pointer">
-          <input
-            type="checkbox"
-            checked={selectedFilters.includes("other")}
-            onChange={() => handleFilterChange("other")}
-            className="w-5 h-5"
-            style={{
-              accentColor: "var(--color-focus-secondary)",
-              color: "#eeeeee",
-            }}
-          />
-          <span className="text-lg">{t("adoptionsGallery.filterOthers")}</span>
-        </label>
+          <label className="flex items-center gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={selectedFilters.includes("other")}
+              onChange={() => handleFilterChange("other")}
+              className="w-5 h-5"
+              style={{ accentColor: "var(--color-focus-secondary)" }}
+            />
+            <span className="text-lg">{t("adoptionsGallery.filterOthers")}</span>
+          </label>
+        </div>
       </div>
 
       {/* Gallery of adoption candidates */}
-      <section className="max-w-6xl mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {filteredAnimals.map((animal) => (
-          <AnimalCard
-            key={animal.name}
-            animal={animal}
-            onSelect={() => handleSelectAnimal(animal)}
-          />
-        ))}
-      </section>
+      <div className="w-full max-w-6xl px-0 md:px-0 lg:px-6 mx-auto">
+        {filteredAnimals.length === 0 ? (
+          <p
+            className="text-center text-lg md:text-xl p-6 rounded-xl"
+            style={{
+              backgroundColor: "var(--color-bg-light)",
+              color: "var(--color-text-dark)",
+            }}
+          >
+            {t("adoptionsGallery.noResults")}
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {filteredAnimals.map((animal) => (
+              <AnimalCard
+                key={animal.name}
+                animal={animal}
+                onSelect={() => handleSelectAnimal(animal)}
+              />
+            ))}
+          </div>
+        )}
+      </div>
 
       {/* Modal for animal details */}
       <AnimalModal
@@ -116,7 +122,7 @@ const AdoptionsGallery = () => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
       />
-    </main>
+    </section>
   );
 };
 

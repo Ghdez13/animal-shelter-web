@@ -1,46 +1,45 @@
+// src/components/Adoptions/AdoptionForm.jsx
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import FormButton from "../FormButton";
 import AutoCloseModal from "../AutoCloseModal";
 import emailjs from "@emailjs/browser";
 
-const VolunteerForm = () => {
-  const { t, i18n } = useTranslation(); // Translation function and current language
+const AdoptionForm = ({ animalName, onClose }) => {
+  const { t, i18n } = useTranslation();
 
+  // Map i18n language codes to readable language names
   const languageNames = {
     es: "Español",
     en: "English",
     fr: "Français",
   };
 
-  // Initialize form state
+  // State for form data
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    service: "",
+    animalName: animalName || "",
     language: languageNames[i18n.language] || i18n.language,
-    formType: "Volunteer Form",
+    formType: "Adoption Form",
   });
 
-  // Track touched fields
-  const [touched, setTouched] = useState({
-    name: false,
-    email: false,
-    service: false,
-  });
+  // State for touched inputs
+  const [touched, setTouched] = useState({ name: false, email: false });
 
-  // Validation errors
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    service: "",
-  });
+  // State for validation errors
+  const [errors, setErrors] = useState({ name: "", email: "" });
 
-  const [isFormValid, setIsFormValid] = useState(false); // Form validity
-  const [isSubmitting, setIsSubmitting] = useState(false); // Submission state
-  const [modalType, setModalType] = useState(""); // Modal type
+  // State for form validity
+  const [isFormValid, setIsFormValid] = useState(false);
 
-  // Sync language field with i18n language
+  // State for form submission status
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // State for showing auto-close modal (success/failure)
+  const [modalType, setModalType] = useState("");
+
+  // Update language field whenever i18n language changes
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
@@ -48,11 +47,11 @@ const VolunteerForm = () => {
     }));
   }, [i18n.language]);
 
-  // Validation function
+  // Function to validate form fields
   const validateForm = (data) => {
     const newErrors = {};
 
-    // Name validation
+    // Validate name
     const nameTrimmed = data.name.trim();
     const nameRegex = /^[a-zA-ZÀ-ÿ\s'-]+$/;
     newErrors.name =
@@ -66,7 +65,7 @@ const VolunteerForm = () => {
         ? t("form.invalidFormat")
         : "";
 
-    // Email validation
+    // Validate email
     const emailTrimmed = data.email.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     newErrors.email =
@@ -76,23 +75,17 @@ const VolunteerForm = () => {
         ? t("form.invalidEmail")
         : "";
 
-    // Service validation
-    const serviceTrimmed = data.service.trim();
-    newErrors.service = serviceTrimmed === "" ? t("form.requiredField") : "";
-
     setErrors(newErrors);
-
-    // Check overall form validity
     setIsFormValid(Object.values(newErrors).every((err) => err === ""));
     return newErrors;
   };
 
-  // Validate on initial render
+  // Re-validate form whenever formData changes
   useEffect(() => {
     validateForm(formData);
   }, [formData]);
 
-  // Handle input/select change
+  // Handle input changes and update form data
   const handleChange = (e) => {
     const { name, value } = e.target;
     const cleanValue = value.replace(/^\s+/, "").replace(/\s{2,}/g, " ");
@@ -101,49 +94,60 @@ const VolunteerForm = () => {
     validateForm(updatedData);
   };
 
-  // Mark field as touched
+  // Mark input as touched when it loses focus
   const handleBlur = (e) => {
     const { name } = e.target;
     setTouched((prev) => ({ ...prev, [name]: true }));
   };
 
-  // Form submission
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm(formData);
+
+    // Stop submission if any validation errors
     if (!Object.values(validationErrors).every((err) => err === "")) return;
 
     setIsSubmitting(true);
 
     try {
+      // Send form via EmailJS
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formData,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
-      setModalType("submitStatusSuccess");
 
-      // Reset form
+      // Show success modal
+      setModalType("adoptionSubmitSuccess");
+
+      // Reset form state
       setFormData({
         name: "",
         email: "",
-        service: "",
+        animalName: animalName || "",
         language: languageNames[i18n.language] || i18n.language,
-        formType: "Volunteer Form",
+        formType: "Adoption Form",
       });
-      setTouched({ name: false, email: false, service: false });
-      setErrors({ name: "", email: "", service: "" });
+      setTouched({ name: false, email: false });
+      setErrors({ name: "", email: "" });
       setIsFormValid(false);
+
+      // Close AnimalModal shortly after success (matches AutoCloseModal)
+      setTimeout(() => {
+        if (onClose) onClose();
+      }, 2500);
     } catch (error) {
       console.error("EmailJS error:", error);
+      // Show failure modal
       setModalType("submitStatusFailed");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Helper to decide whether to show error
+  // Determine whether to show error messages
   const shouldShowError = (field) => {
     const otherFieldsFilled = Object.keys(formData)
       .filter(
@@ -158,8 +162,8 @@ const VolunteerForm = () => {
   return (
     <>
       <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-4 w-full max-w-xl mt-12"
+        onSubmit={handleSubmit} // Attach submit handler
+        className="flex flex-col gap-4 w-full max-w-xl mt-6"
       >
         {/* Name input */}
         <label htmlFor="name" className="sr-only">
@@ -170,8 +174,8 @@ const VolunteerForm = () => {
           type="text"
           name="name"
           value={formData.name}
-          onChange={handleChange}
-          onBlur={handleBlur}
+          onChange={handleChange} // Handle input changes
+          onBlur={handleBlur} // Mark as touched on blur
           placeholder={t("form.name")}
           className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
@@ -193,8 +197,8 @@ const VolunteerForm = () => {
           type="email"
           name="email"
           value={formData.email}
-          onChange={handleChange}
-          onBlur={handleBlur}
+          onChange={handleChange} // Handle input changes
+          onBlur={handleBlur} // Mark as touched on blur
           placeholder={t("form.email")}
           className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
           required
@@ -207,52 +211,31 @@ const VolunteerForm = () => {
           </span>
         )}
 
-        {/* Service select */}
-        <label htmlFor="service" className="sr-only">
-          {t("form.selectService")}
-        </label>
-        <select
-          id="service"
-          name="service"
-          value={formData.service}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
-          required
-          aria-invalid={errors.service ? "true" : "false"}
-          aria-describedby={errors.service ? "service-error" : undefined}
-        >
-          <option value="">{t("form.selectService")}</option>
-          <option value="walks">{t("form.walks")}</option>
-          <option value="volunteer">{t("form.volunteer")}</option>
-          <option value="general">{t("form.general")}</option>
-        </select>
-        {shouldShowError("service") && errors.service && (
-          <span id="service-error" className="text-red-500 text-sm">
-            {errors.service}
-          </span>
-        )}
-
-        {/* Hidden fields */}
+        {/* Hidden fields for template data */}
+        <input type="hidden" name="animalName" value={formData.animalName} />
         <input type="hidden" name="language" value={formData.language} />
         <input type="hidden" name="formType" value={formData.formType} />
 
         {/* Submit button */}
         <FormButton
-          disabled={!isFormValid || isSubmitting}
-          isLoading={isSubmitting}
-          type="submit"
+          disabled={!isFormValid || isSubmitting} // Disable when invalid or submitting
+          isLoading={isSubmitting} // Show loading state
+          type="submit" // Ensure it triggers form submission
         >
-          {isSubmitting ? t("form.sending") : t("form.submit")}
+          {isSubmitting ? t("form.sending") : t("animalModal.submitButton")}
         </FormButton>
       </form>
 
-      {/* Modal for submission status */}
+      {/* AutoCloseModal to show success/failure messages */}
       {modalType && (
-        <AutoCloseModal type={modalType} onClose={() => setModalType("")} />
+        <AutoCloseModal
+          type={modalType}
+          onClose={() => setModalType("")} // Close modal when timeout ends
+          values={{ name: animalName }} // Pass animal name for interpolation
+        />
       )}
     </>
   );
 };
 
-export default VolunteerForm;
+export default AdoptionForm;

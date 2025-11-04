@@ -203,7 +203,9 @@
   "description": "Meet our lovely friends looking for a new home.",
   "filterDogs": "Dogs",
   "filterCats": "Cats",
-  "filterOthers": "Others"
+  "filterOthers": "Others",
+  "noResults": "What a joy! All the little furry friends in this category have already found their forever homes. 🐶🐱"
+
 },
 
 
@@ -215,10 +217,8 @@
   "sterilized": "Sterilized",
   "personality": "Personality",
   "interestedIn": "Interested in {{name}}?",
-  "namePlaceholder": "Your name",
-  "emailPlaceholder": "Your email",
-  "submitButton": "Request information",
-  "thankYou": "We will contact you soon."
+  "submitButton": "Request information"
+
 },
 
 "animalCard": {
@@ -227,8 +227,13 @@
 
   "alerts": {
     "submitStatusSuccess": "Your message has been sent! 😸",
+    "adoptionSubmitSuccess": "Thank you for your interest in {{name}}! 🐾 We’ll get in touch with you soon.",
     "submitStatusFailed": "Oops! Something went wrong, try again. 😿",
     "instagramUnderConstruction": "🚧 Our Instagram is under construction.",
     "sectionUnderConstruction":"🚧 Section under construction. Thank you for your patience."
+  },
+
+  "scrollToTop":{
+    "message":"Scroll to top"
   }
 }

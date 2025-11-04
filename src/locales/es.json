@@ -203,7 +203,9 @@
   "description": "Conoce a nuestros adorables amigos que buscan un nuevo hogar.",
   "filterDogs": "Perros",
   "filterCats": "Gatos",
-  "filterOthers": "Otros"
+  "filterOthers": "Otros",
+  "noResults": "¡Qué alegría! Todos los peluditos de esta categoría ya encontraron hogar. 🐶🐱"
+
 },
 
 "animalModal": {
@@ -214,10 +216,7 @@
   "sterilized": "Esterilizado",
   "personality": "Personalidad",
   "interestedIn": "¿Interesado en {{name}}?",
-  "namePlaceholder": "Tu nombre",
-  "emailPlaceholder": "Tu correo electrónico",
-  "submitButton": "Solicitar información",
-  "thankYou": "Nos pondremos en contacto contigo pronto."
+  "submitButton": "Solicitar información"
 },
 
 "animalCard": {
@@ -226,8 +225,13 @@
 
   "alerts": {
     "submitStatusSuccess": "¡Tu mensaje ha sido enviado! 😸",
+    "adoptionSubmitSuccess": "¡Gracias por tu interés en {{name}}! 🐾 Nos pondremos en contacto contigo pronto.",
     "submitStatusFailed": "¡Ups! Algo salió mal, inténtalo de nuevo. 😿",
     "instagramUnderConstruction": "🚧 Nuestro Instagram está en construcción.",
     "sectionUnderConstruction":"🚧 Sección en construcción. Gracias por tu paciencia."
+  },
+
+  "scrollToTop":{
+    "message":"Ir arriba"
   }
 }

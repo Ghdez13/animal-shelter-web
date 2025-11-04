@@ -136,3 +136,37 @@ body.modal-open {
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+/* scrollbar styling  */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Optional: hide scrollbar visually until hover (WebKit) */
+.custom-scrollbar::-webkit-scrollbar {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.custom-scrollbar:hover::-webkit-scrollbar {
+  opacity: 1;
+}
+
+@supports (scrollbar-width: thin) {
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.25) transparent;
+  }
+}

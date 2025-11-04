@@ -11,7 +11,7 @@ const Adoptions = () => {
     <SectionBackground image={BackgroundMobile} alt="Contact page background">
       <main className="px-6">
         {/* Page title */}
-        <div className="max-w-6xl mx-auto px-6 md:px-6 lg:px-6 mb-8">
+        <div className="max-w-6xl mx-auto mb-20 px-0 md:px-0 lg:px-6">
           <h1 className="text-[50px] md:text-[70px] lg:text-[90px]  font-extrabold  text-[var(--color-text-dark)]">
             {t("adoptions.title")}
           </h1>
