@@ -33,20 +33,25 @@ The goal is to increase pet adoption and provide information about services, vol
 
    ```bash
    git clone https://github.com/your-username/animal-shelter-web.git
-
    ```
 
 2. Navigate into the project folder:
 
+   ```bash
    cd animal-shelter-web
+   ```
 
 3. Install dependencies:
 
+   ```bash
    npm install
+   ```
 
 4. Start the development server:
 
+   ```bash
    npm run dev
+   ```
 
 📖 Project Purpose
 

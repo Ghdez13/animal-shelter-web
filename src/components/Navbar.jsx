@@ -1,4 +1,4 @@
-import LogoBlack from "../assets/logo/navbar-logo.webP";
+import LogoBlack from "../assets/logo/navbar-logo.webp";
 import BackgroundOrange from "../assets/images/BackgroundOrange.webp";
 import { useState, useRef, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
