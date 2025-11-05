@@ -45,7 +45,7 @@ const AboutUsValues = () => {
                 alt={`${title} icon`}
                 className="w-20 h-20 object-contain"
               />
-              <h2 className="text-[40px] font-semibold">{title}</h2>
+              <h2 className="text-[25px] md:text-[30px] font-bold">{title}</h2>
             </div>
             <p className="text-[20px] text-[var(--color-text-dark)]">
               {description}
