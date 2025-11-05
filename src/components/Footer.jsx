@@ -72,27 +72,42 @@ const Footer = () => {
           <div className="text-lg md:text-2xl flex flex-row w-full md:w-auto justify-around md:justify-end md:gap-16">
             {/* Menu group 1 */}
             <div className="flex flex-col gap-2 text-center md:text-left">
-              <a href="/services" className={`${hoverUnderline} ${focusUnderline}`}>
+              <a
+                href="/services"
+                className={`${hoverUnderline} ${focusUnderline}`}
+              >
                 {t("menu.services")}
               </a>
-              <a href="/volunteer" className={`${hoverUnderline} ${focusUnderline}`}>
+              <a
+                href="/volunteer"
+                className={`${hoverUnderline} ${focusUnderline}`}
+              >
                 {t("menu.volunteer")}
               </a>
             </div>
 
             {/* Menu group 2 */}
             <div className="flex flex-col gap-2 text-center md:text-left">
-              <a href="/donations" className={`${hoverUnderline} ${focusUnderline}`}>
+              <a
+                href="/donations"
+                className={`${hoverUnderline} ${focusUnderline}`}
+              >
                 {t("menu.donations")}
               </a>
-              <a href="/about-us" className={`${hoverUnderline} ${focusUnderline}`}>
+              <a
+                href="/about-us"
+                className={`${hoverUnderline} ${focusUnderline}`}
+              >
                 {t("menu.about-us")}
               </a>
             </div>
 
             {/* Menu group 3 + social icons */}
             <div className="flex flex-col gap-2 text-center md:text-left">
-              <a href="/contact" className={`${hoverUnderline} ${focusUnderline}`}>
+              <a
+                href="/contact"
+                className={`${hoverUnderline} ${focusUnderline}`}
+              >
                 {t("menu.contact")}
               </a>
 
@@ -135,29 +150,29 @@ const Footer = () => {
 
           {/* Address group */}
           <div className="flex flex-col gap-3 z-10">
-  <h3 className="font-extrabold">
-    {t("footer.visitUs")}{" "}
-    <span role="img" aria-label="Location pin">
-      📍
-    </span>
-  </h3>
-  <a
-    href="https://maps.app.goo.gl/wTxnETvNsVKJXiEG6"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={t("footer.viewExactLocation")}
-    className="leading-6 block font-normal
+            <h3 className="font-extrabold">
+              {t("footer.visitUs")}{" "}
+              <span role="img" aria-label="Location pin">
+                📍
+              </span>
+            </h3>
+            <a
+              href="https://maps.app.goo.gl/wTxnETvNsVKJXiEG6"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("footer.viewExactLocation")}
+              className="leading-6 block font-normal
       transition-colors
           duration-300
           hover:text-[var(--color-button-bg-hover-primary)]
           focus-visible:text-[var(--color-button-bg-hover-primary)]
           focus-visible:outline-none"
-  >
-    5ta Av. esquina con Av. Constituyentes s/n,
-    <br />
-    Centro, Playa del Carmen, Q.R.
-  </a>
-</div>
+            >
+              5ta Av. esquina con Av. Constituyentes s/n,
+              <br />
+              Centro, Playa del Carmen, Q.R.
+            </a>
+          </div>
 
           {/* Decorative image for mobile */}
           <div className="block md:hidden relative w-[250px] mx-auto mt-16">
@@ -190,7 +205,12 @@ const Footer = () => {
           <p>
             {t("footer.developedBy") + " "}
             <br />
-            <a href="#" className={`${hoverUnderline} ${focusUnderline}`}>
+            <a
+              href="https://www.linkedin.com/in/jerry-hernandez-dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${hoverUnderline} ${focusUnderline}`}
+            >
               Jerry Hernández.
             </a>
           </p>
@@ -209,4 +229,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

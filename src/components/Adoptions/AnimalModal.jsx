@@ -1,22 +1,33 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import AdoptionForm from "./AdoptionForm"; // Import the separated form component
+import AdoptionForm from "./AdoptionForm";
 
 const AnimalModal = ({ animal, isOpen, onClose }) => {
   const { t, i18n } = useTranslation();
   const [interested, setInterested] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
 
-  // Reset interest state when modal closes
+  // Reset states when modal closes
   useEffect(() => {
     if (!isOpen) {
       setInterested(false);
+      setCurrentImage(0);
     }
   }, [isOpen]);
 
-  // Handle overlay click to close modal
   const handleOverlayClick = (e) => {
     if (e.target.id === "modalOverlay") onClose();
+  };
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % animal.images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) =>
+      prev === 0 ? animal.images.length - 1 : prev - 1
+    );
   };
 
   if (!isOpen || !animal) return null;
@@ -32,7 +43,7 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
         height: "calc(var(--vh, 1vh) * 100)",
       }}
     >
-      {/* Outer container with hidden overflow to keep scroll inside rounded corners */}
+      {/* Outer container */}
       <div
         className="relative rounded-2xl bg-[rgba(255,255,255,0.9)] shadow-2xl max-w-3xl w-[90%] md:w-[70%] border-t-4 animate-fadeIn my-10 max-h-[90vh]"
         style={{
@@ -41,32 +52,69 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
           overflow: "hidden",
         }}
       >
-        {/* Scrollable inner wrapper */}
-        <div className="custom-scrollbar overflow-y-auto max-h-[90vh]">
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="absolute top-3 right-5 text-[var(--color-focus-primary)] text-5xl font-extrabold hover:scale-110 transition-transform"
-            aria-label={t("animalModal.close")}
-            title={t("animalModal.close")}
-          >
-            ×
-          </button>
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-4 z-20 text-[var(--color-focus-primary)] text-5xl font-extrabold hover:scale-110 transition-transform"
+          aria-label={t("animalModal.close")}
+          title={t("animalModal.close")}
+        >
+          ×
+        </button>
 
-          {/* Content */}
+        {/* Scrollable inner wrapper */}
+        <div className="custom-scrollbar overflow-y-auto max-h-[90vh] px-1">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Left - image */}
-            <div className="h-72 md:h-full">
+            {/* Left - carousel */}
+            <div className="relative h-72 md:h-full flex items-center justify-center">
               <img
-                src={animal.images[0]}
-                alt={animal.name}
-                className="w-full h-full object-cover"
+                src={animal.images[currentImage]}
+                alt={`${animal.name} ${currentImage + 1}`}
+                className="w-full h-full object-cover rounded-lg transition-all duration-300"
               />
+
+              {/* Prev and Next buttons */}
+              {animal.images.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-2 bg-white/60 hover:bg-white text-gray-800 rounded-full p-2 transition"
+                    aria-label="Previous image"
+                  >
+                    ‹
+                  </button>
+
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-2 bg-white/60 hover:bg-white text-gray-800 rounded-full p-2 transition"
+                    aria-label="Next image"
+                  >
+                    ›
+                  </button>
+                </>
+              )}
+
+              {/* Dots navigation */}
+              {animal.images.length > 1 && (
+                <div className="absolute bottom-3 flex space-x-2">
+                  {animal.images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImage(index)}
+                      className={`w-3 h-3 rounded-full ${
+                        index === currentImage
+                          ? "bg-[var(--color-focus-primary)]"
+                          : "bg-gray-300"
+                      }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Right - info & form */}
             <div className="p-6 flex flex-col justify-between">
-              {/* Animal info */}
               <div>
                 <h2 className="text-3xl text-[var(--color-focus-secondary)] font-bold mb-4">
                   {animal.name}
@@ -96,7 +144,7 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
                 </ul>
               </div>
 
-              {/* Adoption interest section */}
+              {/* Adoption interest */}
               <div className="mt-4">
                 <label className="flex items-center space-x-2 text-[18px]">
                   <input
@@ -109,7 +157,6 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
                   </span>
                 </label>
 
-                {/* Show form if interested */}
                 {interested && (
                   <div className="mt-4">
                     <AdoptionForm animalName={animal.name} onClose={onClose} />
