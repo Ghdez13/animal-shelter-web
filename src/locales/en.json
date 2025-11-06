@@ -93,6 +93,7 @@
   },
 
   "servicesSection": {
+    "ServiceTitle": "Our Services",
     "title": "Our Services | JausPet",
     "description": "At JausPet we offer a variety of services to ensure the well-being of our pets and to support the community. From responsible adoptions to sterilization campaigns and animal care assistance.",
     "backgroundAlt": "Background of the services section",
@@ -107,7 +108,8 @@
   },
 
   "volunteerSection": {
-    "title": "Become a Volunteer | JausPet",
+    "volunteerTitle": "Become a Volunteer",
+    "title": "Volunteer | JausPet",
     "description": "Join as a volunteer and help improve the lives of many animals looking for a home.",
     "backgroundAlt": "Background of the volunteer section",
     "introPhrase": "Our time, our hands, and our hearts can change lives.",
@@ -158,7 +160,8 @@
   },
 
   "donationSection": {
-    "title": "Make a difference | JausPet",
+    "donationTitle": "Make a difference",
+    "title": "Donations | JausPet",
     "description": "Support JausPet to help more pets find loving homes. Your contribution makes a difference.",
     "backgroundAlt": "Donations page background",
     "inspirationalDescription": "Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
@@ -188,7 +191,8 @@
   },
 
   "aboutUs": {
-    "title": "Our Values | JausPet",
+    "aboutUsTitle": "Our Values",
+    "title": "About Us | JausPet",
     "description": "Learn about JausPet, our mission, and how we help pets find loving homes.",
     "backgroundAlt": "About Us background"
   },
@@ -205,6 +209,7 @@
   },
 
   "contact": {
+    "contactTitle": "Contact Us",
     "title": "Contact Us | JausPet",
     "description": "Learn about JausPet and reach out to us for any questions or adoptions.",
     "formDescription": "We’d love to hear from you! If you have any questions, comments, or suggestions, please use our contact form.",
@@ -214,7 +219,8 @@
   },
 
   "adoptions": {
-    "title": "Animals for Adoption | JausPet",
+    "adoptionsTitle": "Animals for Adoption",
+    "title": "Adoptions | JausPet",
     "description": "Discover dogs and cats to adopt and find your perfect companion at JausPet.",
     "backgroundAlt": "Adoptions page background"
   },

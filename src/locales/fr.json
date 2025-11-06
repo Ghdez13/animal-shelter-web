@@ -92,6 +92,7 @@
   },
 
   "servicesSection": {
+    "servicesTitle": "Nos services",
     "title": "Nos services | JausPet",
     "description": "Chez JausPet, nous proposons divers services pour assurer le bien-être de nos animaux et soutenir la communauté. De l’adoption responsable aux campagnes de stérilisation et de soins animaliers.",
     "backgroundAlt": "Arrière-plan de la section des services",
@@ -106,7 +107,8 @@
   },
 
   "volunteerSection": {
-    "title": "Deviens bénévole | JausPet",
+    "volunteerTitle": "Deviens bénévole",
+    "title": "Bénévoles | JausPet",
     "description": "Rejoins-nous comme bénévole et aide à améliorer la vie de nombreux animaux qui cherchent un foyer.",
     "backgroundAlt": "Arrière-plan de la section de bénévolat",
     "introPhrase": "Notre temps, nos mains et nos cœurs peuvent changer des vies.",
@@ -157,7 +159,8 @@
   },
 
   "donationSection": {
-    "title": "Fais la différence | JausPet",
+    "donationTitle": "Fais la différence",
+    "title": "Dons | JausPet",
     "description": "Soutenez JausPet pour aider plus d'animaux à trouver un foyer aimant. Votre contribution fait la différence.",
     "backgroundAlt": "Fond de la page des dons",
     "inspirationalDescription": "Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
@@ -187,7 +190,8 @@
   },
 
   "aboutUs": {
-    "title": "Nos Valeurs | JausPet",
+    "aboutUsTitle": "Nos Valeurs",
+    "title": "À propos de nous | JausPet",
     "description": "Découvrez JausPet, notre mission et comment nous aidons les animaux à trouver des foyers aimants.",
     "backgroundAlt": "Fond de la section À propos de nous"
   },
@@ -204,6 +208,7 @@
   },
 
   "contact": {
+    "contactTitle": "Contactez-nous",
     "title": "Contactez-nous | JausPet",
     "description": "Découvrez JausPet et contactez-nous pour toute question ou adoption.",
     "formDescription": "Nous serions ravis d’avoir de vos nouvelles ! Si vous avez des questions, des commentaires ou des suggestions, veuillez utiliser notre formulaire de contact.",
@@ -213,7 +218,8 @@
   },
 
   "adoptions": {
-    "title": "Animaux à Adopter | JausPet",
+    "adoptionsTitle": "Animaux à Adopter",
+    "title": "Adoptions | JausPet",
     "description": "Découvrez des chiens et des chats à adopter et trouvez votre compagnon idéal sur JausPet.",
     "backgroundAlt": "Fond de la page Adoptions"
   },
