@@ -9,10 +9,9 @@ const Donations = () => {
 
   return (
     <>
-      {/* SEO meta tags */}
+      {/* Reusable SEO component using i18n keys */}
       <SEO
-        title={`${t("donationSection.title")} | JausPet`}
-        description={t("donationSection.description")}
+        pageKey="donationSection"
         url="https://jauspet.vercel.app/donations"
         image="/images/og-twitter-preview.webp"
       />

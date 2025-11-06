@@ -11,10 +11,9 @@ const Contact = () => {
 
   return (
     <>
-      {/* SEO Meta Tags */}
+      {/* Reusable SEO component using i18n keys */}
       <SEO
-        title={`${t("contact.title")} | JausPet`}
-        description={t("contact.description")}
+        pageKey="contact"
         url="https://jauspet.vercel.app/contact"
         image="/images/og-twitter-preview.webp"
       />

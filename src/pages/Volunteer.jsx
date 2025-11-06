@@ -15,8 +15,7 @@ const Volunteer = () => {
     <>
       {/* SEO meta tags */}
       <SEO
-        title={`${t("volunteerSection.title")} | JausPet`}
-        description={t("volunteerSection.description")}
+        pageKey="volunteerSection"
         url="https://jauspet.vercel.app/volunteer"
         image="/images/og-twitter-preview.webp"
       />

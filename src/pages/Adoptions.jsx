@@ -13,10 +13,9 @@ const Adoptions = () => {
       image={BackgroundMobile}
       alt={t("adoptions.backgroundAlt")}
     >
-      {/* Reusable SEO component */}
+      {/* Reusable SEO component using i18n keys */}
       <SEO
-        title={`${t("adoptions.title")} | JausPet`}
-        description={t("adoptions.description")}
+        pageKey="adoptions"
         url="https://jauspet.vercel.app/adoptions"
         image="/images/og-twitter-preview.webp"
       />

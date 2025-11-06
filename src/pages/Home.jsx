@@ -2,18 +2,14 @@ import Hero from "../components/Home/HomeHero";
 import Cards from "../components/Home/HomeCards";
 import CampaignSection from "../components/Home/HomeCampaignSection";
 import TestimonialSlider from "../components/Home/HomeTestimonialsSlider";
-import { useTranslation } from "react-i18next";
 import SEO from "../components/SEO/SEO";
 
 const Home = () => {
-  const { t } = useTranslation();
-
   return (
     <>
       {/* SEO meta tags */}
       <SEO
-        title={`${t("home.title")} | JausPet`}
-        description={t("home.description")}
+        pageKey="home" // Clave del JSON para traducir title y description
         url="https://jauspet.vercel.app/"
         image="/images/og-twitter-preview.webp"
       />

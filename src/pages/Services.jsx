@@ -23,8 +23,7 @@ const Services = () => {
     <>
       {/* SEO meta tags */}
       <SEO
-        title={`${t("servicesSection.title")} | JausPet`}
-        description={t("servicesSection.description")}
+        pageKey="servicesSection"
         url="https://jauspet.vercel.app/services"
         image="/images/og-twitter-preview.webp"
       />
