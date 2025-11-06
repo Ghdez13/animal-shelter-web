@@ -113,11 +113,11 @@ const Donation = () => {
           <LazyImage
             src={isMobile ? Donation1Mobile : Donation1}
             alt="Donation intro"
-            className="w-full h-64 object-cover"
+            className="w-full md:w-1/2 h-auto md:h-[400px] object-cover"
           />
 
           <div
-            className="flex flex-col justify-center items-center text-start p-6 md:p-13"
+            className="flex flex-col justify-center items-center md:items-start text-left md:text-left p-6 md:p-12 md:w-1/2"
             style={{
               backgroundColor: "var(--color-bg-orange)",
               color: "var(--color-text-light)",
@@ -126,9 +126,7 @@ const Donation = () => {
             <h2 className="text-[40px] font-semibold mb-4">
               {t("donationSection.donationIntroTitle")}
             </h2>
-            <p className="max-w-md text-[20px]">
-              {t("donationSection.donationIntro")}
-            </p>
+            <p className="text-[20px]">{t("donationSection.donationIntro")}</p>
           </div>
         </div>
 
@@ -170,8 +168,12 @@ const Donation = () => {
               <p className="text-[40px] font-semibold text-[var(--color-text-light)] mb-4">
                 {t("donationSection.donationBanner")}
               </p>
-              <Button to="/volunteer" className="btn-green">
-                {t("donationSection.button")}
+              <Button
+                to="/volunteer"
+                aria-label={t("donationSection.button")}
+                className="btn-green"
+              >
+                {t("donationSection.go")}
               </Button>
             </div>
           </div>

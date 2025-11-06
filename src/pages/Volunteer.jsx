@@ -69,13 +69,17 @@ const Volunteer = () => {
                   style={{ backgroundImage: `url(${BackgroundBanner})` }}
                 />
 
-                {/* Content with controlled padding */}
+                {/* Banner donation link */}
                 <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 py-4">
                   <p className="text-[40px] md:text-[40px] font-semibold text-[var(--color-text-light)] mb-4">
                     {t("volunteerSection.bannerDescription")}
                   </p>
-                  <Button to="/donations" className="btn-green">
-                    {t("volunteerSection.button")}
+                  <Button
+                    to="/donations"
+                    className="btn-green"
+                    aria-label={t("volunteerSection.button")}
+                  >
+                    {t("volunteerSection.go")}
                   </Button>
                 </div>
               </div>

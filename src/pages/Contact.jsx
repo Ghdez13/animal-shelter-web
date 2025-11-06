@@ -41,7 +41,7 @@ const Contact = () => {
             </div>
           </section>
 
-          {/* Promotional banner linking to adoption/services */}
+          {/* Banner linking to adoption */}
           <section
             aria-label={t("contact.bannerDescription")}
             className="mt-24"
@@ -59,8 +59,12 @@ const Contact = () => {
                   <p className="text-[40px] md:text-[40px] font-semibold text-[var(--color-text-light)] mb-4">
                     {t("contact.bannerDescription")}
                   </p>
-                  <Button to="/adoptions" className="btn-green">
-                    {t("contact.button")}
+                  <Button
+                    to="/adoptions"
+                    aria-label={t("contact.button")}
+                    className="btn-green"
+                  >
+                    {t("contact.go")}
                   </Button>
                 </div>
               </div>

@@ -22,7 +22,8 @@ const ServiceCard = ({ service }) => {
   // Localized texts
   const title = service.title[lang] || service.title["es"];
   const text = service.text[lang] || service.text["es"];
-  const buttonText = service.button[lang] || service.button["es"];
+  const ariaLabelText = service.button[lang] || service.button["es"]; // Texto largo para accesibilidad y SEO
+  const buttonText = service.go?.[lang] || service.go?.["es"] || "Ver más"; // Texto corto visible en el botón
 
   // Identify which services are under construction
   const isUnderConstruction =
@@ -50,9 +51,9 @@ const ServiceCard = ({ service }) => {
           <Button
             to={isUnderConstruction ? undefined : service.link}
             onClick={isUnderConstruction ? () => setShowModal(true) : undefined}
-            aria-label={title}
+            aria-label={ariaLabelText} // Texto largo para SEO y screen readers
           >
-            {buttonText}
+            {buttonText} {/* Texto corto visible */}
           </Button>
         </div>
       </div>

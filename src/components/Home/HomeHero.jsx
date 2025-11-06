@@ -117,7 +117,10 @@ const Hero = () => {
             </p>
 
             <div className="mt-8">
-              <Button to={t(`hero.slides.${currentIndex}.buttonLink`)}>
+              <Button
+                to={t(`hero.slides.${currentIndex}.buttonLink`)}
+                aria-label={t(`hero.slides.${currentIndex}.buttonText`)}
+              >
                 {t(`hero.slides.${currentIndex}.buttonText`)}
               </Button>
             </div>

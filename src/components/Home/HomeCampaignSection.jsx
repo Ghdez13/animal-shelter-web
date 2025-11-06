@@ -5,10 +5,6 @@ import LazyImage from "../LazyImage";
 const CampaignSection = () => {
   const { t } = useTranslation();
 
-  // Public folder images
-  const desktopImage = "/images/abandon1.webp";
-  const mobileImage = "/images/abandon1Mobile.webp";
-
   return (
     <section className="px-6">
       <div className="campaign-container flex flex-col px-0 md:px-0 lg:px-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:gap-12 max-w-6xl mx-auto mt-12">
@@ -41,7 +37,7 @@ const CampaignSection = () => {
             aria-label={t("campaignSection.button")}
             className="mt-6"
           >
-            {t("campaignSection.button")}
+            {t("campaignSection.go")}
           </Button>
         </div>
       </div>

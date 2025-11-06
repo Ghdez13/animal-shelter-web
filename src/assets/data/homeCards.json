@@ -23,10 +23,10 @@
     "category": "services",
     "link": "/adoptions",
     "button": {
-    "es": "Ver animales en adopción",
-    "en": "See animals for adoption",
-    "fr": "Voir les animaux à adopter"
-  }
+      "es": "Ver animales",
+      "en": "See animals",
+      "fr": "Voir les animaux"
+    }
   },
   {
     "id": "card_3",
@@ -51,10 +51,10 @@
     "content": "card.card_4.content",
     "category": "donations",
     "link": "/donations",
-  "button": {
-    "es": "Hacer una donación",
-    "en": "Make a donation",
-    "fr": "Faire un don"
-  }
+    "button": {
+      "es": "Hacer una donación",
+      "en": "Make a donation",
+      "fr": "Faire un don"
+    }
   }
 ]

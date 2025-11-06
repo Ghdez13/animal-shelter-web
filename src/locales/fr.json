@@ -72,8 +72,9 @@
 
   "campaignSection": {
     "title": "Ne les abandonnez pas, aidez-les à trouver un foyer",
-    "text": "Chaque animal mérite amour et attention. Avant de décider de l'abandonner, envisagez des alternatives comme l'adoption ou un refuge temporaire. Votre action peut sauver sa vie et lui offrir un avenir heureux.",
-    "button": "En savoir plus",
+    "text": "Chaque animal mérite amour et soins. Avant de décider d'abandonner, envisagez des alternatives comme l'adoption ou un refuge temporaire. Votre action peut sauver leur vie et leur offrir un avenir heureux.",
+    "button": "En savoir plus sur l'aide aux animaux",
+    "go": "En savoir plus",
     "imageAlt": "Chiot laissé seul dans la rue"
   },
 
@@ -107,21 +108,22 @@
   },
 
   "volunteerSection": {
-    "volunteerTitle": "Deviens bénévole",
-    "title": "Bénévoles | JausPet",
-    "description": "Rejoins-nous comme bénévole et aide à améliorer la vie de nombreux animaux qui cherchent un foyer.",
-    "backgroundAlt": "Arrière-plan de la section de bénévolat",
+    "volunteerTitle": "Devenez bénévole",
+    "title": "Bénévolat | JausPet",
+    "description": "Rejoignez-nous comme bénévole et aidez à améliorer la vie de nombreux animaux à la recherche d'un foyer.",
+    "backgroundAlt": "Fond de la section bénévolat",
     "introPhrase": "Notre temps, nos mains et nos cœurs peuvent changer des vies.",
     "bannerDescription": "Faire un don aide aussi",
-    "button": "En savoir plus",
+    "button": "En savoir plus sur comment devenir bénévole",
+    "go": "Faire un don",
     "captions": [
-      "Organise des événements et des activités",
-      "Enseigne et apprends les soins aux animaux",
-      "Soutiens les campagnes de santé",
-      "Ton don remplit les ventres et les cœurs",
-      "Vacciner, c’est aussi aimer",
-      "Promène un ami à quatre pattes",
-      "Ensemble, nous formons des familles",
+      "Organiser des événements et activités",
+      "Enseigner et apprendre les soins aux animaux",
+      "Soutenir les campagnes de santé",
+      "Votre don remplit les ventres et les cœurs",
+      "Vacciner c'est aussi aimer",
+      "Promener un ami à quatre pattes",
+      "Ensemble, nous créons des familles",
       "Là où naissent de nouvelles familles"
     ]
   },
@@ -159,18 +161,19 @@
   },
 
   "donationSection": {
-    "donationTitle": "Fais la différence",
-    "title": "Dons | JausPet",
-    "description": "Soutenez JausPet pour aider plus d'animaux à trouver un foyer aimant. Votre contribution fait la différence.",
-    "backgroundAlt": "Fond de la page des dons",
-    "inspirationalDescription": "Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
-    "donationIntroTitle": "Ensemble, nous pouvons aider",
-    "donationIntro": "Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
-    "donationBanner": "Soyez bénévole !",
-    "button": "Rejoindre",
-    "whyDonateTitle": "Pourquoi faire un don ?",
-    "whyDonateDescription": "Les dons sont ce qui rend notre mission possible. Chaque contribution nous permet de couvrir les traitements médicaux, la nourriture et un refuge sûr pour les animaux que nous sauvons. Ensemble, nous pouvons changer leur histoire."
-  },
+  "donationTitle": "Faites la différence",
+  "title": "Dons | JausPet",
+  "description": "Soutenez JausPet pour aider plus d'animaux à trouver un foyer rempli d'amour. Votre contribution fait la différence.",
+  "backgroundAlt": "Fond de la page de dons",
+  "inspirationalDescription": "Votre soutien aide à sauver les animaux en situation d'abandon et de maltraitance. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et soigner leurs blessures. Merci pour votre amour.",
+  "donationIntroTitle": "Ensemble, nous pouvons aider",
+  "donationIntro": "Votre soutien aide à sauver les animaux en situation d'abandon et de maltraitance. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et soigner leurs blessures. Merci pour votre amour.",
+  "donationBanner": "Participez comme bénévole !",
+  "button": "Rejoignez-nous maintenant et faites la différence",
+  "go": "Rejoignez-nous",
+  "whyDonateTitle": "Pourquoi donner ?",
+  "whyDonateDescription": "Les dons sont ce qui rend notre mission possible. Chaque contribution nous permet de couvrir les traitements médicaux, la nourriture et un refuge sûr pour les animaux que nous sauvons. Ensemble, nous pouvons changer leur histoire."
+},
 
   "donationCards": {
     "title": "Modes de don",
@@ -208,13 +211,14 @@
   },
 
   "contact": {
-    "contactTitle": "Contactez-nous",
-    "title": "Contactez-nous | JausPet",
-    "description": "Découvrez JausPet et contactez-nous pour toute question ou adoption.",
-    "formDescription": "Nous serions ravis d’avoir de vos nouvelles ! Si vous avez des questions, des commentaires ou des suggestions, veuillez utiliser notre formulaire de contact.",
-    "backgroundAlt": "Fond de la page Contact",
-    "bannerDescription": "Amis à adopter",
-    "button": "En savoir plus"
+  "contactTitle": "Contactez-nous",
+  "title": "Contactez-nous | JausPet",
+  "description": "Découvrez JausPet et contactez-nous pour toute question ou adoption.",
+  "formDescription": "Nous serions ravis d'avoir de vos nouvelles ! Si vous avez des questions, commentaires ou suggestions, utilisez notre formulaire de contact.",
+  "backgroundAlt": "Fond de la page de contact",
+  "bannerDescription": "Amis à adopter",
+  "button": "En savoir plus sur les animaux à adopter",
+  "go": "Voir les animaux"
   },
 
   "adoptions": {

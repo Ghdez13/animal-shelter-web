@@ -130,11 +130,13 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={t("footer.facebook")}
+                  title={t("footer.facebook")} // Esto agrega el tooltip
                   className={`w-5 h-5 md:w-8 md:h-8 block bg-[url('/icons/facebook.webp')] hover:bg-[url('/icons/facebookhover.webp')] bg-contain bg-no-repeat transition-all duration-200 ${focusRing}`}
                 />
                 {/* Instagram icon */}
                 <button
                   aria-label={t("footer.instagram")}
+                  title={t("footer.instagram")} // Esto agrega el tooltip
                   className={`w-5 h-5 md:w-8 md:h-8 block bg-[url('/icons/instagram.webp')] hover:bg-[url('/icons/instagramhover.webp')] bg-contain bg-no-repeat transition-all duration-200 ${focusRing}`}
                   onClick={() => openModal("instagramUnderConstruction")}
                 />
