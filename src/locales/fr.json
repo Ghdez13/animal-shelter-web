@@ -13,16 +13,16 @@
   },
 
   "menu": {
-  "services": "Services",
-  "altServices": "Aller à la section des services",
-  "volunteer": "Bénévoles",
-  "altVolunteer": "Aller à la section du bénévolat",
-  "donations": "Faire un don",
-  "altDonations": "Aller à la section des dons",
-  "about-us": "À propos de nous",
-  "altAbout-us": "Aller à la section À propos de nous",
-  "contact": "Contact",
-  "altContact": "Aller à la section contact"
+    "services": "Services",
+    "altServices": "Aller à la section des services",
+    "volunteer": "Bénévoles",
+    "altVolunteer": "Aller à la section du bénévolat",
+    "donations": "Dons",
+    "altDonations": "Aller à la section des dons",
+    "about-us": "À propos",
+    "altAbout-us": "Aller à la section À propos de nous",
+    "contact": "Contact",
+    "altContact": "Aller à la section contact"
   },
 
   "hero": {
@@ -32,22 +32,25 @@
 
     "slides": [
       {
-        "title": "Un ami vous attend",
-        "text": "Chaque chien ou chat mérite une seconde chance. En adoptant, vous transformez un passé brisé en un avenir rempli d’amour et de loyauté. Ouvrez votre cœur et votre maison deviendra leur refuge sûr.",
+        "title": "Un ami t'attend",
+        "text": "Chaque chien ou chat mérite une seconde chance. En adoptant, vous transformez un passé brisé en un avenir rempli d'amour et de loyauté. Ouvrez votre cœur et votre maison sera leur havre de sécurité.",
         "buttonText": "En savoir plus",
-        "buttonLink": "/services"
+        "buttonLink": "/services",
+        "altButtonText": "Obtenez plus d'informations sur nos services et comment vous pouvez aider"
       },
       {
         "title": "Qui nous sommes",
-        "text": "Notre refuge existe pour protéger, soigner et donner de l’espoir aux animaux abandonnés. Découvrez notre mission, nos valeurs et les histoires inspirantes qui nous motivent chaque jour.",
+        "text": "Notre refuge existe pour protéger, soigner et donner de l'espoir aux animaux abandonnés. Découvrez notre mission, nos valeurs et les histoires inspirantes qui nous motivent chaque jour.",
         "buttonText": "En savoir plus",
-        "buttonLink": "/about-us"
+        "buttonLink": "/about-us",
+        "altButtonText": "En savoir plus sur notre mission et nos valeurs"
       },
       {
-        "title": "Participez au changement",
-        "text": "Votre soutien peut prendre de nombreuses formes : un peu de temps pour aider, un don pour nourrir ou simplement partager pour sensibiliser. Ensemble, chaque petit geste construit un avenir meilleur pour eux.",
+        "title": "Faites partie du changement",
+        "text": "Votre soutien peut prendre plusieurs formes : du temps pour aider, un don pour nourrir ou simplement partager pour sensibiliser. Ensemble, chaque petit geste construit un meilleur avenir pour eux.",
         "buttonText": "Rejoignez-nous",
-        "buttonLink": "/volunteer"
+        "buttonLink": "/volunteer",
+        "altButtonText": "Découvrez comment vous pouvez devenir bénévole et faire la différence"
       }
     ]
   },
@@ -102,7 +105,7 @@
     "title": "Nos services | JausPet",
     "description": "Chez JausPet, nous proposons divers services pour assurer le bien-être de nos animaux et soutenir la communauté. De l’adoption responsable aux campagnes de stérilisation et de soins animaliers.",
     "backgroundAlt": "Arrière-plan de la section des services",
-    "tipsTittle": "Trucs & conseils",
+    "tipsTitle": "Trucs & conseils",
     "loading": "Chargement des services..."
   },
 
@@ -166,19 +169,19 @@
   },
 
   "donationSection": {
-  "donationTitle": "Faites la différence",
-  "title": "Dons | JausPet",
-  "description": "Soutenez JausPet pour aider plus d'animaux à trouver un foyer rempli d'amour. Votre contribution fait la différence.",
-  "backgroundAlt": "Fond de la page de dons",
-  "inspirationalDescription": "Votre soutien aide à sauver les animaux en situation d'abandon et de maltraitance. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et soigner leurs blessures. Merci pour votre amour.",
-  "donationIntroTitle": "Ensemble, nous pouvons aider",
-  "donationIntro": "Votre soutien aide à sauver les animaux en situation d'abandon et de maltraitance. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et soigner leurs blessures. Merci pour votre amour.",
-  "donationBanner": "Participez comme bénévole !",
-  "button": "Rejoignez-nous maintenant et faites la différence",
-  "go": "Rejoignez-nous",
-  "whyDonateTitle": "Pourquoi donner ?",
-  "whyDonateDescription": "Les dons sont ce qui rend notre mission possible. Chaque contribution nous permet de couvrir les traitements médicaux, la nourriture et un refuge sûr pour les animaux que nous sauvons. Ensemble, nous pouvons changer leur histoire."
-},
+    "donationTitle": "Faites la différence",
+    "title": "Dons | JausPet",
+    "description": "Soutenez JausPet pour aider plus d'animaux à trouver un foyer rempli d'amour. Votre contribution fait la différence.",
+    "backgroundAlt": "Fond de la page de dons",
+    "inspirationalDescription": "Votre soutien aide à sauver les animaux en situation d'abandon et de maltraitance. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et soigner leurs blessures. Merci pour votre amour.",
+    "donationIntroTitle": "Ensemble, nous pouvons aider",
+    "donationIntro": "Votre soutien aide à sauver les animaux en situation d'abandon et de maltraitance. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et soigner leurs blessures. Merci pour votre amour.",
+    "donationBanner": "Participez comme bénévole !",
+    "button": "Rejoignez-nous maintenant et faites la différence",
+    "go": "Rejoignez-nous",
+    "whyDonateTitle": "Pourquoi donner ?",
+    "whyDonateDescription": "Les dons sont ce qui rend notre mission possible. Chaque contribution nous permet de couvrir les traitements médicaux, la nourriture et un refuge sûr pour les animaux que nous sauvons. Ensemble, nous pouvons changer leur histoire."
+  },
 
   "donationCards": {
     "title": "Modes de don",
@@ -216,14 +219,14 @@
   },
 
   "contact": {
-  "contactTitle": "Contactez-nous",
-  "title": "Contactez-nous | JausPet",
-  "description": "Découvrez JausPet et contactez-nous pour toute question ou adoption.",
-  "formDescription": "Nous serions ravis d'avoir de vos nouvelles ! Si vous avez des questions, commentaires ou suggestions, utilisez notre formulaire de contact.",
-  "backgroundAlt": "Fond de la page de contact",
-  "bannerDescription": "Amis à adopter",
-  "button": "En savoir plus sur les animaux à adopter",
-  "go": "Voir les animaux"
+    "contactTitle": "Contactez-nous",
+    "title": "Contactez-nous | JausPet",
+    "description": "Découvrez JausPet et contactez-nous pour toute question ou adoption.",
+    "formDescription": "Nous serions ravis d'avoir de vos nouvelles ! Si vous avez des questions, commentaires ou suggestions, utilisez notre formulaire de contact.",
+    "backgroundAlt": "Fond de la page de contact",
+    "bannerDescription": "Amis à adopter",
+    "button": "En savoir plus sur les animaux à adopter",
+    "go": "Voir les animaux"
   },
 
   "adoptions": {

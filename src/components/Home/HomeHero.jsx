@@ -66,9 +66,15 @@ const Hero = () => {
               {t(`hero.slides.${currentIndex}.text`)}
             </p>
 
-            <Button to={t(`hero.slides.${currentIndex}.buttonLink`)}>
-              {t(`hero.slides.${currentIndex}.buttonText`)}
-            </Button>
+            <div className="mt-8">
+              <Button
+                to={t(`hero.slides.${currentIndex}.buttonLink`)}
+                aria-label={t(`hero.slides.${currentIndex}.altButtonText`)} // Agregamos altButtonText para SEO y accesibilidad
+              >
+                {t(`hero.slides.${currentIndex}.buttonText`)}{" "}
+                {/* Texto visible */}
+              </Button>
+            </div>
 
             {/* Dots indicator */}
             <div
@@ -119,9 +125,10 @@ const Hero = () => {
             <div className="mt-8">
               <Button
                 to={t(`hero.slides.${currentIndex}.buttonLink`)}
-                aria-label={t(`hero.slides.${currentIndex}.buttonText`)}
+                aria-label={t(`hero.slides.${currentIndex}.altButtonText`)} // Agregamos altButtonText para SEO y accesibilidad
               >
-                {t(`hero.slides.${currentIndex}.buttonText`)}
+                {t(`hero.slides.${currentIndex}.buttonText`)}{" "}
+                {/* Texto visible */}
               </Button>
             </div>
 

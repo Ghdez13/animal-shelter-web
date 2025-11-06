@@ -14,15 +14,15 @@
 
   "menu": {
     "services": "Servicios",
-    "altServices":"Ir a la sección de servicios",
+    "altServices": "Ir a la sección de servicios",
     "volunteer": "Voluntarios",
-    "altVolunteer":"Ir a la sección de voluntariado",
+    "altVolunteer": "Ir a la sección de voluntariado",
     "donations": "Donar",
-    "altDonations":"Ir a la sección de donaciones",
+    "altDonations": "Ir a la sección de donaciones",
     "about-us": "Nosotros",
-    "altAbout-us":"Ir a la sección de Acerca de nosotros",
+    "altAbout-us": "Ir a la sección de Acerca de nosotros",
     "contact": "Contacto",
-    "altContact":"Ir a la sección de contacto"
+    "altContact": "Ir a la sección de contacto"
   },
 
   "hero": {
@@ -35,19 +35,22 @@
         "title": "Un amigo te espera",
         "text": "Cada perro o gato merece una segunda oportunidad. Al adoptar, conviertes un pasado roto en un futuro lleno de amor y lealtad. Abre tu corazón y tu hogar será su refugio seguro.",
         "buttonText": "Conoce más",
-        "buttonLink": "/services"
+        "buttonLink": "/services",
+        "altButtonText": "Obtén más información sobre nuestros servicios y cómo puedes ayudar"
       },
       {
         "title": "Quiénes somos",
         "text": "Nuestro refugio existe para proteger, cuidar y dar esperanza a los animales abandonados. Descubre nuestra misión, valores e historias inspiradoras que nos motivan cada día.",
         "buttonText": "Conoce más",
-        "buttonLink": "/about-us"
+        "buttonLink": "/about-us",
+        "altButtonText": "Aprende más sobre nuestra misión y valores"
       },
       {
         "title": "Sé parte del cambio",
         "text": "Tu apoyo puede tomar muchas formas: tiempo para ayudar, una donación para alimentar o simplemente compartir para crear conciencia. Juntos, cada pequeño gesto construye un mejor mañana para ellos.",
         "buttonText": "Únete",
-        "buttonLink": "/volunteer"
+        "buttonLink": "/volunteer",
+        "altButtonText": "Descubre cómo puedes ser voluntario y hacer una diferencia"
       }
     ]
   },
@@ -167,19 +170,19 @@
   },
 
   "donationSection": {
-  "donationTitle": "Make a Difference",
-  "title": "Donations | JausPet",
-  "description": "Support JausPet to help more pets find a loving home. Your contribution makes a difference.",
-  "backgroundAlt": "Donation page background",
-  "inspirationalDescription": "Your support helps save animals in situations of abandonment and abuse. Together we can give them a safe home, feed the hungry, and heal their wounds. Thank you for your love.",
-  "donationIntroTitle": "Together we can help",
-  "donationIntro": "Your support helps save animals in situations of abandonment and abuse. Together we can give them a safe home, feed the hungry, and heal their wounds. Thank you for your love.",
-  "donationBanner": "Join us as a volunteer!",
-  "button": "Join now and make a difference",
-  "go": "Join now",
-  "whyDonateTitle": "Why donate?",
-  "whyDonateDescription": "Donations are what make our mission possible. Every contribution allows us to cover medical treatments, food, and a safe shelter for the animals we rescue. Together, we can change their story."
-},
+    "donationTitle": "Haz la diferencia",
+    "title": "Donaciones | JausPet",
+    "description": "Apoya a JausPet para ayudar a más mascotas a encontrar un hogar lleno de amor. Tu contribución hace la diferencia.",
+    "backgroundAlt": "Fondo de la página de donaciones",
+    "inspirationalDescription": "Tu apoyo ayuda a salvar animales en situación de abandono y maltrato. Juntos podemos darles un hogar seguro, alimentar a los que tienen hambre y sanar sus heridas. Gracias por tu cariño.",
+    "donationIntroTitle": "Juntos podemos ayudar",
+    "donationIntro": "Tu apoyo ayuda a salvar animales en situación de abandono y maltrato. Juntos podemos darles un hogar seguro, alimentar a los que tienen hambre y sanar sus heridas. Gracias por tu cariño.",
+    "donationBanner": "¡Participa como voluntario!",
+    "button": "Únete ahora y haz la diferencia",
+    "go": "Únete ahora",
+    "whyDonateTitle": "¿Por qué donar?",
+    "whyDonateDescription": "Las donaciones son lo que hace posible nuestra misión. Cada contribución nos permite cubrir tratamientos médicos, alimento y un refugio seguro para los animales que rescatamos. Juntos, podemos cambiar su historia."
+  },
 
   "donationCards": {
     "title": "Formas de donar",
@@ -217,14 +220,14 @@
   },
 
   "contact": {
-  "contactTitle": "Contáctanos",
-  "title": "Contáctanos | JausPet",
-  "description": "Conoce JausPet y ponte en contacto con nosotros para cualquier consulta o adopción.",
-  "formDescription": "¡Nos encantará saber de ti! Si tienes alguna pregunta, comentario o sugerencia, utiliza nuestro formulario de contacto.",
-  "backgroundAlt": "Fondo de la página de Contacto",
-  "bannerDescription": "Amigos para adoptar",
-  "button": "Más información sobre animales en adopción",
-  "go": "Ve a conocerlos"
+    "contactTitle": "Contáctanos",
+    "title": "Contáctanos | JausPet",
+    "description": "Conoce JausPet y ponte en contacto con nosotros para cualquier consulta o adopción.",
+    "formDescription": "¡Nos encantará saber de ti! Si tienes alguna pregunta, comentario o sugerencia, utiliza nuestro formulario de contacto.",
+    "backgroundAlt": "Fondo de la página de Contacto",
+    "bannerDescription": "Amigos para adoptar",
+    "button": "Más información sobre animales en adopción",
+    "go": "Ve a conocerlos"
   },
 
   "adoptions": {
