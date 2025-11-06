@@ -14,10 +14,15 @@
 
   "menu": {
     "services": "Servicios",
+    "altServices":"Ir a la sección de servicios",
     "volunteer": "Voluntarios",
+    "altVolunteer":"Ir a la sección de voluntariado",
     "donations": "Donar",
+    "altDonations":"Ir a la sección de donaciones",
     "about-us": "Nosotros",
-    "contact": "Contacto"
+    "altAbout-us":"Ir a la sección de Acerca de nosotros",
+    "contact": "Contacto",
+    "altContact":"Ir a la sección de contacto"
   },
 
   "hero": {

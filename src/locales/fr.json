@@ -13,11 +13,16 @@
   },
 
   "menu": {
-    "services": "Services",
-    "volunteer": "Bénévolat",
-    "donations": "Dons",
-    "about-us": "À propos",
-    "contact": "Contact"
+  "services": "Services",
+  "altServices": "Aller à la section des services",
+  "volunteer": "Bénévoles",
+  "altVolunteer": "Aller à la section du bénévolat",
+  "donations": "Faire un don",
+  "altDonations": "Aller à la section des dons",
+  "about-us": "À propos de nous",
+  "altAbout-us": "Aller à la section À propos de nous",
+  "contact": "Contact",
+  "altContact": "Aller à la section contact"
   },
 
   "hero": {

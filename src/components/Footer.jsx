@@ -77,12 +77,14 @@ const Footer = () => {
               <a
                 href="/services"
                 className="hover:underline focus-visible:outline-none"
+                aria-label={t("menu.altServices")}
               >
                 {t("menu.services")}
               </a>
               <a
                 href="/volunteer"
                 className="hover:underline focus-visible:outline-none"
+                aria-label={t("menu.altVolunteer")}
               >
                 {t("menu.volunteer")}
               </a>
@@ -91,12 +93,14 @@ const Footer = () => {
               <a
                 href="/donations"
                 className="hover:underline focus-visible:outline-none"
+                aria-label={t("menu.altDonations")}
               >
                 {t("menu.donations")}
               </a>
               <a
                 href="/about-us"
                 className="hover:underline focus-visible:outline-none"
+                aria-label={t("menu.altAbout-us")}
               >
                 {t("menu.about-us")}
               </a>
@@ -105,6 +109,7 @@ const Footer = () => {
               <a
                 href="/contact"
                 className="hover:underline focus-visible:outline-none"
+                aria-label={t("menu.altContact")}
               >
                 {t("menu.contact")}
               </a>
