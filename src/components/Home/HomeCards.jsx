@@ -83,9 +83,9 @@ const Cards = () => {
                   {card.link && (
                     <Button
                       to={card.link}
-                      aria-label={`Learn more about ${t(card.title)}`}
+                      aria-label={card.button[lang] || card.button["es"]}
                     >
-                      {t("card.learn_more")}
+                      {card.button[lang] || card.button["es"]}
                     </Button>
                   )}
                 </div>

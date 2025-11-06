@@ -1,86 +1,86 @@
 [
-{
-"id": "service_1",
-"icon": "/icons/adoption.webp",
-"iconMobile": "/icons/adoptionMobile.webp",
-"title": {
-"es": "Adopción",
-"en": "Adoption",
-"fr": "Adoption"
-},
-"text": {
-"es": "Conoce a los animales que buscan un hogar y dales una segunda oportunidad.",
-"en": "Meet the animals looking for a home and give them a second chance.",
-"fr": "Rencontrez les animaux à la recherche d'un foyer et offrez-leur une seconde chance."
-},
-"button": {
-"es": "Ver animales",
-"en": "See animals",
-"fr": "Voir les animaux"
-},
-"link": "/adoptions"
-},
-{
-"id": "service_2",
-"icon": "/icons/hoteldog.webp",
-"iconMobile": "/icons/hoteldogMobile.webp",
-"title": {
-"es": "Hotel de perros",
-"en": "Dog Hotel",
-"fr": "Hôtel pour chiens"
-},
-"text": {
-"es": "Ofrecemos alojamiento temporal y cuidado profesional para perros.",
-"en": "We offer temporary lodging and professional care for dogs.",
-"fr": "Nous proposons un hébergement temporaire et des soins professionnels pour les chiens."
-},
-"button": {
-"es": "Saber más",
-"en": "Learn more",
-"fr": "En savoir plus"
-},
-"link": "/hotel"
-},
-{
-"id": "service_3",
-"icon": "/icons/vaccination.webp",
-"iconMobile": "/icons/vaccinationMobile.webp",
-"title": {
-"es": "Campañas",
-"en": "Campaigns",
-"fr": "Campagnes"
-},
-"text": {
-"es": "Participa en nuestras campañas para mantener a las mascotas saludables y controladas.",
-"en": "Join our campaigns to keep pets healthy and controlled.",
-"fr": "Participez à nos campagnes pour maintenir les animaux de compagnie en bonne santé et sous contrôle."
-},
-"button": {
-"es": "Más información",
-"en": "More info",
-"fr": "Plus d'informations"
-},
-"link": "/campaigns"
-},
-{
-"id": "service_4",
-"icon": "/icons/lostandfound.webp",
-"iconMobile": "/icons/lostandfoundMobile.webp",
-"title": {
-"es": "Animales perdidos y encontrados",
-"en": "Lost & Found Animals",
-"fr": "Animaux perdus et retrouvés"
-},
-"text": {
-"es": "Informa sobre animales perdidos o encontrados y ayuda a reunirlos con sus dueños.",
-"en": "Report lost or found animals and help reunite them with their owners.",
-"fr": "Signalez les animaux perdus ou retrouvés et aidez-les à retrouver leurs propriétaires."
-},
-"button": {
-"es": "Informar",
-"en": "Report",
-"fr": "Signaler"
-},
-"link": "/lostFound"
-}
+  {
+    "id": "service_1",
+    "icon": "/icons/adoption.webp",
+    "iconMobile": "/icons/adoptionMobile.webp",
+    "title": {
+      "es": "Adopción",
+      "en": "Adoption",
+      "fr": "Adoption"
+    },
+    "text": {
+      "es": "Conoce a los animales que buscan un hogar y dales una segunda oportunidad.",
+      "en": "Meet the animals looking for a home and give them a second chance.",
+      "fr": "Rencontrez les animaux à la recherche d'un foyer et offrez-leur une seconde chance."
+    },
+    "button": {
+      "es": "Ver animales en adopción",
+      "en": "See animals for adoption",
+      "fr": "Voir les animaux à adopter"
+    },
+    "link": "/adoptions"
+  },
+  {
+    "id": "service_2",
+    "icon": "/icons/hoteldog.webp",
+    "iconMobile": "/icons/hoteldogMobile.webp",
+    "title": {
+      "es": "Hotel de perros",
+      "en": "Dog Hotel",
+      "fr": "Hôtel pour chiens"
+    },
+    "text": {
+      "es": "Ofrecemos alojamiento temporal y cuidado profesional para perros.",
+      "en": "We offer temporary lodging and professional care for dogs.",
+      "fr": "Nous proposons un hébergement temporaire et des soins professionnels pour les chiens."
+    },
+    "button": {
+      "es": "Más sobre el hotel para perros",
+      "en": "Learn more about the dog hotel",
+      "fr": "En savoir plus sur l'hôtel pour chiens"
+    },
+    "link": "/hotel"
+  },
+  {
+    "id": "service_3",
+    "icon": "/icons/vaccination.webp",
+    "iconMobile": "/icons/vaccinationMobile.webp",
+    "title": {
+      "es": "Campañas",
+      "en": "Campaigns",
+      "fr": "Campagnes"
+    },
+    "text": {
+      "es": "Participa en nuestras campañas para mantener a las mascotas saludables y controladas.",
+      "en": "Join our campaigns to keep pets healthy and controlled.",
+      "fr": "Participez à nos campagnes pour maintenir les animaux de compagnie en bonne santé et sous contrôle."
+    },
+    "button": {
+      "es": "Más sobre las campañas",
+      "en": "Learn more about campaigns",
+      "fr": "Plus d'informations sur les campagnes"
+    },
+    "link": "/campaigns"
+  },
+  {
+    "id": "service_4",
+    "icon": "/icons/lostandfound.webp",
+    "iconMobile": "/icons/lostandfoundMobile.webp",
+    "title": {
+      "es": "Animales perdidos y encontrados",
+      "en": "Lost & Found Animals",
+      "fr": "Animaux perdus et retrouvés"
+    },
+    "text": {
+      "es": "Informa sobre animales perdidos o encontrados y ayuda a reunirlos con sus dueños.",
+      "en": "Report lost or found animals and help reunite them with their owners.",
+      "fr": "Signalez les animaux perdus ou retrouvés et aidez-les à retrouver leurs propriétaires."
+    },
+    "button": {
+      "es": "Reportar un animal perdido o encontrado",
+      "en": "Report a lost or found animal",
+      "fr": "Signaler un animal perdu ou retrouvé"
+    },
+    "link": "/lostFound"
+  }
 ]

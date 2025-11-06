@@ -81,7 +81,7 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
             <div className="relative h-72 md:h-full flex items-center justify-center">
               <img
                 src={images[currentImage]}
-                alt={`${animal.name} ${currentImage + 1}`}
+                alt={`${animal.name}, imagen ${currentImage + 1} de ${images.length}`}
                 className="w-full h-full object-cover rounded-lg transition-all duration-300"
                 loading="lazy"
               />
@@ -91,7 +91,8 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
                   <button
                     onClick={prevImage}
                     className="absolute left-2 bg-white/60 hover:bg-white text-gray-800 rounded-full p-2 transition"
-                    aria-label="Previous image"
+                    aria-label={t("animalModal.previousImage")}
+
                   >
                     ‹
                   </button>
@@ -99,7 +100,8 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
                   <button
                     onClick={nextImage}
                     className="absolute right-2 bg-white/60 hover:bg-white text-gray-800 rounded-full p-2 transition"
-                    aria-label="Next image"
+                    aria-label={t("animalModal.nextImage")}
+
                   >
                     ›
                   </button>
@@ -117,7 +119,7 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
                           ? "bg-[var(--color-focus-primary)]"
                           : "bg-gray-300"
                       }`}
-                      aria-label={`Go to image ${index + 1}`}
+                      aria-label={`${t("animalModal.goToImage")} ${index + 1}`}
                     />
                   ))}
                 </div>

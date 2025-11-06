@@ -241,7 +241,10 @@
     "sterilized": "Sterilized",
     "personality": "Personality",
     "interestedIn": "Interested in {{name}}?",
-    "submitButton": "Request information"
+    "submitButton": "Request information",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "goToImage": "Go to image"
   },
 
   "animalCard": {
