@@ -35,7 +35,7 @@ const Tips = () => {
     if (!isHovered) {
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-      }, 4000);
+      }, 15000);
     }
     return () => clearInterval(intervalRef.current);
   }, [isHovered, slides]);
@@ -116,4 +116,3 @@ const Tips = () => {
 };
 
 export default Tips;
-

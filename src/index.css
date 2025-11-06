@@ -16,6 +16,7 @@ body.modal-open {
   padding-right: 0.5rem;
 }
 
+
 /* Mobile optimization:
    Disable fixed background on small screens to prevent visual bugs */
 @media (max-width: 768px) {

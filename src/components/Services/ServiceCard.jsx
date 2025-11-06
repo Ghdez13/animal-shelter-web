@@ -51,9 +51,9 @@ const ServiceCard = ({ service }) => {
           <Button
             to={isUnderConstruction ? undefined : service.link}
             onClick={isUnderConstruction ? () => setShowModal(true) : undefined}
-            aria-label={ariaLabelText} // Texto largo para SEO y screen readers
+            aria-label={ariaLabelText}
           >
-            {buttonText} {/* Texto corto visible */}
+            {buttonText}
           </Button>
         </div>
       </div>

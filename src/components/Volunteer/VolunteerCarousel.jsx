@@ -45,7 +45,7 @@ const VolunteerCarousel = () => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % safeSlides.length);
-    }, 2000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [safeSlides.length, isPaused]);
 

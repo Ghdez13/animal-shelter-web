@@ -30,7 +30,7 @@ const VolunteerReflection = () => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % imagesDesktop.length);
-    }, 5000);
+    }, 13000);
     return () => clearInterval(interval);
   }, [isPaused, imagesDesktop.length]);
 

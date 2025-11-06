@@ -31,11 +31,11 @@ const Hero = () => {
     });
   }, []);
 
-  // Auto slide change every 9s
+  // Auto slide change every 15s
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % mobileImages.length);
-    }, 9000);
+    }, 15000);
     return () => clearInterval(interval);
   }, [mobileImages.length]);
 
@@ -48,7 +48,6 @@ const Hero = () => {
       {/* === Mobile version === */}
       <div className="relative w-full min-[1140px]:hidden">
         <img
-          key={currentIndex}
           src={mobileImages[currentIndex]}
           alt=""
           role="presentation"
@@ -69,10 +68,10 @@ const Hero = () => {
             <div className="mt-8">
               <Button
                 to={t(`hero.slides.${currentIndex}.buttonLink`)}
-                aria-label={t(`hero.slides.${currentIndex}.altButtonText`)} // Agregamos altButtonText para SEO y accesibilidad
+                type="button"
+                aria-label={t(`hero.slides.${currentIndex}.altButtonText`)}
               >
                 {t(`hero.slides.${currentIndex}.buttonText`)}{" "}
-                {/* Texto visible */}
               </Button>
             </div>
 
@@ -125,10 +124,10 @@ const Hero = () => {
             <div className="mt-8">
               <Button
                 to={t(`hero.slides.${currentIndex}.buttonLink`)}
-                aria-label={t(`hero.slides.${currentIndex}.altButtonText`)} // Agregamos altButtonText para SEO y accesibilidad
+                type="button"
+                aria-label={t(`hero.slides.${currentIndex}.altButtonText`)}
               >
                 {t(`hero.slides.${currentIndex}.buttonText`)}{" "}
-                {/* Texto visible */}
               </Button>
             </div>
 

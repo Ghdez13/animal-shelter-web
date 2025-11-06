@@ -32,25 +32,25 @@
 
     "slides": [
       {
-        "title": "Un ami t'attend",
-        "text": "Chaque chien ou chat mérite une seconde chance. En adoptant, vous transformez un passé brisé en un avenir rempli d'amour et de loyauté. Ouvrez votre cœur et votre maison sera leur havre de sécurité.",
+        "title": "Ils vous attendent",
+        "text": "Chaque chien ou chat mérite une seconde chance. En adoptant, vous transformez un passé brisé en un futur rempli d'amour et de loyauté. Ouvrez votre cœur et votre maison sera leur refuge sûr.",
         "buttonText": "En savoir plus",
         "buttonLink": "/services",
         "altButtonText": "Obtenez plus d'informations sur nos services et comment vous pouvez aider"
       },
       {
-        "title": "Qui nous sommes",
-        "text": "Notre refuge existe pour protéger, soigner et donner de l'espoir aux animaux abandonnés. Découvrez notre mission, nos valeurs et les histoires inspirantes qui nous motivent chaque jour.",
+        "title": "Découvrez qui nous sommes",
+        "text": "Nous menons des campagnes d'adoption et sensibilisons à l'abandon des animaux. Nous protégeons et prenons soin de chaque chien et chat arrivant dans notre refuge, leur apportant espoir et amour.",
         "buttonText": "En savoir plus",
         "buttonLink": "/about-us",
         "altButtonText": "En savoir plus sur notre mission et nos valeurs"
       },
       {
-        "title": "Faites partie du changement",
-        "text": "Votre soutien peut prendre plusieurs formes : du temps pour aider, un don pour nourrir ou simplement partager pour sensibiliser. Ensemble, chaque petit geste construit un meilleur avenir pour eux.",
-        "buttonText": "Rejoignez-nous",
+        "title": "Participez au changement",
+        "text": "Votre soutien peut prendre plusieurs formes : du temps pour aider, un don pour nourrir, ou simplement partager pour sensibiliser. Chaque petit geste contribue à un meilleur demain pour eux.",
+        "buttonText": "Rejoindre",
         "buttonLink": "/volunteer",
-        "altButtonText": "Découvrez comment vous pouvez devenir bénévole et faire la différence"
+        "altButtonText": "Découvrez comment vous pouvez être bénévole et faire la différence"
       }
     ]
   },

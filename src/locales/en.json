@@ -32,25 +32,25 @@
 
     "slides": [
       {
-        "title": "A friend is waiting for you",
+        "title": "They awaits you today",
         "text": "Every dog or cat deserves a second chance. By adopting, you turn a broken past into a future full of love and loyalty. Open your heart and your home will be their safe haven.",
         "buttonText": "Learn more",
         "buttonLink": "/services",
         "altButtonText": "Get more information about our services and how you can help"
       },
       {
-        "title": "Who we are",
-        "text": "Our shelter exists to protect, care for, and give hope to abandoned animals. Discover our mission, values, and inspiring stories that motivate us every day.",
+        "title": "Discover who we are",
+        "text": "We run adoption campaigns and raise awareness about animal abandonment. We protect and care for every dog and cat arriving at our shelter, giving them hope and love.",
         "buttonText": "Learn more",
         "buttonLink": "/about-us",
         "altButtonText": "Learn more about our mission and values"
       },
       {
-        "title": "Be part of the change",
-        "text": "Your support can take many forms: time to help, a donation to feed, or simply sharing to raise awareness. Together, every small gesture builds a better tomorrow for them.",
-        "buttonText": "Join us",
+        "title": "Be part of change",
+        "text": "Your support can take many forms: time to help, a donation to feed, or simply sharing to raise awareness. Every small gesture helps a better tomorrow for them.",
+        "buttonText": "Join",
         "buttonLink": "/volunteer",
-        "altButtonText": "Find out how you can volunteer and make a difference"
+        "altButtonText": "Discover how you can volunteer and make a difference"
       }
     ]
   },

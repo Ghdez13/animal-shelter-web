@@ -21,7 +21,7 @@ export default function TestimonialSlider() {
       setCurrentIndex((prev) =>
         prev === testimonialsData.length - 1 ? 0 : prev + 1
       );
-    }, 5000);
+    }, 13000);
 
     return () => clearInterval(intervalRef.current);
   }, [isPaused]);

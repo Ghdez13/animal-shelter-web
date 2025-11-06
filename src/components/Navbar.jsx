@@ -27,7 +27,7 @@ const Navbar = () => {
   const modalRef = useRef(null);
 
   // Determine which logo to use based on window width
-  const currentLogo = window.innerWidth < 1140 ? LogoMobile : LogoBlack;
+  const currentLogo = window.innerWidth < 1140 ? LogoMobile : LogoDesktop;
 
   // Close mobile menu when clicking outside
   useEffect(() => {
