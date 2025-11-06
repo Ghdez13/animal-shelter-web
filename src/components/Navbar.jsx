@@ -1,4 +1,4 @@
-import LogoBlack from "../assets/logo/navbar-logo.webp";
+import LogoDesktop from "../assets/logo/navbar-logo.webp";
 import LogoMobile from "../assets/logo/navbar-logoMobile.webp";
 import BackgroundOrange from "../assets/images/BackgroundOrange.webp";
 import BackgroundOrangeMobile from "../assets/images/BackgroundOrangeMobile.webp";
@@ -56,13 +56,18 @@ const Navbar = () => {
           to="/"
           onClick={() => setIsOpen(false)}
           className="focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-secondary)] rounded-xl transition"
-          title={t("navbar.logoTitle")} // ✅ Tooltip changes dynamically in ES/EN/FR
+          title={t("navbar.logoTitle")}
         >
-          <img
-            src={currentLogo}
-            alt={t("navbar.logoAlt")}
-            className="h-15 md:h-25 lg:h-28 object-contain"
-          />
+          <picture>
+            {/* Desktop */}
+            <source srcSet={LogoDesktop} media="(min-width: 1140px)" />
+            {/* Mobile */}
+            <img
+              src={LogoMobile}
+              alt={t("navbar.logoAlt")}
+              className="h-15 md:h-25 lg:h-28 object-contain"
+            />
+          </picture>
         </Link>
 
         {/* Hamburger button for mobile */}
