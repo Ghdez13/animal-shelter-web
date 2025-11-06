@@ -1,24 +1,28 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Button from "../Button";
+import LazyImage from "../LazyImage"; // Import the LazyImage component
 
 const Cards = () => {
   const { t } = useTranslation();
   const [cards, setCards] = useState([]);
   const [imgIndices, setImgIndices] = useState({});
 
+  // Load cards data from JSON
   useEffect(() => {
     import("../../assets/data/homeCards.json").then((module) =>
       setCards(module.default)
     );
   }, []);
 
+  // Set up image rotation for cards with multiple images
   useEffect(() => {
     const timers = [];
 
     cards.forEach((card, i) => {
       if (card.images?.length > 1) {
         const delay = i * 500;
+
         const rotate = () => {
           setImgIndices((prev) => ({
             ...prev,
@@ -26,6 +30,7 @@ const Cards = () => {
           }));
           timers[i] = setTimeout(rotate, 5000);
         };
+
         timers[i] = setTimeout(rotate, delay);
       }
     });
@@ -38,7 +43,7 @@ const Cards = () => {
       <div className="cards-container grid gap-6 px-0 md:px-0 lg:px-6 md:max-w-6xl md:mx-auto md:grid-cols-2 mt-20">
         {cards.map((card, i) => {
           const currentIndex = imgIndices[card.id] || 0;
-          const rowReverse = i >= 2; // second row reversed
+          const rowReverse = i >= 2; // Second row reversed
 
           return (
             <div
@@ -47,13 +52,21 @@ const Cards = () => {
                 rowReverse ? "md:flex-row-reverse" : ""
               }`}
             >
-              {/* Image card */}
+              {/* Image card with LazyImage for desktop & mobile */}
               {card.type === "image" && (
                 <div className="w-full md:flex-1">
-                  <img
-                    src={card.images[currentIndex]}
+                  {/* Desktop image */}
+                  <LazyImage
+                    src={card.images[currentIndex].desktop}
                     alt={t(card.alt)}
-                    className="w-full h-auto md:h-full object-contain md:object-cover"
+                    className="hidden md:block w-full h-full object-cover"
+                  />
+
+                  {/* Mobile image */}
+                  <LazyImage
+                    src={card.images[currentIndex].mobile}
+                    alt={t(card.alt) + " mobile"}
+                    className="block md:hidden w-full h-auto object-contain"
                   />
                 </div>
               )}

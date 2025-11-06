@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import Filled from "../../assets/icons/filled-footprint.svg";
-import Outline from "../../assets/icons/outline-footprint.svg";
+import Filled from "../../assets/icons/filled-footprint.webp";
+import Outline from "../../assets/icons/outline-footprint.webp";
 
 const Tips = () => {
   const { t, i18n } = useTranslation();

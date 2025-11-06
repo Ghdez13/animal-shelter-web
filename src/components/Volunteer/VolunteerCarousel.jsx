@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Filled from "../../assets/icons/filled-footprint.svg";
-import Outline from "../../assets/icons/outline-footprint.svg";
+import Filled from "../../assets/icons/filled-footprint.webp";
+import Outline from "../../assets/icons/outline-footprint.webp";
+import LazyImage from "../LazyImage";
 
 const VolunteerCarousel = () => {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language || "es";
+  const { t } = useTranslation();
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(1);
@@ -17,12 +17,14 @@ const VolunteerCarousel = () => {
     (_, i) => t(`volunteerSection.captions.${i}`) || ""
   );
 
+  // Map images with desktop and mobile sources
   const images = captions.map((caption, index) => ({
     src: `/images/carousel${index + 1}.webp`,
+    srcMobile: `/images/carousel${index + 1}Mobile.webp`,
     caption,
   }));
 
-  // Update cards per slide on resize
+  // Update cards per slide on window resize
   useEffect(() => {
     const updateCardsPerSlide = () =>
       setCardsPerSlide(window.innerWidth >= 768 ? 2 : 1);
@@ -38,7 +40,7 @@ const VolunteerCarousel = () => {
   }
   const safeSlides = slides.length > 0 ? slides : [[]];
 
-  // Autoplay
+  // Autoplay logic
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
@@ -69,8 +71,10 @@ const VolunteerCarousel = () => {
             >
               <div className="flex flex-col rounded-lg shadow-lg overflow-hidden h-[400px]">
                 <div className="flex-1 overflow-hidden">
-                  <img
+                  {/* LazyImage component handles lazy loading and srcSet */}
+                  <LazyImage
                     src={img.src}
+                    srcMobile={img.srcMobile}
                     alt={img.caption}
                     className="w-full h-full object-cover"
                   />
@@ -90,7 +94,7 @@ const VolunteerCarousel = () => {
         </div>
 
         {/* Navigation dots */}
-        <div className="mt-6 flex space-x-3 justify-center">
+        <div className="mt-6 flex justify-center space-x-3">
           {safeSlides.map((_, index) => {
             const isActive = index === currentIndex;
             return (
@@ -111,6 +115,7 @@ const VolunteerCarousel = () => {
                       }`
                 }
               >
+                {/* Navigation icon */}
                 <img
                   src={isActive ? Filled : Outline}
                   alt={
@@ -119,6 +124,7 @@ const VolunteerCarousel = () => {
                       : `${t("dots.slide")} ${index + 1}`
                   }
                   className="w-full h-full"
+                  loading="lazy"
                 />
               </button>
             );

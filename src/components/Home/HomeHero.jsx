@@ -7,8 +7,8 @@ import HeroImageMobileThree from "../../assets/images/hero-mobile-three.webp";
 import HeroDesktop from "../../assets/images/hero-desktop.webp";
 import HeroDesktopTwo from "../../assets/images/hero-desktop-two.webp";
 import HeroDesktopThree from "../../assets/images/hero-desktop-three.webp";
-import Filled from "../../assets/icons/filled-footprint.svg";
-import Outline from "../../assets/icons/outline-footprint.svg";
+import Filled from "../../assets/icons/filled-footprint.webp";
+import Outline from "../../assets/icons/outline-footprint.webp";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -19,11 +19,7 @@ const Hero = () => {
     HeroImageMobileThree,
   ];
 
-  const desktopImages = [
-    HeroDesktop,
-    HeroDesktopTwo,
-    HeroDesktopThree,
-  ];
+  const desktopImages = [HeroDesktop, HeroDesktopTwo, HeroDesktopThree];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

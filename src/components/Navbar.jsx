@@ -1,5 +1,7 @@
 import LogoBlack from "../assets/logo/navbar-logo.webp";
+import LogoMobile from "../assets/logo/navbar-logoMobile.webp";
 import BackgroundOrange from "../assets/images/BackgroundOrange.webp";
+import BackgroundOrangeMobile from "../assets/images/BackgroundOrangeMobile.webp";
 import { useState, useRef, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -12,6 +14,7 @@ const MENU_ITEMS = [
   "about-us",
   "contact",
 ];
+
 const LANGUAGES = [
   { code: "es", label: "ES" },
   { code: "en", label: "EN" },
@@ -23,7 +26,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef(null);
 
-  // Close mobile menu on outside click
+  // Determine which logo to use based on window width
+  const currentLogo = window.innerWidth < 1140 ? LogoMobile : LogoBlack;
+
+  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -45,14 +51,15 @@ const Navbar = () => {
       role="navigation"
     >
       <div className="max-w-6xl mx-auto w-full pl-5 pr-5 py-3 flex justify-between items-center">
-        {/* Logo linking to home */}
+        {/* Logo linking to home with dynamic title based on language */}
         <Link
           to="/"
           onClick={() => setIsOpen(false)}
           className="focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-secondary)] rounded-xl transition"
+          title={t("navbar.logoTitle")} // ✅ Tooltip changes dynamically in ES/EN/FR
         >
           <img
-            src={LogoBlack}
+            src={currentLogo}
             alt={t("navbar.logoAlt")}
             className="h-15 md:h-25 lg:h-28 object-contain"
           />
@@ -64,11 +71,13 @@ const Navbar = () => {
             e.stopPropagation();
             setIsOpen(!isOpen);
           }}
-          className={`absolute top-6 right-6 w-20 h-4 flex items-center justify-center min-[1140px]:hidden z-60
-            focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-secondary)] focus-visible:rounded-lg transition`}
+          className="absolute top-6 right-6 w-20 h-4 flex items-center justify-center min-[1140px]:hidden z-60 focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-secondary)] focus-visible:rounded-lg transition"
           aria-label={t("navbar.toggleMenu")}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
+          title={
+            isOpen ? t("navbar.toggleMenuClose") : t("navbar.toggleMenuOpen")
+          } // ✅ Title changes dynamically
         >
           {/* Hamburger animation spans */}
           <span
@@ -100,11 +109,7 @@ const Navbar = () => {
               to={`/${item}`}
               aria-label={t(`menu.${item}`)}
               className={({ isActive }) =>
-                `relative text-2xl transition focus:outline-none 
-                hover:after:w-full focus-visible:after:w-full 
-                after:absolute after:-bottom-1 after:left-0 after:h-1 
-                after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300
-                ${
+                `relative text-2xl transition focus:outline-none hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300 ${
                   isActive
                     ? "after:w-full text-[var(--color-text-light)]"
                     : "text-[var(--color-text-light)]"
@@ -121,11 +126,7 @@ const Navbar = () => {
               <button
                 key={code}
                 onClick={() => i18n.changeLanguage(code)}
-                className={`relative font-semibold transition 
-                hover:after:w-full focus-visible:after:w-full 
-                after:absolute after:-bottom-1 after:left-0 after:h-1 
-                after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300 
-                ${
+                className={`relative font-semibold transition hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300 ${
                   i18n.language === code
                     ? "after:w-full text-[var(--color-text-light)]"
                     : "text-[var(--color-text-light)]"
@@ -145,33 +146,36 @@ const Navbar = () => {
           className="fixed inset-0 bg-transparent z-50 flex justify-end"
           onClick={() => setIsOpen(false)}
         >
+          {/* Menu container with mobile optimized background */}
           <div
             ref={modalRef}
             className="w-3/4 max-w-xs h-full p-8 pt-25 flex flex-col space-y-8 shadow-lg"
             style={{
-              backgroundImage: `url(${BackgroundOrange})`,
+              backgroundImage: `url(${
+                window.innerWidth < 1140
+                  ? BackgroundOrangeMobile
+                  : BackgroundOrange
+              })`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Menu links */}
             {MENU_ITEMS.map((item) => (
               <Link
                 key={item}
                 to={`/${item}`}
                 aria-label={t(`menu.${item}`)}
                 onClick={() => setIsOpen(false)}
-                className="relative inline-block text-2xl text-[var(--color-text-light)] transition 
-                  focus:outline-none hover:after:w-full focus-visible:after:w-full
-                  after:absolute after:-bottom-1 after:left-0 after:h-1 
-                  after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300"
+                className="relative inline-block text-2xl text-[var(--color-text-light)] transition focus:outline-none hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300"
               >
                 {t(`menu.${item}`)}
               </Link>
             ))}
 
-            {/* ✅ Mobile language selector (matches desktop behavior) */}
+            {/* Mobile language selector */}
             <div className="flex justify-center space-x-4 pt-6 border-t border-[var(--color-text-light)]">
               {LANGUAGES.map(({ code, label }) => (
                 <button
@@ -180,15 +184,11 @@ const Navbar = () => {
                     i18n.changeLanguage(code);
                     setIsOpen(false);
                   }}
-                  className={`relative inline-block font-semibold transition 
-                    hover:after:w-full focus-visible:after:w-full 
-                    after:absolute after:-bottom-1 after:left-0 after:h-1 
-                    after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300
-                    ${
-                      i18n.language === code
-                        ? "after:w-full text-[var(--color-text-light)]"
-                        : "text-[var(--color-text-light)]"
-                    }`}
+                  className={`relative inline-block font-semibold transition hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300 ${
+                    i18n.language === code
+                      ? "after:w-full text-[var(--color-text-light)]"
+                      : "text-[var(--color-text-light)]"
+                  }`}
                 >
                   {label}
                 </button>

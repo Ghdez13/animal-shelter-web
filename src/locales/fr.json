@@ -1,7 +1,10 @@
 {
   "navbar": {
     "logoAlt": "Logo du refuge animalier, aller à la page d'accueil",
+    "logoTitle": "Aller à l'accueil",
     "toggleMenu": "Basculer le menu",
+    "toggleMenuOpen": "Ouvrir le menu",
+    "toggleMenuClose": "Fermer le menu",
     "learnOurServices": "Découvrez nos services",
     "learnVolunteerOpportunities": "Découvrez les opportunités de bénévolat",
     "donateAnimalShelter": "Faire un don au refuge animalier",
@@ -42,6 +45,11 @@
         "buttonLink": "/volunteer"
       }
     ]
+  },
+
+  "home": {
+    "title": "Accueil",
+    "description": "Découvrez comment vous pouvez aider à changer des vies en adoptant, en faisant un don ou en devenant bénévole. Chez JausPet, chaque geste compte pour offrir amour et un foyer digne aux chiens et chats en attente d’une famille."
   },
 
   "card": {
@@ -85,18 +93,22 @@
 
   "servicesSection": {
     "title": "Nos services",
+    "description": "Chez JausPet, nous proposons divers services pour assurer le bien-être de nos animaux et soutenir la communauté. De l’adoption responsable aux campagnes de stérilisation et de soins animaliers.",
+    "backgroundAlt": "Arrière-plan de la section des services",
     "tipsTittle": "Trucs & conseils",
     "loading": "Chargement des services..."
   },
 
   "dots": {
-  "goToSlide": "Aller à la diapositive",
-  "activeSlide": "Diapositive active",
-  "slide": "Diapositive"
-},
+    "goToSlide": "Aller à la diapositive",
+    "activeSlide": "Diapositive active",
+    "slide": "Diapositive"
+  },
 
   "volunteerSection": {
     "title": "Deviens bénévole",
+    "description": "Rejoins-nous comme bénévole et aide à améliorer la vie de nombreux animaux qui cherchent un foyer.",
+    "backgroundAlt": "Arrière-plan de la section de bénévolat",
     "introPhrase": "Notre temps, nos mains et nos cœurs peuvent changer des vies.",
     "bannerDescription": "Faire un don aide aussi",
     "button": "En savoir plus",
@@ -146,7 +158,9 @@
 
   "donationSection": {
     "title": "Fais la différence",
-    "description": "Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
+    "description": "Soutenez JausPet pour aider plus d'animaux à trouver un foyer aimant. Votre contribution fait la différence.",
+    "backgroundAlt": "Fond de la page des dons",
+    "inspirationalDescription": "Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
     "donationIntroTitle": "Ensemble, nous pouvons aider",
     "donationIntro": "Votre soutien aide à sauver les animaux abandonnés ou maltraités. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et guérir leurs blessures. Merci pour votre amour.",
     "donationBanner": "Soyez bénévole !",
@@ -163,7 +177,7 @@
       "Virement international",
       "Liste de souhaits Amazon"
     ],
-    "description": [
+    "cardDescription": [
       "Faites un don directement via notre compte bancaire. Sûr et rapide.",
       "Soutenez-nous depuis le magasin OXXO le plus proche en utilisant notre référence.",
       "Vous pouvez également faire un don depuis l’étranger en utilisant notre code SWIFT.",
@@ -173,7 +187,9 @@
   },
 
   "aboutUs": {
-    "title": "Nos Valeurs"
+    "title": "Nos Valeurs",
+    "description": "Découvrez JausPet, notre mission et comment nous aidons les animaux à trouver des foyers aimants.",
+    "backgroundAlt": "Fond de la section À propos de nous"
   },
 
   "aboutUsValues": {
@@ -184,52 +200,56 @@
       "Nos actions sont animées par le désir d’aider. Du sauvetage des animaux de la rue à l’éducation à l’adoption responsable, tout ce que nous faisons vient du souhait de faire le bien et d’améliorer des vies.",
       "La pasión impulsa nuestro refugio. Nos dedicamos con entusiasmo y entrega a cada proyecto, a cada animal rescatado y a cada familia que encuentra un nuevo compañero, porque creemos que cada vida salvada merece todo nuestro corazón."
     ],
-     "imageAlt": "Dons aidant les animaux"
+    "imageAlt": "Dons aidant les animaux"
   },
 
   "contact": {
     "title": "Contactez-nous",
-    "description": "Nous serions ravis d’avoir de vos nouvelles ! Si vous avez des questions, des commentaires ou des suggestions, veuillez utiliser notre formulaire de contact.",
+    "description": "Découvrez JausPet et contactez-nous pour toute question ou adoption.",
+    "formDescription": "Nous serions ravis d’avoir de vos nouvelles ! Si vous avez des questions, des commentaires ou des suggestions, veuillez utiliser notre formulaire de contact.",
+    "backgroundAlt": "Fond de la page Contact",
     "bannerDescription": "Amis à adopter",
     "button": "En savoir plus"
   },
 
   "adoptions": {
-    "title": "Animaux à Adopter"
+    "title": "Animaux à Adopter",
+    "description": "Découvrez des chiens et des chats à adopter et trouvez votre compagnon idéal sur JausPet.",
+    "backgroundAlt": "Fond de la page Adoptions"
   },
 
-"adoptionsGallery": {
-  "description": "Rencontrez nos adorables amis à la recherche d'un nouveau foyer.",
-  "filterDogs": "Chiens",
-  "filterCats": "Chats",
-  "filterOthers": "Autres",
-  "noResults": "Quelle joie ! Tous les petits compagnons de cette catégorie ont déjà trouvé leur foyer pour toujours. 🐶🐱"
-},
-  
-"animalModal": {
-  "close": "Fermer",
-  "age": "Âge",
-  "sex": "Sexe",
-  "size": "Taille",
-  "sterilized": "Stérilisé",
-  "personality": "Personnalité",
-  "interestedIn": "Intéressé par {{name}} ?",
-  "submitButton": "Demander des informations"
-},
+  "adoptionsGallery": {
+    "description": "Rencontrez nos adorables amis à la recherche d'un nouveau foyer.",
+    "filterDogs": "Chiens",
+    "filterCats": "Chats",
+    "filterOthers": "Autres",
+    "noResults": "Quelle joie ! Tous les petits compagnons de cette catégorie ont déjà trouvé leur foyer pour toujours. 🐶🐱"
+  },
 
-"animalCard": {
-  "button": "Adoptez-moi"
-},
+  "animalModal": {
+    "close": "Fermer",
+    "age": "Âge",
+    "sex": "Sexe",
+    "size": "Taille",
+    "sterilized": "Stérilisé",
+    "personality": "Personnalité",
+    "interestedIn": "Intéressé par {{name}} ?",
+    "submitButton": "Demander des informations"
+  },
+
+  "animalCard": {
+    "button": "Adoptez-moi"
+  },
 
   "alerts": {
     "submitStatusSuccess": "Votre message a été envoyé ! 😸",
     "adoptionSubmitSuccess": "Merci pour votre intérêt pour {{name}} ! 🐾 Nous vous contacterons bientôt.",
     "submitStatusFailed": "Oups ! Quelque chose s'est mal passé, réessayez. 😿",
     "instagramUnderConstruction": "🚧 Notre Instagram est en construction.",
-    "sectionUnderConstruction":"🚧 Section en construction. Merci pour votre patience."
+    "sectionUnderConstruction": "🚧 Section en construction. Merci pour votre patience."
   },
 
-  "scrollToTop":{
-    "message":"Retour en haut"
+  "scrollToTop": {
+    "message": "Retour en haut"
   }
 }

@@ -2,17 +2,29 @@ import { useTranslation } from "react-i18next";
 import SectionBackground from "../components/SectionBackground";
 import BackgroundMobile from "../assets/images/background-mobile.webp";
 import AdoptionsGallery from "../components/Adoptions/AdoptionsGallery";
+import SEO from "../components/SEO/SEO";
 
 const Adoptions = () => {
   const { t } = useTranslation();
 
   return (
     // Wrap main content with responsive mobile background
-    <SectionBackground image={BackgroundMobile} alt="Contact page background">
+    <SectionBackground
+      image={BackgroundMobile}
+      alt={t("adoptions.backgroundAlt")}
+    >
+      {/* Reusable SEO component */}
+      <SEO
+        title={`${t("adoptions.title")} | JausPet`}
+        description={t("adoptions.description")}
+        url="https://jauspet.vercel.app/adoptions"
+        image="/images/og-twitter-preview.webp"
+      />
+
       <main className="px-6">
         {/* Page title */}
         <div className="max-w-6xl mx-auto mb-20 px-0 md:px-0 lg:px-6">
-          <h1 className="text-[50px] md:text-[70px] lg:text-[90px]  font-extrabold  text-[var(--color-text-dark)]">
+          <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold text-[var(--color-text-dark)]">
             {t("adoptions.title")}
           </h1>
         </div>

@@ -3,8 +3,14 @@
     "id": "card_1",
     "type": "image",
     "images": [
-      "/images/adoption1.webp",
-      "/images/adoption2.webp"
+      {
+        "desktop": "/images/adoption1.webp",
+        "mobile": "/images/adoption1Mobile.webp"
+      },
+      {
+        "desktop": "/images/adoption2.webp",
+        "mobile": "/images/adoption2Mobile.webp"
+      }
     ],
     "alt": "card.card_1.alt",
     "category": "services"
@@ -21,8 +27,14 @@
     "id": "card_3",
     "type": "image",
     "images": [
-      "/images/donation1.webp",
-      "/images/donation2.webp"
+      {
+        "desktop": "/images/donation1.webp",
+        "mobile": "/images/donation1Mobile.webp"
+      },
+      {
+        "desktop": "/images/donation2.webp",
+        "mobile": "/images/donation2Mobile.webp"
+      }
     ],
     "alt": "card.card_3.alt",
     "category": "donations"

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import ScrollIcon from "../assets/icons/to-back.svg";
+import ScrollIcon from "../assets/icons/to-back.webp";
 
 const ScrollToTopButton = ({ scrollThreshold = 300, smooth = true }) => {
   const { t } = useTranslation(); // <-- import translation hook

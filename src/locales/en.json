@@ -1,7 +1,10 @@
 {
   "navbar": {
     "logoAlt": "Animal Shelter logo, go to home page",
+    "logoTitle": "Go Home",
     "toggleMenu": "Toggle Menu",
+    "toggleMenuOpen": "Open Menu",
+    "toggleMenuClose": "Close Menu",
     "learnOurServices": "Learn About Our Services",
     "learnVolunteerOpportunities": "Discover Volunteer Opportunities",
     "donateAnimalShelter": "Donate to the Animal Shelter",
@@ -42,6 +45,11 @@
         "buttonLink": "/volunteer"
       }
     ]
+  },
+
+  "home": {
+    "title": "Home",
+    "description": "Discover how you can help change lives by adopting, donating, or volunteering. At JausPet, every action counts to bring love and a dignified home to dogs and cats waiting for a family."
   },
 
   "card": {
@@ -86,18 +94,22 @@
 
   "servicesSection": {
     "title": "Our Services",
+    "description": "At JausPet we offer a variety of services to ensure the well-being of our pets and to support the community. From responsible adoptions to sterilization campaigns and animal care assistance.",
+    "backgroundAlt": "Background of the services section",
     "tipsTittle": "Tips & advice",
     "loading": "Loading services..."
   },
 
   "dots": {
-  "goToSlide": "Go to slide",
-  "activeSlide": "Active slide",
-  "slide": "Slide"
-},
+    "goToSlide": "Go to slide",
+    "activeSlide": "Active slide",
+    "slide": "Slide"
+  },
 
   "volunteerSection": {
     "title": "Become a Volunteer",
+    "description": "Join as a volunteer and help improve the lives of many animals looking for a home.",
+    "backgroundAlt": "Background of the volunteer section",
     "introPhrase": "Our time, our hands, and our hearts can change lives.",
     "bannerDescription": "Donating helps too",
     "button": "Learn more",
@@ -147,7 +159,9 @@
 
   "donationSection": {
     "title": "Make a difference",
-    "description": "Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
+    "description": "Support JausPet to help more pets find loving homes. Your contribution makes a difference.",
+    "backgroundAlt": "Donations page background",
+    "inspirationalDescription": "Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
     "donationIntroTitle": "Together We Can Help",
     "donationIntro": "Your support helps save abused and abandoned animals. Together, we can give them safe homes, feed the hungry, and heal their wounds. Thank you for your love.",
     "donationBanner": "Join as a Volunteer!",
@@ -164,7 +178,7 @@
       "International transfer",
       "Amazon Wishlist"
     ],
-    "description": [
+    "cardDescription": [
       "Donate directly through our bank account. Safe and quick.",
       "Support us from your nearest OXXO store using our reference.",
       "You can also donate from abroad using our SWIFT code.",
@@ -174,7 +188,9 @@
   },
 
   "aboutUs": {
-    "title": "Our Values"
+    "title": "Our Values",
+    "description": "Learn about JausPet, our mission, and how we help pets find loving homes.",
+    "backgroundAlt": "About Us background"
   },
 
   "aboutUsValues": {
@@ -185,55 +201,56 @@
       "Our actions are driven by a passion for helping. From rescuing street animals to educating about responsible adoption, everything we do comes from the desire to do good and improve lives.",
       "Passion fuels our shelter. We dedicate ourselves with enthusiasm and commitment to every project, every rescued animal, and every family finding a new companion, because we believe every saved life deserves all our heart."
     ],
-     "imageAlt": "Donations helping animals"
+    "imageAlt": "Donations helping animals"
   },
 
   "contact": {
     "title": "Contact Us",
-    "description": "We’d love to hear from you! If you have any questions, comments, or suggestions, please use our contact form.",
+    "description": "Learn about JausPet and reach out to us for any questions or adoptions.",
+    "formDescription": "We’d love to hear from you! If you have any questions, comments, or suggestions, please use our contact form.",
+    "backgroundAlt": "Contact page background",
     "bannerDescription": "Friends for Adoption",
     "button": "More Info"
   },
 
   "adoptions": {
-    "title": "Animals for Adoption"
+    "title": "Animals for Adoption",
+    "description": "Discover dogs and cats to adopt and find your perfect companion at JausPet.",
+    "backgroundAlt": "Adoptions page background"
   },
 
-    "adoptionsGallery": {
-  "description": "Meet our lovely friends looking for a new home.",
-  "filterDogs": "Dogs",
-  "filterCats": "Cats",
-  "filterOthers": "Others",
-  "noResults": "What a joy! All the little furry friends in this category have already found their forever homes. 🐶🐱"
+  "adoptionsGallery": {
+    "description": "Meet our lovely friends looking for a new home.",
+    "filterDogs": "Dogs",
+    "filterCats": "Cats",
+    "filterOthers": "Others",
+    "noResults": "What a joy! All the little furry friends in this category have already found their forever homes. 🐶🐱"
+  },
 
-},
+  "animalModal": {
+    "close": "Close",
+    "age": "Age",
+    "sex": "Sex",
+    "size": "Size",
+    "sterilized": "Sterilized",
+    "personality": "Personality",
+    "interestedIn": "Interested in {{name}}?",
+    "submitButton": "Request information"
+  },
 
-
-"animalModal": {
-  "close": "Close",
-  "age": "Age",
-  "sex": "Sex",
-  "size": "Size",
-  "sterilized": "Sterilized",
-  "personality": "Personality",
-  "interestedIn": "Interested in {{name}}?",
-  "submitButton": "Request information"
-
-},
-
-"animalCard": {
-  "button": "Take home"
-},
+  "animalCard": {
+    "button": "Take home"
+  },
 
   "alerts": {
     "submitStatusSuccess": "Your message has been sent! 😸",
     "adoptionSubmitSuccess": "Thank you for your interest in {{name}}! 🐾 We’ll get in touch with you soon.",
     "submitStatusFailed": "Oops! Something went wrong, try again. 😿",
     "instagramUnderConstruction": "🚧 Our Instagram is under construction.",
-    "sectionUnderConstruction":"🚧 Section under construction. Thank you for your patience."
+    "sectionUnderConstruction": "🚧 Section under construction. Thank you for your patience."
   },
 
-  "scrollToTop":{
-    "message":"Scroll to top"
+  "scrollToTop": {
+    "message": "Scroll to top"
   }
 }

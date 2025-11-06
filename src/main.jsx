@@ -1,12 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom"; // React Router for SPA routing
+import { HelmetProvider } from "react-helmet-async"; // Helmet for SEO
 
 import App from "./App.jsx"; // Main app component
 import "./index.css"; // Global CSS
 import "./i18n.js"; // i18n initialization
 
-//Fix for mobile 100vh issue (iOS / Android browsers)
+// Fix for mobile 100vh issue (iOS / Android browsers)
 const setVh = () => {
   document.documentElement.style.setProperty(
     "--vh",
@@ -22,7 +23,9 @@ const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <App /> {/* Main SPA component */}
+      <HelmetProvider>
+        <App /> {/* Main SPA component */}
+      </HelmetProvider>
     </BrowserRouter>
   </StrictMode>
 );

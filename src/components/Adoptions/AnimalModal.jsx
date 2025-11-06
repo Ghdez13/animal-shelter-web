@@ -7,6 +7,15 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
   const { t, i18n } = useTranslation();
   const [interested, setInterested] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen size
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // run on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Reset states when modal closes
   useEffect(() => {
@@ -21,16 +30,20 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
   };
 
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % animal.images.length);
+    setCurrentImage((prev) => (prev + 1) % images.length);
   };
 
   const prevImage = () => {
-    setCurrentImage((prev) =>
-      prev === 0 ? animal.images.length - 1 : prev - 1
-    );
+    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   if (!isOpen || !animal) return null;
+
+  // Choose image set based on device type
+  const images =
+    isMobile && animal.images.mobile?.length > 0
+      ? animal.images.mobile
+      : animal.images.desktop;
 
   return (
     <div
@@ -43,7 +56,6 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
         height: "calc(var(--vh, 1vh) * 100)",
       }}
     >
-      {/* Outer container */}
       <div
         className="relative rounded-2xl bg-[rgba(255,255,255,0.9)] shadow-2xl max-w-3xl w-[90%] md:w-[70%] border-t-4 animate-fadeIn my-10 max-h-[90vh]"
         style={{
@@ -62,19 +74,19 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
           ×
         </button>
 
-        {/* Scrollable inner wrapper */}
+        {/* Inner scrollable content */}
         <div className="custom-scrollbar overflow-y-auto max-h-[90vh] px-1">
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Left - carousel */}
             <div className="relative h-72 md:h-full flex items-center justify-center">
               <img
-                src={animal.images[currentImage]}
+                src={images[currentImage]}
                 alt={`${animal.name} ${currentImage + 1}`}
                 className="w-full h-full object-cover rounded-lg transition-all duration-300"
+                loading="lazy"
               />
 
-              {/* Prev and Next buttons */}
-              {animal.images.length > 1 && (
+              {images.length > 1 && (
                 <>
                   <button
                     onClick={prevImage}
@@ -94,10 +106,9 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
                 </>
               )}
 
-              {/* Dots navigation */}
-              {animal.images.length > 1 && (
+              {images.length > 1 && (
                 <div className="absolute bottom-3 flex space-x-2">
-                  {animal.images.map((_, index) => (
+                  {images.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentImage(index)}

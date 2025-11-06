@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Filled from "../../assets/icons/filled-footprint.svg";
-import Outline from "../../assets/icons/outline-footprint.svg";
-
+import LazyImage from "../LazyImage";
+import Filled from "../../assets/icons/filled-footprint.webp";
+import Outline from "../../assets/icons/outline-footprint.webp";
 import Message1 from "../../assets/images/message1.webp";
+import Message1Mobile from "../../assets/images/message1Mobile.webp";
 import Message2 from "../../assets/images/message2.webp";
+import Message2Mobile from "../../assets/images/message2Mobile.webp";
 import Message3 from "../../assets/images/message3.webp";
+import Message3Mobile from "../../assets/images/message3Mobile.webp";
 
 const VolunteerReflection = () => {
   const { t } = useTranslation();
@@ -17,20 +20,23 @@ const VolunteerReflection = () => {
   const descriptions = t("volunteerReflection.description", {
     returnObjects: true,
   });
-  const images = [Message1, Message2, Message3];
 
-  // Autoplay with pause support
+  // Arrays for desktop and mobile images
+  const imagesMobile = [Message1Mobile, Message2Mobile, Message3Mobile];
+  const imagesDesktop = [Message1, Message2, Message3];
+
+  // Autoplay with pause support on hover or touch
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setCurrentIndex((prev) => (prev + 1) % imagesDesktop.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [isPaused, images.length]);
+  }, [isPaused, imagesDesktop.length]);
 
   return (
     <section className="w-full mt-24">
-      {/* Container that handles pause on interaction */}
+      {/* Container handling pause on interaction */}
       <div
         className="max-w-6xl mx-auto w-full px-0 md:px-0 lg:px-6 flex flex-col md:flex-row items-start md:items-center text-left"
         onMouseEnter={() => setIsPaused(true)}
@@ -38,16 +44,23 @@ const VolunteerReflection = () => {
         onTouchStart={() => setIsPaused(true)}
         onTouchEnd={() => setIsPaused(false)}
       >
-        {/* Image */}
+        {/* Responsive image section */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">
-          <img
-            src={images[currentIndex]}
-            alt={`${titles[currentIndex]} reflection`}
-            className="w-full h-auto md:w-120 md:h-120 object-contain"
+          {/* Mobile image */}
+          <LazyImage
+            src={imagesMobile[currentIndex]}
+            alt={`${titles[currentIndex]} reflection mobile`}
+            className="block md:hidden w-full h-auto object-contain"
+          />
+          {/* Desktop image */}
+          <LazyImage
+            src={imagesDesktop[currentIndex]}
+            alt={`${titles[currentIndex]} reflection desktop`}
+            className="hidden md:block w-full md:w-120 md:h-120 object-contain"
           />
         </div>
 
-        {/* Text */}
+        {/* Text section */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
           <h2 className="text-[40px] font-bold text-[var(--color-text-dark)] mb-4">
             {titles[currentIndex]}
@@ -58,7 +71,7 @@ const VolunteerReflection = () => {
 
           {/* Navigation dots */}
           <div className="flex justify-start mt-6 space-x-2 w-full">
-            {images.map((_, index) => (
+            {imagesDesktop.map((_, index) => (
               <button
                 key={index}
                 type="button"
@@ -67,6 +80,7 @@ const VolunteerReflection = () => {
                 aria-label={`${t("dots.goToSlide")} ${index + 1}`}
                 aria-current={index === currentIndex ? "true" : "false"}
               >
+                {/* Dot icon changes based on current slide */}
                 <img
                   src={index === currentIndex ? Filled : Outline}
                   alt={

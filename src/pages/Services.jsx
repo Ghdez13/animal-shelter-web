@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import SEO from "../components/SEO/SEO";
 import ServiceCard from "../components/Services/ServiceCard";
 import Tips from "../components/Services/ServicesTips";
 import SectionBackground from "../components/SectionBackground";
@@ -19,41 +20,54 @@ const Services = () => {
   }, []);
 
   return (
-    <SectionBackground image={BackgroundMobile}>
-      <main className="px-6">
-        {/* Main section title */}
-        <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-30">
-          <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold mb-20 text-[var(--color-text-dark)]">
-            {t("servicesSection.title")}
-          </h1>
-        </div>
+    <>
+      {/* SEO meta tags */}
+      <SEO
+        title={`${t("servicesSection.title")} | JausPet`}
+        description={t("servicesSection.description")}
+        url="https://jauspet.vercel.app/services"
+        image="/images/og-twitter-preview.webp"
+      />
 
-        {/* Services grid */}
-        {loading ? (
-          <p className="text-center text-lg text-[var(--color-text-dark)]">
-            {t("servicesSection.loading")}
-          </p>
-        ) : (
-          <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {services.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
+      {/* Main content wrapped with responsive background */}
+      <SectionBackground
+        image={BackgroundMobile}
+        alt={t("servicesSection.backgroundAlt")}
+      >
+        <main className="px-6">
+          {/* Main section title */}
+          <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-30">
+            <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold mb-20 text-[var(--color-text-dark)]">
+              {t("servicesSection.title")}
+            </h1>
           </div>
-        )}
 
-        {/* Tips section */}
-        <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6">
-          <h2 className="text-[50px] font-bold mt-12 text-[var(--color-text-dark)]">
-            {t("servicesSection.tipsTitle")}
-          </h2>
-        </div>
-        <div className="mt-8">
-          <Tips />
-        </div>
-      </main>
-    </SectionBackground>
+          {/* Services grid */}
+          {loading ? (
+            <p className="text-center text-lg text-[var(--color-text-dark)]">
+              {t("servicesSection.loading")}
+            </p>
+          ) : (
+            <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {services.map((service) => (
+                <ServiceCard key={service.id} service={service} />
+              ))}
+            </div>
+          )}
+
+          {/* Tips section */}
+          <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6">
+            <h2 className="text-[50px] font-bold mt-12 text-[var(--color-text-dark)]">
+              {t("servicesSection.tipsTitle")}
+            </h2>
+          </div>
+          <div className="mt-8">
+            <Tips />
+          </div>
+        </main>
+      </SectionBackground>
+    </>
   );
 };
 
 export default Services;
-

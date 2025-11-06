@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Quote } from "lucide-react";
 import testimonialsData from "../../assets/data/homeTestimonials.json";
-import Filled from "../../assets/icons/filled-footprint.svg";
-import Outline from "../../assets/icons/outline-footprint.svg";
+import Filled from "../../assets/icons/filled-footprint.webp";
+import Outline from "../../assets/icons/outline-footprint.webp";
 
 export default function TestimonialSlider() {
   const { i18n, t } = useTranslation();

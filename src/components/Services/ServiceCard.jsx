@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Button from "../Button";
 import AutoCloseModal from "../AutoCloseModal";
@@ -8,6 +8,16 @@ const ServiceCard = ({ service }) => {
   const lang = i18n.language;
 
   const [showModal, setShowModal] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile screen safely
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Localized texts
   const title = service.title[lang] || service.title["es"];
@@ -22,12 +32,10 @@ const ServiceCard = ({ service }) => {
 
   return (
     <>
-      {/* Card Container */}
       <div className="bg-[var(--color-bg-article)] rounded-lg shadow-md py-[50px] px-[20px] flex flex-col items-start text-left hover:-translate-y-1 transition-transform duration-300">
-        {/* Header: icon + title */}
         <div className="flex items-center gap-4 mb-4">
           <img
-            src={service.icon}
+            src={isMobile ? service.iconMobile || service.icon : service.icon}
             alt={title}
             className="w-20 h-20 sm:w-28 sm:h-28"
           />
@@ -36,10 +44,8 @@ const ServiceCard = ({ service }) => {
           </h2>
         </div>
 
-        {/* Description */}
         <p className="mt-2 text-[20px] text-[var(--color-text-dark)]">{text}</p>
 
-        {/* Action Button */}
         <div className="mt-2">
           <Button
             to={isUnderConstruction ? undefined : service.link}
@@ -51,7 +57,6 @@ const ServiceCard = ({ service }) => {
         </div>
       </div>
 
-      {/* Modal alert for under construction sections */}
       {showModal && (
         <AutoCloseModal
           type="sectionUnderConstruction"
