@@ -6,6 +6,7 @@ import { HelmetProvider } from "react-helmet-async"; // Helmet for SEO
 import App from "./App.jsx"; // Main app component
 import "./index.css"; // Global CSS
 import "./i18n.js"; // i18n initialization
+import i18n from "./i18n.js";
 
 // Fix for mobile 100vh issue (iOS / Android browsers)
 const setVh = () => {
@@ -22,7 +23,9 @@ window.addEventListener("resize", setVh);
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <Suspense fallback={<div>Loading translations...</div>}>
+    <Suspense
+      fallback={<div className="loading-screen">{i18n.t("loading")}</div>}
+    >
       <BrowserRouter>
         <HelmetProvider>
           <App /> {/* Main SPA component */}

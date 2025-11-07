@@ -16,7 +16,6 @@ body.modal-open {
   padding-right: 0.5rem;
 }
 
-
 /* Mobile optimization:
    Disable fixed background on small screens to prevent visual bugs */
 @media (max-width: 768px) {
@@ -83,17 +82,20 @@ body.modal-open {
 }
 
 @keyframes blinkDisappear {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
-  25%, 75% {
+  25%,
+  75% {
     opacity: 0;
   }
 }
 
 .animate-blink {
   /* Parpadeo más lento (1.5s cada uno × 4 = 6s total) */
-  animation: blinkDisappear 1.5s ease-in-out 4, fadeOut 1.5s ease-in-out 6s forwards;
+  animation: blinkDisappear 1.5s ease-in-out 4,
+    fadeOut 1.5s ease-in-out 6s forwards;
 }
 
 @keyframes fadeOut {
@@ -191,6 +193,15 @@ body.modal-open {
 @supports (scrollbar-width: thin) {
   .custom-scrollbar {
     scrollbar-width: thin;
-    scrollbar-color: rgba(0,0,0,0.25) transparent;
+    scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
   }
+}
+
+.loading-screen {
+  @apply flex items-center justify-center h-screen text-[var(--color-text-dark)] text-lg; /* Removed font-comic */
+  font-family: "ComicRelief", "Comic Sans MS", Arial, sans-serif; /* Added direct font-family */
+  animation: fadeIn 0.6s ease-in-out forwards;
+  background-color: #ffffffcc; /* light white overlay */
+  -webkit-backdrop-filter: blur(10px); /* For Safari and iOS */
+  backdrop-filter: blur(10px); /* For Chrome, Edge, Firefox */
 }

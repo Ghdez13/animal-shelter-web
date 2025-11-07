@@ -1,4 +1,6 @@
 {
+  "loading":"Cargando...",
+
   "navbar": {
     "logoAlt": "Logo del refugio de animales, ir a la página de inicio",
     "logoTitle": "Ir a inicio",

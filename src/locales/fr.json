@@ -1,4 +1,6 @@
 {
+  "loading": "Chargement...",
+
   "navbar": {
     "logoAlt": "Logo du refuge animalier, aller à la page d'accueil",
     "logoTitle": "Aller à l'accueil",

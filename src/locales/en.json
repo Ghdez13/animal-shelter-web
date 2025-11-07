@@ -1,4 +1,6 @@
 {
+  "loading": "Loading...",
+  
   "navbar": {
     "logoAlt": "Animal Shelter logo, go to home page",
     "logoTitle": "Go Home",
