@@ -156,18 +156,18 @@
     "submit": "Send"
   },
 
-  "volunteerReflection": {
-    "title": [
-      "Your time changes lives",
-      "They need love too",
-      "Building communities"
-    ],
-    "description": [
-      "Giving a few hours can change everything. Every walk, every touch, every act of love brings hope back to those who need it most. Your time has the power to transform lives.",
-      "Animals feel, wait, and trust. A little attention and kindness can heal invisible wounds and fill their world with joy. To love is also to save.",
-      "Being a volunteer not only helps animals, it connects people. Together we build a space of empathy, respect, and hope, where every action sparks real and lasting change."
-    ]
-  },
+"volunteerReflection": {
+  "title": [
+    "Transform lives",
+    "Give love",
+    "Building communities"
+  ],
+  "description": [
+    "Spending a few hours can make a difference. Every walk, touch, or gesture of love restores hope to those who need it most. Your time has the power to change destinies.",
+    "Animals feel, wait, and trust. A little care and affection can heal invisible wounds and fill their world with joy. To love is also a way to save.",
+    "Being a volunteer not only helps animals, it also connects people. Together we build a space of empathy, respect, and hope, where every action drives real change."
+  ]
+},
 
   "donationSection": {
     "donationTitle": "Make a Difference",

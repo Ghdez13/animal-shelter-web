@@ -82,7 +82,7 @@ const AboutUsValues = () => {
         >
           <div className="w-full max-w-md text-left">
             {/* Section title */}
-            <h2 className="text-[40px]font-semibold mb-4">
+            <h2 className="text-[40px] font-semibold mb-4">
               {data.ourStoryTitle}
             </h2>
             {/* Section paragraphs */}

@@ -155,18 +155,18 @@
     "submit": "Envoyer"
   },
 
-  "volunteerReflection": {
-    "title": [
-      "Ton temps change des vies",
-      "Eux aussi ont besoin d'amour",
-      "Aider nous rend humains"
-    ],
-    "description": [
-      "Offrir quelques heures peut tout changer. Chaque promenade, chaque caresse, chaque geste d’amour redonne espoir à ceux qui en ont le plus besoin. Ton temps a le pouvoir de transformer des vies.",
-      "Les animaux ressentent, attendent et font confiance. Un peu d’attention et de tendresse peut guérir des blessures invisibles et remplir leur monde de joie. Aimer, c’est aussi sauver.",
-      "Être bénévole n’aide pas seulement les animaux, cela unit les gens. Ensemble, nous créons un espace d’empathie, de respect et d’espoir, où chaque action inspire un changement réel et durable."
-    ]
-  },
+"volunteerReflection": {
+  "title": [
+    "Transformer des vies",
+    "Offrir de l’amour",
+    "Créer du lien"
+  ],
+  "description": [
+    "Consacrer quelques heures peut faire la différence. Chaque promenade, caresse ou geste d’amour redonne espoir à ceux qui en ont le plus besoin. Ton temps a le pouvoir de changer des destins.",
+    "Les animaux ressentent, attendent et font confiance. Un peu d’attention, de douceur et d’affection peut guérir des blessures invisibles et remplir leur monde de joie. Aimer, c’est aussi sauver.",
+    "Être bénévole n’aide pas seulement les animaux, cela unit aussi les personnes. Ensemble, nous construisons un espace d’empathie, de respect et d’espoir, où chaque action provoque un vrai changement."
+  ]
+},
 
   "donationSection": {
     "donationTitle": "Faites la différence",
