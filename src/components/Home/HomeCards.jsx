@@ -55,7 +55,7 @@ const Cards = () => {
             >
               {/* Image card using LazyImage for desktop and mobile */}
               {card.type === "image" && (
-                <div className="w-full md:flex-1">
+                <div className="w-full md:flex-1 aspect-[16/9]">
                   {/* Desktop image */}
                   <LazyImage
                     src={card.images[currentIndex].desktop}
@@ -67,20 +67,18 @@ const Cards = () => {
                   <LazyImage
                     src={card.images[currentIndex].mobile}
                     alt={t(card.alt) + " mobile"}
-                    className="block md:hidden w-full h-auto object-contain"
+                    className="block md:hidden w-full h-full object-cover"
                   />
                 </div>
               )}
 
               {/* Text card */}
               {card.type === "text" && (
-                <div className="p-6 md:p-12 flex-1 flex flex-col justify-center hover:shadow-lg hover:-translate-y-1 transition-transform duration-300">
-                  <h2 className="text-[40px] font-bold mb-2">
+                <div className="p-6 md:p-12 text-[var(--color-text-dark)] flex-1 flex flex-col justify-center hover:shadow-lg hover:-translate-y-1 transition-transform duration-300">
+                  <h2 className="text-[40px]  font-bold mb-2">
                     {t(card.title)}
                   </h2>
-                  <p className="text-[var(--color-text-dark)] text-[20px] mb-4">
-                    {t(card.content)}
-                  </p>
+                  <p className="text-[20px] mb-4">{t(card.content)}</p>
                   {card.link && (
                     <Button
                       to={card.link}

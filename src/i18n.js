@@ -23,7 +23,7 @@ i18n
             escapeValue: false, // React already escapes variables
         },
         react: {
-            useSuspense: false, // Avoids wrapping components in Suspense
+            useSuspense: true,
         },
         detection: {
             order: ["localStorage", "navigator", "htmlTag", "path", "subdomain"],

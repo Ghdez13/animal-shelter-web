@@ -53,12 +53,10 @@ const AboutUsValues = () => {
                 alt={`${title} icon`}
                 className="w-20 h-20 object-contain"
               />
-              <h2 className="text-[25px] md:text-[30px] font-bold">{title}</h2>
+              <h2 className="text-[25px]  md:text-[30px] font-bold">{title}</h2>
             </div>
             {/* Value description */}
-            <p className="text-[20px] text-[var(--color-text-dark)]">
-              {description}
-            </p>
+            <p className="text-[20px] ">{description}</p>
           </div>
         ))}
       </div>
@@ -84,12 +82,12 @@ const AboutUsValues = () => {
         >
           <div className="w-full max-w-md text-left">
             {/* Section title */}
-            <h2 className="text-[40px] font-semibold mb-4">
+            <h2 className="text-[40px]font-semibold mb-4">
               {data.ourStoryTitle}
             </h2>
             {/* Section paragraphs */}
             {data.storyText.map((paragraph, index) => (
-              <p key={index} className="text-[20px] mb-4">
+              <p key={index} className="text-[20px]  mb-4">
                 {paragraph}
               </p>
             ))}

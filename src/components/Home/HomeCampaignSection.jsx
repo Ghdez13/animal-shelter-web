@@ -6,7 +6,7 @@ const CampaignSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="px-6">
+    <section className="px-6 ">
       <div className="campaign-container flex flex-col px-0 md:px-0 lg:px-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:gap-12 max-w-6xl mx-auto mt-12">
         {/* Image wrapper: mobile first (top), desktop right */}
         <div className="flex justify-center w-full mb-6 min-[900px]:mb-0 min-[900px]:flex-1 min-[900px]:justify-end min-[900px]:order-2">
@@ -25,11 +25,11 @@ const CampaignSection = () => {
         </div>
 
         {/* Campaign text content */}
-        <div className="campaign-content flex flex-col text-left min-[900px]:flex-1 min-[900px]:order-1">
-          <h2 className="campaign-title text-[40px] font-bold text-[var(--color-text-dark)]">
+        <div className="campaign-content text-[var(--color-text-dark)] flex flex-col text-left min-[900px]:flex-1 min-[900px]:order-1">
+          <h2 className="campaign-title text-[40px] font-bold ">
             {t("campaignSection.title")}
           </h2>
-          <p className="campaign-text mt-7 text-[20px] text-[var(--color-text-dark)]">
+          <p className="campaign-text mt-7 text-[20px]">
             {t("campaignSection.text")}
           </p>
           <Button

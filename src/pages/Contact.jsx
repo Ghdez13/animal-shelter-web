@@ -25,18 +25,16 @@ const Contact = () => {
       >
         <main className="px-6">
           {/* Page title */}
-          <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-30">
-            <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold mb-20 text-[var(--color-text-dark)]">
+          <div className="max-w-6xl text-[var(--color-text-dark)] mx-auto px-0 md:px-0 lg:px-6 md:mb-30">
+            <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold mb-20">
               {t("contact.contactTitle")}
             </h1>
           </div>
 
           {/* Reusable contact form component */}
-          <section className="mt-12">
+          <section className="text-[var(--color-text-dark)] mt-12">
             <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-40">
-              <p className="text-[20px] text-[var(--color-text-dark)]">
-                {t("contact.formDescription")}
-              </p>
+              <p className="text-[20px]">{t("contact.formDescription")}</p>
               <ContactForm />
             </div>
           </section>
@@ -54,7 +52,7 @@ const Contact = () => {
                   style={{ backgroundImage: `url(${BackgroundBanner})` }}
                 />
 
-                {/* Content */}
+                {/* Banner adoption */}
                 <div className="relative z-10 flex flex-col justify-center items-center text-center px-4 py-4 h-full">
                   <p className="text-[40px] md:text-[40px] font-semibold text-[var(--color-text-light)] mb-4">
                     {t("contact.bannerDescription")}

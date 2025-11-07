@@ -18,6 +18,7 @@ const DonationCard = ({
   onFlip,
   t,
   isMobile,
+  index,
 }) => (
   <div
     onClick={onFlip}
@@ -42,6 +43,12 @@ const DonationCard = ({
         <p className="text-[20px] text-[var(--color-text-dark)] leading-snug text-left max-w-[85%]">
           {description}
         </p>
+        {/*Blinking text shown only on the first card */}
+        {index === 0 && (
+          <span className="mt-4 text-[var(--color-text-tips)] text-lg font-bold animate-blink">
+            ✨ {t("donationCards.clickToFlip")} ✨
+          </span>
+        )}
       </div>
 
       {/* Back side */}
@@ -109,7 +116,7 @@ const Donation = () => {
     <section className="w-full flex justify-center px-0 md:px-0 lg:px-6">
       <div className="w-full max-w-6xl flex flex-col items-center">
         {/* Intro Section with image and text */}
-        <div className="flex flex-col md:flex-row w-full rounded-2xl overflow-hidden mt-6">
+        <div className="flex flex-col text-[var(--color-text-dark)] md:flex-row w-full rounded-2xl overflow-hidden mt-6">
           <LazyImage
             src={isMobile ? Donation1Mobile : Donation1}
             alt="Donation intro"
@@ -131,8 +138,8 @@ const Donation = () => {
         </div>
 
         {/* Donation Cards Section */}
-        <div className="w-full text-center mt-12">
-          <h2 className="text-[40px] font-bold text-[var(--color-text-dark)] mb-10">
+        <div className="w-full text-[var(--color-text-dark)] text-center mt-12">
+          <h2 className="text-[40px] font-bold mb-10">
             {t("donationCards.title")}
           </h2>
 
@@ -140,6 +147,7 @@ const Donation = () => {
             {donationTitles.map((title, index) => (
               <DonationCard
                 key={index}
+                index={index}
                 title={title}
                 description={donationDescriptions[index]}
                 icon={
@@ -180,12 +188,12 @@ const Donation = () => {
         </div>
 
         {/* Why Donate Section */}
-        <div className="w-full mt-24 flex flex-col-reverse md:flex-row items-center gap-8">
+        <div className="w-full mt-24 flex text-[var(--color-text-dark)] flex-col-reverse md:flex-row items-center gap-8">
           <div className="w-full md:w-1/2 text-left flex flex-col justify-center">
-            <h2 className="text-[40px] font-bold text-[var(--color-text-dark)] mb-4">
+            <h2 className="text-[40px] font-bold  mb-4">
               {t("donationSection.whyDonateTitle")}
             </h2>
-            <p className="text-[var(--color-text-dark)] text-[20px] leading-relaxed">
+            <p className="text-[20px] leading-relaxed">
               {t("donationSection.whyDonateDescription")}
             </p>
           </div>

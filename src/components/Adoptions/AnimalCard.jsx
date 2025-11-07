@@ -26,7 +26,7 @@ const AnimalCard = ({ animal, onSelect }) => {
 
   return (
     <article
-      className="flex flex-col items-center bg-transparent rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 transition-transform duration-300"
+      className="flex flex-col text-[var(--color-text-dark)] items-center bg-transparent rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 transition-transform duration-300"
       aria-label={animal.name}
     >
       {/* Animal image */}

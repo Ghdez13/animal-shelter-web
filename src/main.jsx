@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom"; // React Router for SPA routing
 import { HelmetProvider } from "react-helmet-async"; // Helmet for SEO
@@ -22,10 +22,12 @@ window.addEventListener("resize", setVh);
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <BrowserRouter>
-      <HelmetProvider>
-        <App /> {/* Main SPA component */}
-      </HelmetProvider>
-    </BrowserRouter>
+    <Suspense fallback={<div>Loading translations...</div>}>
+      <BrowserRouter>
+        <HelmetProvider>
+          <App /> {/* Main SPA component */}
+        </HelmetProvider>
+      </BrowserRouter>
+    </Suspense>
   </StrictMode>
 );

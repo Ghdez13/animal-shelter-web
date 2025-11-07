@@ -82,6 +82,29 @@ body.modal-open {
   animation: fadeIn 0.5s ease-in-out forwards;
 }
 
+@keyframes blinkDisappear {
+  0%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  /* Parpadeo más lento (1.5s cada uno × 4 = 6s total) */
+  animation: blinkDisappear 1.5s ease-in-out 4, fadeOut 1.5s ease-in-out 6s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .btn-style {
   @apply inline-block w-56 mt-7 text-center text-[var(--color-text-light)] text-lg font-semibold
          bg-[var(--color-bg-orange)] border border-[#daa34b] rounded-md cursor-pointer

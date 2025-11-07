@@ -48,7 +48,7 @@ export default function TestimonialSlider() {
 
   return (
     <section
-      className="w-full flex flex-col items-center text-center p-6 mt-12 overflow-hidden"
+      className="w-full flex flex-col items-center text-center text-[var(--color-text-dark)] p-6 mt-12 overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -70,10 +70,10 @@ export default function TestimonialSlider() {
                 className="w-10 h-10 text-[var(--color-button-bg-hover-primary)] mx-auto mb-4"
                 aria-hidden="true"
               />
-              <p className="text-[20px] italic text-gray-700 leading-relaxed">
+              <p className="text-[20px] italic leading-relaxed">
                 “{testimonial.text[currentLang] || testimonial.text["es"]}”
               </p>
-              <p className="mt-4 text-[20px] font-semibold text-gray-900">
+              <p className="mt-4 text-[20px] font-semibold">
                 - {testimonial.author}
               </p>
             </div>

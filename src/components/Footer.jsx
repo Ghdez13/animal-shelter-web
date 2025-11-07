@@ -76,14 +76,14 @@ const Footer = () => {
             <div className="flex flex-col gap-2 text-center md:text-left">
               <a
                 href="/services"
-                className="hover:underline focus-visible:outline-none"
+                className="hover:underline hover:decoration-[var(--color-focus-primary)] hover:decoration-3 focus-visible:outline-none"
                 aria-label={t("menu.altServices")}
               >
                 {t("menu.services")}
               </a>
               <a
                 href="/volunteer"
-                className="hover:underline focus-visible:outline-none"
+                className="hover:underline hover:decoration-[var(--color-focus-primary)] hover:decoration-3 focus-visible:outline-none"
                 aria-label={t("menu.altVolunteer")}
               >
                 {t("menu.volunteer")}
@@ -92,14 +92,14 @@ const Footer = () => {
             <div className="flex flex-col gap-2 text-center md:text-left">
               <a
                 href="/donations"
-                className="hover:underline focus-visible:outline-none"
+                className="hover:underline hover:decoration-[var(--color-focus-primary)] hover:decoration-3  focus-visible:outline-none"
                 aria-label={t("menu.altDonations")}
               >
                 {t("menu.donations")}
               </a>
               <a
                 href="/about-us"
-                className="hover:underline focus-visible:outline-none"
+                className="hover:underline hover:decoration-[var(--color-focus-primary)] hover:decoration-3  focus-visible:outline-none"
                 aria-label={t("menu.altAbout-us")}
               >
                 {t("menu.about-us")}
@@ -108,7 +108,7 @@ const Footer = () => {
             <div className="flex flex-col gap-2 text-center md:text-left">
               <a
                 href="/contact"
-                className="hover:underline focus-visible:outline-none"
+                className="hover:underline hover:decoration-[var(--color-focus-primary)] hover:decoration-3 focus-visible:outline-none"
                 aria-label={t("menu.altContact")}
               >
                 {t("menu.contact")}

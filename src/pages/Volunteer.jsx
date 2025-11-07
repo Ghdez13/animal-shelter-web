@@ -27,17 +27,15 @@ const Volunteer = () => {
         {/* Main section with bottom padding to respect footer */}
         <main className="px-6">
           {/* Main section title */}
-          <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-30">
-            <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold mb-20 text-[var(--color-text-dark)]">
+          <div className="max-w-6xl mx-auto text-[var(--color-text-dark)] px-0 md:px-0 lg:px-6 md:mb-30">
+            <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold mb-20">
               {t("volunteerSection.volunteerTitle")}
             </h1>
           </div>
 
           {/* Volunteering introductory message */}
-          <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6">
-            <p className="text-[20px] text-[var(--color-text-dark)]">
-              {t("volunteerSection.description")}
-            </p>
+          <div className="max-w-6xl text-[var(--color-text-dark)] mx-auto px-0 md:px-0 lg:px-6">
+            <p className="text-[20px]">{t("volunteerSection.description")}</p>
           </div>
 
           {/* Images carousel */}
@@ -45,16 +43,14 @@ const Volunteer = () => {
 
           {/* Volunteer form */}
           <section aria-labelledby="volunteer-form-title" className="mt-12">
-            <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6">
+            <div className="max-w-6xl text-[var(--color-text-dark)] mx-auto px-0 md:px-0 lg:px-6">
               <h2
                 id="volunteer-form-title"
-                className="text-[40px] font-bold mb-6 text-[var(--color-text-dark)]"
+                className="text-[40px] font-bold mb-6"
               >
                 {t("form.title")}
               </h2>
-              <p className="text-[20px] text-[var(--color-text-dark)]">
-                {t("form.description")}
-              </p>
+              <p className="text-[20px]">{t("form.description")}</p>
               <VolunteerForm />
             </div>
           </section>
@@ -68,8 +64,6 @@ const Volunteer = () => {
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${BackgroundBanner})` }}
                 />
-
-                {/* Banner donation link */}
                 <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 py-4">
                   <p className="text-[40px] md:text-[40px] font-semibold text-[var(--color-text-light)] mb-4">
                     {t("volunteerSection.bannerDescription")}

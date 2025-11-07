@@ -44,7 +44,7 @@ const Tips = () => {
 
   return (
     <section
-      className="relative max-w-6xl mx-auto px-0 md:px-0 lg:px-6"
+      className="relative text-[var(--color-text-dark)] max-w-6xl mx-auto px-0 md:px-0 lg:px-6"
       // Pause autoplay on hover (desktop) or touch (mobile)
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -69,15 +69,13 @@ const Tips = () => {
                 return (
                   // Each tip is an article for semantic purposes
                   <article key={tip.id} className="flex-1">
-                    <h3 className="text-[var(--color-text-dark)] font-bold text-[20px] sm:text-[40px] mb-6">
+                    <h3 className="font-bold text-[20px] sm:text-[40px] mb-6">
                       {title}
                     </h3>
-                    <p className="text-[20px] font-bold mb-2 text-[var(--color-text-tips)]">
+                    <p className="text-[20px] font-extrabold mb-2 text-[var(--color-text-tips)]">
                       {prefix}
                     </p>
-                    <p className="text-[20px] text-[var(--color-text-dark)]">
-                      {text}
-                    </p>
+                    <p className="text-[20px]">{text}</p>
                   </article>
                 );
               })}

@@ -46,7 +46,7 @@ const Hero = () => {
       role="region"
     >
       {/* === Mobile version === */}
-      <div className="relative w-full min-[1140px]:hidden">
+      <div className="relative text-[var(--color-text-dark)] w-full min-[1140px]:hidden">
         <img
           src={mobileImages[currentIndex]}
           alt=""
@@ -57,11 +57,11 @@ const Hero = () => {
         {/* Content wrapper */}
         <div className="max-w-6xl mx-auto w-full px-6">
           <article className="flex flex-col text-left px-0 md:px-0 lg:px-6">
-            <h1 className="text-[50px] font-extrabold text-[var(--color-text-dark)] text-left">
+            <h1 className="text-[50px] font-extrabold text-left">
               {t(`hero.slides.${currentIndex}.title`)}
             </h1>
 
-            <p className="mt-7 text-[20px] text-[var(--color-text-dark)]">
+            <p className="mt-7 text-[20px]">
               {t(`hero.slides.${currentIndex}.text`)}
             </p>
 
@@ -104,7 +104,7 @@ const Hero = () => {
 
       {/* === Desktop version (>=1140px) === */}
       <div
-        className="hidden min-[1140px]:flex relative w-full min-h-[1000px] bg-no-repeat bg-center bg-cover"
+        className="hidden min-[1140px]:flex relative text-[var(--color-text-dark)] w-full min-h-[1000px] bg-no-repeat bg-center bg-cover"
         style={{
           backgroundImage: `url(${desktopImages[currentIndex]})`,
           maxWidth: "2000px",
@@ -113,11 +113,11 @@ const Hero = () => {
       >
         <div className="max-w-6xl w-full flex relative z-20 mt-48">
           <article className="flex flex-col justify-center max-w-[38%] ml-8">
-            <h1 className="text-[60px] font-extrabold text-[var(--color-text-dark)] leading-tight">
+            <h1 className="text-[60px] font-extrabold  leading-tight">
               {t(`hero.slides.${currentIndex}.title`)}
             </h1>
 
-            <p className="mt-6 text-[22px] text-[var(--color-text-dark)]">
+            <p className="mt-6 text-[22px]">
               {t(`hero.slides.${currentIndex}.text`)}
             </p>
 

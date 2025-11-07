@@ -35,7 +35,7 @@ const VolunteerReflection = () => {
   }, [isPaused, imagesDesktop.length]);
 
   return (
-    <section className="w-full mt-24">
+    <section className="w-full text-[var(--color-text-dark)] mt-24">
       {/* Container handling pause on interaction */}
       <div
         className="max-w-6xl mx-auto w-full px-0 md:px-0 lg:px-6 flex flex-col md:flex-row items-start md:items-center text-left"
@@ -62,10 +62,8 @@ const VolunteerReflection = () => {
 
         {/* Text section */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
-          <h2 className="text-[40px] font-bold text-[var(--color-text-dark)] mb-4">
-            {titles[currentIndex]}
-          </h2>
-          <p className="text-[var(--color-text-dark)] text-[20px] leading-relaxed">
+          <h2 className="text-[40px] font-bold mb-4">{titles[currentIndex]}</h2>
+          <p className="text-[20px] leading-relaxed">
             {descriptions[currentIndex]}
           </p>
 

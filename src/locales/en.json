@@ -198,7 +198,8 @@
       "You can also donate from abroad using our SWIFT code.",
       "Send food, medicine, or toys directly from our wishlist."
     ],
-    "message": "🚧 We're working on this section. If you'd like to help, send us an email and we'll tell you how."
+    "message": "🚧 We're working on this section. If you'd like to help, send us an email and we'll tell you how.",
+    "clickToFlip": "Click to flip!"
   },
 
   "aboutUs": {
