@@ -8,15 +8,15 @@ const FooterContact = ({ emailParts = [] }) => {
   const email = useMemo(() => emailParts.join(""), [emailParts]);
 
   return (
-    <div className="inline-flex flex-col gap-0.5 text-[var(--color-text-light)] font-normal leading-6 mb-8">
+    <div className="inline-flex flex-col gap-0.5 text-(--color-text-light) font-normal leading-6 mb-8">
       <a
         href={`mailto:${email}`}
         aria-label={t("footer.emailAriaLabel", { email })}
         className="
           transition-colors
           duration-300
-          hover:text-[var(--color-button-bg-hover-primary)]
-          focus-visible:text-[var(--color-button-bg-hover-primary)]
+          hover:text-(--color-button-bg-hover-primary)
+          focus-visible:text-(--color-button-bg-hover-primary)
           focus-visible:outline-none
         "
       >

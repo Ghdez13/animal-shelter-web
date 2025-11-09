@@ -1,17 +1,19 @@
 import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 import Filled from "../../assets/icons/filled-footprint.webp";
 import Outline from "../../assets/icons/outline-footprint.webp";
 
 const Tips = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
+  const swiperRef = useRef(null);
 
   const [tips, setTips] = useState([]);
   const [slides, setSlides] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const intervalRef = useRef(null);
 
   // Load tips JSON dynamically
   useEffect(() => {
@@ -29,50 +31,43 @@ const Tips = () => {
     setSlides(grouped);
   }, [tips]);
 
-  // Auto-slide effect
-  useEffect(() => {
-    if (!slides.length) return;
-    if (!isHovered) {
-      intervalRef.current = setInterval(() => {
-        setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-      }, 15000);
-    }
-    return () => clearInterval(intervalRef.current);
-  }, [isHovered, slides]);
-
   if (!slides.length) return null;
 
   return (
     <section
-      className="relative text-[var(--color-text-dark)] max-w-6xl mx-auto px-0 md:px-0 lg:px-6"
-      // Pause autoplay on hover (desktop) or touch (mobile)
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={() => setIsHovered(true)}
-      onTouchEnd={() => setIsHovered(false)}
+      className="relative text-text-dark max-w-6xl mx-auto px-0 md:px-0 lg:px-6"
+      onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+      onMouseLeave={() => swiperRef.current?.autoplay?.start()}
+      onTouchStart={() => swiperRef.current?.autoplay?.stop()}
+      onTouchEnd={() => swiperRef.current?.autoplay?.start()}
     >
-      {/* Carousel slides */}
-      <div className="overflow-hidden">
-        <div
-          className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {slides.map((group, i) => (
-            <div
-              key={i}
-              className="flex flex-col md:flex-row gap-4 md:gap-6 w-full flex-shrink-0"
-            >
+      {/* === Swiper container === */}
+      <Swiper
+        modules={[Autoplay]}
+        slidesPerView={1}
+        loop={true}
+        allowTouchMove={true}
+        autoplay={{
+          delay: 15000,
+          disableOnInteraction: false,
+        }}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
+        className="w-full overflow-hidden"
+      >
+        {slides.map((group, i) => (
+          <SwiperSlide key={i}>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full">
               {group.map((tip) => {
                 const title = tip.title[lang] || tip.title["es"];
                 const prefix = tip.prefix[lang] || tip.prefix["es"];
                 const text = tip.text[lang] || tip.text["es"];
                 return (
-                  // Each tip is an article for semantic purposes
                   <article key={tip.id} className="flex-1">
                     <h3 className="font-bold text-[20px] sm:text-[40px] mb-6">
                       {title}
                     </h3>
-                    <p className="text-[20px] font-extrabold mb-2 text-[var(--color-text-tips)]">
+                    <p className="text-[20px] font-extrabold mb-2 text-(--color-text-tips)">
                       {prefix}
                     </p>
                     <p className="text-[20px]">{text}</p>
@@ -80,19 +75,18 @@ const Tips = () => {
                 );
               })}
             </div>
-          ))}
-        </div>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-      {/* Navigation dots */}
+      {/* === Custom dots === */}
       <div className="flex justify-center mt-4 space-x-2">
         {slides.map((group, idx) => (
           <button
             key={idx}
             type="button"
-            onClick={() => setCurrentIndex(idx)}
-            // Focus style consistent with global :focus-visible
-            className="focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-primary)] rounded-full"
+            onClick={() => swiperRef.current?.slideToLoop(idx)}
+            className="focus:outline-none focus-visible:ring-4 focus-visible:ring-(--color-focus-primary) rounded-full"
             aria-label={`${t("dots.goToSlide")} ${idx + 1} - ${
               group[0].title[lang] || group[0].title["es"]
             }`}

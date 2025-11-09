@@ -26,19 +26,22 @@ const AnimalCard = ({ animal, onSelect }) => {
 
   return (
     <article
-      className="flex flex-col text-[var(--color-text-dark)] items-center bg-transparent rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 transition-transform duration-300"
+      className="flex flex-col text-text-dark items-center bg-transparent rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 transition-transform duration-300"
       aria-label={animal.name}
     >
       {/* Animal image */}
       <img
         src={mainImage}
         alt={animal.name}
-        className="w-full h-64 object-cover"
+        className="w-full h-64 object-cover cursor-pointer hover:opacity-90 transition-opacity"
         loading="lazy"
+        onClick={() => onSelect(animal)}
+        role="button"
+        aria-label={`View more about ${animal.name}`}
       />
 
       {/* Animal info */}
-      <div className="p-6 flex flex-col items-center text-center text-[var(--color-text-dark)]">
+      <div className="p-6 flex flex-col items-center text-center text-text-dark ">
         <h2 className="text-[24px] md:text-[28px] font-semibold mb-4">
           {animal.name}
         </h2>

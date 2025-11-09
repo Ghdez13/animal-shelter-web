@@ -25,7 +25,7 @@ const CampaignSection = () => {
         </div>
 
         {/* Campaign text content */}
-        <div className="campaign-content text-[var(--color-text-dark)] flex flex-col text-left min-[900px]:flex-1 min-[900px]:order-1">
+        <div className="campaign-content texttext-dark flex flex-col text-left min-[900px]:flex-1 min-[900px]:order-1">
           <h2 className="campaign-title text-[40px] font-bold ">
             {t("campaignSection.title")}
           </h2>

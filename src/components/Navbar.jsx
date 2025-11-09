@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="w-full bg-transparent text-[var(--color-text-dark)] font-semibold z-50"
+      className="w-full bg-transparent text-text-dark font-semibold z-50"
       role="navigation"
     >
       <div className="max-w-6xl mx-auto w-full pl-5 pr-5 py-3 flex justify-between items-center">
@@ -52,7 +52,7 @@ const Navbar = () => {
         <Link
           to="/"
           onClick={() => setIsOpen(false)}
-          className="focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-secondary)] rounded-xl transition"
+          className="focus:outline-none focus-visible:ring-4 focus-visible:ring-(--color-focus-secondary) rounded-xl transition"
           title={t("navbar.logoTitle")}
         >
           <picture>
@@ -73,7 +73,7 @@ const Navbar = () => {
             e.stopPropagation();
             setIsOpen(!isOpen);
           }}
-          className="absolute top-6 right-6 w-20 h-4 flex items-center justify-center min-[1140px]:hidden z-60 focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-secondary)] focus-visible:rounded-lg transition"
+          className="absolute top-6 right-6 w-20 h-4 flex items-center justify-center min-[1140px]:hidden z-60 focus:outline-none focus-visible:ring-4 focus-visible:ring-(--color-focus-secondary) focus-visible:rounded-lg transition"
           aria-label={t("navbar.toggleMenu")}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -85,20 +85,20 @@ const Navbar = () => {
           <span
             className={`absolute w-16 h-1.5 rounded transition-transform duration-300 ease-in-out ${
               isOpen
-                ? "rotate-45 bg-[var(--color-text-light)]"
-                : "-translate-y-2 bg-[var(--color-text-light)]"
+                ? "rotate-45 bg-(--color-text-light)"
+                : "-translate-y-2 bg-(--color-text-light)"
             }`}
           ></span>
           <span
             className={`absolute w-16 h-1.5 rounded transition-opacity duration-300 ease-in-out ${
-              isOpen ? "opacity-0" : "opacity-100 bg-[var(--color-text-light)]"
+              isOpen ? "opacity-0" : "opacity-100 bg-(--color-text-light)"
             }`}
           ></span>
           <span
             className={`absolute w-16 h-1.5 rounded transition-transform duration-300 ease-in-out ${
               isOpen
-                ? "-rotate-45 bg-[var(--color-text-light)]"
-                : "translate-y-2 bg-[var(--color-text-light)]"
+                ? "-rotate-45 bg-(--color-text-light)"
+                : "translate-y-2 bg-(--color-text-light)"
             }`}
           ></span>
         </button>
@@ -111,10 +111,10 @@ const Navbar = () => {
               to={`/${item}`}
               aria-label={t(`menu.${item}`)}
               className={({ isActive }) =>
-                `relative text-2xl transition focus:outline-none hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300 ${
+                `relative text-2xl transition focus:outline-none hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-(--color-focus-secondary) after:w-0 after:transition-all after:duration-300 ${
                   isActive
-                    ? "after:w-full text-[var(--color-text-light)]"
-                    : "text-[var(--color-text-light)]"
+                    ? "after:w-full text-(--color-text-light)"
+                    : "text-(--color-text-light)"
                 }`
               }
             >
@@ -128,10 +128,10 @@ const Navbar = () => {
               <button
                 key={code}
                 onClick={() => i18n.changeLanguage(code)}
-                className={`relative font-semibold transition hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300 ${
+                className={`relative font-semibold transition hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-(--color-focus-secondary) after:w-0 after:transition-all after:duration-300 ${
                   i18n.language === code
-                    ? "after:w-full text-[var(--color-text-light)]"
-                    : "text-[var(--color-text-light)]"
+                    ? "after:w-full text-(--color-text-light)"
+                    : "text-(--color-text-light)"
                 }`}
               >
                 {label}
@@ -171,14 +171,14 @@ const Navbar = () => {
                 to={`/${item}`}
                 aria-label={t(`menu.${item}`)}
                 onClick={() => setIsOpen(false)}
-                className="relative inline-block text-2xl text-[var(--color-text-light)] transition focus:outline-none hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300"
+                className="relative inline-block text-2xl text-(--color-text-light) transition focus:outline-none hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-(--color-focus-secondary) after:w-0 after:transition-all after:duration-300"
               >
                 {t(`menu.${item}`)}
               </Link>
             ))}
 
             {/* Mobile language selector */}
-            <div className="flex justify-center space-x-4 pt-6 border-t border-[var(--color-text-light)]">
+            <div className="flex justify-center space-x-4 pt-6 border-t border-(--color-text-light)">
               {LANGUAGES.map(({ code, label }) => (
                 <button
                   key={code}
@@ -186,10 +186,10 @@ const Navbar = () => {
                     i18n.changeLanguage(code);
                     setIsOpen(false);
                   }}
-                  className={`relative inline-block font-semibold transition hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-[var(--color-focus-secondary)] after:w-0 after:transition-all after:duration-300 ${
+                  className={`relative inline-block font-semibold transition hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-(--color-focus-secondary) after:w-0 after:transition-all after:duration-300 ${
                     i18n.language === code
-                      ? "after:w-full text-[var(--color-text-light)]"
-                      : "text-[var(--color-text-light)]"
+                      ? "after:w-full text-(--color-text-light)"
+                      : "text-(--color-text-light)"
                   }`}
                 >
                   {label}

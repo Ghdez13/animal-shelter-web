@@ -22,7 +22,7 @@ const Donations = () => {
         alt={t("donationSection.backgroundAlt")}
       >
         <main className="px-6">
-          <div className="w-full text-[var(--color-text-dark)] max-w-6xl mx-auto">
+          <div className="w-full text-text-dark max-w-6xl mx-auto">
             {/* Page title */}
             <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 md:mb-30">
               <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold mb-20">

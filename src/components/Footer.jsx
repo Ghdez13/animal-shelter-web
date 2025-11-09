@@ -47,7 +47,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="text-[var(--color-text-dark)] font-semibold bg-transparent px-6 py-10 mt-12">
+    <footer className="text-text-dark font-semibold bg-transparent px-6 py-10 mt-12">
       <div className="max-w-6xl mx-auto w-full px-0 md:px-0 lg:px-6 flex flex-col gap-5">
         {/* Logo + Menu section */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-center w-full px-5 mb-6 gap-8 md:gap-16">
@@ -65,7 +65,7 @@ const Footer = () => {
                 <img
                   src={LogoMobile}
                   alt={t("footer.logoAlt")}
-                  className="h-15 lg:h-20 object-contain"
+                  className="h-15 lg:h-20 object-contain md:-mt-5"
                 />
               </picture>
             </a>
@@ -76,14 +76,14 @@ const Footer = () => {
             <div className="flex flex-col gap-2 text-center md:text-left">
               <a
                 href="/services"
-                className="hover:underline hover:decoration-[var(--color-focus-primary)] hover:decoration-3 focus-visible:outline-none"
+                className="hover:underline hover:decoration-(--color-focus-primary) hover:decoration-3 focus-visible:outline-none"
                 aria-label={t("menu.altServices")}
               >
                 {t("menu.services")}
               </a>
               <a
                 href="/volunteer"
-                className="hover:underline hover:decoration-[var(--color-focus-primary)] hover:decoration-3 focus-visible:outline-none"
+                className="hover:underline hover:decoration-(--color-focus-primary) hover:decoration-3 focus-visible:outline-none"
                 aria-label={t("menu.altVolunteer")}
               >
                 {t("menu.volunteer")}
@@ -92,14 +92,14 @@ const Footer = () => {
             <div className="flex flex-col gap-2 text-center md:text-left">
               <a
                 href="/donations"
-                className="hover:underline hover:decoration-[var(--color-focus-primary)] hover:decoration-3  focus-visible:outline-none"
+                className="hover:underline hover:decoration-(--color-focus-primary) hover:decoration-3  focus-visible:outline-none"
                 aria-label={t("menu.altDonations")}
               >
                 {t("menu.donations")}
               </a>
               <a
                 href="/about-us"
-                className="hover:underline hover:decoration-[var(--color-focus-primary)] hover:decoration-3  focus-visible:outline-none"
+                className="hover:underline hover:decoration-(--color-focus-primary) hover:decoration-3  focus-visible:outline-none"
                 aria-label={t("menu.altAbout-us")}
               >
                 {t("menu.about-us")}
@@ -108,7 +108,7 @@ const Footer = () => {
             <div className="flex flex-col gap-2 text-center md:text-left">
               <a
                 href="/contact"
-                className="hover:underline hover:decoration-[var(--color-focus-primary)] hover:decoration-3 focus-visible:outline-none"
+                className="hover:underline hover:decoration-(--color-focus-primary) hover:decoration-3 focus-visible:outline-none"
                 aria-label={t("menu.altContact")}
               >
                 {t("menu.contact")}
@@ -120,12 +120,12 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label={t("footer.facebook")}
                   title={t("footer.facebook")}
-                  className="w-5 h-5 md:w-8 md:h-8 block bg-[url('/icons/facebook.webp')] hover:bg-[url('/icons/facebookhover.webp')] bg-contain bg-no-repeat transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[var(--color-focus-primary)]"
+                  className="-mt-2 md:-mt-1 w-8 h-8 md:w-8 md:h-8 block bg-[url('/icons/facebook.webp')] hover:bg-[url('/icons/facebookhover.webp')] bg-contain bg-no-repeat transition-all duration-200 focus-visible:ring-2 focus-visible:ring-(--color-focus-primary)"
                 />
                 <button
                   aria-label={t("footer.instagram")}
                   title={t("footer.instagram")}
-                  className="w-5 h-5 md:w-8 md:h-8 block bg-[url('/icons/instagram.webp')] hover:bg-[url('/icons/instagramhover.webp')] bg-contain bg-no-repeat transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[var(--color-focus-primary)]"
+                  className="-mt-2 md:-mt-1 w-8 h-8 md:w-8 md:h-8 block bg-[url('/icons/instagram.webp')] hover:bg-[url('/icons/instagramhover.webp')] bg-contain bg-no-repeat transition-all duration-200 focus-visible:ring-2 focus-visible:ring-(--color-focus-primary)"
                   onClick={() => openModal("instagramUnderConstruction")}
                 />
               </div>
@@ -135,7 +135,7 @@ const Footer = () => {
 
         {/* Contact section with orange background */}
         <div
-          className="relative text-lg md:text-2xl flex flex-col items-start p-6 rounded-lg text-[var(--color-text-light)] gap-6 overflow-hidden"
+          className="relative text-lg md:text-2xl flex flex-col items-start p-6 rounded-lg text-(--color-text-light) gap-6 overflow-hidden"
           style={{
             backgroundImage: `url(${
               window.innerWidth < 1140
@@ -162,7 +162,7 @@ const Footer = () => {
               href="https://maps.app.goo.gl/wTxnETvNsVKJXiEG6"
               target="_blank"
               rel="noopener noreferrer"
-              className="leading-6 block font-normal transition-colors duration-300 hover:text-[var(--color-button-bg-hover-primary)] focus-visible:text-[var(--color-button-bg-hover-primary)] focus-visible:outline-none"
+              className="leading-6 block font-normal transition-colors duration-300 hover:text-(--color-button-bg-hover-primary) focus-visible:text-(--color-button-bg-hover-primary) focus-visible:outline-none"
             >
               5ta Av. esquina con Av. Constituyentes s/n,
               <br />
@@ -188,7 +188,7 @@ const Footer = () => {
         </div>
 
         {/* Rights and developer info */}
-        <div className="text-xs md:text-lg text-[var(--color-text-dark)] flex justify-between items-start w-full mt-4">
+        <div className="text-xs md:text-lg text-text-dark flex justify-between items-start w-full mt-4">
           <p>
             © {new Date().getFullYear()}. {t("footer.rights")} <br />
             {t("footer.allRightsReserved")}.

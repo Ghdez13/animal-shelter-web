@@ -2,17 +2,21 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import AdoptionForm from "./AdoptionForm";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 
 const AnimalModal = ({ animal, isOpen, onClose }) => {
   const { t, i18n } = useTranslation();
   const [interested, setInterested] = useState(false);
-  const [currentImage, setCurrentImage] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   // Detect screen size
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); // run on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -21,20 +25,11 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
   useEffect(() => {
     if (!isOpen) {
       setInterested(false);
-      setCurrentImage(0);
     }
   }, [isOpen]);
 
   const handleOverlayClick = (e) => {
     if (e.target.id === "modalOverlay") onClose();
-  };
-
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   if (!isOpen || !animal) return null;
@@ -67,7 +62,7 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-4 z-20 text-[var(--color-focus-primary)] text-5xl font-extrabold hover:scale-110 transition-transform"
+          className="absolute top-3 right-4 z-20 text-(--color-focus-primary) text-5xl font-extrabold hover:scale-110 transition-transform"
           aria-label={t("animalModal.close")}
           title={t("animalModal.close")}
         >
@@ -77,59 +72,45 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
         {/* Inner scrollable content */}
         <div className="custom-scrollbar overflow-y-auto max-h-[90vh] px-1">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Left - carousel */}
+            {/* Left - Swiper carousel */}
             <div className="relative h-72 md:h-full flex items-center justify-center">
-              <img
-                src={images[currentImage]}
-                alt={`${animal.name}, imagen ${currentImage + 1} de ${images.length}`}
-                className="w-full h-full object-cover rounded-lg transition-all duration-300"
-                loading="lazy"
-              />
-
-              {images.length > 1 && (
-                <>
-                  <button
-                    onClick={prevImage}
-                    className="absolute left-2 bg-white/60 hover:bg-white text-gray-800 rounded-full p-2 transition"
-                    aria-label={t("animalModal.previousImage")}
-
-                  >
-                    ‹
-                  </button>
-
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-2 bg-white/60 hover:bg-white text-gray-800 rounded-full p-2 transition"
-                    aria-label={t("animalModal.nextImage")}
-
-                  >
-                    ›
-                  </button>
-                </>
-              )}
-
-              {images.length > 1 && (
-                <div className="absolute bottom-3 flex space-x-2">
-                  {images.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImage(index)}
-                      className={`w-3 h-3 rounded-full ${
-                        index === currentImage
-                          ? "bg-[var(--color-focus-primary)]"
-                          : "bg-gray-300"
+              <Swiper
+                modules={[Navigation, Pagination]}
+                loop={images.length > 1}
+                navigation={{
+                  prevEl: ".swiper-button-prev-custom",
+                  nextEl: ".swiper-button-next-custom",
+                }}
+                pagination={{
+                  clickable: true,
+                  bulletClass: "swiper-dot-custom",
+                  bulletActiveClass: "swiper-dot-custom-active",
+                }}
+                className="h-full w-full"
+              >
+                {images.map((img, idx) => (
+                  <SwiperSlide key={idx}>
+                    <img
+                      src={img}
+                      alt={`${animal.name}, imagen ${idx + 1} de ${
+                        images.length
                       }`}
-                      aria-label={`${t("animalModal.goToImage")} ${index + 1}`}
+                      className="w-full h-full object-cover rounded-lg"
+                      loading="lazy"
                     />
-                  ))}
-                </div>
-              )}
+                  </SwiperSlide>
+                ))}
+
+                {/* Flechas personalizadas */}
+                <div className="swiper-button-prev-custom">‹</div>
+                <div className="swiper-button-next-custom">›</div>
+              </Swiper>
             </div>
 
             {/* Right - info & form */}
             <div className="p-6 flex flex-col justify-between">
               <div>
-                <h2 className="text-3xl text-[var(--color-focus-secondary)] font-bold mb-4">
+                <h2 className="text-3xl text-(--color-focus-secondary) font-bold mb-4">
                   {animal.name}
                 </h2>
 

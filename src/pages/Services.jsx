@@ -35,7 +35,7 @@ const Services = () => {
       >
         <main className="px-6">
           {/* Main section title */}
-          <div className="max-w-6xl mx-auto text-[var(--color-text-dark)] px-0 md:px-0 lg:px-6 md:mb-30">
+          <div className="max-w-6xl mx-auto text-text-dark px-0 md:px-0 lg:px-6 md:mb-30">
             <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold mb-20">
               {t("servicesSection.servicesTitle")}
             </h1>
@@ -43,7 +43,7 @@ const Services = () => {
 
           {/* Services grid */}
           {loading ? (
-            <p className="text-center text-lg text-[var(--color-text-dark)]">
+            <p className="text-center text-lg text-text-dark">
               {t("servicesSection.loading")}
             </p>
           ) : (
@@ -55,7 +55,7 @@ const Services = () => {
           )}
 
           {/* Tips section */}
-          <div className="max-w-6xl mx-auto text-[var(--color-text-dark)] px-0 md:px-0 lg:px-6">
+          <div className="max-w-6xl mx-auto text-text-dark px-0 md:px-0 lg:px-6">
             <h2 className="text-[50px] font-bold mt-12">
               {t("servicesSection.tipsTitle")}
             </h2>

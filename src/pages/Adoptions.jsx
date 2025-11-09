@@ -22,7 +22,7 @@ const Adoptions = () => {
 
       <main className="px-6">
         {/* Page title */}
-        <div className="max-w-6xl text-[var(--color-text-dark)] mx-auto mb-20 px-0 md:px-0 lg:px-6">
+        <div className="max-w-6xl text-text-dark mx-auto mb-20 px-0 md:px-0 lg:px-6">
           <h1 className="text-[50px] md:text-[70px] lg:text-[90px] font-extrabold">
             {t("adoptions.adoptionsTitle")}
           </h1>

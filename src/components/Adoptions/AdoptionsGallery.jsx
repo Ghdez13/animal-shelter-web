@@ -40,10 +40,12 @@ const AdoptionsGallery = () => {
         );
 
   return (
-    <section className="relative flex flex-col items-start gap-10 text-[var(--color-text-dark)]">
+    <section className="relative flex flex-col items-start gap-10 text-text-dark">
       {/* Page description */}
       <div className="w-full max-w-6xl px-0 md:px-0 lg:px-6 mx-auto">
-        <p className="text-lg md:text-xl">{t("adoptionsGallery.description")}</p>
+        <p className="text-lg md:text-xl">
+          {t("adoptionsGallery.description")}
+        </p>
       </div>
 
       {/* Filter section */}
@@ -86,7 +88,9 @@ const AdoptionsGallery = () => {
               className="w-5 h-5"
               style={{ accentColor: "var(--color-focus-secondary)" }}
             />
-            <span className="text-lg">{t("adoptionsGallery.filterOthers")}</span>
+            <span className="text-lg">
+              {t("adoptionsGallery.filterOthers")}
+            </span>
           </label>
         </div>
       </div>

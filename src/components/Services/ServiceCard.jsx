@@ -33,14 +33,14 @@ const ServiceCard = ({ service }) => {
 
   return (
     <>
-      <div className="bg-[var(--color-bg-article)] rounded-lg shadow-md py-[50px] px-[20px] flex flex-col items-start text-[var(--color-text-dark)] text-left hover:-translate-y-1 transition-transform duration-300">
+      <div className="bg-(--color-bg-article) rounded-lg shadow-md py-[50px] px-5 flex flex-col items-start text-text-dark text-left hover:-translate-y-1 transition-transform duration-300">
         <div className="flex items-center gap-4 mb-4">
           <img
             src={isMobile ? service.iconMobile || service.icon : service.icon}
             alt={title}
             className="w-20 h-20 sm:w-28 sm:h-28"
           />
-          <h2 className="text-[25px] md:text-[30px] font-bold break-words text-start">
+          <h2 className="text-[25px] md:text-[30px] font-bold wrap-break-words text-start">
             {title}
           </h2>
         </div>

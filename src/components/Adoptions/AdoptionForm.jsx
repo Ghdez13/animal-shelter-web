@@ -177,7 +177,7 @@ const AdoptionForm = ({ animalName, onClose }) => {
           onChange={handleChange} // Handle input changes
           onBlur={handleBlur} // Mark as touched on blur
           placeholder={t("form.name")}
-          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
+          className="p-3 rounded-xl border border-gray-300 bg-(--color-bg-article)"
           required
           aria-invalid={errors.name ? "true" : "false"}
           aria-describedby={errors.name ? "name-error" : undefined}
@@ -200,7 +200,7 @@ const AdoptionForm = ({ animalName, onClose }) => {
           onChange={handleChange} // Handle input changes
           onBlur={handleBlur} // Mark as touched on blur
           placeholder={t("form.email")}
-          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
+          className="p-3 rounded-xl border border-gray-300 bg-(--color-bg-article)"
           required
           aria-invalid={errors.email ? "true" : "false"}
           aria-describedby={errors.email ? "email-error" : undefined}

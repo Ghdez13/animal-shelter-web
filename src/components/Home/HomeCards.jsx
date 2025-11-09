@@ -49,13 +49,13 @@ const Cards = () => {
           return (
             <div
               key={card.id}
-              className={`bg-[var(--color-bg-article)] rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 md:flex md:items-stretch md:gap-6 ${
+              className={`bg-(--color-bg-article) rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 md:flex md:items-stretch md:gap-6 ${
                 rowReverse ? "md:flex-row-reverse" : ""
               }`}
             >
               {/* Image card using LazyImage for desktop and mobile */}
               {card.type === "image" && (
-                <div className="w-full md:flex-1 aspect-[16/9]">
+                <div className="w-full md:flex-1 aspect-video">
                   {/* Desktop image */}
                   <LazyImage
                     src={card.images[currentIndex].desktop}
@@ -74,7 +74,7 @@ const Cards = () => {
 
               {/* Text card */}
               {card.type === "text" && (
-                <div className="p-6 md:p-12 text-[var(--color-text-dark)] flex-1 flex flex-col justify-center hover:shadow-lg hover:-translate-y-1 transition-transform duration-300">
+                <div className="p-6 md:p-12 text-text-dark flex-1 flex flex-col justify-center hover:shadow-lg hover:-translate-y-1 transition-transform duration-300">
                   <h2 className="text-[40px]  font-bold mb-2">
                     {t(card.title)}
                   </h2>

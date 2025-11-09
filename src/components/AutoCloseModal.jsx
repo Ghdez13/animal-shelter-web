@@ -18,7 +18,7 @@ const AutoCloseModal = ({ type, onClose, duration = 3000, values = {} }) => {
     >
       {/* Modal box */}
       <div
-        className="bg-[var(--color-bg-article)] text-[var(--color-text-dark)] rounded-lg border-t-4 border-[#ef7a2b] p-6 w-11/12 max-w-sm text-center shadow-lg"
+        className="bg-(--color-bg-article) text-text-dark rounded-lg border-t-4 border-[#ef7a2b] p-6 w-11/12 max-w-sm text-center shadow-lg"
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
       >
         {/* Interpolates variables from `values` */}

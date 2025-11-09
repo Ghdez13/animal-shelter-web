@@ -31,37 +31,37 @@ const DonationCard = ({
       }`}
     >
       {/* Front side */}
-      <div className="absolute w-full h-full bg-[var(--color-bg-article)] rounded-2xl shadow-md p-6 flex flex-col justify-center items-center hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 backface-hidden overflow-hidden will-change-transform">
+      <div className="absolute w-full h-full bg-(--color-bg-article) rounded-2xl shadow-md p-6 flex flex-col justify-center items-center hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 backface-hidden overflow-hidden will-change-transform">
         <LazyImage
           src={icon}
           alt={`${title} icon`}
           className="w-20 h-20 mb-3 object-contain"
         />
-        <h3 className="text-[25px] font-semibold text-[var(--color-text-dark)] mb-2 text-center">
+        <h3 className="text-[25px] font-semibold text-text-dark mb-2 text-center">
           {title}
         </h3>
-        <p className="text-[20px] text-[var(--color-text-dark)] leading-snug text-left max-w-[85%]">
+        <p className="text-[20px] text-text-dark leading-snug text-left max-w-[85%]">
           {description}
         </p>
         {/*Blinking text shown only on the first card */}
         {index === 0 && (
-          <span className="mt-4 text-[var(--color-text-tips)] text-lg font-bold animate-blink">
+          <span className="mt-4 text-(--color-text-tips) text-lg font-bold animate-blink">
             ✨ {t("donationCards.clickToFlip")} ✨
           </span>
         )}
       </div>
 
       {/* Back side */}
-      <div className="absolute w-full h-full bg-[var(--color-bg-article)] rounded-2xl shadow-md flex flex-col justify-center items-center hover:shadow-lg hover:-translate-y-1 rotate-y-180 backface-hidden p-6 border border-gray-300 overflow-hidden will-change-transform">
+      <div className="absolute w-full h-full bg-(--color-bg-article) rounded-2xl shadow-md flex flex-col justify-center items-center hover:shadow-lg hover:-translate-y-1 rotate-y-180 backface-hidden p-6 border border-gray-300 overflow-hidden will-change-transform">
         <LazyImage
           src={isMobile ? backIcon.mobile : backIcon.desktop}
           alt="Construction icon"
           className="w-20 h-20 mb-3 object-contain"
         />
-        <h3 className="text-[25px] font-semibold text-[var(--color-text-dark)] mb-2 text-center">
+        <h3 className="text-[25px] font-semibold text-text-dark mb-2 text-center">
           {title}
         </h3>
-        <p className="text-[20px] text-[var(--color-text-dark)] leading-snug text-left max-w-[85%]">
+        <p className="text-[20px] text-text-dark) leading-snug text-left max-w-[85%]">
           {t("donationCards.message")}
         </p>
       </div>
@@ -116,7 +116,7 @@ const Donation = () => {
     <section className="w-full flex justify-center px-0 md:px-0 lg:px-6">
       <div className="w-full max-w-6xl flex flex-col items-center">
         {/* Intro Section with image and text */}
-        <div className="flex flex-col text-[var(--color-text-dark)] md:flex-row w-full rounded-2xl overflow-hidden mt-6">
+        <div className="flex flex-col text-text-dark md:flex-row w-full rounded-2xl overflow-hidden mt-6">
           <LazyImage
             src={isMobile ? Donation1Mobile : Donation1}
             alt="Donation intro"
@@ -138,7 +138,7 @@ const Donation = () => {
         </div>
 
         {/* Donation Cards Section */}
-        <div className="w-full text-[var(--color-text-dark)] text-center mt-12">
+        <div className="w-full text-text-dark text-center mt-12">
           <h2 className="text-[40px] font-bold mb-10">
             {t("donationCards.title")}
           </h2>
@@ -173,7 +173,7 @@ const Donation = () => {
               style={{ backgroundImage: `url(${BackgroundBanner})` }}
             />
             <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 py-4">
-              <p className="text-[40px] font-semibold text-[var(--color-text-light)] mb-4">
+              <p className="text-[40px] font-semibold text-(--color-text-light) mb-4">
                 {t("donationSection.donationBanner")}
               </p>
               <Button
@@ -188,7 +188,7 @@ const Donation = () => {
         </div>
 
         {/* Why Donate Section */}
-        <div className="w-full mt-24 flex text-[var(--color-text-dark)] flex-col-reverse md:flex-row items-center gap-8">
+        <div className="w-full mt-24 flex text-text-dark) flex-col-reverse md:flex-row items-center gap-8">
           <div className="w-full md:w-1/2 text-left flex flex-col justify-center">
             <h2 className="text-[40px] font-bold  mb-4">
               {t("donationSection.whyDonateTitle")}

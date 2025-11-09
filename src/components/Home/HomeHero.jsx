@@ -1,5 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-fade";
 import Button from "../Button";
 import HeroImageMobile from "../../assets/images/hero-mobile.webp";
 import HeroImageMobileTwo from "../../assets/images/hero-mobile-two.webp";
@@ -12,6 +16,7 @@ import Outline from "../../assets/icons/outline-footprint.webp";
 
 const Hero = () => {
   const { t } = useTranslation();
+  const swiperRef = useRef(null);
 
   const mobileImages = [
     HeroImageMobile,
@@ -23,7 +28,18 @@ const Hero = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Preload images to prevent flicker
+  // === Keep track of Swiper changes ===
+  const handleSlideChange = (swiper) => {
+    setCurrentIndex(swiper.realIndex);
+  };
+
+  // === Manual slide navigation (for both versions) ===
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+    if (swiperRef.current) swiperRef.current.slideToLoop(index);
+  };
+
+  // === Preload images ===
   useEffect(() => {
     [...mobileImages, ...desktopImages].forEach((img) => {
       const image = new Image();
@@ -31,13 +47,13 @@ const Hero = () => {
     });
   }, []);
 
-  // Auto slide change every 15s
+  // === Auto-slide for desktop ===
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % mobileImages.length);
+      setCurrentIndex((prev) => (prev + 1) % desktopImages.length);
     }, 15000);
     return () => clearInterval(interval);
-  }, [mobileImages.length]);
+  }, [desktopImages.length]);
 
   return (
     <section
@@ -45,66 +61,93 @@ const Hero = () => {
       aria-label={t("hero.carouselLabel")}
       role="region"
     >
-      {/* === Mobile version === */}
-      <div className="relative text-[var(--color-text-dark)] w-full min-[1140px]:hidden">
-        <img
-          src={mobileImages[currentIndex]}
-          alt=""
-          role="presentation"
-          className="w-full h-auto object-cover transition-all animate-fadeIn"
-        />
+      {/* === Mobile version (with Swiper fade effect) === */}
+      <div
+        className="relative text-text-dark w-full min-[1140px]:hidden"
+        onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+        onMouseLeave={() => swiperRef.current?.autoplay?.start()}
+      >
+        <Swiper
+          modules={[Autoplay, EffectFade]}
+          effect="fade"
+          fadeEffect={{ crossFade: true }}
+          slidesPerView={1}
+          loop={true}
+          allowTouchMove={true}
+          autoplay={{
+            delay: 15000,
+            disableOnInteraction: false,
+          }}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onSlideChange={handleSlideChange}
+          className="w-full"
+        >
+          {mobileImages.map((image, index) => (
+            <SwiperSlide key={index}>
+              {/* === Container fades smoothly === */}
+              <div className="relative animate-fadeIn">
+                <img
+                  src={image}
+                  alt=""
+                  role="presentation"
+                  className="w-full h-auto object-cover"
+                />
 
-        {/* Content wrapper */}
-        <div className="max-w-6xl mx-auto w-full px-6">
-          <article className="flex flex-col text-left px-0 md:px-0 lg:px-6">
-            <h1 className="text-[50px] font-extrabold text-left">
-              {t(`hero.slides.${currentIndex}.title`)}
-            </h1>
-
-            <p className="mt-7 text-[20px]">
-              {t(`hero.slides.${currentIndex}.text`)}
-            </p>
-
-            <div className="mt-8">
-              <Button
-                to={t(`hero.slides.${currentIndex}.buttonLink`)}
-                type="button"
-                aria-label={t(`hero.slides.${currentIndex}.altButtonText`)}
-              >
-                {t(`hero.slides.${currentIndex}.buttonText`)}{" "}
-              </Button>
-            </div>
-
-            {/* Dots indicator */}
-            <div
-              className="mt-10 flex space-x-3 justify-start"
-              role="group"
-              aria-label={t("hero.slideNavigation")}
-            >
-              {mobileImages.map((_, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  onClick={() => setCurrentIndex(index)}
-                  aria-label={`${t("hero.goToSlide")} ${index + 1}`}
-                  className={`w-8 h-8 md:w-10 md:h-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-primary)] rounded-full`}
+                {/* === Content === */}
+                <div
+                  className="max-w-6xl mx-auto w-full px-6"
+                  onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+                  onMouseLeave={() => swiperRef.current?.autoplay?.start()}
                 >
-                  <img
-                    src={index === currentIndex ? Filled : Outline}
-                    alt=""
-                    role="presentation"
-                    className="w-full h-full"
-                  />
-                </button>
-              ))}
-            </div>
-          </article>
+                  <article className="flex flex-col text-left px-0 md:px-0 lg:px-6">
+                    <h1 className="text-[50px] font-extrabold text-left">
+                      {t(`hero.slides.${index}.title`)}
+                    </h1>
+
+                    <p className="mt-7 text-[20px]">
+                      {t(`hero.slides.${index}.text`)}
+                    </p>
+
+                    <div className="mt-8">
+                      <Button
+                        to={t(`hero.slides.${index}.buttonLink`)}
+                        type="button"
+                        aria-label={t(`hero.slides.${index}.altButtonText`)}
+                      >
+                        {t(`hero.slides.${index}.buttonText`)}{" "}
+                      </Button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* === Dots (custom indicators) === */}
+        <div className="mt-10 flex space-x-3 justify-start px-6">
+          {mobileImages.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => goToSlide(index)}
+              aria-label={`${t("hero.goToSlide")} ${index + 1}`}
+              className={`w-8 h-8 md:w-10 md:h-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-(--color-focus-primary) rounded-full`}
+            >
+              <img
+                src={index === currentIndex ? Filled : Outline}
+                alt=""
+                role="presentation"
+                className="w-full h-full"
+              />
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* === Desktop version (>=1140px) === */}
+      {/* === Desktop version (no Swiper but synced with dots) === */}
       <div
-        className="hidden min-[1140px]:flex relative text-[var(--color-text-dark)] w-full min-h-[1000px] bg-no-repeat bg-center bg-cover"
+        className="hidden min-[1140px]:flex relative text-text-dark w-full min-h-[1000px] bg-no-repeat bg-center bg-cover transition-all duration-700"
         style={{
           backgroundImage: `url(${desktopImages[currentIndex]})`,
           maxWidth: "2000px",
@@ -112,8 +155,8 @@ const Hero = () => {
         }}
       >
         <div className="max-w-6xl w-full flex relative z-20 mt-48">
-          <article className="flex flex-col justify-center max-w-[38%] ml-8">
-            <h1 className="text-[60px] font-extrabold  leading-tight">
+          <article className="flex flex-col justify-center max-w-[38%] ml-8 animate-fadeIn">
+            <h1 className="text-[60px] font-extrabold leading-tight">
               {t(`hero.slides.${currentIndex}.title`)}
             </h1>
 
@@ -127,10 +170,11 @@ const Hero = () => {
                 type="button"
                 aria-label={t(`hero.slides.${currentIndex}.altButtonText`)}
               >
-                {t(`hero.slides.${currentIndex}.buttonText`)}{" "}
+                {t(`hero.slides.${currentIndex}.buttonText`)}
               </Button>
             </div>
 
+            {/* === Dots (synced) === */}
             <div
               className="mt-8 flex space-x-3"
               role="group"
@@ -140,9 +184,9 @@ const Hero = () => {
                 <button
                   key={index}
                   type="button"
-                  onClick={() => setCurrentIndex(index)}
+                  onClick={() => goToSlide(index)}
                   aria-label={`${t("hero.goToSlide")} ${index + 1}`}
-                  className={`w-8 h-8 md:w-10 md:h-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-focus-primary)] rounded-full`}
+                  className={`w-8 h-8 md:w-10 md:h-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-(--color-focus-primary) rounded-full`}
                 >
                   <img
                     src={index === currentIndex ? Filled : Outline}

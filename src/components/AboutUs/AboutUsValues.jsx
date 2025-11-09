@@ -41,7 +41,7 @@ const AboutUsValues = () => {
   }));
 
   return (
-    <section className="bg-transparent text-[var(--color-text-dark)]">
+    <section className="bg-transparent text-text-dark">
       {/* === Values section === */}
       <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
         {values.map(({ title, description, icon }, index) => (

@@ -172,7 +172,7 @@ const ContactForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder={t("form.name")}
-          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
+          className="p-3 rounded-xl border border-gray-300 bg-(--color-bg-article)"
           required
           aria-required="true"
           aria-invalid={errors.name ? "true" : "false"}
@@ -197,7 +197,7 @@ const ContactForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder={t("form.email")}
-          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)]"
+          className="p-3 rounded-xl border border-gray-300 bg-(--color-bg-article)"
           required
           aria-required="true"
           aria-invalid={errors.email ? "true" : "false"}
@@ -221,7 +221,7 @@ const ContactForm = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder={t("form.message")}
-          className="p-3 rounded-xl border border-gray-300 bg-[var(--color-bg-article)] h-32 resize-none max-w-full"
+          className="p-3 rounded-xl border border-gray-300 bg-(--color-bg-article) h-32 resize-none max-w-full"
           required
           aria-required="true"
           aria-invalid={errors.message ? "true" : "false"}
