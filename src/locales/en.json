@@ -34,14 +34,14 @@
 
     "slides": [
       {
-        "title": "They awaits you today",
+        "title": "New Beginnings",
         "text": "Every dog or cat deserves a second chance. By adopting, you turn a broken past into a future full of love and loyalty. Open your heart and your home will be their safe haven.",
         "buttonText": "Learn more",
         "buttonLink": "/services",
         "altButtonText": "Get more information about our services and how you can help"
       },
       {
-        "title": "Discover who we are",
+        "title": "Who we are",
         "text": "We run adoption campaigns and raise awareness about animal abandonment. We protect and care for every dog and cat arriving at our shelter, giving them hope and love.",
         "buttonText": "Learn more",
         "buttonLink": "/about-us",
@@ -58,7 +58,7 @@
   },
 
   "home": {
-    "title": "Shelter JausPet",
+    "title": "Home | Shelter JausPet",
     "description": "Discover how you can help change lives by adopting, donating, or volunteering. At JausPet, every action counts to bring love and a dignified home to dogs and cats waiting for a family."
   },
 

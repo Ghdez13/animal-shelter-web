@@ -40,7 +40,7 @@ const VolunteerReflection = () => {
   }, []);
 
   return (
-    <section className="w-full text-text-dark mt-20 overflow-hidden">
+    <section className="w-full text-text-dark mt-10 overflow-hidden">
       <div
         className="max-w-6xl mx-auto w-full"
         onMouseEnter={() => swiperRef.current?.autoplay?.stop?.()}
@@ -64,7 +64,7 @@ const VolunteerReflection = () => {
             <SwiperSlide key={index}>
               <div className="flex flex-col md:flex-row items-start md:items-center px-4 md:px-8">
                 {/* Image */}
-                <div className="w-full md:w-1/2 flex justify-center items-center min-h-[400px] md:min-h-[500px] lg:min-h-[600px] overflow-visible relative mb-6 md:mb-0">
+                <div className="w-full md:w-1/2 flex justify-center items-center min-h-[400px] md:min-h-[500px] lg:min-h-[600px] overflow-visible relative mb-0">
                   <LazyImage
                     src={images[index]} // Use images state directly
                     alt={`${titles[index]} reflection`}

@@ -34,21 +34,21 @@
 
     "slides": [
       {
-        "title": "Un amigo te espera",
+        "title": "Conoce a tu amigo",
         "text": "Cada perro o gato merece una segunda oportunidad. Al adoptar, conviertes un pasado roto en un futuro lleno de amor, esperanza, confianza y lealtad. Abre tu corazón y tu hogar será su refugio seguro.",
         "buttonText": "Conoce más",
         "buttonLink": "/services",
         "altButtonText": "Obtén más información sobre nuestros servicios y cómo puedes ayudar"
       },
       {
-        "title": "Descubre quiénes somos",
+        "title": "Quiénes somos",
         "text": "Nos encargamos de realizar campañas de adopción y concientizar sobre el abandono animal. Protegemos y cuidamos a cada perro y gato que llega a nuestro refugio, brindándoles esperanza y amor.",
         "buttonText": "Conoce más",
         "buttonLink": "/about-us",
         "altButtonText": "Aprende más sobre nuestra misión y valores"
       },
       {
-        "title": "Sé parte del cambio",
+        "title": "Sé el cambio",
         "text": "Tu apoyo puede tomar muchas formas: tiempo para ayudar, una donación para alimentar o simplemente compartir para crear conciencia. Cada pequeño gesto ayuda a un mañana mejor para ellos.",
         "buttonText": "Únete",
         "buttonLink": "/volunteer",
@@ -58,7 +58,7 @@
   },
 
   "home": {
-    "title": "Inicio | JausPet",
+    "title": "Inicio | Shelter JausPet",
     "description": "Descubre cómo puedes ayudar a transformar vidas adoptando, donando o siendo voluntario. En JausPet, cada acción cuenta para brindar amor y un hogar digno a perros y gatos en espera."
   },
 

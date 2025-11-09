@@ -47,7 +47,7 @@ const Hero = () => {
     });
   }, []);
 
-  // === Auto-slide for desktop ===
+  // === Auto-slide for desktop (dots synced) ===
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % desktopImages.length);
@@ -55,17 +55,25 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [desktopImages.length]);
 
+  // === Pause autoplay on hover ===
+  const handleMouseEnter = () => {
+    if (swiperRef.current?.autoplay?.stop) swiperRef.current.autoplay.stop();
+  };
+  const handleMouseLeave = () => {
+    if (swiperRef.current?.autoplay?.start) swiperRef.current.autoplay.start();
+  };
+
   return (
     <section
       className="w-full"
       aria-label={t("hero.carouselLabel")}
       role="region"
     >
-      {/* === Mobile version (with Swiper fade effect) === */}
+      {/* === Mobile version (Swiper fade effect, autoHeight, flexible) === */}
       <div
         className="relative text-text-dark w-full min-[1140px]:hidden"
-        onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
-        onMouseLeave={() => swiperRef.current?.autoplay?.start()}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <Swiper
           modules={[Autoplay, EffectFade]}
@@ -74,6 +82,7 @@ const Hero = () => {
           slidesPerView={1}
           loop={true}
           allowTouchMove={true}
+          autoHeight={true} // <-- important to prevent button cutoff
           autoplay={{
             delay: 15000,
             disableOnInteraction: false,
@@ -84,7 +93,6 @@ const Hero = () => {
         >
           {mobileImages.map((image, index) => (
             <SwiperSlide key={index}>
-              {/* === Container fades smoothly === */}
               <div className="relative animate-fadeIn">
                 <img
                   src={image}
@@ -93,28 +101,24 @@ const Hero = () => {
                   className="w-full h-auto object-cover"
                 />
 
-                {/* === Content === */}
-                <div
-                  className="max-w-6xl mx-auto w-full px-6"
-                  onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
-                  onMouseLeave={() => swiperRef.current?.autoplay?.start()}
-                >
-                  <article className="flex flex-col text-left px-0 md:px-0 lg:px-6">
+                <div className="w-full px-4 py-6 mx-auto">
+                  <article className="flex flex-col text-left">
                     <h1 className="text-[50px] font-extrabold text-left">
                       {t(`hero.slides.${index}.title`)}
                     </h1>
 
-                    <p className="mt-7 text-[20px]">
+                    <p className="mt-4 sm:mt-7 text-[20px]">
                       {t(`hero.slides.${index}.text`)}
                     </p>
 
-                    <div className="mt-8">
+                    <div className="mt-6 sm:mt-8">
                       <Button
+                        className="w-full sm:w-auto wrap-break-words whitespace-normal"
                         to={t(`hero.slides.${index}.buttonLink`)}
                         type="button"
                         aria-label={t(`hero.slides.${index}.altButtonText`)}
                       >
-                        {t(`hero.slides.${index}.buttonText`)}{" "}
+                        {t(`hero.slides.${index}.buttonText`)}
                       </Button>
                     </div>
                   </article>
@@ -125,14 +129,14 @@ const Hero = () => {
         </Swiper>
 
         {/* === Dots (custom indicators) === */}
-        <div className="mt-10 flex space-x-3 justify-start px-6">
+        <div className="mt-8 flex space-x-3 justify-start px-6">
           {mobileImages.map((_, index) => (
             <button
               key={index}
               type="button"
               onClick={() => goToSlide(index)}
               aria-label={`${t("hero.goToSlide")} ${index + 1}`}
-              className={`w-8 h-8 md:w-10 md:h-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-(--color-focus-primary) rounded-full`}
+              className="w-8 h-8 md:w-10 md:h-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-(--color-focus-primary) rounded-full"
             >
               <img
                 src={index === currentIndex ? Filled : Outline}
@@ -176,7 +180,7 @@ const Hero = () => {
 
             {/* === Dots (synced) === */}
             <div
-              className="mt-8 flex space-x-3"
+              className="mt-10 flex space-x-3"
               role="group"
               aria-label={t("hero.slideNavigation")}
             >
@@ -186,7 +190,7 @@ const Hero = () => {
                   type="button"
                   onClick={() => goToSlide(index)}
                   aria-label={`${t("hero.goToSlide")} ${index + 1}`}
-                  className={`w-8 h-8 md:w-10 md:h-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-(--color-focus-primary) rounded-full`}
+                  className="w-8 h-8 md:w-10 md:h-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-(--color-focus-primary) rounded-full"
                 >
                   <img
                     src={index === currentIndex ? Filled : Outline}

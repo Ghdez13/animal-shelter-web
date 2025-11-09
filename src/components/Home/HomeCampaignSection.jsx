@@ -7,7 +7,7 @@ const CampaignSection = () => {
 
   return (
     <section className="px-6 ">
-      <div className="campaign-container flex flex-col px-0 md:px-0 lg:px-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:gap-12 max-w-6xl mx-auto mt-12">
+      <div className="campaign-container text-text-dark flex flex-col px-0 md:px-0 lg:px-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:gap-12 max-w-6xl mx-auto mt-12">
         {/* Image wrapper: mobile first (top), desktop right */}
         <div className="flex justify-center w-full mb-6 min-[900px]:mb-0 min-[900px]:flex-1 min-[900px]:justify-end min-[900px]:order-2">
           {/* Mobile image */}
