@@ -34,18 +34,18 @@
 
     "slides": [
       {
-        "title": "Ils vous attendent",
-        "text": "Chaque chien ou chat mérite une seconde chance. En adoptant, vous transformez un passé brisé en un futur rempli d'amour et de loyauté. Ouvrez votre cœur et votre maison sera leur refuge sûr.",
-        "buttonText": "En savoir plus",
-        "buttonLink": "/services",
-        "altButtonText": "Obtenez plus d'informations sur nos services et comment vous pouvez aider"
-      },
-      {
         "title": "Découvrez qui nous sommes",
         "text": "Nous menons des campagnes d'adoption et sensibilisons à l'abandon des animaux. Nous protégeons et prenons soin de chaque chien et chat arrivant dans notre refuge, leur apportant espoir et amour.",
         "buttonText": "En savoir plus",
         "buttonLink": "/about-us",
         "altButtonText": "En savoir plus sur notre mission et nos valeurs"
+      },
+      {
+        "title": "Ils vous attendent",
+        "text": "Chaque chien ou chat mérite une seconde chance. En adoptant, vous transformez un passé brisé en un futur rempli d'amour et de loyauté. Ouvrez votre cœur et votre maison sera leur refuge sûr.",
+        "buttonText": "En savoir plus",
+        "buttonLink": "/services",
+        "altButtonText": "Obtenez plus d'informations sur nos services et comment vous pouvez aider"
       },
       {
         "title": "Participez au changement",
@@ -157,18 +157,14 @@
     "submit": "Envoyer"
   },
 
-"volunteerReflection": {
-  "title": [
-    "Transformer des vies",
-    "Offrir de l’amour",
-    "Créer du lien"
-  ],
-  "description": [
-    "Consacrer quelques heures peut faire la différence. Chaque promenade, caresse ou geste d’amour redonne espoir à ceux qui en ont le plus besoin. Ton temps a le pouvoir de changer des destins.",
-    "Les animaux ressentent, attendent et font confiance. Un peu d’attention, de douceur et d’affection peut guérir des blessures invisibles et remplir leur monde de joie. Aimer, c’est aussi sauver.",
-    "Être bénévole n’aide pas seulement les animaux, cela unit aussi les personnes. Ensemble, nous construisons un espace d’empathie, de respect et d’espoir, où chaque action provoque un vrai changement."
-  ]
-},
+  "volunteerReflection": {
+    "title": ["Transformer des vies", "Offrir de l’amour", "Créer du lien"],
+    "description": [
+      "Consacrer quelques heures peut faire la différence. Chaque promenade, caresse ou geste d’amour redonne espoir à ceux qui en ont le plus besoin. Ton temps a le pouvoir de changer des destins.",
+      "Les animaux ressentent, attendent et font confiance. Un peu d’attention, de douceur et d’affection peut guérir des blessures invisibles et remplir leur monde de joie. Aimer, c’est aussi sauver.",
+      "Être bénévole n’aide pas seulement les animaux, cela unit aussi les personnes. Ensemble, nous construisons un espace d’empathie, de respect et d’espoir, où chaque action provoque un vrai changement."
+    ]
+  },
 
   "donationSection": {
     "donationTitle": "Faites la différence",

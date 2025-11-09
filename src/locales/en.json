@@ -1,6 +1,6 @@
 {
   "loading": "Loading...",
-  
+
   "navbar": {
     "logoAlt": "Animal Shelter logo, go to home page",
     "logoTitle": "Go Home",
@@ -34,13 +34,6 @@
 
     "slides": [
       {
-        "title": "New Beginnings",
-        "text": "Every dog or cat deserves a second chance. By adopting, you turn a broken past into a future full of love and loyalty. Open your heart and your home will be their safe haven.",
-        "buttonText": "Learn more",
-        "buttonLink": "/services",
-        "altButtonText": "Get more information about our services and how you can help"
-      },
-      {
         "title": "Who we are",
         "text": "We run adoption campaigns and raise awareness about animal abandonment. We protect and care for every dog and cat arriving at our shelter, giving them hope and love.",
         "buttonText": "Learn more",
@@ -48,7 +41,14 @@
         "altButtonText": "Learn more about our mission and values"
       },
       {
-        "title": "Be part of change",
+        "title": "New Beginnings",
+        "text": "Every dog or cat deserves a second chance. By adopting, you turn a broken past into a future full of love and loyalty. Open your heart and your home will be their safe haven.",
+        "buttonText": "Learn more",
+        "buttonLink": "/services",
+        "altButtonText": "Get more information about our services and how you can help"
+      },
+      {
+        "title": "Support & Care",
         "text": "Your support can take many forms: time to help, a donation to feed, or simply sharing to raise awareness. Every small gesture helps a better tomorrow for them.",
         "buttonText": "Join",
         "buttonLink": "/volunteer",
@@ -158,18 +158,14 @@
     "submit": "Send"
   },
 
-"volunteerReflection": {
-  "title": [
-    "Transform lives",
-    "Give love",
-    "Building communities"
-  ],
-  "description": [
-    "Spending a few hours can make a difference. Every walk, touch, or gesture of love restores hope to those who need it most. Your time has the power to change destinies.",
-    "Animals feel, wait, and trust. A little care and affection can heal invisible wounds and fill their world with joy. To love is also a way to save.",
-    "Being a volunteer not only helps animals, it also connects people. Together we build a space of empathy, respect, and hope, where every action drives real change."
-  ]
-},
+  "volunteerReflection": {
+    "title": ["Transform lives", "Give love", "Building communities"],
+    "description": [
+      "Spending a few hours can make a difference. Every walk, touch, or gesture of love restores hope to those who need it most. Your time has the power to change destinies.",
+      "Animals feel, wait, and trust. A little care and affection can heal invisible wounds and fill their world with joy. To love is also a way to save.",
+      "Being a volunteer not only helps animals, it also connects people. Together we build a space of empathy, respect, and hope, where every action drives real change."
+    ]
+  },
 
   "donationSection": {
     "donationTitle": "Make a Difference",
