@@ -27,9 +27,7 @@ const ServiceCard = ({ service }) => {
 
   // Identify which services are under construction
   const isUnderConstruction =
-    service.link === "/hotel" ||
-    service.link === "/campaigns" ||
-    service.link === "/lostFound";
+    service.link === "/hotel" || service.link === "/lostFound";
 
   return (
     <>

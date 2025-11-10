@@ -43,7 +43,7 @@ const DonationCard = ({
         <p className="text-[20px] text-text-dark leading-snug text-left max-w-[85%]">
           {description}
         </p>
-        {/*Blinking text shown only on the first card */}
+        {/* Blinking text shown only on the first card */}
         {index === 0 && (
           <span className="mt-4 text-(--color-text-tips) text-lg font-bold animate-blink">
             ✨ {t("donationCards.clickToFlip")} ✨
@@ -61,7 +61,7 @@ const DonationCard = ({
         <h3 className="text-[25px] font-semibold text-text-dark mb-2 text-center">
           {title}
         </h3>
-        <p className="text-[20px] text-text-dark) leading-snug text-left max-w-[85%]">
+        <p className="text-[20px] text-text-dark leading-snug text-left max-w-[85%]">
           {t("donationCards.message")}
         </p>
       </div>
@@ -116,15 +116,19 @@ const Donation = () => {
     <section className="w-full flex justify-center px-0 md:px-0 lg:px-6">
       <div className="w-full max-w-6xl flex flex-col items-center">
         {/* Intro Section with image and text */}
-        <div className="flex flex-col text-text-dark md:flex-row w-full rounded-2xl overflow-hidden mt-6">
-          <LazyImage
-            src={isMobile ? Donation1Mobile : Donation1}
-            alt="Donation intro"
-            className="w-full md:w-1/2 h-auto md:h-[400px] object-cover"
-          />
+        <div className="flex flex-col md:flex-row w-full rounded-2xl overflow-hidden mt-6">
+          {/* Image container */}
+          <div className="flex-1">
+            <LazyImage
+              src={isMobile ? Donation1Mobile : Donation1}
+              alt="Donation intro"
+              className="w-full h-full object-contain md:object-cover"
+            />
+          </div>
 
+          {/* Text container */}
           <div
-            className="flex flex-col justify-center items-center md:items-start text-left md:text-left p-6 md:p-12 md:w-1/2"
+            className="flex-1 flex flex-col justify-center items-center md:items-start text-left md:text-left p-6 md:p-12"
             style={{
               backgroundColor: "var(--color-bg-orange)",
               color: "var(--color-text-light)",
@@ -177,7 +181,7 @@ const Donation = () => {
                 {t("donationSection.donationBanner")}
               </p>
               <Button
-                to="/volunteer"
+                to="/events"
                 aria-label={t("donationSection.button")}
                 className="btn-green"
               >
@@ -188,9 +192,9 @@ const Donation = () => {
         </div>
 
         {/* Why Donate Section */}
-        <div className="w-full mt-24 flex text-text-dark) flex-col-reverse md:flex-row items-center gap-8">
+        <div className="w-full mt-24 flex text-text-dark flex-col-reverse md:flex-row items-center gap-8">
           <div className="w-full md:w-1/2 text-left flex flex-col justify-center">
-            <h2 className="text-[40px] font-bold  mb-4">
+            <h2 className="text-[40px] font-bold mb-4">
               {t("donationSection.whyDonateTitle")}
             </h2>
             <p className="text-[20px] leading-relaxed">

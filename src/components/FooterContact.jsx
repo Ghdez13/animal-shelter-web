@@ -15,8 +15,8 @@ const FooterContact = ({ emailParts = [] }) => {
         className="
           transition-colors
           duration-300
-          hover:text-(--color-button-bg-hover-primary)
-          focus-visible:text-(--color-button-bg-hover-primary)
+          hover:text-focus-tertiary
+          focus-visible:text-focus-tertiary
           focus-visible:outline-none
         "
       >

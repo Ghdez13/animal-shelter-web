@@ -41,11 +41,11 @@
         "altButtonText": "Learn more about our mission and values"
       },
       {
-        "title": "New Beginnings",
-        "text": "Every dog or cat deserves a second chance. By adopting, you turn a broken past into a future full of love and loyalty. Open your heart and your home will be their safe haven.",
-        "buttonText": "Learn more",
-        "buttonLink": "/services",
-        "altButtonText": "Get more information about our services and how you can help"
+        "title": "Come and adopt!",
+        "text": "We organize adoption events so you can meet our dogs and cats. Each meeting can change a life. Come, fall in love, and start a beautiful story filled with hope and second chances.",
+        "buttonText": "See dates",
+        "buttonLink": "/events",
+        "altButtonText": "Explore the upcoming adoption event dates"
       },
       {
         "title": "Support & Care",
@@ -174,10 +174,10 @@
     "backgroundAlt": "Donation page background",
     "inspirationalDescription": "Your support helps save animals in situations of abandonment and abuse. Together we can give them a safe home, feed the hungry, and heal their wounds. Thank you for your love.",
     "donationIntroTitle": "Together we can help",
-    "donationIntro": "Your support helps save animals in situations of abandonment and abuse. Together we can give them a safe home, feed the hungry, and heal their wounds. Thank you for your love.",
-    "donationBanner": "Join us as a volunteer!",
-    "button": "Join now and make a difference",
-    "go": "Join now",
+    "donationIntro": "Your generosity can change lives. With every act of support, we heal sick animals, provide nourishing meals to those in need, and bring comfort and care to the most vulnerable. Every contribution, big or small, carries hope and love to those who need it most.",
+    "donationBanner": "Adoption Fairs",
+    "button": "Click to learn more about adoption fairs",
+    "go": "See dates",
     "whyDonateTitle": "Why donate?",
     "whyDonateDescription": "Donations are what make our mission possible. Every contribution allows us to cover medical treatments, food, and a safe shelter for the animals we rescue. Together, we can change their story."
   },
@@ -261,6 +261,30 @@
   "animalCard": {
     "button": "Take home"
   },
+
+"events": {
+  "title": "Campaigns | JausPet",
+  "eventsTitle": "Adoption Fairs",
+  "description": "Add this date to your calendar and join us",
+  "upcoming": [
+    {
+      "date": {
+        "dayName": "Sunday",
+        "dayNumber": "16",
+        "month": "November"
+      },
+      "location": "Quinta Alegria - Playa del Carmen",
+      "time": "4:00 PM - 08:00 PM",
+      "start": "2025-11-16T16:00:00-05:00",
+      "end": "2025-11-16T20:00:00-05:00",
+      "mapUrl": "https://maps.app.goo.gl/wTxnETvNsVKJXiEG6",
+      "titleHoverLocation": "Open in Google Maps",
+      "titleHoverCalendar": "Add to Calendar"
+    }
+  ],
+  "nextEvents": "More dates coming soon...",
+  "carouselTitle": "🐾 It all starts right here!"
+},
 
   "alerts": {
     "submitStatusSuccess": "Your message has been sent! 😸",

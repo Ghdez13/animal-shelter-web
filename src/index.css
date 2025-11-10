@@ -70,6 +70,7 @@ body.modal-open {
   /* Focus */
   --color-focus-primary: #ef7a2b;
   --color-focus-secondary: #3a9d9a;
+  --color-focus-tertiary: #2a6f4e;
 
   /* Buttons - Primary */
   --color-button-shadow-primary: #d35400;
@@ -107,7 +108,7 @@ body.modal-open {
 .animate-blink {
   /* Slower blinking */
   animation: blinkDisappear 1.5s ease-in-out 4,
-    fadeOut 1.5s ease-in-out 6s forwards;
+    fadeOut 1.5s ease-in-out 10s forwards;
 }
 
 @keyframes fadeOut {
@@ -133,15 +134,15 @@ body.modal-open {
 
 .btn-green {
   @apply inline-block w-56 mt-7 text-center text-(--color-text-light) text-lg font-semibold
-         bg-[#3a9d9a]  
-         border-[#2e7d7a] 
+         bg-[#2e7d7a]  
+         border-[#3a9d9a] 
          rounded-md cursor-pointer
          px-5 py-2
-         shadow-[0px_6px_0px_#2e7d7a]
-         hover:bg-[#36a1a1]  
+         shadow-[0px_6px_0px_#3a9d9a]
+         hover:bg-focus-tertiary  
          hover:border-[#2e7d7a] 
          hover:shadow-[0px_6px_0px_#2e7d7a]
-         active:shadow-[0px_2px_0px_#2e7d7a]
+         active:shadow-[0px_2px_0px_#3a9d9a]
          active:relative active:top-0.5
          transition-all duration-200;
 }

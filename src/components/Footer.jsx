@@ -162,7 +162,7 @@ const Footer = () => {
               href="https://maps.app.goo.gl/wTxnETvNsVKJXiEG6"
               target="_blank"
               rel="noopener noreferrer"
-              className="leading-6 block font-normal transition-colors duration-300 hover:text-(--color-button-bg-hover-primary) focus-visible:text-(--color-button-bg-hover-primary) focus-visible:outline-none"
+              className="leading-6 block font-normal transition-colors duration-300 hover:text-focus-tertiary focus-visible:text-focus-tertiary focus-visible:outline-none"
             >
               5ta Av. esquina con Av. Constituyentes s/n,
               <br />

@@ -54,7 +54,7 @@ const Contact = () => {
 
                 {/* Banner adoption */}
                 <div className="relative z-10 flex flex-col justify-center items-center text-center px-4 py-4 h-full">
-                  <p className="text-[40px] md:text-[40px] font-semibold text-(--color-text-light) mb-4">
+                  <p className="text-[40px] font-semibold text-(--color-text-light) mb-4">
                     {t("contact.bannerDescription")}
                   </p>
                   <Button

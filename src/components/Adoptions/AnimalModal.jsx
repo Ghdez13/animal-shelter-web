@@ -23,11 +23,10 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
 
   // Reset states when modal closes
   useEffect(() => {
-    if (!isOpen) {
-      setInterested(false);
-    }
+    if (!isOpen) setInterested(false);
   }, [isOpen]);
 
+  // Close modal if overlay clicked
   const handleOverlayClick = (e) => {
     if (e.target.id === "modalOverlay") onClose();
   };
@@ -47,9 +46,7 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
       className="fixed inset-0 bg-transparent backdrop-blur-sm flex items-center justify-center z-50 px-4 overflow-y-auto"
       role="dialog"
       aria-modal="true"
-      style={{
-        height: "calc(var(--vh, 1vh) * 100)",
-      }}
+      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
     >
       <div
         className="relative rounded-2xl bg-[rgba(255,255,255,0.9)] shadow-2xl max-w-3xl w-[90%] md:w-[70%] border-t-4 animate-fadeIn my-10 max-h-[90vh]"
@@ -92,7 +89,7 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
                   <SwiperSlide key={idx}>
                     <img
                       src={img}
-                      alt={`${animal.name}, imagen ${idx + 1} de ${
+                      alt={`${animal.name}, image ${idx + 1} of ${
                         images.length
                       }`}
                       className="w-full h-full object-cover rounded-lg"
@@ -101,9 +98,13 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
                   </SwiperSlide>
                 ))}
 
-                {/* Flechas personalizadas */}
-                <div className="swiper-button-prev-custom">‹</div>
-                <div className="swiper-button-next-custom">›</div>
+                {/* Custom arrows - always in DOM, hidden on mobile */}
+                <div className="swiper-button-prev-custom hidden md:flex">
+                  ‹
+                </div>
+                <div className="swiper-button-next-custom hidden md:flex">
+                  ›
+                </div>
               </Swiper>
             </div>
 
@@ -114,6 +115,7 @@ const AnimalModal = ({ animal, isOpen, onClose }) => {
                   {animal.name}
                 </h2>
 
+                {/* Animal details */}
                 <ul className="space-y-1 mb-6 text-[18px]">
                   <li>
                     <strong>{t("animalModal.age")}:</strong>{" "}

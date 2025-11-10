@@ -1,5 +1,5 @@
 {
-  "loading":"Cargando...",
+  "loading": "Cargando...",
 
   "navbar": {
     "logoAlt": "Logo del refugio de animales, ir a la página de inicio",
@@ -41,11 +41,11 @@
         "altButtonText": "Aprende más sobre nuestra misión y valores"
       },
       {
-        "title": "Hogar & amor",
-        "text": "Cada perro o gato merece una segunda oportunidad. Al adoptar, conviertes un pasado roto en un futuro lleno de amor, esperanza, confianza y lealtad. Abre tu corazón y tu hogar será su refugio.",
-        "buttonText": "Conoce más",
-        "buttonLink": "/services",
-        "altButtonText": "Obtén más información sobre nuestros servicios y cómo puedes ayudar"
+        "title": "¡Ven y adopta!",
+        "text": "Organizamos campañas de adopción para que conozcas a nuestros perros y gatos. Cada encuentro puede cambiar una vida. Ven, enamórate y comienza una hermosa historia de amor, esperanza y segundas oportunidades.",
+        "buttonText": "Ver fechas",
+        "buttonLink": "/events",
+        "altButtonText": "Explora las próximas fechas de nuestras campañas de adopción"
       },
       {
         "title": "Sé el cambio",
@@ -159,11 +159,7 @@
   },
 
   "volunteerReflection": {
-    "title": [
-      "Transforma vidas",
-      "Regala amor",
-      "Creando comunidades"
-    ],
+    "title": ["Transforma vidas", "Regala amor", "Creando comunidades"],
     "description": [
       "Dedicar unas horas puede marcar la diferencia. Cada paseo, caricia o gesto de amor devuelve esperanza a quienes más lo necesitan. Tu tiempo tiene el poder de cambiar destinos.",
       "Los animales sienten, esperan y confían. Un poco de atención y cariño puede sanar heridas invisibles y llenar de alegría su mundo. Amar también es una forma de salvar.",
@@ -178,10 +174,10 @@
     "backgroundAlt": "Fondo de la página de donaciones",
     "inspirationalDescription": "Tu apoyo ayuda a salvar animales en situación de abandono y maltrato. Juntos podemos darles un hogar seguro, alimentar a los que tienen hambre y sanar sus heridas. Gracias por tu cariño.",
     "donationIntroTitle": "Juntos podemos ayudar",
-    "donationIntro": "Tu apoyo ayuda a salvar animales en situación de abandono y maltrato. Juntos podemos darles un hogar seguro, alimentar a los que tienen hambre y sanar sus heridas. Gracias por tu cariño.",
-    "donationBanner": "¡Participa como voluntario!",
-    "button": "Únete ahora y haz la diferencia",
-    "go": "Únete ahora",
+    "donationIntro": "Con tu generosidad y cariño hacia los animales, podemos curar a los que están enfermos, proporcionar alimento a quienes más lo necesitan y mejorar la vida de los más desamparados. Cada contribución, por pequeña que sea, lleva esperanza, cuidado y amor a quienes más lo requieren.",
+    "donationBanner": "Ferias de adoción",
+    "button": "Clic para conocer más sobre ferias de adopción",
+    "go": "Ver fechas",
     "whyDonateTitle": "¿Por qué donar?",
     "whyDonateDescription": "Las donaciones son lo que hace posible nuestra misión. Cada contribución nos permite cubrir tratamientos médicos, alimento y un refugio seguro para los animales que rescatamos. Juntos, podemos cambiar su historia."
   },
@@ -264,6 +260,16 @@
 
   "animalCard": {
     "button": "Llévame a casa"
+  },
+
+  "events": {
+    "title": "Campañas | JausPet",
+    "eventsTitle": "Ferias de adopción",
+    "description": "Agrega esta fecha a tu agenda y acompáñanos",
+    "titleHoverLocation": "Abrir en Google Maps",
+    "titleHoverCalendar": "Agenda la fecha",
+    "nextEvents": "Próximamente más fechas...",
+    "carouselTitle": "🐾 ¡Es aquí donde todo comienza!"
   },
 
   "alerts": {

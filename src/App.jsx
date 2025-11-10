@@ -12,6 +12,7 @@ import Donations from "./pages/Donations";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Adoptions from "./pages/Adoptions";
+import Events from "./pages/Events";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="about-us" element={<AboutUs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="/adoptions" element={<Adoptions />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
       </main>
 

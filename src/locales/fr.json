@@ -41,11 +41,11 @@
         "altButtonText": "En savoir plus sur notre mission et nos valeurs"
       },
       {
-        "title": "Ils vous attendent",
-        "text": "Chaque chien ou chat mérite une seconde chance. En adoptant, vous transformez un passé brisé en un futur rempli d'amour et loyauté. Ouvrez votre cœur et votre maison sera leur refuge.",
-        "buttonText": "En savoir plus",
-        "buttonLink": "/services",
-        "altButtonText": "Obtenez plus d'informations sur nos services et comment vous pouvez aider"
+        "title": "Trouve ton compagnon !",
+        "text": "Nous organisons des campagnes d’adoption pour que tu rencontres nos chiens et nos chats. Chaque rencontre peut changer une vie. Viens, tombe amoureux et commence une belle histoire d’amour et d’espoir.",
+        "buttonText": "Voir les dates",
+        "buttonLink": "/events",
+        "altButtonText": "Découvre les prochaines dates de nos campagnes d’adoption"
       },
       {
         "title": "Participez au changement",
@@ -173,10 +173,10 @@
     "backgroundAlt": "Fond de la page de dons",
     "inspirationalDescription": "Votre soutien aide à sauver les animaux en situation d'abandon et de maltraitance. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et soigner leurs blessures. Merci pour votre amour.",
     "donationIntroTitle": "Ensemble, nous pouvons aider",
-    "donationIntro": "Votre soutien aide à sauver les animaux en situation d'abandon et de maltraitance. Ensemble, nous pouvons leur offrir un foyer sûr, nourrir les affamés et soigner leurs blessures. Merci pour votre amour.",
-    "donationBanner": "Devenez bénévole !",
-    "button": "Rejoignez-nous maintenant et faites la différence",
-    "go": "Rejoignez-nous",
+    "donationIntro": "Votre générosité peut transformer des vies. Chaque geste de soutien nous permet de soigner les animaux malades, de fournir des repas nourrissants à ceux qui en ont besoin, et d’apporter réconfort et attention aux plus vulnérables. Chaque contribution, grande ou petite, transmet espoir et amour à ceux qui en ont le plus besoin.",
+    "donationBanner": "Foires d'adoption",
+    "button": "Cliquez pour en savoir plus sur les foires d'adoption",
+    "go": "Voir les dates",
     "whyDonateTitle": "Pourquoi donner ?",
     "whyDonateDescription": "Les dons sont ce qui rend notre mission possible. Chaque contribution nous permet de couvrir les traitements médicaux, la nourriture et un refuge sûr pour les animaux que nous sauvons. Ensemble, nous pouvons changer leur histoire."
   },
@@ -260,6 +260,30 @@
   "animalCard": {
     "button": "Adoptez-moi"
   },
+
+"events": {
+  "title": "Campagnes | JausPet",
+  "eventsTitle": "Foires d'adoption",
+  "description": "Ajoutez cette date à votre agenda et rejoignez-nous",
+  "upcoming": [
+    {
+      "date": {
+        "dayName": "Dimanche",
+        "dayNumber": "16",
+        "month": "Novembre"
+      },
+      "location": "Quinta Alegria - Playa del Carmen",
+      "time": "16h00 - 20h00",
+      "start": "2025-11-16T16:00:00-05:00",
+      "end": "2025-11-16T20:00:00-05:00",
+      "mapUrl": "https://maps.app.goo.gl/wTxnETvNsVKJXiEG6",
+      "titleHoverLocation": "Ouvrir dans Google Maps",
+      "titleHoverCalendar": "Ajouter à l'agenda"
+    }
+  ],
+  "nextEvents": "Plus de dates à venir...",
+  "carouselTitle": "🐾 C’est ici que tout commence !"
+},
 
   "alerts": {
     "submitStatusSuccess": "Votre message a été envoyé ! 😸",
