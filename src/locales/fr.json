@@ -42,7 +42,7 @@
       },
       {
         "title": "Trouve ton compagnon !",
-        "text": "Nous organisons des campagnes d’adoption pour que tu rencontres nos chiens et nos chats. Chaque rencontre peut changer une vie. Viens, tombe amoureux et commence une belle histoire d’amour et d’espoir.",
+        "text": "214 animaux ont été adoptés jusqu'à présent. Chaque rencontre a transformé des vies. Venez et participez avec nous ces histoires remplies d'amour, d'espoir et de nouvelles opportunités pour tous.",
         "buttonText": "Voir les dates",
         "buttonLink": "/events",
         "altButtonText": "Découvre les prochaines dates de nos campagnes d’adoption"
@@ -231,6 +231,7 @@
   "adoptions": {
     "adoptionsTitle": "Animaux à Adopter",
     "title": "Adoptions | JausPet",
+    "counterTitle":"Animaux adoptés",
     "description": "Découvrez des chiens et des chats à adopter et trouvez votre compagnon idéal sur JausPet.",
     "backgroundAlt": "Fond de la page Adoptions"
   },

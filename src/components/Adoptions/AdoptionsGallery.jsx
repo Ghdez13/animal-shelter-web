@@ -43,9 +43,9 @@ const AdoptionsGallery = () => {
     <section className="relative flex flex-col items-start gap-10 text-text-dark">
       {/* Page description */}
       <div className="w-full max-w-6xl px-0 md:px-0 lg:px-6 mx-auto">
-        <p className="text-lg md:text-xl">
+        <h2 className="text-[25px] font-semibold">
           {t("adoptionsGallery.description")}
-        </p>
+        </h2>
       </div>
 
       {/* Filter section */}

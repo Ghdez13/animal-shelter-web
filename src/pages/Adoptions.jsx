@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import SectionBackground from "../components/SectionBackground";
 import BackgroundMobile from "../assets/images/background-mobile.webp";
 import AdoptionsGallery from "../components/Adoptions/AdoptionsGallery";
+import AdoptionCounter from "../components/Adoptions/AdoptionCounter";
 import SEO from "../components/SEO/SEO";
 
 const Adoptions = () => {
@@ -27,7 +28,8 @@ const Adoptions = () => {
             {t("adoptions.adoptionsTitle")}
           </h1>
         </div>
-
+        {/* Adoption counter */}
+        <AdoptionCounter max={214} />
         {/* Gallery Section */}
         <AdoptionsGallery />
       </main>

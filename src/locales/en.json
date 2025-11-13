@@ -42,7 +42,7 @@
       },
       {
         "title": "Come and adopt!",
-        "text": "We organize adoption events so you can meet our dogs and cats. Each meeting can change a life. Come, fall in love, and start a beautiful story filled with hope and second chances.",
+        "text": "214 dogs and cats have been adopted so far. Each encounter has transformed lives. Come, participate, and celebrate these stories full of love, hope, and new opportunities for all.",
         "buttonText": "See dates",
         "buttonLink": "/events",
         "altButtonText": "Explore the upcoming adoption event dates"
@@ -232,6 +232,7 @@
   "adoptions": {
     "adoptionsTitle": "Animals for Adoption",
     "title": "Adoptions | JausPet",
+    "counterTitle":"Adopted Animals",
     "description": "Discover dogs and cats to adopt and find your perfect companion at JausPet.",
     "backgroundAlt": "Adoptions page background"
   },

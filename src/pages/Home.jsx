@@ -9,7 +9,7 @@ const Home = () => {
     <>
       {/* SEO meta tags */}
       <SEO
-        pageKey="home" // Clave del JSON para traducir title y description
+        pageKey="home" 
         url="https://jauspet.vercel.app/"
         image="/images/og-twitter-preview.webp"
       />

@@ -41,8 +41,8 @@
         "altButtonText": "Aprende más sobre nuestra misión y valores"
       },
       {
-        "title": "¡Ven y adopta!",
-        "text": "Organizamos campañas de adopción para que conozcas a nuestros perros y gatos. Cada encuentro puede cambiar una vida. Ven, enamórate y comienza una hermosa historia de amor, esperanza y segundas oportunidades.",
+        "title": "¡Participa! 😺",
+        "text": "214 animales han sido adoptados hasta ahora. Cada encuentro ha transformado vidas. Ven y celebra con nosotros estas historias llenas de amor, esperanza y nuevas oportunidades para todos.",
         "buttonText": "Ver fechas",
         "buttonLink": "/events",
         "altButtonText": "Explora las próximas fechas de nuestras campañas de adopción"
@@ -232,6 +232,7 @@
   "adoptions": {
     "adoptionsTitle": "Candidatos en Adopción",
     "title": "Adopciones | JausPet",
+    "counterTitle":"Animales adoptados",
     "description": "Descubre perros y gatos para adoptar y encuentra tu compañero ideal en JausPet.",
     "backgroundAlt": "Fondo de la página de Adopciones"
   },
