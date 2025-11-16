@@ -10,11 +10,10 @@ const SEO = ({ pageKey, url, image }) => {
   // Get translated values
   const title = t(`${pageKey}.title`) || "JausPet";
   const description =
-    t(`${pageKey}.description`) ||
-    "JausPet - Adopta, ayuda, comparte amor";
+    t(`${pageKey}.description`) || "JausPet - Adopta, ayuda, comparte amor";
 
   // 👇 If no image is provided, fallback to global OG image
-  const ogImage = image || "/og/default.webp";
+  const ogImage = image || "https://jauspet.vercel.app/og/default.webp";
 
   // Update document title when language or route changes
   useEffect(() => {
