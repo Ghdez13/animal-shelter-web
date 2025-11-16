@@ -15,7 +15,6 @@ const Contact = () => {
       <SEO
         pageKey="contact"
         url="https://jauspet.vercel.app/contact"
-        image="/images/og-twitter-preview.webp"
       />
 
       {/* Wrap main content with responsive mobile background */}

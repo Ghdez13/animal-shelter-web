@@ -18,7 +18,6 @@ const Adoptions = () => {
       <SEO
         pageKey="adoptions"
         url="https://jauspet.vercel.app/adoptions"
-        image="/images/og-twitter-preview.webp"
       />
 
       <main className="px-6">

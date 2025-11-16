@@ -7,11 +7,16 @@ const SEO = ({ pageKey, url, image }) => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
 
-  // Get translated values from JSON
+  // Get translated values
   const title = t(`${pageKey}.title`) || "JausPet";
-  const description = t(`${pageKey}.description`) || "JausPet - Adopta, ayuda, comparte amor";
+  const description =
+    t(`${pageKey}.description`) ||
+    "JausPet - Adopta, ayuda, comparte amor";
 
-  // Ensure document.title updates when language or route changes
+  // 👇 If no image is provided, fallback to global OG image
+  const ogImage = image || "/og/default.webp";
+
+  // Update document title when language or route changes
   useEffect(() => {
     document.title = title;
   }, [title, i18n.language, location.pathname]);
@@ -22,18 +27,18 @@ const SEO = ({ pageKey, url, image }) => {
       <title>{title}</title>
       <meta name="description" content={description} />
 
-      {/* Open Graph meta tags */}
+      {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={ogImage} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
 
-      {/* Twitter meta tags */}
+      {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={ogImage} />
     </Helmet>
   );
 };

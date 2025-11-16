@@ -17,7 +17,6 @@ const AboutUs = () => {
       <SEO
         pageKey="aboutUs"
         url="https://jauspet.vercel.app/about"
-        image="/images/og-twitter-preview.webp"
       />
 
       <main className="px-6">

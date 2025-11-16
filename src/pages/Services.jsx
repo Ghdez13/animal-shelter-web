@@ -25,7 +25,6 @@ const Services = () => {
       <SEO
         pageKey="servicesSection"
         url="https://jauspet.vercel.app/services"
-        image="/images/og-twitter-preview.webp"
       />
 
       {/* Main content wrapped with responsive background */}

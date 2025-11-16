@@ -13,7 +13,6 @@ const Donations = () => {
       <SEO
         pageKey="donationSection"
         url="https://jauspet.vercel.app/donations"
-        image="/images/og-twitter-preview.webp"
       />
 
       {/* Page layout with responsive background */}

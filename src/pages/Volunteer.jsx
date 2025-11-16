@@ -17,7 +17,6 @@ const Volunteer = () => {
       <SEO
         pageKey="volunteerSection"
         url="https://jauspet.vercel.app/volunteer"
-        image="/images/og-twitter-preview.webp"
       />
 
       <SectionBackground

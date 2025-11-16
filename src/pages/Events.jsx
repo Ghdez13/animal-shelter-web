@@ -15,7 +15,6 @@ const Events = () => {
       <SEO
         pageKey="events"
         url="https://jauspet.vercel.app/events"
-        image="/images/og-twitter-preview.webp"
       />
 
       <main className="px-6">

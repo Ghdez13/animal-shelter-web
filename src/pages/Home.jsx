@@ -11,7 +11,6 @@ const Home = () => {
       <SEO
         pageKey="home" 
         url="https://jauspet.vercel.app/"
-        image="/images/og-twitter-preview.webp"
       />
 
       {/* Main content of the homepage */}
