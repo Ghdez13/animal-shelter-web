@@ -215,7 +215,13 @@
       "Our actions are driven by a passion for helping. From rescuing street animals to educating about responsible adoption, everything we do comes from the desire to do good and improve lives.",
       "Passion fuels our shelter. We dedicate ourselves with enthusiasm and commitment to every project, every rescued animal, and every family finding a new companion, because we believe every saved life deserves all our heart."
     ],
-    "imageAlt": "Donations helping animals"
+    "imageAlt": "Donations helping animals",
+    "ourStoryTitle": "Our Story",
+    "storyText": [
+      "The help we provide to animals was born from a genuine and selfless interest in promoting animal welfare in our community.",
+      "Paco Lozano began with a dream: to help those who have no voice of their own, regardless of economic limitations or obstacles that might hinder the care of cats and dogs in Playa del Carmen. By motivating more people to join the cause, he created a Facebook page and gradually built a community of committed people eager to help.",
+      "Thanks to this movement, many dogs and cats have found loving homes, and although the task may seem endless, it is incredibly rewarding to see families being formed or how families are complemented by little paws that enrich the heart and family bond."
+    ]
   },
 
   "contact": {
@@ -232,7 +238,7 @@
   "adoptions": {
     "adoptionsTitle": "Animals for Adoption",
     "title": "Adoptions | JausPet",
-    "counterTitle":"Adopted Animals",
+    "counterTitle": "Adopted Animals",
     "description": "Discover dogs and cats to adopt and find your perfect companion at JausPet.",
     "backgroundAlt": "Adoptions page background"
   },
@@ -263,29 +269,29 @@
     "button": "Take home"
   },
 
-"events": {
-  "title": "Campaigns | JausPet",
-  "eventsTitle": "Adoption Fairs",
-  "description": "Add this date to your calendar and join us",
-  "upcoming": [
-    {
-      "date": {
-        "dayName": "Sunday",
-        "dayNumber": "16",
-        "month": "November"
-      },
-      "location": "Quinta Alegria - Playa del Carmen",
-      "time": "4:00 PM - 08:00 PM",
-      "start": "2025-11-16T16:00:00-05:00",
-      "end": "2025-11-16T20:00:00-05:00",
-      "mapUrl": "https://maps.app.goo.gl/wTxnETvNsVKJXiEG6",
-      "titleHoverLocation": "Open in Google Maps",
-      "titleHoverCalendar": "Add to Calendar"
-    }
-  ],
-  "nextEvents": "More dates coming soon...",
-  "carouselTitle": "🐾 It all starts right here!"
-},
+  "events": {
+    "title": "Campaigns | JausPet",
+    "eventsTitle": "Adoption Fairs",
+    "description": "Add this date to your calendar and join us",
+    "upcoming": [
+      {
+        "date": {
+          "dayName": "Sunday",
+          "dayNumber": "16",
+          "month": "November"
+        },
+        "location": "Quinta Alegria - Playa del Carmen",
+        "time": "4:00 PM - 08:00 PM",
+        "start": "2025-11-16T16:00:00-05:00",
+        "end": "2025-11-16T20:00:00-05:00",
+        "mapUrl": "https://maps.app.goo.gl/wTxnETvNsVKJXiEG6",
+        "titleHoverLocation": "Open in Google Maps",
+        "titleHoverCalendar": "Add to Calendar"
+      }
+    ],
+    "nextEvents": "More dates coming soon...",
+    "carouselTitle": "🐾 It all starts right here!"
+  },
 
   "alerts": {
     "submitStatusSuccess": "Your message has been sent! 😸",

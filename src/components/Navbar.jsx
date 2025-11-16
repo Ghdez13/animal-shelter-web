@@ -79,7 +79,7 @@ const Navbar = () => {
           aria-controls="mobile-menu"
           title={
             isOpen ? t("navbar.toggleMenuClose") : t("navbar.toggleMenuOpen")
-          } // ✅ Title changes dynamically
+          } 
         >
           {/* Hamburger animation spans */}
           <span

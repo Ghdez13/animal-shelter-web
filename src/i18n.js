@@ -1,13 +1,14 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
 
 import en from "./locales/en.json";
 import es from "./locales/es.json";
 import fr from "./locales/fr.json";
 
+// Read saved language OR default to English
+const savedLanguage = localStorage.getItem("i18nextLng") || "es";
+
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
@@ -15,7 +16,8 @@ i18n
       es: { translation: es },
       fr: { translation: fr },
     },
-    fallbackLng: "en", //Always fallback to English
+    lng: savedLanguage, // initial language to load
+    fallbackLng: "es", // fallback language if something goes wrong
     debug: process.env.NODE_ENV === "development",
     interpolation: {
       escapeValue: false,
@@ -23,16 +25,6 @@ i18n
     react: {
       useSuspense: true,
     },
-    detection: {
-      //Detection order (navigator goes last)
-      order: ["localStorage", "htmlTag", "path", "subdomain", "navigator"],
-      caches: ["localStorage"],
-    },
   });
-
-// Force English only on the very first visit
-if (!localStorage.getItem("i18nextLng")) {
-  i18n.changeLanguage("en");
-}
 
 export default i18n;

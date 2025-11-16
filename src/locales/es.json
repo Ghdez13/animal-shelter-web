@@ -215,7 +215,13 @@
       "Nos mueve la vocación de ayudar. Cada acción, desde rescatar animales de las calles hasta educar sobre adopciones responsables, nace del profundo deseo de hacer el bien y mejorar la vida de quienes más lo necesitan.",
       "La pasión impulsa nuestro refugio. Nos dedicamos con entusiasmo y entrega a cada proyecto, a cada animal rescatado y a cada familia que encuentra un nuevo compañero, porque creemos que cada vida salvada merece todo nuestro corazón."
     ],
-    "imageAlt": "Donaciones ayudando a los animales"
+    "imageAlt": "Donaciones ayudando a los animales",
+    "ourStoryTitle": "Nuestra Historia",
+    "storyText": [
+      "La ayuda que brindamos a los animales nació del interés genuino y desinteresado de promover el bienestar animal en nuestra comunidad.",
+      "Paco Lozano comenzó con un sueño: ayudar a aquellos que no tienen voz propia, sin importar las limitaciones económicas ni las oportunidades que dificulten el cuidado de los gatos y perros de Playa del Carmen. Motivando a más personas a unirse a la causa, creó una página de Facebook y, poco a poco, logró sumar una comunidad de personas comprometidas y encantadas de ayudar.",
+      "Gracias a este movimiento, se ha logrado dar hogar a numerosos perros y gatos, y aunque la tarea parece interminable, resulta sumamente satisfactorio ver cómo se crean familias o cómo las familias se complementan con huellitas que engrandecen el corazón y el núcleo familiar."
+    ]
   },
 
   "contact": {
@@ -232,7 +238,7 @@
   "adoptions": {
     "adoptionsTitle": "Candidatos en Adopción",
     "title": "Adopciones | JausPet",
-    "counterTitle":"Animales adoptados",
+    "counterTitle": "Animales adoptados",
     "description": "Descubre perros y gatos para adoptar y encuentra tu compañero ideal en JausPet.",
     "backgroundAlt": "Fondo de la página de Adopciones"
   },
@@ -250,7 +256,7 @@
     "age": "Edad",
     "sex": "Sexo",
     "size": "Tamaño",
-    "sterilized": "Esterilizado",
+    "sterilized": "Esterilizado(a)",
     "personality": "Personalidad",
     "interestedIn": "¿Interesado en {{name}}?",
     "submitButton": "Solicitar información",

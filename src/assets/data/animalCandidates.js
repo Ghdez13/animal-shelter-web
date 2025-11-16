@@ -21,38 +21,11 @@ export const animalsCandidates = [
     age: { en: "11 months", es: "11 meses", fr: "11 mois" },
     sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
     sex: { en: "Male", es: "Macho", fr: "Mâle" },
-    size: { en: "Medium", es: "Mediano", fr: "Moyen" },
+    size: { en: "Medium", es: "Mediano", fr: "Moyenne" },
     personality: {
       en: "Friendly and playful",
       es: "Amigable y juguetón",
       fr: "Amical et joueur",
-    },
-  },
-  {
-    name: "Bolillo",
-    type: "dog",
-    images: {
-      desktop: [
-        "/dogImages/Bolillo.webp",
-        "/dogImages/Bolillo1.webp",
-        "/dogImages/Bolillo2.webp",
-        "/dogImages/Bolillo3.webp",
-      ],
-      mobile: [
-        "/dogImages/BolilloMobile.webp",
-        "/dogImages/Bolillo1Mobile.webp",
-        "/dogImages/Bolillo2Mobile.webp",
-        "/dogImages/Bolillo3Mobile.webp",
-      ],
-    },
-    age: { en: "4 months", es: "4 meses", fr: "4 mois" },
-    sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
-    sex: { en: "Male", es: "Macho", fr: "Mâle" },
-    size: { en: "Medium", es: "Mediano", fr: "Moyen" },
-    personality: {
-      en: "Calm and affectionate",
-      es: "Tranquilo y cariñoso",
-      fr: "Calme et affectueux",
     },
   },
   {
@@ -73,7 +46,7 @@ export const animalsCandidates = [
     age: { en: "9 months", es: "9 meses", fr: "9 mois" },
     sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
     sex: { en: "Female", es: "Hembra", fr: "Femelle" },
-    size: { en: "Medium", es: "Mediano", fr: "Moyen" },
+    size: { en: "Medium", es: "Mediano", fr: "Moyenne" },
     personality: {
       en: "Playful and sweet",
       es: "Juguetona y dulce",
@@ -98,7 +71,7 @@ export const animalsCandidates = [
     age: { en: "1 year", es: "1 año", fr: "1 an" },
     sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
     sex: { en: "Female", es: "Hembra", fr: "Femelle" },
-    size: { en: "Medium", es: "Mediano", fr: "Moyen" },
+    size: { en: "Medium", es: "Mediano", fr: "Moyenne" },
     personality: {
       en: "Calm and obedient",
       es: "Calmada y obediente",
@@ -149,7 +122,7 @@ export const animalsCandidates = [
     },
     sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
     sex: { en: "Female & male", es: "Hembra y macho", fr: "Femelle & Mâle" },
-    size: { en: "Medium", es: "Mediano", fr: "Moyen" },
+    size: { en: "Medium", es: "Mediano", fr: "Moyenne" },
     personality: {
       en: "Friendly and sociable. Adoption together",
       es: "Amigables y sociables. Adopción juntos",
@@ -182,11 +155,57 @@ export const animalsCandidates = [
     },
     sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
     sex: { en: "Males", es: "Machos", fr: "Mâles" },
-    size: { en: "Medium", es: "Mediano", fr: "Moyen" },
+    size: { en: "Medium", es: "Mediano", fr: "Moyenne" },
     personality: {
       en: "Playful and protective",
       es: "Juguetones y guardianes",
       fr: "Joueurs et protecteurs",
+    },
+  },
+  {
+    name: "Malinali",
+    type: "dog",
+    images: {
+      desktop: [
+        "/dogImages/Malinali.webp",
+        "/dogImages/Malinali2.webp",
+      ],
+      mobile: [
+        "/dogImages/MalinaliMobile.webp",
+        "/dogImages/Malinali2Mobile.webp",
+      ],
+    },
+    age: { en: "+ 8 years", es: "+ 8 años", fr: "+ 8 ans" },
+    sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
+    sex: { en: "Female", es: "Hembra", fr: "Femelle" },
+    size: { en: "Medium", es: "Mediano", fr: "Moyenne" },
+    personality: {
+      en: "Friendly, healthy & loving",
+      es: "Sociable, sana y cariñosa",
+      fr: "Sociable, saine & affectueuse",
+    },
+  },
+  {
+    name: "Morita",
+    type: "dog",
+    images: {
+      desktop: [
+        "/dogImages/Morita.webp",
+        "/dogImages/Morita2.webp",
+      ],
+      mobile: [
+        "/dogImages/MoritaMobile.webp",
+        "/dogImages/Morita2Mobile.webp",
+      ],
+    },
+    age: { en: "+ 7 years", es: "+ 7 años", fr: "+ 7 ans" },
+    sterilized: { en: "No yet", es: "No aún", fr: "Pas encore" },
+    sex: { en: "Female", es: "Hembra", fr: "Femelle" },
+    size: { en: "Small", es: "Pequeño", fr: "Petite" },
+    personality: {
+      en: "Calm & loving",
+      es: "Tranquila y cariñosa",
+      fr: "Calme & affectuese",
     },
   },
   {
@@ -224,7 +243,7 @@ export const animalsCandidates = [
     age: { en: "6 months", es: "6 meses", fr: "6 mois" },
     sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
     sex: { en: "Male", es: "Macho", fr: "Mâle" },
-    size: { en: "Medium", es: "Mediano", fr: "Moyen" },
+    size: { en: "Medium", es: "Mediano", fr: "Moyenne" },
     personality: {
       en: "Calm and playful",
       es: "Tranquilo y juguetón",
@@ -249,7 +268,7 @@ export const animalsCandidates = [
     age: { en: "3 years", es: "3 años", fr: "3 ans" },
     sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
     sex: { en: "Female", es: "Hembra", fr: "Femelle" },
-    size: { en: "Medium", es: "Mediano", fr: "Moyen" },
+    size: { en: "Medium", es: "Mediano", fr: "Moyenne" },
     personality: {
       en: "Affectionate and active",
       es: "Cariñosa y activa",
@@ -293,11 +312,36 @@ export const animalsCandidates = [
     age: { en: "4 months", es: "4 meses", fr: "4 mois" },
     sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
     sex: { en: "Male", es: "Macho", fr: "Mâle" },
-    size: { en: "Small", es: "Pequeño", fr: "Petit" },
+    size: { en: "Small", es: "Pequeño", fr: "Petite" },
     personality: {
       en: "Sociable and playful",
       es: "Sociable y juguetón",
       fr: "Sociable et joueur",
+    },
+  },
+  {
+    name: "Morgana",
+    type: "cat",
+    images: {
+      desktop: [
+        "/catImages/Morgana.webp",
+        "/catImages/Morgana2.webp",
+        "/catImages/Morgana3.webp",
+      ],
+      mobile: [
+        "/catImages/MorganaMobile.webp",
+        "/catImages/Morgana2Mobile.webp",
+        "/catImages/Morgana3Mobile.webp",
+      ],
+    },
+    age: { en: "10 months", es: "10 meses", fr: "10 mois" },
+    sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
+    sex: { en: "Female", es: "Hembra", fr: "Femelle" },
+    size: { en: "Small", es: "Pequeño", fr: "Petite" },
+    personality: {
+      en: "Very loving",
+      es: "Super cariñosa",
+      fr: "Super affectueuse",
     },
   },
 ];

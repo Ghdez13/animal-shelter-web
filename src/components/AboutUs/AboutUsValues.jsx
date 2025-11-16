@@ -2,19 +2,20 @@ import { useTranslation } from "react-i18next";
 import AboutUsOurHistory from "../../assets/images/aboutUsOurHistory.webp";
 import AboutUsOurHistoryMobile from "../../assets/images/aboutUsOurHistoryMobile.webp";
 import LazyImage from "../LazyImage";
-import aboutUs from "../../assets/data/aboutUs.json";
 
 const AboutUsValues = () => {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language;
-  const data = aboutUs[lang];
+  const { t } = useTranslation();
 
-  // Titles and descriptions for each value card from i18n
+  // Titles and descriptions from i18n
   const titles = t("aboutUsValues.title", { returnObjects: true }) || [];
   const descriptions =
     t("aboutUsValues.description", { returnObjects: true }) || [];
 
-  // Icons for values, desktop by default
+  // Story section content from i18n
+  const storyTitle = t("aboutUsValues.ourStoryTitle");
+  const storyText = t("aboutUsValues.storyText", { returnObjects: true }) || [];
+
+  // Icons (desktop by default)
   const iconsDesktop = [
     "/icons/animalWelfare.webp",
     "/icons/respect.webp",
@@ -22,7 +23,7 @@ const AboutUsValues = () => {
     "/icons/passion.webp",
   ];
 
-  // Mobile versions of icons
+  // Mobile versions
   const iconsMobile = [
     "/icons/animalWelfareMobile.webp",
     "/icons/respectMobile.webp",
@@ -30,10 +31,10 @@ const AboutUsValues = () => {
     "/icons/passionMobile.webp",
   ];
 
-  // Detect mobile screen for responsive icons
+  // Detect mobile screen
   const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
-  // Combine titles, descriptions, and icons into an array of value objects
+  // Combine values
   const values = titles.map((title, index) => ({
     title,
     description: descriptions[index],
@@ -46,33 +47,34 @@ const AboutUsValues = () => {
       <div className="max-w-6xl mx-auto px-0 md:px-0 lg:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
         {values.map(({ title, description, icon }, index) => (
           <div key={index} className="flex flex-col items-start text-left">
-            {/* Value icon and title */}
+            {/* Icon + Title */}
             <div className="flex items-center gap-3 mb-2">
               <LazyImage
                 src={icon}
                 alt={`${title} icon`}
                 className="w-20 h-20 object-contain"
               />
-              <h2 className="text-[25px]  md:text-[30px] font-bold">{title}</h2>
+              <h2 className="text-[25px] md:text-[30px] font-bold">{title}</h2>
             </div>
-            {/* Value description */}
-            <p className="text-[20px] ">{description}</p>
+
+            {/* Description */}
+            <p className="text-[20px]">{description}</p>
           </div>
         ))}
       </div>
 
       {/* === Our Story section === */}
       <div className="flex flex-col px-0 md:px-0 lg:px-6 lg:flex-row w-full max-w-6xl mx-auto rounded-2xl overflow-hidden mt-6">
-        {/* Section image with responsive support using srcSet */}
+        {/* Image */}
         <LazyImage
-          src={AboutUsOurHistory} // default desktop
+          src={AboutUsOurHistory}
           srcSet={`${AboutUsOurHistoryMobile} 600w, ${AboutUsOurHistory} 1600w`}
           sizes="(max-width: 1139px) 600px, 1600px"
           alt={t("aboutUsValues.imageAlt", "Donation helping animals")}
           className="w-full lg:w-1/2 object-cover h-80 lg:h-auto lg:rounded-l-2xl"
         />
 
-        {/* Text content area */}
+        {/* Text block */}
         <div
           className="flex flex-col items-center justify-center w-full lg:w-1/2 px-6 lg:rounded-r-2xl"
           style={{
@@ -81,13 +83,12 @@ const AboutUsValues = () => {
           }}
         >
           <div className="w-full max-w-md text-left">
-            {/* Section title */}
-            <h2 className="text-[40px] font-semibold mb-4">
-              {data.ourStoryTitle}
-            </h2>
-            {/* Section paragraphs */}
-            {data.storyText.map((paragraph, index) => (
-              <p key={index} className="text-[20px]  mb-4">
+            {/* Title */}
+            <h2 className="text-[40px] font-semibold mb-4">{storyTitle}</h2>
+
+            {/* Paragraphs */}
+            {storyText.map((paragraph, index) => (
+              <p key={index} className="text-[20px] mb-4">
                 {paragraph}
               </p>
             ))}

@@ -214,7 +214,13 @@
       "Nos actions sont animées par le désir d’aider. Du sauvetage des animaux de la rue à l’éducation à l’adoption responsable, tout ce que nous faisons vient du souhait de faire le bien et d’améliorer des vies.",
       "La pasión impulsa nuestro refugio. Nos dedicamos con entusiasmo y entrega a cada proyecto, a cada animal rescatado y a cada familia que encuentra un nuevo compañero, porque creemos que cada vida salvada merece todo nuestro corazón."
     ],
-    "imageAlt": "Dons aidant les animaux"
+    "imageAlt": "Dons aidant les animaux",
+    "ourStoryTitle": "Notre Histoire",
+    "storyText": [
+      "L’aide que nous apportons aux animaux est née d’un intérêt sincère et désintéressé pour promouvoir le bien-être animal dans notre communauté.",
+      "Paco Lozano a commencé avec un rêve : aider ceux qui n’ont pas de voix, quelles que soient les limitations économiques ou les obstacles qui pourraient entraver le soin des chats et des chiens à Playa del Carmen. En motivant davantage de personnes à rejoindre la cause, il a créé une page Facebook et a progressivement rassemblé une communauté de personnes engagées et désireuses d’aider.",
+      "Grâce à ce mouvement, de nombreux chiens et chats ont trouvé des foyers aimants, et bien que la tâche puisse sembler interminable, il est extrêmement gratifiant de voir comment des familles se forment ou comment elles se complètent avec de petites pattes qui enrichissent le cœur et le noyau familial."
+    ]
   },
 
   "contact": {
@@ -231,7 +237,7 @@
   "adoptions": {
     "adoptionsTitle": "Animaux à Adopter",
     "title": "Adoptions | JausPet",
-    "counterTitle":"Animaux adoptés",
+    "counterTitle": "Animaux adoptés",
     "description": "Découvrez des chiens et des chats à adopter et trouvez votre compagnon idéal sur JausPet.",
     "backgroundAlt": "Fond de la page Adoptions"
   },
@@ -249,7 +255,7 @@
     "age": "Âge",
     "sex": "Sexe",
     "size": "Taille",
-    "sterilized": "Stérilisé",
+    "sterilized": "Stérilisé(e)",
     "personality": "Personnalité",
     "interestedIn": "Intéressé par {{name}} ?",
     "submitButton": "Demander des informations",
@@ -262,29 +268,29 @@
     "button": "Adoptez-moi"
   },
 
-"events": {
-  "title": "Campagnes | JausPet",
-  "eventsTitle": "Foires d'adoption",
-  "description": "Ajoutez cette date à votre agenda et rejoignez-nous",
-  "upcoming": [
-    {
-      "date": {
-        "dayName": "Dimanche",
-        "dayNumber": "16",
-        "month": "Novembre"
-      },
-      "location": "Quinta Alegria - Playa del Carmen",
-      "time": "16h00 - 20h00",
-      "start": "2025-11-16T16:00:00-05:00",
-      "end": "2025-11-16T20:00:00-05:00",
-      "mapUrl": "https://maps.app.goo.gl/wTxnETvNsVKJXiEG6",
-      "titleHoverLocation": "Ouvrir dans Google Maps",
-      "titleHoverCalendar": "Ajouter à l'agenda"
-    }
-  ],
-  "nextEvents": "Plus de dates à venir...",
-  "carouselTitle": "🐾 C’est ici que tout commence !"
-},
+  "events": {
+    "title": "Campagnes | JausPet",
+    "eventsTitle": "Foires d'adoption",
+    "description": "Ajoutez cette date à votre agenda et rejoignez-nous",
+    "upcoming": [
+      {
+        "date": {
+          "dayName": "Dimanche",
+          "dayNumber": "16",
+          "month": "Novembre"
+        },
+        "location": "Quinta Alegria - Playa del Carmen",
+        "time": "16h00 - 20h00",
+        "start": "2025-11-16T16:00:00-05:00",
+        "end": "2025-11-16T20:00:00-05:00",
+        "mapUrl": "https://maps.app.goo.gl/wTxnETvNsVKJXiEG6",
+        "titleHoverLocation": "Ouvrir dans Google Maps",
+        "titleHoverCalendar": "Ajouter à l'agenda"
+      }
+    ],
+    "nextEvents": "Plus de dates à venir...",
+    "carouselTitle": "🐾 C’est ici que tout commence !"
+  },
 
   "alerts": {
     "submitStatusSuccess": "Votre message a été envoyé ! 😸",
