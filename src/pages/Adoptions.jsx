@@ -28,7 +28,7 @@ const Adoptions = () => {
           </h1>
         </div>
         {/* Adoption counter */}
-        <AdoptionCounter max={214} />
+        <AdoptionCounter max={215} />
         {/* Gallery Section */}
         <AdoptionsGallery />
       </main>
