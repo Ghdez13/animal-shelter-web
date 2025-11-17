@@ -144,10 +144,12 @@ export const animalsCandidates = [
       desktop: [
         "/dogImages/Malinali.webp",
         "/dogImages/Malinali2.webp",
+        "/dogImages/Malinali3.webp",
       ],
       mobile: [
         "/dogImages/MalinaliMobile.webp",
         "/dogImages/Malinali2Mobile.webp",
+        "/dogImages/Malinali3Mobile.webp",
       ],
     },
     age: { en: "+ 8 years", es: "+ 8 años", fr: "+ 8 ans" },

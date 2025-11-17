@@ -15,10 +15,7 @@ const Adoptions = () => {
       alt={t("adoptions.backgroundAlt")}
     >
       {/* Reusable SEO component using i18n keys */}
-      <SEO
-        pageKey="adoptions"
-        url="https://jauspet.vercel.app/adoptions"
-      />
+      <SEO pageKey="adoptions" url="https://jauspet.vercel.app/adoptions" />
 
       <main className="px-6">
         {/* Page title */}
