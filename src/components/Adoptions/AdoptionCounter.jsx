@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Confetti from "react-confetti";
 
-const AdoptionCounter = ({ max = 214, speed = 20 }) => {
+const AdoptionCounter = ({ max = 215, speed = 20 }) => {
   const { t } = useTranslation();
   const [count, setCount] = useState(0);
   const [showNumber, setShowNumber] = useState(true); // Visibility for blinking

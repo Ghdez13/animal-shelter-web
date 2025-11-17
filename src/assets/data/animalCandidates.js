@@ -54,31 +54,6 @@ export const animalsCandidates = [
     },
   },
   {
-    name: "Chilindrina",
-    type: "dog",
-    images: {
-      desktop: [
-        "/dogImages/Chilindrina.webp",
-        "/dogImages/Chilindrina1.webp",
-        "/dogImages/Chilindrina2.webp",
-      ],
-      mobile: [
-        "/dogImages/ChilindrinaMobile.webp",
-        "/dogImages/Chilindrina1Mobile.webp",
-        "/dogImages/Chilindrina2Mobile.webp",
-      ],
-    },
-    age: { en: "1 year", es: "1 año", fr: "1 an" },
-    sterilized: { en: "Yes", es: "Sí", fr: "Oui" },
-    sex: { en: "Female", es: "Hembra", fr: "Femelle" },
-    size: { en: "Medium", es: "Mediano", fr: "Moyenne" },
-    personality: {
-      en: "Calm and obedient",
-      es: "Calmada y obediente",
-      fr: "Calme et obéissante",
-    },
-  },
-  {
     name: "Elektra",
     type: "dog",
     images: {
