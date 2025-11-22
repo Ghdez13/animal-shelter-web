@@ -19,8 +19,8 @@ export const eventsUpcoming = [
             fr: "Quinta Alegria - Playa del Carmen",
         },
         time: "4:00 PM - 08:00 PM",
-        start: "2025-23-16T16:00:00-05:00",
-        end: "2025-23-16T20:00:00-05:00",
+        start: "2025-11-23T16:00:00-05:00",
+        end: "2025-11-23T20:00:00-05:00",
         mapUrl: "https://maps.app.goo.gl/wTxnETvNsVKJXiEG6",
         titleHoverLocation: {
             es: "Abrir en Google Maps",
