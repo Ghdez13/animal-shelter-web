@@ -171,7 +171,7 @@ const Navbar = () => {
                 to={`/${item}`}
                 aria-label={t(`menu.${item}`)}
                 onClick={() => setIsOpen(false)}
-                className="relative inline-block text-2xl text-(--color-text-light) transition focus:outline-none hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-(--color-focus-secondary) after:w-0 after:transition-all after:duration-300"
+                className="relative inline-block w-fit text-2xl text-(--color-text-light) transition focus:outline-none hover:after:w-full focus-visible:after:w-full after:absolute after:-bottom-1 after:left-0 after:h-1 after:bg-(--color-focus-secondary) after:w-0 after:transition-all after:duration-300"
               >
                 {t(`menu.${item}`)}
               </Link>
